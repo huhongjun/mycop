@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<registration>
+
+	<tool
+			id="sakai.topicstore"
+			title="题库管理"
+			description="提供试题的仓库">
+
+		<configuration name="pagesize" value="20" />
+
+	</tool>
+
+</registration>
