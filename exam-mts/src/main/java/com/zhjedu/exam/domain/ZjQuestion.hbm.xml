@@ -121,5 +121,10 @@
 			<key column="QUESTION"/> 
 			<one-to-many class="com.zhjedu.exam.domain.ZjQuizQuestion"/> 
 		</set>
+		<set name="optionListOn" lazy="false" inverse="true">
+        	<cache usage="read-write"/> 
+			<key column="QUESTION"/> 
+			<one-to-many class="com.zhjedu.exam.domain.ZjQuestionOptionListOn"/> 
+		</set>
     </class>
 </hibernate-mapping>

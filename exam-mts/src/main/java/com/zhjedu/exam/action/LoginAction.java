@@ -50,6 +50,7 @@ public ActionForward login(ActionMapping mapping, ActionForm actionForm,HttpServ
 					request.getSession().setAttribute(UserSession.TEACHER_SESSION, teacher);
 				    }
 				    else{
+				    	request.setAttribute("info", "登录名或密码错误，请重新登录！");
 				    	return mapping.findForward("login");
 				    }
 				} catch (SQLException e) {
@@ -65,6 +66,7 @@ public ActionForward login(ActionMapping mapping, ActionForm actionForm,HttpServ
 						return new ActionForward("/assignment.do?method=getStatus&status=1");
 					}
 					else{
+						request.setAttribute("info", "登录名或密码错误，请重新登录！");
 						return mapping.findForward("login");
 					}
 				} catch (SQLException e) {

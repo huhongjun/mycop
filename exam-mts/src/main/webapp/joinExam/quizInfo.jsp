@@ -9,27 +9,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>无标题文档</title>
 </head>
+<style>
+body,table,tr,td,input,select,div,textarea,font	{font-family: "宋体";font-size:12px; color:red}
+.btnBlue
+{
+	BORDER-RIGHT: #2C59AA 1px solid; BORDER-LEFT: #2C59AA 1px solid; BORDER-TOP: #2C59AA 1px solid; BORDER-BOTTOM: #2C59AA 1px solid;
+	PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 1px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#9DBCEA);
+	HEIGHT: 23px;
+	FONT-SIZE: 9pt;	CURSOR: hand; COLOR: black; 	
+}
+</style>
 <bean:define id="timelimit" name="quiz" property="timelimit"/>
 <%
 	if(Integer.parseInt(timelimit.toString()) > 0){	//做倒计时控制
 %>
-<body onload="javascript:show_date_time(<%=Integer.parseInt(timelimit.toString()) * 60 %>)">&nbsp; 
+<body onload="javascript:show_date_time(<%=Integer.parseInt(timelimit.toString()) * 60 %>)" style="margin-top:0">&nbsp; 
 <% 
 	}else{ 
 %>
-<body onload="javascript:show_date_time(-1)">
+<body onload="javascript:show_date_time(-1)" style="margin-top:0">
 <%
 	}
 %>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="27%" height="30">考试名称：<bean:write name="quiz" property="name"/> </td>
-    <td width="14%">总分：100分 </td>
+    <td width="41%" height="30">考试名称：<bean:write name="quiz" property="name"/> </td>
     <td width="12%">姓名：<%=UserSessionInfo.getStudentRealName(request) %> </td>
     <td width="22%">考试剩余时间：<span id="nowtime"></span></td>
     <td width="25%"><div align="center">
-      <input type="button" name="Submit" value=" 检 查 " onclick="parent.mainFrame.window.checkFinish()"/>
-      <input type="button" name="Submit2" value=" 交 卷 " onclick="parent.mainFrame.window.sbt()"/>
+      <input type="button" name="Submit" value=" 检 查 " onclick="parent.mainFrame.window.checkFinish()" class="btnBlue"/>
+      <input type="button" name="Submit2" value=" 交 卷 " onclick="parent.mainFrame.window.sbt()" class="btnBlue"/>
     </div></td>
   </tr>
 </table>

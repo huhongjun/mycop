@@ -17,11 +17,14 @@
 <body>
 <form name="examForm" action="<%=request.getContextPath()%>/joinExam.do?method=sbtExam" method="post">
 <div align="center" class="bgall">
-	<div class="toptitle"> 试 题 列 表</div>
+	<div class="toptitle"></div>
+	<div class="toptitle"> <bean:write name="quiz" property="name"/> （总分：<span id="_totalScore"></span>分）</div>
        <div class="borderv">
     <div class="ms">
 <%
+	int _totalScore = 0;
 	int questionNo = 0;
+	int questionNo2 = 0;
 	ArrayList questionId = new ArrayList();
 	StringBuffer _questionId = new StringBuffer("");
 	String op = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -31,18 +34,20 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-	<div class="tt"><%=questionNo %>)、单选题</div>
+	<div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、单选题</div>
     <div class="line-h">&nbsp;</div>
     <table>
 <%
 			for(int i = 0; i < questionList.size(); i ++){
+				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
+				_totalScore += quizQuestion.getGrade();
 %>
       <tr>
-            <td width="52" >第<%=i + 1 %>题 </td>
+            <td width="52" valign="top">第<%=questionNo2 %>题 </td>
             <td height="25" colspan="2" align="left"><%=question.getQuestioncontext() %> <span class="tx">（<%=quizQuestion.getGrade() %>分）</span></td>
         </tr>
 <%
@@ -74,18 +79,20 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-    <div class="tt"><%=questionNo %>)、多选题</div>
+    <div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、多选题</div>
         <div class="line-h">&nbsp;</div>
 <table>
 <%
 			for(int i = 0; i < questionList.size(); i ++){
+				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
+				_totalScore += quizQuestion.getGrade();
 %>
 		<tr>
-              <td width="52" >第<%=i + 1 %>题</td>
+              <td width="52" valign="top">第<%=questionNo2 %>题</td>
               <td height="25" colspan="2" align="left"> <%=question.getQuestioncontext() %> （<%=quizQuestion.getGrade() %>分）</td>
         </tr>
 <%
@@ -117,18 +124,20 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-    <div class="tt"><%=questionNo %>)、判断题</div>
+    <div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、判断题</div>
         <div class="line-h">&nbsp;</div>
 <table>
 <%
 			for(int i = 0; i < questionList.size(); i ++){
+				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
+				_totalScore += quizQuestion.getGrade();
 %>
             <tr>
-              <td width="50" >第<%=i + 1 %>题</td>
+              <td width="50" valign="top">第<%=questionNo2 %>题</td>
               <td width="886" height="25" align="left"><%=question.getQuestioncontext() %> <span class="tx">（<%=quizQuestion.getGrade() %>分）</span></td>
             </tr>
 
@@ -155,19 +164,21 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-    <div class="tt"><%=questionNo %>)、填空题</div>
+    <div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、填空题</div>
         <div class="line-h">&nbsp;</div>
 <table class="tb-form">
 <%
 			for(int i = 0; i < questionList.size(); i ++){
+				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				long num = question.getQuestionNum();
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
+				_totalScore += quizQuestion.getGrade();
 %>
 		<tr>
-              <td width="52"><span >第<%=i + 1 %>题 </span></td>
+              <td width="52" valign="top"><span >第<%=questionNo2 %>题 </span></td>
               <td height="22" colspan="2" align="left"><%=question.getQuestioncontext() %><span class="tx">（<%=quizQuestion.getGrade() %>分）</span></td>
         </tr>
 <%
@@ -195,18 +206,20 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-    <div class="tt"><%=questionNo %>)、简答题</div>
+    <div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、简答题</div>
  	<div class="line-h">&nbsp;</div>
 <table>
 <%
 			for(int i = 0; i < questionList.size(); i ++){
+				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
+				_totalScore += quizQuestion.getGrade();
 %>
 		<tr>
-              <td width="52"><span >第<%=i + 1 %>题 </span></td>
+              <td width="52" valign="top"><span >第<%=questionNo2 %>题 </span></td>
               <td height="22" colspan="2" align="left"><%=question.getQuestioncontext() %><span class="tx">（<%=quizQuestion.getGrade() %>分）</span></td>
         </tr>
 		<tr>
@@ -229,18 +242,20 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-        <div class="tt"><%=questionNo %>)、匹配题</div>
+        <div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、匹配题</div>
         <div class="line-h">&nbsp;</div>
         <table>
 <%
 			for(int i = 0; i < questionList.size(); i ++){
+				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				List matchingOptionList = question.getMatchingOptionList();
 				List matchingAnswerList = question.getMatchingAnswerList();
+				_totalScore += quizQuestion.getGrade();
 %>
 		<tr>
-              <td width="52"><span >第<%=i + 1 %>题 </span></td>
+              <td width="52" valign="top"><span >第<%=questionNo2 %>题 </span></td>
               <td height="22" colspan="2" align="left"><%=question.getQuestioncontext() %><span class="tx">（<%=quizQuestion.getGrade() %>分）</span></td>
         </tr>
 <%
@@ -293,7 +308,7 @@
 		if(questionList != null && questionList.size() > 0){
 			questionNo = questionNo + 1;
 %>
-        <div class="tt"><%=questionNo %>)、<%=title %></div>
+        <div class="tt"><%=UserSessionInfo.getQuestionNo(questionNo - 1) %>、<%=title %></div>
         <div class="line-h">&nbsp;</div>
       <table>
 
@@ -302,14 +317,17 @@
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
 				List sonQuestionList = question.getSonQuestionList();
+				_totalScore += quizQuestion.getGrade();
 %>
   <tr>
-            <td width="52">第<%=i + 1 %>题</td>
-            <td height="22" colspan="2" align="left"><%=question.getQuestioncontext() %>（<%=quizQuestion.getGrade() %>分）</td>
+            <td width="52" valign="top">第<%=UserSessionInfo.getQuestionNo(i) %>部分</td>
+            <td height="22"  width="755"  align="left"><%=question.getQuestioncontext() %>（<%=quizQuestion.getGrade() %>分）</td>
+        	<td width="125">&nbsp;</td>
         </tr>
 <%
 				if(sonQuestionList != null && sonQuestionList.size() > 0){
 					for(int j = 0; j < sonQuestionList.size(); j ++){
+						questionNo2 = questionNo2 + 1;
 						String score = UserSessionInfo.getScore(Float.parseFloat(quizQuestion.getGrade().toString()), sonQuestionList.size(), j);
 						ZjQuestion sonQuestion = (ZjQuestion)sonQuestionList.get(j);
 						_questionId.append("," + sonQuestion.getId());
@@ -319,14 +337,20 @@
 							if(sonQuestion.getQuestioncontext() != null && !"".equals(sonQuestion.getQuestioncontext())){
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left"><%=sonQuestion.getQuestioncontext() %> （<%=score %>分）</td>
-            <td width="125"></td>
+            <td width="125">&nbsp;</td>
           </tr>
 <%
 								if(optionList != null && optionList.size() > 0){
+								Set optionListOn = sonQuestion.getOptionListOn();
+								if(optionListOn != null){
+									Iterator it = optionListOn.iterator();
+									if(it.hasNext()){
+										ZjQuestionOptionListOn listOn = (ZjQuestionOptionListOn)it.next();
+										long x = listOn.getId().getListOn();
+										if(x == 1){	//全部横排
 %>
-
           <tr>
             <td height="25" align="right"></td>
             <td width="755" align="left">
@@ -340,22 +364,62 @@
 									}
 %>
             </td>
+            <td width="125">&nbsp;</td>
+          </tr>
+<%
+										}else if(x == 2){	//分两列排
+%>
+          <tr>
+          	<td height="25" align="right"></td>
+            <td height="25" width="755" align="left">
+            	<table style="width:700px;">
+<%
+											int col = optionList.size() % 2;
+											if(col > 0) 
+												col = optionList.size() / 2 + 1;
+											else
+												col = optionList.size() / 2;
+											for(int k = 0; k < col; k ++){
+										
+%>
+            		<tr>
+<%
+												for(int t = 0; t < 2; t ++){
+													if(2 * k + t < optionList.size()){
+														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
+%>
+            			<td height="25" style="width:350px;" align="left">
+						<input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
+            			</td>
+<%
+													}else{
+%>
+            			<td height="25" style="width:350px;" align="left">&nbsp;</td>
+<%
+													}
+												}
+%>
+            		</tr>
+<%
+											}
+%>
+            	</table>
+            </td>
             <td width="125"></td>
           </tr>
 <%
-								}
-							}else{
-								if(optionList != null && optionList.size() > 0){
+										}else{
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right"></td>
             <td width="755" align="left">
 <%
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
             <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
-            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
+            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
 <%
 									}
 %>
@@ -363,21 +427,105 @@
             <td width="125"></td>
           </tr>
 <%
+										}
+									}
+								}
+								}
+							}else{
+								if(optionList != null && optionList.size() > 0){
+								Set optionListOn = sonQuestion.getOptionListOn();
+								if(optionListOn != null){
+									Iterator it = optionListOn.iterator();
+									if(it.hasNext()){
+										ZjQuestionOptionListOn listOn = (ZjQuestionOptionListOn)it.next();
+										long x = listOn.getId().getListOn();
+%>
+          <tr>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
+            <td width="755" align="left">
+<%
+										if(x == 1){	//全部横排
+
+									for(int k = 0; k < optionList.size(); k ++){
+										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
+%>
+            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
+<%
+									}
+										}else if(x == 2){	//分两列排
+%>
+            	<table style="width:700px;">
+<%
+											int col = optionList.size() % 2;
+											if(col > 0) 
+												col = optionList.size() / 2 + 1;
+											else
+												col = optionList.size() / 2;
+											for(int k = 0; k < col; k ++){
+										
+%>
+            		<tr>
+<%
+												for(int t = 0; t < 2; t ++){
+													if(2 * k + t < optionList.size()){
+														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
+%>
+            			<td height="25" style="width:350px;" align="left">
+						<input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
+            			</td>
+<%
+													}else{
+%>
+            			<td height="25" style="width:350px;" align="left">&nbsp;</td>
+<%
+													}
+												}
+%>
+            		</tr>
+<%
+											}
+%>
+            	</table>
+
+<%
+										}else{
+									for(int k = 0; k < optionList.size(); k ++){
+										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
+%>
+            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
+<%
+									}
+										}
+%>
+            </td>
+            <td width="125"></td>
+          </tr>
+<%
 								}
 							}
+							}}
 						}else if(Constants.QUESTION_MULTICHOICE.equals(sonQuestion.getQtype())){	//子题为多选题
 							List optionList = sonQuestion.getOptionList();
 							if(sonQuestion.getQuestioncontext() != null && !"".equals(sonQuestion.getQuestioncontext())){
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left"><%=sonQuestion.getQuestioncontext() %> （<%=score %>分）</td>
-            <td width="125"></td>
+            <td width="125">&nbsp;</td>
           </tr>
 <%
 								if(optionList != null && optionList.size() > 0){
+								Set optionListOn = sonQuestion.getOptionListOn();
+								if(optionListOn != null){
+									Iterator it = optionListOn.iterator();
+									if(it.hasNext()){
+										ZjQuestionOptionListOn listOn = (ZjQuestionOptionListOn)it.next();
+										long x = listOn.getId().getListOn();
+										if(x == 1){	//全部横排
 %>
-
           <tr>
             <td height="25" align="right"></td>
             <td width="755" align="left">
@@ -391,22 +539,62 @@
 									}
 %>
             </td>
+            <td width="125">&nbsp;</td>
+          </tr>
+<%
+										}else if(x == 2){	//分两列排
+%>
+          <tr>
+          	<td height="25" align="right"></td>
+            <td height="25" width="755" align="left">
+            	<table style="width:700px;">
+<%
+											int col = optionList.size() % 2;
+											if(col > 0) 
+												col = optionList.size() / 2 + 1;
+											else
+												col = optionList.size() / 2;
+											for(int k = 0; k < col; k ++){
+										
+%>
+            		<tr>
+<%
+												for(int t = 0; t < 2; t ++){
+													if(2 * k + t < optionList.size()){
+														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
+%>
+            			<td height="25" style="width:350px;" align="left">
+						<input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
+            			</td>
+<%
+													}else{
+%>
+            			<td height="25" style="width:350px;" align="left">&nbsp;</td>
+<%
+													}
+												}
+%>
+            		</tr>
+<%
+											}
+%>
+            	</table>
+            </td>
             <td width="125"></td>
           </tr>
 <%
-								}
-							}else{
-								if(optionList != null && optionList.size() > 0){
+										}else{
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right"></td>
             <td width="755" align="left">
 <%
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
             <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
-            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
+            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
 <%
 									}
 %>
@@ -414,14 +602,96 @@
             <td width="125"></td>
           </tr>
 <%
+										}
+									}
+								}
+%>
+
+
+<%
+								}
+							}else{
+								if(optionList != null && optionList.size() > 0){
+								Set optionListOn = sonQuestion.getOptionListOn();
+								if(optionListOn != null){
+									Iterator it = optionListOn.iterator();
+									if(it.hasNext()){
+										ZjQuestionOptionListOn listOn = (ZjQuestionOptionListOn)it.next();
+										long x = listOn.getId().getListOn();
+%>
+          <tr>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
+            <td width="755" align="left">
+<%
+										if(x == 1){	//全部横排
+
+									for(int k = 0; k < optionList.size(); k ++){
+										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
+%>
+            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
+<%
+									}
+										}else if(x == 2){	//分两列排
+%>
+            	<table style="width:700px;">
+<%
+											int col = optionList.size() % 2;
+											if(col > 0) 
+												col = optionList.size() / 2 + 1;
+											else
+												col = optionList.size() / 2;
+											for(int k = 0; k < col; k ++){
+										
+%>
+            		<tr>
+<%
+												for(int t = 0; t < 2; t ++){
+													if(2 * k + t < optionList.size()){
+														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
+%>
+            			<td height="25" style="width:350px;" align="left">
+						<input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
+            			</td>
+<%
+													}else{
+%>
+            			<td height="25" style="width:350px;" align="left">&nbsp;</td>
+<%
+													}
+												}
+%>
+            		</tr>
+<%
+											}
+%>
+            	</table>
+
+<%
+										}else{
+									for(int k = 0; k < optionList.size(); k ++){
+										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
+%>
+            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
+<%
+									}
+										}
+%>
+            </td>
+            <td width="125"></td>
+          </tr>
+<%
 								}
 							}
+							}}
 						}else if(Constants.QUESTION_JUDGE.equals(sonQuestion.getQtype())){	//子题为判断题
 							List optionList = sonQuestion.getOptionList();
 							if(sonQuestion.getQuestioncontext() != null && !"".equals(sonQuestion.getQuestioncontext())){
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left"><%=sonQuestion.getQuestioncontext() %> （<%=score %>分）</td>
             <td width="125"></td>
           </tr>
@@ -437,7 +707,7 @@
 							}else{
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left">
 			<input type="radio" name="<%=sonQuestion.getId() %>" value="1"> 正确
 			<input type="radio" name="<%=sonQuestion.getId() %>" value="2"> 错误
@@ -451,7 +721,7 @@
 							if(sonQuestion.getQuestioncontext() != null && !"".equals(sonQuestion.getQuestioncontext())){
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left"><%=sonQuestion.getQuestioncontext() %> （<%=score %>分）</td>
             <td width="125"></td>
           </tr>
@@ -472,7 +742,7 @@
 							}else{
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left">
 <%
 								for(int k = 0; k < num; k ++){
@@ -490,7 +760,7 @@
 							if(sonQuestion.getQuestioncontext() != null && !"".equals(sonQuestion.getQuestioncontext())){
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left"><%=sonQuestion.getQuestioncontext() %> （<%=score %>分）</td>
             <td width="125"></td>
           </tr>
@@ -503,7 +773,7 @@
 							}else{
 %>
           <tr>
-            <td height="25" align="right"><span ><%=j + 1 %></span>、</td>
+            <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left"><textarea rows="10" name="<%=sonQuestion.getId() %>" cols="60" ></textarea></td>
             <td width="125"></td>
           </tr>
@@ -535,6 +805,7 @@ if(id != null && id.length() > 0){
 </form>
 </body>
 <script type="text/javascript">
+document.getElementById("_totalScore").innerHTML = "<%=_totalScore%>";
 	function checkFinish(){
 <%
 	if(questionId != null && questionId.size() > 0){

@@ -63,6 +63,7 @@ public class ZjQuestion extends ActionForm implements java.io.Serializable {
      private List sonQuestionList;
      private ZjQuizAnswers uAnswer;
      private String shortName;
+     private Set optionListOn = new HashSet();
     // Constructors
 	
 	/** default constructor */
@@ -489,5 +490,13 @@ public class ZjQuestion extends ActionForm implements java.io.Serializable {
 
 	public void setUAnswer(ZjQuizAnswers answer) {
 		uAnswer = answer;
+	}
+
+	public Set getOptionListOn() {
+		return optionListOn;
+	}
+
+	public void setOptionListOn(Set optionListOn) {
+		this.optionListOn = optionListOn;
 	}
 }

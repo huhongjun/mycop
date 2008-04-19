@@ -49,7 +49,17 @@
 		var answer = QuestionForm.answer;
 		var t = false;
 		var rtflag = true;
-		
+		if(isNaN(document.QuestionForm.defaultgrade.value))   
+          {
+          	alert("默认分值必须为数字!");   
+  			document.QuestionForm.defaultgrade.value="";
+  			document.QuestionForm.defaultgrade.focus();
+          	rtflag = false; 
+          	return false;  
+          } 
+          else{
+          	rtflag = true;
+          }
 		if(content== ""||content==null){
 			alert("请输入题目内容!");
 			rtflag=false;
@@ -240,7 +250,11 @@
 		else{}
 	}
 	function addOption(){
-		if(document.getElementById("options_e").innerHTML == ""){
+		if(document.getElementById("options_c").innerHTML == ""){
+			document.getElementById("options_c").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"C\"/>&nbsp;C.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\" maxlength=\"200\" />&nbsp;<br />";
+		}else if(document.getElementById("options_d").innerHTML == ""){
+			document.getElementById("options_d").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"D\"/>&nbsp;D.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\" maxlength=\"200\" />&nbsp;<br />";
+		}else if(document.getElementById("options_e").innerHTML == ""){
 			document.getElementById("options_e").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"E\"/>&nbsp;E.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}else if(document.getElementById("options_f").innerHTML == ""){
 			document.getElementById("options_f").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
