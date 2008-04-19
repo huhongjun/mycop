@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    
+    <!-- ========== Action Mapping Definitions =============================== -->
+    <action-mappings>	
+		
+		<action path="/Maneuver" name="QuestionForm" parameter="method" type="com.zhjedu.exam.action.ManeuverAction" scope="request" validate="false">
+			<forward name="listManeuver" path="/maneuver/listManeuver.jsp"/>
+			<forward name="err_page" path="/maneuver/err_page.jsp"/>
+		</action>
+		<action path="/joinExam" name="QuestionForm" parameter="method" type="com.zhjedu.exam.action.joinExamAction" scope="request" validate="false">
+			<forward name="quizInfo" path="/joinExam/quizInfo.jsp"/>
+			<forward name="quizYulan" path="/joinExam/quizYulan.jsp"/>
+			<forward name="quizQuestionInfo" path="/joinExam/quizQuestionInfo.jsp"/>
+			<forward name="quizQuestionAnswerInfo" path="/joinExam/quizQuestionAnswerInfo.jsp"/>
+			<forward name="quizQuestionAnswer" path="/joinExam/quizQuestionAnswer.jsp"/>
+			<forward name="info" path="/joinExam/info.jsp"/>
+			<forward name="info2" path="/joinExam/info2.jsp"/>
+		</action>
+		<action path="/Paper" name="QuestionForm" parameter="method" type="com.zhjedu.exam.action.PaperAction" scope="request" validate="false">
+			<forward name="listPaper" path="/paper/listPaper.jsp"/>
+			
+			<forward name="addPaper" path="/paper/addPaper.jsp"/>
+			<forward name="editPaper" path="/paper/editPaper.jsp"/>
+			
+			<forward name="listQuestion" path="/paper/listQuestion.jsp"/>
+			
+			<forward name="error" path="/paper/err_page.jsp"/>
+		</action>
+    </action-mappings>
+</struts-config>

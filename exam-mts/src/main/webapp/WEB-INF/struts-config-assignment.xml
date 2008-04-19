@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <!-- ========== Form Bean Definitions ================================== -->
+    <form-beans>
+    	
+    	  <form-bean name="assignmentForm" type="com.zhjedu.exam.form.AssignmentForm" />
+    	 
+    </form-beans>
+    
+    <!-- ========== Action Mapping Definitions =============================== -->
+    <action-mappings>	
+		
+<action
+      attribute="assignmentForm"
+      name="assignmentForm"
+      parameter="method"
+      path="/assignment"
+      scope="request"
+      validate="false"
+      type="com.zhjedu.exam.action.AssignmentAction">
+      <forward name="index_s" path="/assignment_s/index_s.jsp"/>
+      <forward name="assignment_list" path="/assignment_s/assignment_list_s.jsp"/>      
+	  <forward name="addassignment_view_s" path="/assignment_s/addassignment_view_s.jsp"/>
+</action>
+		
+    </action-mappings>
+        
+    <!-- ========== Controller Configuration ================================ -->
+    <controller />
+    
+    <!-- ========== Message Resources Definitions ============================ -->    
+    <message-resources parameter="ApplicationResources" />   
+    <!-- ========== Plug Ins Configuration ================================= -->
+</struts-config>
+

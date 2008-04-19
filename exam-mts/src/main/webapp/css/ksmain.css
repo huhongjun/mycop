@@ -1,0 +1,29 @@
+
+.cm_text{color:#000000;}
+.cm_tt_bg{	background:url(../image/cm-tt-bg.gif) repeat-x  bottom ;}
+
+.tb-cm{ background:#006699;}
+.tb-cm tr{color:#000000;}
+.tb-cm td{font-size: 12px; padding:2px;}
+.tb-cm td a{font-size: 12px; color:#000000;}
+.tb-cm td a:link{color:#006699;}
+.tb-cm td a:hover{ color:#FF9900;}
+.tb-cm td a:visited{color:#0099CC;}
+.shijuan_tt_bg{  color:#FFFFFF;font-size:14px;  background:url(../image/add-assign_bg.jpg) no-repeat center left; height:64px; padding-left:70px;padding-top:30px;  }
+
+.page_css{ float:right; width:300px; padding-right:10px; }
+
+.td_func a{font-size: 12px;height:24px; padding-left:15px;padding-top:7px;  }
+.td_func a:link{color:#006699;}
+.td_func a:hover{ color:#FF9900;}
+.td_func a:visited{color:#0099CC;}
+.td_func span{font-size: 12px;height:24px; padding-left:15px;padding-top:7px; }
+.td_func input{font-size:12px;height:24px; padding:4px; }
+
+.bg1{ background:#EEF7FF;}
+.bg2{ background:#F7FBFF;}
+.btn_add_bg{ background:url(../image/btn-add-bg.gif) no-repeat center center; width:109px;text-indent:25px; }
+.btn_edit_bg{ background:url(../image/btn-edit-bg.gif) no-repeat center center; width:109px;text-indent:25px; }
+.btn_del_bg{ background:url(../image/btn-del-bg.gif) no-repeat center center; width:109px;text-indent:25px;}
+.btn_cm{font-size: 12px;width:60px; height:21px;padding:0px;	background: url(../image/btn_cm.jpg) no-repeat center center;border-style: none;}
+.btn_cm_small{font-size: 12px;width:45px; height:21px;padding:0px;background: url(../image/btn_cm_small.jpg) no-repeat center center;border-style: none;}

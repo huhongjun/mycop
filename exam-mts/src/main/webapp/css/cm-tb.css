@@ -1,0 +1,12 @@
+.tb-cm{	background: #7DD5FF;}
+.tb-cm td{font-size: 12px; padding:2px;}
+.tb-cm td a{font-size: 12px; color:#000000;}
+.tb-cm td a:link{color:#006699;}
+.tb-cm td a:hover{ color:#FF9900;}
+.tb-cm td a:visited{color:#0099CC;}
+.tt_bg{  color:#FFFFFF;font-size:14px;  background:url(../image/add-assign_bg.jpg) no-repeat center left; height:64px; padding-left:75px;padding-top:14px;  }
+
+.bg1{ background:#EEF7FF;}
+.bg2{ background:#F7FBFF;}
+
+.page_css{ float:right; width:200px; padding-right:10px; }
