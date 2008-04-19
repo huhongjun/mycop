@@ -1,0 +1,48 @@
+<%@ page contentType="text/html; charset=GB2312"%>
+<%@ page language="java" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tlds/gever-goa.tld" prefix="goa" %>
+<html:errors />
+<%String context =request.getContextPath();%>
+
+
+<html:form action="/${entity.name}/edit${entity.name}" method="post">
+<div align="center">
+  <center>
+    <br>  
+	<table  align="center" width="500"  border="0" cellspacing="0" cellpadding="0">
+	<tr> 
+      <td align="center" colspan="2"><span class="TableTitleText">${entity.display-name}编辑</span></td>
+      </tr>
+	<tr>
+	<td align="center">
+		<table width="98%" align="center" border="0" cellspacing="0" cellpadding="0">
+		  <tr> 
+			<td>&nbsp;<html:hidden name="${entity.name}Form" property="actionType"/></td>
+		  </tr>
+	#foreach($field in ${entity.fieldlist})
+			  <tr class="listcellrow" height="23" >
+					     <td width="86" nowrap class="InputLabelCell">${field.label}：</td>
+				     <td ><html:text styleClass="input2" property="vo.${field.name}" size="50" validatetype="notempty" msg="名称不能为空！" maxlength="100"/><font color="red">*</font></td>
+			  </tr>
+			#end   
+  <tr>
+			<td>&nbsp;</td>
+		  </tr>
+		  
+		</table>
+	</td>
+	</tr><tr> 
+        <td align="center" colspan="2"> 
+			          <goa:button property="save" value="保存" styleClass="button"  onclick="return doSave(${entity.name}Form)" operation="${entity.resoperationcode_edit}"/>
+		          <goa:button property="save" value="保存并返回" styleClass="button"  onclick="return doSaveExit(${entity.name}Form)" operation="${entity.resoperationcode_edit}"/>
+          <goa:button property="exit" value="返回" styleClass="button" onclick="doAction('goUrl(index)')" operation="${entity.resoperationcode_view}"/></td>
+      </tr></table>
+    </center>
+</div>
+
+</html:form>
+</body>
+

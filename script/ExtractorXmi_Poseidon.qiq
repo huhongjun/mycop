@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+ *
+ * QiQu script to exctract state machine relevant from a Poseidon XMI file which contains exactely
+ * one state machine
+ *
+ * www.qiqu.org
+ *
+ * 1_Reduce_PoseidonXmi_StateMachine.qiq
+ * $Revision: 1.3 $, $Date: 2006/05/12 15:01:36 $
+ *
+ *
+-->
+<QiQuScript Version="0.9">
+  <LoadDoc FileName="XMI14Model" NewDocRef="$inModel"/>
+  <CreateDoc NewDocRef="$ReducedOutput"/>
+  <CreateEle NodeRef="$ReducedOutput" EleName="'model'" NewEleRef="$outModel"/>
+  
+  <!-- create a new document to hold the definitions of UML:TaggedValues -->
+  <CreateDoc NewDocRef="$tagDefinitionDoc"/>
+  
+  <CreateEle NodeRef="$tagDefinitionDoc" EleName="'tagDefinitions'" NewEleRef="$tagDefs"/>
+  <For NodeRef="$inModel" XPath="//UML:TagDefinition[@xmi.id]" IteratorEleRef="$TagDef">
+    <CreateEle NodeRef="$tagDefs" EleName="'tagDefinition'" NewEleRef="$Tag" EleRef="$TagDef" CopyAttr="'true'" CopySubEle="'false'"/>
+  </For>
+  
+  <Index NodeRef="$tagDefinitionDoc" AttrNames="'xmi.id'"/>
+  
+  
+  <!-- Find first state machine in model -->
+  <CreateEle NodeRef="$outModel" EleName="'statemachine'" NewEleRef="$outStateMachine"/>
+  <SelectFirst NodeRef="$inModel" XPath="//UML2:StateMachine[@xmi.id]" SelectedEleRef="$inStateMachine"/>
+  <CopyAttrs EleRefFrom="$inStateMachine" AttrNamesFrom="'xmi.id'" EleRefTo="$outStateMachine"/>
+
+  <!-- Collect transition information -->
+  <CreateEle NodeRef="$outStateMachine" EleName="'transitionlist'" NewEleRef="$outTransitions"/>
+  <For NodeRef="$inModel" XPath="//UML2:Transition[@xmi.id]" IteratorEleRef="$inTransition">
+    <CreateEle NodeRef="$outTransitions" EleName="'transition'" NewEleRef="$outTransition"/>
+    <CopyAttrs EleRefFrom="$inTransition" AttrNamesFrom="'xmi.id'" EleRefTo="$outTransition" AttrNamesTo="'xmi.id'"/>
+    <SelectFirst NodeRef="$inTransition" XPath="./UML2:Transition.source/*[@xmi.idref]" SelectedEleRef="$inSource"/>
+    <Set Ref="$outTransition.source.xmi.idref" Value="$inSource.xmi.idref"/>
+    <SelectFirst NodeRef="$inTransition" XPath="./UML2:Transition.target/*[@xmi.idref]" SelectedEleRef="$inTarget"/>
+    <Set Ref="$outTransition.target.xmi.idref" Value="$inTarget.xmi.idref"/>
+    <SelectFirst NodeRef="$inTransition" XPath="./UML2:Transition.trigger/*[@xmi.idref]" SelectedEleRef="$inEvent"/>
+    <Set Ref="$outTransition.event.xmi.idref" Value="$inEvent.xmi.idref"/>
+    
+    <!-- Poseidon 4.0.1 XPath="./UML2:Transition.effect/UML2:Activity[@xmi.id]" -->
+    <!-- Poseidon 4.1.1 XPath="./UML2:Transition.effect/UML2:OpaqueBehavior[@xmi.id]" -->
+    <SelectFirst NodeRef="$inTransition" XPath="./UML2:Transition.effect/UML2:OpaqueBehavior[@xmi.id] | ./UML2:Transition.effect/UML2:Activity[@xmi.id]" SelectedEleRef="$inTransitionAction"/>
+    <If Condition="exists( $inTransitionAction )">
+      <Set Ref="$outTransition.action.name" Value="replace($inTransitionAction.name,'\p{Space}','_')"/>
+    </If>
+  </For>
+  
+  <!-- Collect event information -->
+  <CreateEle NodeRef="$outStateMachine" EleName="'eventlist'" NewEleRef="$outEvents"/>
+  <For NodeRef="$inModel" XPath="//UML2:CallTrigger[@xmi.id]" IteratorEleRef="$inEvent">
+    <CreateEle NodeRef="$outEvents" EleName="'event'" NewEleRef="$outEvent"/>
+    <Set Ref="$outEvent.xmi.id" Value="$inEvent.xmi.id"/>
+    <Set Ref="$outEvent.name" Value="replace($inEvent.name,'\p{Space}','_')"/>
+    <!--Set Ref="$outEvent.name" Value="$inEvent.name"/-->
+  </For>
+  
+  <!-- Collect state information -->
+  <Set Ref="parentStateName" Value="'null'"/>
+
+  <CreateEle NodeRef="$outStateMachine" EleName="'statelist'" NewEleRef="$outStates"/>
+  <CreateEle NodeRef="$outStates" EleName="'state'" NewEleRef="$outState"/>
+  <Set Ref="$outState.name" Value="'{top}'"/>
+  <Set Ref="$outState.isComposite" Value="'true'"/>
+  <For NodeRef="$inStateMachine" XPath=".//UML2:State[@xmi.id] | .//UML2:FinalState[@xmi.id] | .//UML2:Pseudostate[@xmi.id]" IteratorEleRef="$inState">
+    <CreateEle NodeRef="$outStates" EleName="'state'" NewEleRef="$outState"/>
+    <CopyAttrs EleRefFrom="$inState" AttrNamesFrom="'name,xmi.id'" EleRefTo="$outState"/>
+    <Set Ref="$outState.name" Value="replace($inState.name, ' |/|\d++', '')"/>
+    <Set Ref="$outState.isComposite" Value="'false'"/>
+    <ClearRef Ref="$inStateRegion"/>
+    <SelectFirst NodeRef="$inState" XPath="./UML2:State.region/UML2:Region/UML2:Region.subvertex" SelectedEleRef="$inStateRegion"/>
+    <If Condition="exists($inStateRegion)">
+      <Set Ref="$outState.isComposite" Value="'true'"/>
+    </If>
+    <If Condition="equals('initial', $inState.kind)">
+      <Set Ref="$outState.isInitial" Value="'true'"/>
+    </If>
+    <If Condition="equals('FinalState', getName($inState))">
+      <Set Ref="$outState.isFinal" Value="'true'"/>
+    </If>
+    <SelectFirst NodeRef="$inState" XPath="../../../.." SelectedEleRef="$parentState"/>
+    <If Condition="equals('State', getName($parentState))">
+      <Set Ref="$outState.parent" Value="replace($parentState.name, ' |/|\d++', '')"/>
+    </If>
+    <If Condition="equals('StateMachine', getName($parentState))">
+      <Set Ref="$outState.parent" Value="'{top}'"/>
+    </If>
+    
+    <CreateEle NodeRef="$outState" EleName="'outgoingtransitionlist'" NewEleRef="$outOutgoingTransitions"/>
+    <For NodeRef="$inState" XPath="./UML2:Vertex.outgoing/UML2:Transition[@xmi.idref]" IteratorEleRef="$inOutgoingTransition">
+      <CreateEle NodeRef="$outOutgoingTransitions" EleName="'outgoingtransition'" NewEleRef="$outOutgoingTransition"/>
+      <Set Ref="$outOutgoingTransition.transition.xmi.idref" Value="$inOutgoingTransition.xmi.idref"/>
+    </For>
+    
+    <!-- Tags on the state -->
+    <CreateEle NodeRef="$outState" EleName="'taglist'" NewEleRef="$outTags"/>
+    <For NodeRef="$inState" XPath="./UML:ModelElement.taggedValue/UML:TaggedValue" IteratorEleRef="$inTaggedValue">
+      <CreateEle NodeRef="$outTags" EleName="'tag'" NewEleRef="$outTag"/>
+      <SelectFirst NodeRef="$inTaggedValue" XPath="./UML:TaggedValue.type/UML:TagDefinition" SelectedEleRef="$inTagDefinition"/>
+      <SelectFirst NodeRef="$tagDefs" XPath="//tagDefinition[@xmi.id = '#$inTagDefinition.xmi.idref#']" SelectedEleRef="$inRefTagDefinition"/>
+      <Set Ref="$outTag.name" Value="$inRefTagDefinition.name"/>
+      <SelectFirst NodeRef="$inTaggedValue" XPath="./UML:TaggedValue.dataValue" SelectedEleRef="$inTagDataValue"/>
+      <Set Ref="$outTag.value" Value="$inTagDataValue"/>
+    </For>
+  </For>
+
+  <ResolveIds IdRef="$outModel" EleToResolve="$outTransitions"/>
+
+  <SaveDoc DocRef="$ReducedOutput" Encoding="'ISO-8859-1'" FileName="ReducedOutput"/>
+
+</QiQuScript>

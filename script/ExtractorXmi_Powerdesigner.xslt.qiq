@@ -1,0 +1,6 @@
+<QiQuScript >
+	<XslTransform 
+		InputFileName="'model/input/cop-mysql.pdm.xml'" 
+		OutputFileName="'model/input/jagModelFromPowerdesigner.xml'" 
+		StylesheetFileName="'script/maptojag.xslt'"/>
+</QiQuScript>

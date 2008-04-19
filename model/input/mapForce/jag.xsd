@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!--W3C Schema 由 XMLSpy v2006 U 创建 (http://www.altova.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:complexType name="entityType">
+		<xs:sequence>
+			<xs:element name="xmltree" type="xmltreeType"/>
+			<xs:element name="fieldlist" type="fieldlistType"/>
+		</xs:sequence>
+		<xs:attribute name="name" use="required"/>
+		<xs:attribute name="display-name" use="required"/>
+		<xs:attribute name="description" use="required"/>
+		<xs:attribute name="root-package" use="required"/>
+		<xs:attribute name="table-name" use="required"/>
+		<xs:attribute name="primary-key" use="required"/>
+		<xs:attribute name="primary-key-type" use="required"/>
+		<xs:attribute name="primary-key-autoid"/>
+		<xs:attribute name="is-composite" use="required"/>
+		<xs:attribute name="is-association" use="required"/>
+		<xs:attribute name="resoperationcode_edit"/>
+		<xs:attribute name="resoperationcode_view"/>
+		<xs:attribute name="querySQL" use="required"/>
+		<xs:attribute name="ref-name" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="fieldType" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="optionlist">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="option">
+							<xs:complexType>
+								<xs:attribute name="id" type="xs:string" use="required"/>
+								<xs:attribute name="value" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="name" use="required"/>
+		<xs:attribute name="type" use="required"/>
+		<xs:attribute name="column-name" use="required"/>
+		<xs:attribute name="label" use="required"/>
+		<xs:attribute name="required" type="xs:string" use="required"/>
+		<xs:attribute name="sql-type" use="required"/>
+		<xs:attribute name="jdbc-type" use="required"/>
+		<xs:attribute name="primary-key" use="required"/>
+		<xs:attribute name="auto-primary-key" type="xs:string" use="required"/>
+		<xs:attribute name="foreign-key" type="xs:string" use="required"/>
+		<xs:attribute name="validation-depends" type="xs:string" use="required"/>
+		<xs:attribute name="validation-xml" type="xs:string" use="required"/>
+		<xs:attribute name="ref-tablename" type="xs:string"/>
+		<xs:attribute name="ref-columnname" type="xs:string"/>
+		<xs:attribute name="tooltip" use="required"/>
+		<xs:attribute name="length"/>
+		<xs:attribute name="defaultvalue"/>
+		<xs:attribute name="listOfValues"/>
+	</xs:complexType>
+	<xs:complexType name="fieldlistType">
+		<xs:sequence>
+			<xs:element name="field" type="fieldType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="jag">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="app">
+					<xs:complexType mixed="true">
+						<xs:attribute name="name" use="required"/>
+						<xs:attribute name="version" use="required"/>
+						<xs:attribute name="description" use="required"/>
+						<xs:attribute name="RootPackage" use="required"/>
+						<xs:attribute name="LogFramework" use="required"/>
+						<xs:attribute name="DateFormat" use="required"/>
+						<xs:attribute name="TimestampFormat" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="config">
+					<xs:complexType mixed="true">
+						<xs:attribute name="author" use="required"/>
+						<xs:attribute name="version" use="required"/>
+						<xs:attribute name="company" use="required"/>
+						<xs:attribute name="template-root" use="required"/>
+						<xs:attribute name="Appservere" use="required"/>
+						<xs:attribute name="BusinessTier" use="required"/>
+						<xs:attribute name="useJava5" use="required"/>
+						<xs:attribute name="useRelations" use="required"/>
+						<xs:attribute name="useWebService" use="required"/>
+						<xs:attribute name="useMock" use="required"/>
+						<xs:attribute name="webTier" use="required"/>
+						<xs:attribute name="serviceTier" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="path">
+					<xs:complexType mixed="true">
+						<xs:attribute name="ServiceOutput" use="required"/>
+						<xs:attribute name="HibernateOutput" use="required"/>
+						<xs:attribute name="EjbOutput" use="required"/>
+						<xs:attribute name="WebOutput" use="required"/>
+						<xs:attribute name="TestOutput" use="required"/>
+						<xs:attribute name="JspOutput" use="required"/>
+						<xs:attribute name="ConfigOutput" use="required"/>
+						<xs:attribute name="MockOutput" type="xs:string" use="required"/>
+						<xs:attribute name="swing_output" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="datasource">
+					<xs:complexType mixed="true">
+						<xs:attribute name="jndi-name" use="required"/>
+						<xs:attribute name="mapping" use="required"/>
+						<xs:attribute name="jdbc-driver" use="required"/>
+						<xs:attribute name="jdbc-url" use="required"/>
+						<xs:attribute name="user-name" use="required"/>
+						<xs:attribute name="password" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="entitylist">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="entity" type="entityType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="xmltreeType">
+		<xs:attribute name="sql" use="required"/>
+		<xs:attribute name="ref-nodeid" use="required"/>
+		<xs:attribute name="cascade-column" use="required"/>
+		<xs:attribute name="cascade-root" use="required"/>
+		<xs:attribute name="rootname" use="required"/>
+		<xs:attribute name="rootlabel" use="required"/>
+	</xs:complexType>
+</xs:schema>

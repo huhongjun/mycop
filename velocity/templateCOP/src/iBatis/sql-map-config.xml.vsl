@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+  <transactionManager type="JDBC">
+    <dataSource type="SIMPLE">
+      <property value="${datasource.jdbc-driver}" name="JDBC.Driver"/>
+      <property value="${datasource.jdbc-url}" name="JDBC.ConnectionURL"/>
+      <property value="${datasource.user-name}" name="JDBC.Username"/>
+      <property value="${datasource.password}" name="JDBC.Password"/>
+    </dataSource>
+  </transactionManager>
+
+#foreach($entity in ${entitylist.entitylist})
+  <sqlMap resource="${entity.root-package}/${entity.name}/dao/impl/sqlmap/${entity.name}.xml"/>
+#end
+</sqlMapConfig>

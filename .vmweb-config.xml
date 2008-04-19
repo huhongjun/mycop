@@ -1,0 +1,10 @@
+<config>
+	<context-values>
+		<resource path="velowebedit.test.vm">
+			<value key="a" object-class="com.gever.goa.base.BaseDAO"/>
+		</resource>
+		<resource path="velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl">
+			<value key="a" object-class="com.gever.goa.base.BaseDAO"/>
+		</resource>
+	</context-values>
+</config>

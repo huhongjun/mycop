@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<jag>
+  <app name="qiquGenerated" version="1.0" description="Book management" RootPackage="com.gever.goa" LogFramework="log4j" DateFormat="dd/MM/yyyy" TimestampFormat="dd/MM/yyyy HH:mm:ss" nameFirstUpper="QiquGenerated"></app>
+  <config author="HuHJ" version="1.0" company="OSMatrix 天行软件" template-root="../templates/entity_facade_jboss_jsk_2_0" Appservere="Tomcat 5" BusinessTier="Hibernate 3" useJava5="false" useRelations="true" useWebService="true" useMock="true" webTier="Struts 1.2" serviceTier="ServiceLocator"></config>
+  <path ServiceOutput="./src/java-service/" HibernateOutput="./src/java-hibernate/" EjbOutput="./src/java-ejb/" WebOutput="./src/java-web/" TestOutput="./src/java-test/" JspOutput="./src/web/" ConfigOutput="./conf/" MockOutput="" swing_output="./src/java-swing/"></path>
+  <datasource jndi-name="jdbc/Test" mapping="MySQL" jdbc-driver="org.gjt.mm.mysql.Driver" jdbc-url="jdbc:mysql://localhost:3308/cop" user-name="root" password=""></datasource>
+  <entitylist>
+    <entity name="Book" display-name="图书" description="Book 实体" root-package="com.gever.goa.book" table-name="qiqu_book" primary-key="bookid" primary-key-type="java.lang.String" primary-key-autoid="false" is-composite="false" is-association="false" resoperationcode_edit="TSGL.OPT" resoperationcode_view="TSGL.VIEW" querySQL="SELECT bookid,bookname,publisher,deptid from qiqu_book where 1=1 " ref-name="TUser" nameFirstUpper="Book">
+      <xmltree sql=" Select id as nodeid,name as nodename,case when (Select COUNT(*) AS CNT from T_DEPARTMENT b  WHERE (T_DEPARTMENT.id&gt;b.id or b.id&gt;T_DEPARTMENT.id) AND b.parent_id=T_DEPARTMENT.id  ) &gt;0 then '1' else '0' end as isfolder from T_DEPARTMENT where  1=1 " ref-nodeid="deptid" cascade-column="parent_id" cascade-root="0" rootname="department" rootlabel="部门"/>
+      <fieldlist>
+        <field name="bookid" type="java.lang.String" column-name="bookid" label="代码" required="true" sql-type="VARCHAR(20)" jdbc-type="VARCHAR" primary-key="true" auto-primary-key="true" foreign-key="false" validation-depends="integer, maxlength" validation-xml="" nameFirstUpper="Bookid"></field>
+        <field name="bookname" type="java.lang.String" column-name="bookname" label="书名" required="false" sql-type="VARCHAR(20)" jdbc-type="VARCHAR" primary-key="false" auto-primary-key="false" foreign-key="false" validation-depends="" validation-xml="" nameFirstUpper="Bookname"></field>
+        <field name="publisher" type="java.lang.String" column-name="publisher" label="出版社" required="false" sql-type="VARCHAR(20)" jdbc-type="VARCHAR" primary-key="false" auto-primary-key="false" foreign-key="false" validation-depends="" validation-xml="" nameFirstUpper="Publisher"></field>
+        <field name="deptid" type="java.lang.String" column-name="deptid" label="所属部门" required="false" sql-type="VARCHAR(20)" jdbc-type="VARCHAR" primary-key="false" auto-primary-key="false" foreign-key="false" validation-depends="" validation-xml="" ref-tablename="" ref-columnname="" nameFirstUpper="Deptid">
+          <optionlist>
+            <option id="" value=""/>
+          </optionlist>
+        </field>
+      </fieldlist>
+    </entity>
+    <entity name="User" display-name="用户" description="TUser 实体" root-package="com.gever.goa.user" table-name="qiqu_user" primary-key="id" primary-key-type="java.lang.String" is-composite="false" is-association="false" querySQL="SELECT id,name,email from qiqu_user where 1=1 " ref-name="TUser" nameFirstUpper="User">
+      <xmltree sql=" Select id as nodeid,name as nodename,case when (Select COUNT(*) AS CNT from T_DEPARTMENT b  WHERE (T_DEPARTMENT.id&gt;b.id or b.id&gt;T_DEPARTMENT.id) AND b.parent_id=T_DEPARTMENT.id  ) &gt;0 then '1' else '0' end as isfolder from T_DEPARTMENT where  1=1 " ref-nodeid="1" cascade-column="parent_id" cascade-root="0" rootname="department" rootlabel="部门"/>
+      <fieldlist>
+        <field name="id" type="java.lang.String" column-name="id" label="代码" required="true" sql-type="INT(11)" jdbc-type="INTEGER" primary-key="true" auto-primary-key="true" foreign-key="false" validation-depends="integer, maxlength" validation-xml="" nameFirstUpper="Id"></field>
+        <field name="name" type="java.lang.String" column-name="name" label="名称" required="false" sql-type="VARCHAR(20)" jdbc-type="VARCHAR" primary-key="false" auto-primary-key="false" foreign-key="false" validation-depends="" validation-xml="" nameFirstUpper="Name"></field>
+        <field name="email" type="java.lang.String" column-name="email" label="电邮" required="false" sql-type="VARCHAR(20)" jdbc-type="VARCHAR" primary-key="false" auto-primary-key="false" foreign-key="false" validation-depends="" validation-xml="" nameFirstUpper="Email"></field>
+      </fieldlist>
+    </entity>
+  </entitylist>
+</jag>

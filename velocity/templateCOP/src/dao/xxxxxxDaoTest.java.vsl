@@ -1,0 +1,65 @@
+package ${entity.root-package}.dao;
+
+
+import com.gever.exception.DefaultException;
+import ${entity.root-package}.vo.${entity.name}VO;
+import com.gever.util.Codes;
+import com.gever.vo.VOInterface;
+
+import junit.framework.TestCase;
+import com.gever.util.InitTestUtil;
+
+public class ${entity.name}DaoTest extends TestCase {
+
+	private ${entity.name}Dao testDAO;
+	
+	public static void main(String[] args) {
+		junit.textui.TestRunner.run(${entity.name}DaoTest.class);
+	}
+
+	protected void setUp() throws Exception {
+		super.setUp();
+		InitTestUtil.init();		
+		testDAO = ${entity.name}Factory.getInstance().create${entity.name}DAO("unittest");
+	}
+
+	public void testGetPageSql() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void testInsert() throws DefaultException {
+			${entity.name}VO testVO = new ${entity.name}VO();
+	#foreach($field in ${entity.fieldlist})
+	testVO.set${field.nameFirstUpper}("");
+	#end
+
+		int ret;
+		ret = testDAO.insert(testVO);
+		assertTrue("新增一条记录返回结果应为1",ret==1);
+	}
+	
+		public void testUpdate() throws DefaultException {
+			${entity.name}VO testVO = new ${entity.name}VO();
+	#foreach($field in ${entity.fieldlist})
+	testVO.set${field.nameFirstUpper}("");
+	#end
+
+		int ret;
+		ret = testDAO.insert(testVO);
+		assertTrue("新增一条记录返回结果应为1",ret==1);
+	}
+	
+		public void testDelete() throws DefaultException {
+			${entity.name}VO testVO = new ${entity.name}VO();
+	#foreach($field in ${entity.fieldlist})
+	testVO.set${field.nameFirstUpper}("");
+	#end
+
+		int ret;
+		ret = testDAO.insert(testVO);
+		assertTrue("新增一条记录返回结果应为1",ret==1);
+	}
+	
+	
+}

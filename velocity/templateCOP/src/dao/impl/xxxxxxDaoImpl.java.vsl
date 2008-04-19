@@ -1,0 +1,87 @@
+package  ${entity.root-package}.dao.impl;
+
+import java.util.*;
+import com.gever.exception.DefaultException;
+import com.gever.jdbc.sqlhelper.SQLHelper;
+import com.gever.jdbc.sqlhelper.DefaultSQLHelper;
+import com.gever.goa.base.BaseDAO;
+import com.gever.util.StringUtils;
+import com.gever.vo.VOInterface;
+
+import ${entity.root-package}.vo.${entity.name}VO;
+import ${entity.root-package}.vo.${entity.name}TreeVO;
+import ${entity.root-package}.dao.${entity.name}Dao;
+
+#parse("velocity/templateCOP/common/JavaClassComment.vsl")
+
+public class ${entity.name}DaoImpl extends BaseDAO implements ${entity.name}Dao {
+    private static final String QUERY_SQL = 
+         "${entity.querySQL}";
+    private static String TREE_SQL = 
+    		     "${entity.xmltree.sql}";
+
+    public ${entity.name}DaoImpl(String dbData) {
+        super(dbData);
+    }
+
+    public String getPageSql() {
+        return QUERY_SQL;
+    }
+
+    /**
+     * @return 
+     * @throws DefaultException
+     */
+    public List getTreeData()throws DefaultException{
+        List treeData = new ArrayList();
+        ${entity.name}TreeVO vo = new ${entity.name}TreeVO();
+        SQLHelper helper = helper = new DefaultSQLHelper(dbData); ;
+        treeData = (ArrayList) helper.queryByListVo(TREE_SQL, vo);
+        return treeData;
+    }
+
+	    //				获取nodeid的子节点，当nodeid为空时默认为顶级节点
+    public List getTreeData(String nodeid) throws DefaultException {
+        System.out.println("----------getTreeDate In Impl-----------------");
+        List treeData = new ArrayList();
+        String strWhere = "";
+        //nodeid为null，当成顶级的节点
+        if ( StringUtils.isNull(nodeid)) { 		nodeid = "${entity.xmltree.cascade-root}"; } 
+
+        strWhere = " and ${entity.xmltree.cascade-column} =" + nodeid; 
+        ${entity.name}TreeVO vo = new ${entity.name}TreeVO();
+        SQLHelper helper = helper = new DefaultSQLHelper(dbData);
+        treeData = (ArrayList) helper.queryByListVo(TREE_SQL + strWhere, vo);
+        return treeData;
+    }
+        
+  public int insert(VOInterface vo) throws DefaultException {
+    SQLHelper helper = new DefaultSQLHelper(dbData);
+#if(${entity.primary-key-autoid} == "false")
+    helper.setAutoID(false);
+    if (isRepeat( (${entity.name}VO) vo)) {
+      throw new DefaultException("PK repeat!");
+    }
+    else {
+      int iRet = helper.insert(vo);
+      return iRet;
+    }
+#else
+    return super.insert(vo);
+#end
+  }
+
+  private boolean isRepeat(${entity.root-package}.vo.${entity.name}VO vo) throws
+      DefaultException {
+    String sql = QUERY_SQL + " and ${entity.primary-key} = "+ vo.getValue("${entity.primary-key}") ;
+    SQLHelper helper = new DefaultSQLHelper(dbData); ;
+    boolean bRet = false;
+    Map map = (HashMap) helper.query(sql,com.gever.jdbc.sqlhelper.DataTypes.RS_SINGLE_MAP);
+    if (com.gever.util.NumberUtil.stringToLong( (String) map.get("cnt")) > 0) {
+      bRet = true;
+
+    }
+    return bRet;
+
+  }    
+}

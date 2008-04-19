@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) -->
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+	#foreach($entity in ${entitylist.entitylist})
+	    <form-bean name="${entity.name}Form"   type="${entity.root-package}.action.${entity.name}Form"/>
+	#end
+	</form-beans>
+
+	<global-exceptions>
+</global-exceptions>
+
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+	#foreach($entity in ${entitylist.entitylist})
+			<action path="/${entity.name}/list${entity.name}" name="${entity.name}Form"  
+						type="${entity.root-package}.action.${entity.name}Action"
+				validate="false"   parameter="toList" scope="session" >
+			<forward name="index" path="${entity.name}.list${entity.name}" redirect="false"/>
+			<forward name="edit" path="/${entity.name}/edit${entity.name}.do" redirect="true"/>
+				<forward name="view" path="/${entity.name}/view${entity.name}.do" redirect="true" /> 
+					</action>
+
+		<action path="/${entity.name}/edit${entity.name}" name="${entity.name}Form"  
+				type="${entity.root-package}.action.${entity.name}Action"
+				validate="false"   parameter="toEdit" scope="session" >
+			<forward name="edit" path="${entity.name}.edit${entity.name}" redirect="false"/>
+			<forward name="index" path="/${entity.name}/list${entity.name}.do" redirect="true"/>
+		</action>
+			<action path="/${entity.name}/view${entity.name}" name="${entity.name}Form" 
+			type="${entity.root-package}.action.${entity.name}Action" 
+			validate="false" 			parameter="toView" scope="session">
+	  <forward name="view" path="${entity.name}.view${entity.name}" redirect="false" /> 
+	  <forward name="edit" path="/${entity.name}/edit${entity.name}.do" redirect="true" /> 
+	  <forward name="index" path="/${entity.name}/list${entity.name}.do" redirect="true" /> 
+	  </action>
+			<action path="/${entity.name}/tree${entity.name}" 		name="${entity.name}Form"
+		type="${entity.root-package}.action.${entity.name}Action"
+		validate="false" 		parameter="toTree" 		scope="session" >
+			<forward name="index" path="${entity.name}.lefttree" redirect="false"/>
+		</action>
+		#end
+	</action-mappings>
+	
+	</struts-config>

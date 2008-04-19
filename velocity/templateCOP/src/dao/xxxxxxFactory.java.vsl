@@ -1,0 +1,32 @@
+package ${entity.root-package}.dao;
+
+#parse("velocity/templateCOP/common/JavaClassComment.vsl")
+
+public abstract class ${entity.name}Factory {
+    private static String className = "${entity.root-package}.dao.impl.Default${entity.name}Factory";
+    private static ${entity.name}Factory factory = null;
+    public ${entity.name}Factory() {
+    }
+
+    /**
+    */
+   public static synchronized ${entity.name}Factory getInstance() {
+       if (factory == null) {
+           try {
+               Class c = Class.forName(className);
+               factory = (${entity.name}Factory) c.newInstance();
+           } catch (Exception e) {
+               System.err.println("Failed to load ${entity.name}Factory class " +
+                   className);
+               e.printStackTrace();
+
+               return null;
+           }
+       }
+
+       return factory;
+   }
+   public abstract ${entity.name}Dao create${entity.name}DAO(String dbData);
+
+
+}

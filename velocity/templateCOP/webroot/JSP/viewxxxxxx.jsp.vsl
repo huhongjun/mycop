@@ -1,0 +1,45 @@
+<%@ page contentType="text/html; charset=GB2312"%>
+<%@ page language="java" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tlds/gever-goa.tld" prefix="goa" %>
+<%String context =request.getContextPath();%>
+
+<html:form action="/${entity.name}/view${entity.name}" method="post">
+<div align="center">
+  <center>
+   <br>
+	<table  align="center" width="600"  border="0" cellspacing="0" cellpadding="0">
+	<tr> 
+      <td align="center" colspan="2"><span class="TableTitleText">${entity.display-name} ±à¼­</span></td>
+      </tr>
+	<tr>
+	<td align="center">
+		<table width="98%" align="center" border="0" cellspacing="0" cellpadding="0">
+				
+				#foreach($field in ${entity.fieldlist})
+			  <tr class="listcellrow" height="23" >
+					    <td width="86" nowrap class="InputLabelCell">${field.label}£º</td>
+					    <td class="f12"><goa:write  name="${entity.name}Form" property="vo.${field.name}" filter="true"/></td>
+			  </tr>
+			#end
+</table>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td align="center"> 
+		        <html:hidden name="${entity.name}Form" property="fid" />
+		        <goa:button property="save" value="ÐÞ¸Ä" styleClass="button"  onclick=" toUrl('../${entity.name}/edit${entity.name}.do?actionType=modify',false)" operation="${entity.resoperationcode_edit}"/>
+        <goa:button property="exit" value="·µ»Ø" styleClass="button" onclick="doAction('goUrl(index)')" operation="${entity.resoperationcode_view}"/></td>
+      </tr>
+    </table>
+    </center>
+</div>
+
+</html:form>
+</body>
+

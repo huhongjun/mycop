@@ -1,0 +1,115 @@
+Wed Aug 02 11:51:55 GMT+08:00 2006  [debug] AvalonLogSystem initialized using logfile './velocity/log/velocity.log'
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] ************************************************************** 
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Starting Jakarta Velocity v1.4
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] RuntimeInstance initializing.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogSystem
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Using logger class org.apache.velocity.runtime.log.AvalonLogSystem
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] FileResourceLoader : initialization starting.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] FileResourceLoader : adding path '.'
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] FileResourceLoader : initialization complete.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] ClasspathResourceLoader : initialization starting.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] ClasspathResourceLoader : initialization complete.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Default ResourceManager initialization complete.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Include
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Created: 20 parsers.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : initialization starting.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : adding VMs from VM library template : VM_global_library.vm
+Wed Aug 02 11:51:55 GMT+08:00 2006  [error] ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro :  VM library template macro registration complete.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : allowInline = true : VMs can be defined inline in templates
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : messages on  : VM system will output logging messages
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : autoload off  : VM system will not automatically reload global library macros
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocimacro : initialization complete.
+Wed Aug 02 11:51:55 GMT+08:00 2006   [info] Velocity successfully started.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/vo/xxxxxxVO.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/vo/xxxxxxVO.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/vo/xxxxxxTreeVO.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/vo/xxxxxxTreeVO.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/xxxxxxFactory.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/xxxxxxFactory.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/xxxxxxDao.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/xxxxxxDao.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/xxxxxxDaoTest.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/xxxxxxDaoTest.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/impl/xxxxxxDaoImpl.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/impl/xxxxxxDaoImpl.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006  [error] Left side (${entity.primary-key-autoid}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. velocity/templateCOP/src/dao/impl/xxxxxxDaoImpl.java.vsl [line 60, column 36]
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/impl/DefaultxxxxxxFactory.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/dao/impl/DefaultxxxxxxFactory.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/action/xxxxxxAction.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/action/xxxxxxAction.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:56 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/action/xxxxxxForm.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/src/action/xxxxxxForm.java.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/common/JavaClassComment.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 7,column 15] : ${config.company} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 8,column 25] : ${config.author} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/common/JavaClassComment.vsl [line 9,column 13] : ${config.version} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl [line 39,column 150] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl [line 40,column 149] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl [line 41,column 116] : ${entity.resoperationcode_view} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/framexxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/framexxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/treedata.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/treedata.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl [line 27,column 105] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl [line 31,column 173] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl [line 33,column 120] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl [line 34,column 164] : ${entity.resoperationcode_view} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl [line 35,column 113] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/treexxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/treexxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/viewxxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/JSP/viewxxxxxx.jsp.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/viewxxxxxx.jsp.vsl [line 36,column 180] : ${entity.resoperationcode_edit} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = velocity/templateCOP/webroot/JSP/viewxxxxxx.jsp.vsl [line 37,column 114] : ${entity.resoperationcode_view} is not a valid reference.
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/WEB-INF/struts-config-xxxxxx.xml.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/webroot/WEB-INF/tiles-defs-xxxxxx.xml.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/db/createTables-xxxxxx.sql.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Wed Aug 02 11:51:57 GMT+08:00 2006   [info] ResourceManager : found velocity/templateCOP/db/initData-xxxxxx.sql.vsl with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader

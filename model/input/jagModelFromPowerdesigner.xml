@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:/MyEclipseWork/workspace/QiQu-COP/model/input/jag.xsd">
+<entitylist>
+<entity name="DO_WORK_REPORT" display-name="工作汇报" table-name="DO_WORK_REPORT">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="CREATE_DATE" label="日期 CREATE_DATE" sql-type="date"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="BEGIN_TIME" label="开始时间 BEGIN_TIME" sql-type="date"/>
+<field name="END_TIME" label="结束时间" sql-type="date"/>
+<field name="RENDER" label="汇报人 RENDER" sql-type="varchar(20)"/>
+<field name="CHECKER" label="审批 CHECKER" sql-type="varchar(20)"/>
+<field name="CHECK_DATE" label="审批日期 CHECK_DATE" sql-type="date"/>
+<field name="CONTENT" label="汇报内容 CONTENT" sql-type="blob"/>
+<field name="SEND_FLAG" label="是否发送 SEND_FLAG" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_IMPOWER" display-name="授权书" table-name="DO_IMPOWER">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="CREATE_TIME" label="创建时间 CREATE_TIME" sql-type="date"/>
+<field name="ACCEPTER" label="授权人 ACCEPTER" sql-type="varchar(20)"/>
+<field name="PAYER" label="被授权人" sql-type="varchar(20)"/>
+<field name="BEGIN_TIME" label="开始时间 BEGIN_TIME" sql-type="date"/>
+<field name="END_TIME" label="结束时间" sql-type="date"/>
+<field name="COMMENTS" label="授权说明" sql-type="varchar(60)"/>
+<field name="NOTICE" label="通知人员" sql-type="varchar(2000)"/>
+<field name="CONTENT" label="授权内容 CONTENT" sql-type="blob"/>
+<field name="SEND_FLAG" label="是否发送 SEND_FLAG" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_TEAM_LOG" display-name="日志团队设置" table-name="DO_TEAM_LOG">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="TEAM_TYPE" label="团队类型" sql-type="int"/>
+<field name="TEAM_MEMBER" label="团队成员" sql-type="varchar(1000)"/>
+</fieldlist>
+</entity>
+<entity name="DO_WORK_LOG" display-name="工作日志" table-name="DO_WORK_LOG">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="CREATE_TIME" label="创建时间 CREATE_TIME" sql-type="date"/>
+<field name="DEPT_CODE" label="部门编码" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="FILL_DATE" label="填写日期 FILL_DATE" sql-type="date"/>
+<field name="LOG_CONTENT" label="日志内容 LOG_CONTENT" sql-type="blob"/>
+</fieldlist>
+</entity>
+<entity name="DO_CALENDAR_ARRANGE" display-name="日程安排" table-name="DO_CALENDAR_ARRANGE">
+<fieldlist>
+<field name="SERIAL_NUM" label="SERIAL_NUM" required="1" sql-type="varchar(30)"/>
+<field name="CALENDAR" label="CALENDAR" sql-type="date"/>
+<field name="USER_CODE" label="USER_CODE" sql-type="int"/>
+<field name="BEGIN_TIME" label="BEGIN_TIME" sql-type="date"/>
+<field name="END_TIME" label="END_TIME" sql-type="date"/>
+<field name="TASK_TYPE" label="TASK_TYPE" sql-type="int"/>
+<field name="TASK_SUM" label="TASK_SUM" sql-type="varchar(60)"/>
+<field name="TASK_CONTENT" label="TASK_CONTENT" sql-type="varchar(200)"/>
+<field name="REMIND_FLAG" label="REMIND_FLAG" sql-type="int"/>
+<field name="AWOKE_TIME" label="AWOKE_TIME" sql-type="int"/>
+<field name="ARRANGE" label="ARRANGE" sql-type="varchar(20)"/>
+</fieldlist>
+</entity>
+<entity name="DO_PERSONAL_TARGET" display-name="个人目标" table-name="DO_PERSONAL_TARGET">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="CURRENT_YEAR" label="年 CURRENT_YEAR" sql-type="CHAR(4)"/>
+<field name="CURRENT_MONTH" label="月 CURRENT_MONTH" sql-type="varchar(2)"/>
+<field name="CURRENT_WORK" label="周 CURRENT_WORK" sql-type="CHAR(1)"/>
+<field name="TARGET_TYPE" label="目标类型 TARGET_TYPE" sql-type="int"/>
+<field name="DEPT_CODE" label="部门编码" sql-type="varchar(30)"/>
+<field name="POST_CODE" label="岗位 POST_CODE" sql-type="varchar(30)"/>
+<field name="CREATE_DATE" label="编制日期" sql-type="date"/>
+<field name="TARGET_CONTENT" label="目标内容 TARGET_CONTENT" sql-type="blob"/>
+<field name="AUDITOR" label="审核人 AUDITOR" sql-type="varchar(20)"/>
+<field name="AUDIT_DATE" label="审核日期 AUDIT_DATE" sql-type="date"/>
+<field name="AUDIT_FLAG" label="是否通过审核 AUDIT_FLAG" sql-type="int"/>
+<field name="AUDIT_OPINION" label="审核意见 AUDIT_OPINION" sql-type="varchar(200)"/>
+</fieldlist>
+</entity>
+<entity name="DO_TARGET_MANAGE" display-name="目标管理" table-name="DO_TARGET_MANAGE">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="CURRENT_YEAR" label="年 CURRENT_YEAR" sql-type="CHAR(4)"/>
+<field name="CURRENT_MONTH" label="月 CURRENT_MONTH" sql-type="varchar(2)"/>
+<field name="CURRENT_WORK" label="周 CURRENT_WORK" sql-type="CHAR(1)"/>
+<field name="TARGET_TYPE" label="目标类型 TARGET_TYPE" sql-type="CHAR(1)"/>
+<field name="DEPT_CODE" label="部门编码" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="CREATE_DATE" label="编制日期" sql-type="date"/>
+<field name="AUDITOR" label="审核人 AUDITOR" sql-type="varchar(20)"/>
+<field name="AUDIT_DATE" label="审核日期 AUDIT_DATE" sql-type="date"/>
+<field name="AUDIT_FLAG" label="是否通过审核 AUDIT_FLAG" sql-type="int"/>
+<field name="AUDIT_OPINION" label="审核意见 AUDIT_OPINION" sql-type="varchar(200)"/>
+<field name="CHECK_FLAG" label="是否通过审批 CHECK_FLAG" sql-type="int"/>
+<field name="CHECKER" label="审批人 CHECKER" sql-type="varchar(20)"/>
+<field name="CHECK_DATE" label="审批日期 CHECK_DATE" sql-type="date"/>
+<field name="CHECK_OPINION" label="审批意见 CHECK_OPINION" sql-type="varchar(200)"/>
+<field name="TARGET_CONTENT" label="目标内容 TARGET_CONTENT" sql-type="blob"/>
+</fieldlist>
+</entity>
+<entity name="DO_BBS_USER" display-name="论坛匿名用户表" table-name="DO_BBS_USER">
+<fieldlist>
+<field name="BBS_USER_CODE" label="BBS用户代码 BBS_USER_CODE" required="1" sql-type="varchar(20)"/>
+<field name="NICKNAME" label="昵称 NICKNAME" required="1" sql-type="varchar(20)"/>
+<field name="USER_ICON" label="用户图标 USER_ICON" sql-type="varchar(255)"/>
+<field name="LAST_LOG_TIME" label="最后登陆时间 LAST_LOG_TIME" sql-type="date"/>
+<field name="USER_STATE" label="用户状态 USER_STATE" required="1" sql-type="int"/>
+<field name="USER_CODE" label="OA用户名称 USER_CODE" required="1" sql-type="int"/>
+<field name="SEX_CODE" label="性别 SEX_CODE" sql-type="varchar(4)"/>
+<field name="E_MAIL" label="电子邮件 E_MAIL" sql-type="varchar(30)"/>
+<field name="HOME_PAGE" label="用户主页 HOME_PAGE" sql-type="varchar(100)"/>
+</fieldlist>
+</entity>
+<entity name="DO_BBS_TOPICLIST" display-name="论坛话题表" table-name="DO_BBS_TOPICLIST">
+<fieldlist>
+<field name="SERIAL_NUM" label="话题编号" required="1" sql-type="varchar(30)"/>
+<field name="TOPIC_NUM" label="主话题编号 TOPIC_NUM" required="1" sql-type="varchar(30)"/>
+<field name="BBS_USER_CODE" label="BBS用户代码 BBS_USER_CODE" required="1" sql-type="varchar(20)"/>
+<field name="CONTENT" label="内容 CONTENT" sql-type="varchar(3000)"/>
+<field name="IP_ADDRESS" label="IP地址 IP_ADDRESS" sql-type="varchar(20)"/>
+<field name="FILE_PATH" label="附件" sql-type="varchar(255)"/>
+<field name="FILE_NAME" label="附件名称" sql-type="varchar(255)"/>
+<field name="REPLY_DATE" label="回复时间 REPLY_DATE" sql-type="date"/>
+<field name="AWOKE_FLAG" label="是否消息提醒 AWOKE_FLAG" required="1" sql-type="int"/>
+<field name="IS_SHOW" label="是否显示 IS_SHOW" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_BBS_SBOARD" display-name="论坛二级栏目表" table-name="DO_BBS_SBOARD">
+<fieldlist>
+<field name="SERIAL_NUM" label="二级栏目 SERIAL_NUM" required="1" sql-type="varchar(30)"/>
+<field name="TBOARD_SERIAL" label="上级栏目编号 TBOARD_SERIAL" sql-type="varchar(30)"/>
+<field name="SBOARD_NAME" label="栏目名称 SBOARD_NAME" required="1" sql-type="varchar(100)"/>
+<field name="SBOARD_MASTER" label="栏目版主 SBOARD_MASTER" sql-type="varchar(20)"/>
+<field name="ICON_FILE" label="栏目图标 ICON_FILE" sql-type="varchar(255)"/>
+<field name="SBOARD_NOTE" label="栏目说明 SBOARD_NOTE" sql-type="varchar(200)"/>
+<field name="SBOARD_STATE" label="栏目状态 SBOARD_STATE" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_NETMEET" display-name="网络会议表" table-name="DO_NETMEET">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="TITLE" label="主题 TITLE" sql-type="varchar(200)"/>
+<field name="CALLER" label="召集 CALLER" sql-type="varchar(20)"/>
+<field name="MASTER" label="主持 MASTER" sql-type="varchar(20)"/>
+<field name="BEGIN_TIME" label="开始时间 BEGIN_TIME" sql-type="date"/>
+<field name="END_TIME" label="结束时间" sql-type="date"/>
+<field name="ATTENDS" label="出席人员 ATTENDS" sql-type="varchar(1000)"/>
+<field name="ON_LINES" label="在线人员 ON_LINES" sql-type="varchar(1000)"/>
+<field name="FINISH_FLAG" label="会议结束标志 FINISH_FLAG" sql-type="int"/>
+<field name="RECORDER" label="记录" sql-type="varchar(20)"/>
+<field name="SUMMARY" label="会议纪要 SUMMARY" sql-type="text"/>
+<field name="FILE_PATH" label="附件" sql-type="varchar(255)"/>
+<field name="FILE_NAME" label="附件名称" sql-type="varchar(255)"/>
+<field name="AWOKE_FLAG" label="是否消息提醒 AWOKE_FLAG" required="1" sql-type="int"/>
+<field name="BUILDING" label="是否归档 BUILDING" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_NETMEET_CONTENT" display-name="网络会议内容" table-name="DO_NETMEET_CONTENT">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="ORDER_ID" label="会议序号 ORDER_ID" required="1" sql-type="int"/>
+<field name="USER_NAME" label="发言人 USER_NAME" sql-type="varchar(20)"/>
+<field name="CONTENT" label="发言内容 CONTENT" sql-type="varchar(3000)"/>
+<field name="USER_ICON" label="用户图标 USER_ICON" sql-type="varchar(255)"/>
+<field name="FILE_PATH" label="附件" sql-type="varchar(255)"/>
+<field name="FILE_NAME" label="附件名称" sql-type="varchar(255)"/>
+</fieldlist>
+</entity>
+<entity name="DO_BBS_TOPIC" display-name="论坛话题主表" table-name="DO_BBS_TOPIC">
+<fieldlist>
+<field name="SERIAL_NUM" label="主话题编号 SERIAL_NUM" required="1" sql-type="varchar(30)"/>
+<field name="SBOARD_SERIAL" label="上级栏目编号 SBOARD_SERIAL" sql-type="varchar(30)"/>
+<field name="TOPIC" label="话题" sql-type="varchar(200)"/>
+<field name="BBS_USER_CODE" label="话题作者" required="1" sql-type="varchar(20)"/>
+<field name="TOPIC_TYPE" label="话题类型" sql-type="int"/>
+<field name="TOPIC_USER" label="话题用户" sql-type="varchar(2000)"/>
+<field name="APPEAR_DATE" label="发表时间 APPEAR_DATE" sql-type="date"/>
+<field name="TOPIC_ORDER" label="发表顺序号 TOPIC_ORDER" required="1" sql-type="int"/>
+<field name="HIT_TIMES" label="点击次数 HIT_TIMES" sql-type="int"/>
+<field name="ISBLOCK" label="是否封贴ISBLOCK" sql-type="int"/>
+<field name="IS_SHOW" label="是否显示 IS_SHOW" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_CARDCASE" display-name="名片夹" table-name="DO_CARDCASE">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="TYPE_CODE" label="类别代码" sql-type="varchar(30)"/>
+<field name="CUSTOMER" label="名片姓名 CUSTOMER" sql-type="varchar(20)"/>
+<field name="NICKNAME" label="昵称 NICKNAME" sql-type="varchar(20)"/>
+<field name="DUTY" label="职务" sql-type="varchar(20)"/>
+<field name="COMPANY" label="公司名称 COMPANY" sql-type="varchar(100)"/>
+<field name="ADDRESS" label="公司地址 ADDRESS" sql-type="varchar(60)"/>
+<field name="POST_CODE" label="邮编" sql-type="varchar(20)"/>
+<field name="E_MAIL" label="E_MAIL" sql-type="varchar(30)"/>
+<field name="PHONE" label="电话 PHONE" sql-type="varchar(30)"/>
+<field name="FAX" label="传真 FAX" sql-type="varchar(30)"/>
+<field name="MOBILE" label="手机 MOBILE" sql-type="varchar(15)"/>
+<field name="HOME_PAGE" label="主页 HOME_PAGE" sql-type="varchar(100)"/>
+<field name="REMARK" label="备注" sql-type="varchar(200)"/>
+</fieldlist>
+</entity>
+<entity name="DO_TICKLER" display-name="备忘录" table-name="DO_TICKLER">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="用户代码" required="1" sql-type="int"/>
+<field name="CONTENT" label="内容 CONTENT" sql-type="varchar(300)"/>
+<field name="CREATE_DATE" label="编制日期" sql-type="date"/>
+<field name="REMIND_FLAG" label="是否提醒 REMIND_FLAG" sql-type="CHAR(1)"/>
+<field name="AWOKE_TIME" label="提醒的时间 AWOKE_TIME" sql-type="date"/>
+<field name="FINISH_FLAG" label="完成标志 FINISH_FLAG" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="DO_PERSONAL_SETUP" display-name="个人目标读者设置" table-name="DO_PERSONAL_SETUP">
+<fieldlist>
+<field name="USER_CODE" label="用户代码" required="1" sql-type="int"/>
+<field name="TEAM_MEMBER" label="团队成员 TEAM_MEMBER" sql-type="varchar(1000)"/>
+</fieldlist>
+</entity>
+<entity name="DO_ARRANGER" display-name="日程安排人" table-name="DO_ARRANGER">
+<fieldlist>
+<field name="USER_CODE" label="用户代码" required="1" sql-type="int"/>
+<field name="ARRANGE" label="日程安排人 ARRANGE" required="1" sql-type="varchar(255)"/>
+</fieldlist>
+</entity>
+<entity name="DO_WORLD_WINDOW" display-name="世界之窗" table-name="DO_WORLD_WINDOW">
+<fieldlist>
+<field name="TITLE" label="主题 TITLE" required="1" sql-type="varchar(100)"/>
+<field name="INFO_TYPE" label="类别代码" required="1" sql-type="varchar(30)"/>
+<field name="CHILD_TYPE" label="子类 CHILD_TYPE" sql-type="varchar(20)"/>
+<field name="URL" label="网址" sql-type="varchar(100)"/>
+</fieldlist>
+</entity>
+<entity name="DO_VIEW_RIGHT" display-name="日程安排浏览权限" table-name="DO_VIEW_RIGHT">
+<fieldlist>
+<field name="USER_CODE" label="用户代码" required="1" sql-type="int"/>
+<field name="MEMBER" label="浏览成员 MEMBER" required="1" sql-type="varchar(255)"/>
+</fieldlist>
+</entity>
+<entity name="DO_INNER_MSG" display-name="内部短消息" table-name="DO_INNER_MSG">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="发送人 USER_CODE" required="1" sql-type="varchar(30)"/>
+<field name="SEND_TIME" label="发送时间 SEND_TIME" sql-type="date"/>
+<field name="CONTENT" label="消息内容 CONTENT" sql-type="varchar(255)"/>
+<field name="RECEIVER" label="接收人 RECEIVER" sql-type="varchar(20)"/>
+<field name="READ_FLAG" label="阅读标志" sql-type="int"/>
+<field name="READ_TIME" label="阅读时间" sql-type="date"/>
+<field name="WEB_URL" label="页面路径" sql-type="varchar(255)"/>
+<field name="MSG_TYPE" label="短消息类型" sql-type="varchar(1)"/>
+<field name="MEMO" label="备注" sql-type="varchar(255)"/>
+<field name="MODEL_ID" label="模块ID MODEL_ID" sql-type="int"/>
+<field name="MSERIAL_NUM" label="模块编号 MSERIAL_NUM" sql-type="varchar(30)"/>
+</fieldlist>
+</entity>
+<entity name="DO_CARDCASE_TYPE" display-name="名片夹类别" table-name="DO_CARDCASE_TYPE">
+<fieldlist>
+<field name="TYPE_CODE" label="类别代码" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="TYPE_NAME" label="类别名称" sql-type="varchar(20)"/>
+<field name="REMARK" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="DO_BBS_TOPBOARD" display-name="论坛一级栏目表" table-name="DO_BBS_TOPBOARD">
+<fieldlist>
+<field name="SERIAL_NUM" label="一级栏目 SERIAL_NUM" required="1" sql-type="varchar(30)"/>
+<field name="TBOARD_NAME" label="栏目名称 TBOARD_NAME" required="1" sql-type="varchar(50)"/>
+<field name="ICON_FILE" label="栏目图标 ICON_FILE" sql-type="varchar(255)"/>
+<field name="TBOARD_NOTE" label="栏目说明 TBOARD_NOTE" sql-type="varchar(200)"/>
+<field name="TBOARD_STATE" label="栏目状态 TBOARD_STATE" sql-type="int"/>
+<field name="MASTER" label="版主 MASTER" sql-type="varchar(20)"/>
+</fieldlist>
+</entity>
+<entity name="DO_INFO_TYPE" display-name="信息类别" table-name="DO_INFO_TYPE">
+<fieldlist>
+<field name="INFO_TYPE" label="类别代码" required="1" sql-type="varchar(30)"/>
+<field name="TYPE_NAME" label="类别名称" required="1" sql-type="varchar(20)"/>
+</fieldlist>
+</entity>
+<entity name="DO_FIVEYEAR_LAYOUT" display-name="五年规划" table-name="DO_FIVEYEAR_LAYOUT">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="CURRENT_YEAR" label="年" sql-type="CHAR(4)"/>
+<field name="USER_CODE" label="用户代码" sql-type="int"/>
+<field name="CREATE_DATE" label="编制日期" sql-type="date"/>
+<field name="APPROVE" label="批准人" sql-type="varchar(20)"/>
+<field name="APPROVE_DATE" label="批准日期" sql-type="date"/>
+<field name="CONTENT" label="规化内容" sql-type="blob"/>
+<field name="APPROVE_FLAG" label="是否通过批准" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="Mail" display-name="电子邮件_邮件表" table-name="Mail">
+<fieldlist>
+<field name="USER_CODE" label="员工编号" sql-type="int"/>
+<field name="SERIAL_NUM" label="邮件序号" required="1" sql-type="varchar(30)"/>
+<field name="POST_USERNAME" label="寄件人名称" sql-type="varchar(100)"/>
+<field name="POST_ADDRESS" label="寄件人地址" sql-type="varchar(50)"/>
+<field name="RECEIVE_ADDRESS" label="收件人地址" sql-type="varchar(800)"/>
+<field name="COPY_SEND" label="抄送" sql-type="varchar(800)"/>
+<field name="DENSE_SEND" label="密送" sql-type="varchar(800)"/>
+<field name="SEND_DATE" label="发送日期" sql-type="varchar(19)"/>
+<field name="TITLE" label="主题" sql-type="varchar(500)"/>
+<field name="MAIL_DIR_ID" label="邮件夹ID" required="1" sql-type="varchar(30)"/>
+<field name="RE_FLAG" label="回复标志" sql-type="varchar(1)"/>
+<field name="READ_FLAG" label="阅读标志" sql-type="varchar(1)"/>
+<field name="CONTENT" label="邮件内容" sql-type="text"/>
+<field name="MAIL_TYPE" label="邮件类型" sql-type="varchar(1)"/>
+<field name="PRIORITY" label="优先级别" sql-type="varchar(1)"/>
+<field name="MAIL_SIZE" label="邮件大小" sql-type="double"/>
+<field name="OLD_MAILDIR_ID" label="旧文件夹" sql-type="varchar(30)"/>
+</fieldlist>
+</entity>
+<entity name="MailAttch" display-name="邮件附件表" table-name="MailAttch">
+<fieldlist>
+<field name="SERIAL_NUM" label="附件序号" required="1" sql-type="varchar(30)"/>
+<field name="MAIL_ID" label="邮件序号" required="1" sql-type="varchar(30)"/>
+<field name="ATTCH_NAME" label="附件名称" sql-type="varchar(500)"/>
+<field name="FILE_PATH" label="附件路径" sql-type="varchar(500)"/>
+<field name="MEMO" label="附件备注" sql-type="varchar(1)"/>
+</fieldlist>
+</entity>
+<entity name="MailDirectory" display-name="邮箱文件夹表" table-name="MailDirectory">
+<fieldlist>
+<field name="SERIAL_NUM" label="邮件夹序号" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="人员编号" required="1" sql-type="varchar(6)"/>
+<field name="MAIL_DIR_NAME" label="邮件夹名称" required="1" sql-type="varchar(30)"/>
+<field name="FLAG" label="邮件夹标志" required="1" sql-type="varchar(1)"/>
+<field name="MEMO" label="邮件夹备注" sql-type="varchar(30)"/>
+</fieldlist>
+</entity>
+<entity name="MailInfo" display-name="邮箱参数表" table-name="MailInfo">
+<fieldlist>
+<field name="PAGENUMBER" label="分页数量" sql-type="int"/>
+<field name="USER_CODE" label="用户ID" sql-type="int"/>
+<field name="LABLE_NAME" label="签名" sql-type="text"/>
+<field name="POST_FLAG" label="是否保存到寄件夹" sql-type="CHAR(1)"/>
+<field name="SIGN_FLAG" label="是否加上个人签名" sql-type="CHAR(1)"/>
+<field name="RETURN_FLAG" label="是否回执" sql-type="CHAR(1)"/>
+<field name="SHOW_FLAG" label="是否显示表头" sql-type="CHAR(1)"/>
+<field name="MAIL_LEVEL" label="默认邮件级别" sql-type="CHAR(1)"/>
+</fieldlist>
+</entity>
+<entity name="POP3MAILSETUP" display-name="外发邮箱设置" table-name="POP3MAILSETUP">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="USER_CODE" label="人员编号" required="1" sql-type="int"/>
+<field name="POP3_NAME" label="POP3名称" required="1" sql-type="varchar(60)"/>
+<field name="POP3_ADDRESS" label="接收服务器地址、端口" sql-type="varchar(60)"/>
+<field name="POP3_ACCOUNT" label="POP3登录账号" sql-type="varchar(60)"/>
+<field name="POP3_PWD" label="POP3登录密码" sql-type="varchar(255)"/>
+<field name="AUTO_FLAG" label="自动生效标志" sql-type="CHAR(1)"/>
+<field name="DEL_FLAG" label="删信标志" sql-type="CHAR(1)"/>
+<field name="INCEPT_MAIL_DIR" label="接收邮件夹" sql-type="varchar(60)"/>
+<field name="SHOW_NAME" label="显示姓名" sql-type="varchar(20)"/>
+<field name="SHOW_ADDRESS" label="显示地址" sql-type="varchar(60)"/>
+<field name="SMTP_SERVER" label="SMTP服务器" sql-type="varchar(60)"/>
+<field name="SMTP_AUTH" label="SMTP验证标志" sql-type="CHAR(1)"/>
+<field name="SMTP_NAME" label="SMTP用户名" sql-type="varchar(60)"/>
+<field name="SMTP_PWD" label="SMTP服务器验证口令" sql-type="varchar(255)"/>
+<field name="USE_FLAG" label="账号使用状态" sql-type="CHAR(1)"/>
+</fieldlist>
+</entity>
+<entity name="MailCapacity" display-name="邮箱容量表" table-name="MailCapacity">
+<fieldlist>
+<field name="USER_CODE" label="员工编号" required="1" sql-type="int"/>
+<field name="MAIL_CAPACITY" label="邮件容量" required="1" sql-type="double"/>
+<field name="CAPACITY_FLAG" label="容量超出限制" required="1" sql-type="varchar(1)"/>
+<field name="LIMIT_FLAG" label="限制标志" required="1" sql-type="varchar(1)"/>
+<field name="MEMO" label="备注" sql-type="varchar(100)"/>
+</fieldlist>
+</entity>
+<entity name="DO_LOG_CONTENT" display-name="工作日志内容" table-name="DO_LOG_CONTENT">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="TSERIAL_NUM" label="日志编号 TSERIAL_NUM" required="1" sql-type="varchar(30)"/>
+<field name="LOG_CONTENT" label="日志内容 LOG_CONTENT" sql-type="varchar(255)"/>
+<field name="REMARK" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="DO_WORK_LOG_ADVICE" display-name="工作日志建议" table-name="DO_WORK_LOG_ADVICE">
+<fieldlist>
+<field name="serial_num" label="serial_num" required="1" sql-type="VARCHAR(30)"/>
+<field name="op_date" label="op_date" required="1" sql-type="VARCHAR(20)"/>
+<field name="adviser" label="adviser" required="1" sql-type="VARCHAR(20)"/>
+<field name="advice" label="advice" sql-type="VARCHAR(1000)"/>
+<field name="remark" label="remark" sql-type="VARCHAR(100)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_JOB" display-name="编码表－职称" table-name="SYS_JOB">
+<fieldlist>
+<field name="JOB_CODE" label="职称代码" required="1" sql-type="varchar(4)"/>
+<field name="JOB_NAME" label="职称名称" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="GEVERID" display-name="公用序列号表" table-name="GEVERID">
+<fieldlist>
+<field name="IDTYPE" label="IDTYPE" required="1" sql-type="int"/>
+<field name="ID" label="ID" required="1" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_SYSTEM_ID" display-name="T_SYSTEM_ID" table-name="T_SYSTEM_ID">
+<fieldlist>
+<field name="IDTYPE" label="IDTYPE" required="1" sql-type="int"/>
+<field name="ID" label="ID" required="1" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_SYSTEM_LOG" display-name="系统日志" table-name="T_SYSTEM_LOG">
+<fieldlist>
+<field name="ID" label="ID" required="1" sql-type="int"/>
+<field name="OTIME" label="OTIME" required="1" sql-type="varchar(20)"/>
+<field name="USERNAME" label="USERNAME" sql-type="varchar(50)"/>
+<field name="MODULE" label="MODULE" sql-type="varchar(50)"/>
+<field name="IPADDRESS" label="IPADDRESS" sql-type="varchar(50)"/>
+<field name="ACTION" label="ACTION" sql-type="varchar(30)"/>
+<field name="FILTERLEVEL" label="FILTERLEVEL" sql-type="int"/>
+<field name="TYPE" label="TYPE" sql-type="int"/>
+<field name="MEMO" label="MEMO" sql-type="varchar(500)"/>
+</fieldlist>
+</entity>
+<entity name="T_USER_MENU" display-name="用户定制菜单" table-name="T_USER_MENU">
+<fieldlist>
+<field name="EMPID" label="EMPID" required="1" sql-type="varchar(10)"/>
+<field name="NODEID" label="NODEID" required="1" sql-type="varchar(50)"/>
+<field name="NODENAME" label="NODENAME" sql-type="varchar(100)"/>
+<field name="PARENTID" label="PARENTID" sql-type="varchar(50)"/>
+<field name="LINK" label="LINK" sql-type="varchar(200)"/>
+<field name="LINKMODE" label="LINKMODE" required="1" sql-type="int"/>
+<field name="ISFOLDER" label="ISFOLDER" required="1" sql-type="varchar(1)"/>
+<field name="ISHIDED" label="ISHIDED" required="1" sql-type="varchar(1)"/>
+<field name="ORDERID" label="ORDERID" required="1" sql-type="int"/>
+<field name="ISMENU" label="ISMENU" required="1" sql-type="varchar(1)"/>
+<field name="FLAG" label="FLAG" required="1" sql-type="varchar(1)"/>
+<field name="MEMO" label="MEMO" sql-type="varchar(255)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_DUTY" display-name="编码表－职务" table-name="SYS_DUTY">
+<fieldlist>
+<field name="DUTY_CODE" label="职务代码" required="1" sql-type="varchar(4)"/>
+<field name="DUTY_NAME" label="职务名称" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_POLITY" display-name="编码表－政治面貌" table-name="SYS_POLITY">
+<fieldlist>
+<field name="POLITY_CODE" label="政治面貌代码" required="1" sql-type="varchar(4)"/>
+<field name="POLITY_NAME" label="政治面貌" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_SEX" display-name="编码表－性别" table-name="SYS_SEX">
+<fieldlist>
+<field name="SEX_CODE" label="性别代码" required="1" sql-type="varchar(4)"/>
+<field name="SEX_NAME" label="性别名称" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_MARRIAGE" display-name="编码表－婚姻状况" table-name="SYS_MARRIAGE">
+<fieldlist>
+<field name="MARRIAGE_CODE" label="婚姻状况代码" required="1" sql-type="varchar(4)"/>
+<field name="MARRIAGE" label="婚姻状况名称" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_KNOWLEDGE" display-name="编码表－学历" table-name="SYS_KNOWLEDGE">
+<fieldlist>
+<field name="KNOWLEDGE_CODE" label="学历代码" required="1" sql-type="varchar(4)"/>
+<field name="KNOWLEDGE_NAME" label="学历名称" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_NATIONAL" display-name="编码表－民族" table-name="SYS_NATIONAL">
+<fieldlist>
+<field name="NATIONAL_CODE" label="民族代码" required="1" sql-type="varchar(4)"/>
+<field name="NATIONAL_NAME" label="民族名称" sql-type="varchar(20)"/>
+<field name="REMARKS" label="备注" sql-type="varchar(60)"/>
+</fieldlist>
+</entity>
+<entity name="SYS_UNIT_INFO" display-name="单位基本信息" table-name="SYS_UNIT_INFO">
+<fieldlist>
+<field name="UNIT_CODE" label="单位简称" required="1" sql-type="varchar(20)"/>
+<field name="UNIT_NAME" label="单位名称" sql-type="varchar(60)"/>
+<field name="PHONE" label="联系电话" sql-type="varchar(30)"/>
+<field name="FAX" label="传真 FAX" sql-type="varchar(30)"/>
+<field name="E_MAIL" label="电子邮箱" sql-type="varchar(30)"/>
+<field name="HOME_PAGE" label="网站" sql-type="varchar(100)"/>
+<field name="REMARK" label="备注" sql-type="text"/>
+<field name="UNIT_TYPE" label="单位类型" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="SYS_PARAMETER" display-name="系统参数设置" table-name="SYS_PARAMETER">
+<fieldlist>
+<field name="WORK_LOG_NUM" label="工作日志条数" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_DEPARTMENT" display-name="组织部门表" table-name="T_DEPARTMENT">
+<fieldlist>
+<field name="ID" label="组织部门表ID" required="1" sql-type="int"/>
+<field name="CODE" label="组织编码" sql-type="varchar(30)"/>
+<field name="NAME" label="组织部门名称" sql-type="varchar(50)"/>
+<field name="DESCRIPTION" label="组织部门描述" sql-type="varchar(100)"/>
+<field name="DEPARTMENTTYPE" label="组织部门类型" sql-type="varchar(30)"/>
+<field name="PARENT_ID" label="上级组织部门" sql-type="int"/>
+<field name="ORDERID" label="ORDERID" sql-type="int"/>
+<field name="FUNCTIONARY" label="FUNCTIONARY" sql-type="VARCHAR(50)"/>
+</fieldlist>
+</entity>
+<entity name="T_JOB" display-name="工作岗位表" table-name="T_JOB">
+<fieldlist>
+<field name="ID" label="岗位表ID" required="1" sql-type="int"/>
+<field name="NAME" label="岗位名称" sql-type="varchar(50)"/>
+<field name="DESCRIPTION" label="岗位描述" sql-type="varchar(100)"/>
+<field name="DEPARTMENT_ID" label="所在组织部门ID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_RESOURCE" display-name="资源信息表" table-name="T_RESOURCE">
+<fieldlist>
+<field name="ID" label="资源信息ID" required="1" sql-type="int"/>
+<field name="NAME" label="资源名称" sql-type="varchar(50)"/>
+<field name="DESCRIPTION" label="资源描述" sql-type="varchar(100)"/>
+<field name="RESOURCETYPE" label="资源类型" sql-type="varchar(30)"/>
+<field name="LINK" label="页面链接" sql-type="varchar(200)"/>
+<field name="PARENT_ID" label="上层资源Id" sql-type="int"/>
+<field name="TARGET" label="TARGET" sql-type="CHAR(1)"/>
+<field name="CODE" label="资源编码" sql-type="varchar(12)"/>
+<field name="ORDERID" label="ORDERID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_RESOPERATION" display-name="资源操作信息表" table-name="T_RESOPERATION">
+<fieldlist>
+<field name="ID" label="资源操作信息ID" required="1" sql-type="int"/>
+<field name="NAME" label="资源操作名称" sql-type="varchar(50)"/>
+<field name="DESCRIPTION" label="资源操作描述" sql-type="varchar(100)"/>
+<field name="RESOURCE_ID" label="对应的资源ID" sql-type="int"/>
+<field name="CODE" label="资源操作代码" sql-type="varchar(12)"/>
+<field name="ORDERID" label="ORDERID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_ROLE" display-name="角色信息表" table-name="T_ROLE">
+<fieldlist>
+<field name="ID" label="角色信息ID" required="1" sql-type="int"/>
+<field name="NAME" label="角色名称" sql-type="varchar(50)"/>
+<field name="DESCRIPTION" label="角色描述" sql-type="varchar(100)"/>
+<field name="ROLETYPE" label="角色类型" sql-type="varchar(30)"/>
+</fieldlist>
+</entity>
+<entity name="T_ROLE_PERMISSION" display-name="角色权限对应表" table-name="T_ROLE_PERMISSION">
+<fieldlist>
+<field name="ROLE_ID" label="角色信息表ID" sql-type="int"/>
+<field name="RESOURCE_ID" label="资源信息表ID" sql-type="int"/>
+<field name="RESOPERATION_ID" label="资源操作表ID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_USER" display-name="用户信息表" table-name="T_USER">
+<fieldlist>
+<field name="ID" label="用户表ID" required="1" sql-type="int"/>
+<field name="USERNAME" label="用户账户名称" required="1" sql-type="varchar(30)"/>
+<field name="PASSWORD" label="用户密码" sql-type="varchar(50)"/>
+<field name="USERTYPE" label="用户类型" sql-type="varchar(30)"/>
+<field name="LEVEL" label="用户层级" sql-type="varchar(10)"/>
+<field name="STATUS" label="账户激活状态" sql-type="varchar(20)"/>
+<field name="VALIDDATE" label="账户有效期" sql-type="varchar(20)"/>
+<field name="NAME" label="人员姓名" sql-type="varchar(30)"/>
+<field name="CODE" label="人员编码" sql-type="varchar(30)"/>
+<field name="GENDER" label="人员性别" sql-type="varchar(6)"/>
+</fieldlist>
+</entity>
+<entity name="T_USER_PERMISSION" display-name="用户权限关系表" table-name="T_USER_PERMISSION">
+<fieldlist>
+<field name="USER_ID" label="用户信息表ID" sql-type="int"/>
+<field name="RESOURCE_ID" label="资源信息表ID" sql-type="int"/>
+<field name="RESOPERATION_ID" label="资源操作表ID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_USER_ROLE" display-name="用户角色关系表" table-name="T_USER_ROLE">
+<fieldlist>
+<field name="USER_ID" label="用户信息表ID" sql-type="int"/>
+<field name="ROLE_ID" label="角色信息表ID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_JOB_PERSON" display-name="人员岗位关系表" table-name="T_JOB_PERSON">
+<fieldlist>
+<field name="JOB_ID" label="岗位信息表ID" sql-type="int"/>
+<field name="ID" label="用户表ID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_DEPARTMENT_PERSON" display-name="人员组织关系表" table-name="T_DEPARTMENT_PERSON">
+<fieldlist>
+<field name="DEPARTMENT_ID" label="组织部门信息表ID" sql-type="int"/>
+<field name="ID" label="用户表ID" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="T_USER_STATUS" display-name="用户状态表" table-name="T_USER_STATUS">
+<fieldlist>
+<field name="value" label="value" required="1" sql-type="varchar(100)"/>
+<field name="id" label="id" required="1" sql-type="varchar(20)"/>
+</fieldlist>
+</entity>
+<entity name="T_USER_USERTYPE" display-name="用户类型表" table-name="T_USER_USERTYPE">
+<fieldlist>
+<field name="value" label="value" required="1" sql-type="varchar(100)"/>
+<field name="id" label="id" required="1" sql-type="varchar(30)"/>
+</fieldlist>
+</entity>
+<entity name="T_LEVEL" display-name="行政级别" table-name="T_LEVEL">
+<fieldlist>
+<field name="id" label="id" required="1" sql-type="int(11)"/>
+<field name="code" label="code" sql-type="varchar(30)"/>
+<field name="name" label="name" sql-type="varchar(30)"/>
+<field name="description" label="description" sql-type="varchar(100)"/>
+</fieldlist>
+</entity>
+<entity name="T_USER_CSS" display-name="用户CSS" table-name="T_USER_CSS">
+<fieldlist>
+<field name="id" label="id" required="1" sql-type="int(11)"/>
+<field name="user_id" label="user_id" sql-type="int(11)"/>
+<field name="css_id" label="css_id" sql-type="int(11)"/>
+</fieldlist>
+</entity>
+<entity name="IS_INFO_SERVE" display-name="信息发布" table-name="IS_INFO_SERVE">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="TITLE" label="主题 TITLE" sql-type="varchar(100)"/>
+<field name="INFO_TYPE" label="类别名称" sql-type="varchar(20)"/>
+<field name="DEPT" label="部门" sql-type="varchar(2000)"/>
+<field name="USER_CODE" label="发布人 USER_CODE" sql-type="int"/>
+<field name="CREATE_DATE" label="发布日期 CREATE_DATE" sql-type="date"/>
+<field name="FILE_PATH" label="附件" sql-type="varchar(255)"/>
+<field name="FILE_NAME" label="附件名称" sql-type="varchar(255)"/>
+<field name="WORD_CONTENT" label="文本模板内容 WORD_CONTENT" sql-type="text"/>
+<field name="CONTENT" label="华表模板内容 CONTENT" sql-type="blob"/>
+<field name="HINT_FLAG" label="提醒标志 HINT_FLAG" sql-type="int"/>
+<field name="SEND_FLAG" label="信息发送标志 SEND_FLAG" sql-type="int"/>
+<field name="EDITOR_TYPE" label="编辑器种类" sql-type="int"/>
+<field name="INFO_FLAG" label="信息标志 INFO_FLAG" sql-type="int"/>
+<field name="SHOW_FLAG" label="SHOW_FLAG" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="IS_INFO_MANAGE" display-name="信息管理" table-name="IS_INFO_MANAGE">
+<fieldlist>
+<field name="TITLE" label="主题 TITLE" required="1" sql-type="varchar(100)"/>
+<field name="INFO_TYPE" label="类别" required="1" sql-type="varchar(20)"/>
+<field name="USER_CODE" label="创建人 USER_CODE" required="1" sql-type="int"/>
+<field name="CREATE_DATE" label="创建日期 CREATE_DATE" sql-type="date"/>
+<field name="FILE_PATH" label="附件" sql-type="varchar(255)"/>
+<field name="FILE_NAME" label="附件名称" sql-type="varchar(255)"/>
+<field name="URL" label="网址" sql-type="varchar(100)"/>
+<field name="CONTENT" label="内容 CONTENT" sql-type="text"/>
+<field name="INFO_LEVLE" label="信息级别 INFO_LEVEL" sql-type="int"/>
+<field name="INFO_FLAG" label="信息标志 INFO_FLAG" sql-type="int"/>
+</fieldlist>
+</entity>
+<entity name="IS_STANDARD_MODEL" display-name="标准模板" table-name="IS_STANDARD_MODEL">
+<fieldlist>
+<field name="MODEL_CODE" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="MODEL_TYPE" label="模板类型" sql-type="int"/>
+<field name="CREATE_DATE" label="发布日期" sql-type="date"/>
+<field name="ISSUE_FLAG" label="发布标志" sql-type="int"/>
+<field name="MODEL_NAME" label="模板名称" sql-type="varchar(20)"/>
+<field name="USER_CODE" label="发布人" sql-type="int"/>
+<field name="FILE_PATH" label="附件" sql-type="varchar(255)"/>
+<field name="FILE_NAME" label="附件名称" sql-type="varchar(255)"/>
+<field name="WORD_CONTENT" label="文本模板内容" sql-type="text"/>
+<field name="CONTENT" label="华表模板内容" sql-type="blob"/>
+<field name="EDITOR_TYPE" label="编辑器种类" sql-type="int"/>
+<field name="INFO_TYPE" label="类别名称" sql-type="varchar(20)"/>
+</fieldlist>
+</entity>
+<entity name="IS_ADDRESS_LIST" display-name="通讯录" table-name="IS_ADDRESS_LIST">
+<fieldlist>
+<field name="SERIAL_NUM" label="编号" required="1" sql-type="varchar(30)"/>
+<field name="TYPE_FLAG" label="类别" sql-type="int"/>
+<field name="GROUP_NAME" label="群组名称" sql-type="varchar(20)"/>
+<field name="USER_CODE" label="用户编号 USER_CODE" sql-type="int"/>
+<field name="MEMBER" label="成员 MEMBER" sql-type="text"/>
+<field name="GROUP_CODE" label="群组代码" sql-type="varchar(20)"/>
+<field name="TABLE_NAME" label="关联的表名 TABLE_NAME" sql-type="varchar(20)"/>
+</fieldlist>
+</entity>
+<entity name="IS_DOTYPE" display-name="类别设置" table-name="IS_DOTYPE">
+<fieldlist>
+<field name="INFO_TYPE" label="类别名称" required="1" sql-type="varchar(20)"/>
+<field name="TYPELEVEL" label="类别级别" sql-type="int"/>
+<field name="PARENT_TYPE" label="父类名称" sql-type="varchar(20)"/>
+<field name="MODULEFLAG" label="所属模块" sql-type="int"/>
+<field name="REMARK" label="备注" sql-type="varchar(30)"/>
+</fieldlist>
+</entity>
+</entitylist>
+</jag>

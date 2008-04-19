@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+#foreach($entity in ${entitylist.entitylist})
+  <definition extends="tree.template" name="${entity.name}.lefttree">
+    <put name="body" value="/${entity.name}/tree${entity.name}.jsp" />
+  </definition>
+  <definition extends="main.template" name="${entity.name}.list${entity.name}">
+    <put name="body" value="/${entity.name}/list${entity.name}.jsp" />
+  </definition>
+  <definition extends="edit.template" name="${entity.name}.edit${entity.name}">
+    <put name="body" value="/${entity.name}/edit${entity.name}.jsp" />
+  </definition>
+  <definition extends="view.template" name="${entity.name}.view${entity.name}">
+    <put name="body" value="/${entity.name}/view${entity.name}.jsp" />
+  </definition>
+#end
+</tiles-definitions>

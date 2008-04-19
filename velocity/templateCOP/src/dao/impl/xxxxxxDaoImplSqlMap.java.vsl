@@ -1,0 +1,49 @@
+package com.gever.goa.dailyoffice.worklog.dao.impl;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.*;
+
+import ${entity.root-package}.vo.${entity.name}VO;
+import ${entity.root-package}.vo.${entity.name}TreeVO;
+import ${entity.root-package}.dao.${entity.name}Dao;
+
+import com.gever.ibatis.SqlMapClientUtil;
+import com.ibatis.common.resources.Resources;
+import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+
+
+public class ${entity.name}DaoImplSqlMap extends BaseDAO implements ${entity.name}Dao {
+
+    public ${entity.name}DaoImplSqlMap(String dbData) {
+        super(dbData);
+    }
+
+    public String getPageSql() {
+        return QUERY_SQL;
+    }
+
+    /**
+     * 新增--重载BaseDAO中的insert方法
+     * 为了能够处理获取logID主键值
+     * @param vo 当前vo对象
+     * @return 新增多少笔,-1为失败
+     * @throws DefaultException
+     */
+    public int insert(VOInterface vo) throws DefaultException {       return iRet;    }
+    
+    public int update(VOInterface vo) throws DefaultException {
+    	int ret= -1;
+		try {
+			ret = SqlMapClientUtil.getInstance().update("update${entity.name}",vo);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+    	return ret;
+
+    }    
+}
+
