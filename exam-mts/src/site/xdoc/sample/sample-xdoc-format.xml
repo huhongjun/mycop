@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+  <properties>
+    <title>欢迎-用XDoc做的样例页面</title>
+    <author email="dev@maven.apache.org">Maven团队</author>
+  </properties>
+  <body>
+    <section name="ch1 第一段 ">
+      <p>
+        第一段内容.
+      </p>
+    </section>
+    <section name="第二段">
+      <p>
+        第二段内容.
+      </p>
+    </section>    
+  </body>
+</document>

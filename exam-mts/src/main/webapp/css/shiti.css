@@ -1,0 +1,11 @@
+body{margin:0px;background: #D4E3EA url(../image/bg_all.jpg) repeat-x;}
+.bgall{ background: url(../image/bg_all.jpg) no-repeat center top;}
+.toptitle{ font-size: 20px; font-weight:bold; color:#FFFFFF;padding-top:50; padding-bottom:50;width:948px; height:114px;}
+
+.borderv{background: url(../image/borderv.gif) repeat-y center top;width:980px;}
+.ms{ background: url(../image/bg_tbout.jpg) no-repeat center top;width:980px;}
+.ms table{  background:url(../image/bg_tb.jpg) no-repeat center top;width:948px;margin-left:20px;}
+.ms table td{ font-size: 12px;color:#006699; padding:2px; }
+.tt{width:920px;height:20px;padding-top:50px;padding-left:0px;	font-size: 12px;color:#006699;font-weight: bold;text-align: left;margin-left:10px;}
+.tb-form tr tb input {font-size: 12px; width:200px;}
+.line-h{background:url(../image/line_h.gif) repeat-x;width:940px;height:20px;margin-left:10px;}
