@@ -1,0 +1,41 @@
+<QiQuScript>
+	<LoadDoc FileName="'script/transformer_preRunVelo_jag.qiq'" NewDocRef="$transformerQiQuScript"/>
+	<RunQiQuScript NodeRef="$transformerQiQuScript"/>
+	
+    <LoadDoc FileName="'model/input/jagModel_transformed.xml'" NewDocRef="$jagDoc"/>
+    	<SelectFirst NodeRef="$jagDoc" XPath="/jag/app[1]" SelectedEleRef="$app"/>
+    	<SelectFirst NodeRef="$jagDoc" XPath="/jag/config[1]" SelectedEleRef="$config"/>   
+        <SelectFirst NodeRef="$jagDoc" XPath="/jag/path[1]" SelectedEleRef="$paths"/>
+        <SelectFirst NodeRef="$jagDoc" XPath="/jag/datasource[1]" SelectedEleRef="$datasource"/>
+		<SelectFirst NodeRef="$jagDoc" XPath="/jag/entitylist[1]" SelectedEleRef="$entitylist"/>
+		<SelectFirst NodeRef="$jagDoc" XPath="/jag/sessionlist[1]" SelectedEleRef="$sessions"/>
+
+		<CreateDoc NewDocRef="$veloOutputListDoc"/>
+		<CreateEle  NodeRef="$veloOutputListDoc" EleName="'filelist'" NewEleRef="$veloFileList"/>
+	
+	<LoadDoc FileName="'velocity/templateCOP/veloList.xml'" NewDocRef="$veloDoc"/>
+	<For NodeRef="$veloDoc" XPath="/templatelist/template" IteratorEleRef="$template">
+	    <VelocityContextPut ContextName="'app'" NodeRef="$app"/>
+	    <VelocityContextPut ContextName="'config'" NodeRef="$config"/>
+	    <VelocityContextPut ContextName="'paths'" NodeRef="$paths"/>
+	    <VelocityContextPut ContextName="'datasource'" NodeRef="$datasource"/>
+	    <VelocityContextPut ContextName="'sessions'" NodeRef="$sessions"/>	
+	    <If Condition="equalsIgnoreCase($template.scope , 'entity')">
+		    <For NodeRef="$jagDoc" XPath="//entity" IteratorEleRef="$entity">
+		    	<VelocityContextPut ContextName="'entity'" NodeRef="$entity"/>
+		    		<CreateEle NodeRef="$veloFileList" EleName="'file'" NewEleRef="$OutputFileName"/>
+		    		<Set Ref="$OutputFileName.name" Value="$template.Output + replace(replace($template.CustomName,'xxxxxx',$entity.name),'\{ROOTPACKAGE\}',replace($entity.root-package, '\.', '\\\\\\\\'))"/>
+		    	<RunVelocity TemplateFileName="$template.FileName"
+			     	OutputFileName="$OutputFileName.name"/>
+		    </For>
+	    </If>
+	    <If  Condition="equalsIgnoreCase($template.scope , 'app')">
+	    	<CreateEle NodeRef="$veloFileList" EleName="'file'" NewEleRef="$OutputFileName"/>
+	    	<Set Ref="$OutputFileName.name" Value="$template.Output + replace($template.CustomName,'xxxxxx',$app.name)"/>
+	    	<VelocityContextPut ContextName="'entitylist'" NodeRef="$entitylist"/>
+	    	<RunVelocity TemplateFileName="$template.FileName"
+		     	OutputFileName="$OutputFileName.name"/>   	
+	    </If>	
+	</For>
+	<SaveDoc FileName="'script/veloOutputList.xml'" DocRef="$veloOutputListDoc"/>
+</QiQuScript>

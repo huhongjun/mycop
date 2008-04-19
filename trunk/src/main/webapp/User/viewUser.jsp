@@ -1,0 +1,51 @@
+<%@ page contentType="text/html; charset=GB2312"%>
+<%@ page language="java" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tlds/gever-goa.tld" prefix="goa" %>
+<%String context =request.getContextPath();%>
+
+<html:form action="/User/viewUser" method="post">
+<div align="center">
+  <center>
+   <br>
+	<table  align="center" width="600"  border="0" cellspacing="0" cellpadding="0">
+	<tr> 
+      <td align="center" colspan="2"><span class="TableTitleText">用户 编辑</span></td>
+      </tr>
+	<tr>
+	<td align="center">
+		<table width="98%" align="center" border="0" cellspacing="0" cellpadding="0">
+				
+							  <tr class="listcellrow" height="23" >
+					    <td width="86" nowrap class="InputLabelCell">代码：</td>
+					    <td class="f12"><goa:write  name="UserForm" property="vo.id" filter="true"/></td>
+			  </tr>
+						  <tr class="listcellrow" height="23" >
+					    <td width="86" nowrap class="InputLabelCell">名称：</td>
+					    <td class="f12"><goa:write  name="UserForm" property="vo.name" filter="true"/></td>
+			  </tr>
+						  <tr class="listcellrow" height="23" >
+					    <td width="86" nowrap class="InputLabelCell">电邮：</td>
+					    <td class="f12"><goa:write  name="UserForm" property="vo.email" filter="true"/></td>
+			  </tr>
+			</table>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td align="center"> 
+		        <html:hidden name="UserForm" property="fid" />
+		        <goa:button property="save" value="修改" styleClass="button"  onclick=" toUrl('../User/editUser.do?actionType=modify',false)" operation="${entity.resoperationcode_edit}"/>
+        <goa:button property="exit" value="返回" styleClass="button" onclick="doAction('goUrl(index)')" operation="${entity.resoperationcode_view}"/></td>
+      </tr>
+    </table>
+    </center>
+</div>
+
+</html:form>
+</body>
+

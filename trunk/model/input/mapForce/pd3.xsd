@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--W3C Schema 由 XMLSpy v2006 U 创建 (http://www.altova.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="collection" xmlns:o="object" elementFormDefault="qualified">
+	<xs:import namespace="object" schemaLocation="D:\MyEclipseWork\workspace\QiQu-COP\model\input\mapForce\pd2.xsd"/>
+	<xs:complexType name="ChildExtendedDependenciesType">
+		<xs:sequence>
+			<xs:element name="ExtendedDependency" type="o:ExtendedDependencyType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildrenType">
+		<xs:sequence>
+			<xs:element name="Model" type="o:ModelType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ColumnType">
+		<xs:sequence>
+			<xs:element name="Column" type="o:ColumnType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ColumnsType">
+		<xs:choice>
+			<xs:element name="Column" type="o:ColumnType"/>
+			<xs:element name="ViewColumn" type="o:ViewColumnType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DBMSType">
+		<xs:sequence>
+			<xs:element name="Shortcut" type="o:ShortcutType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DatabasesType">
+		<xs:sequence>
+			<xs:element name="Database" type="o:DatabaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DefaultDiagramType">
+		<xs:sequence>
+			<xs:element name="PhysicalDiagram" type="o:PhysicalDiagramType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DefaultGroupsType">
+		<xs:sequence>
+			<xs:element name="Group" type="o:GroupType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DestinationSymbolType">
+		<xs:choice>
+			<xs:element name="TableSymbol" type="o:TableSymbolType"/>
+			<xs:element name="NoteSymbol" type="o:NoteSymbolType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DomainType">
+		<xs:sequence>
+			<xs:element name="PhysicalDomain" type="o:PhysicalDomainType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DomainsType">
+		<xs:sequence>
+			<xs:element name="PhysicalDomain" type="o:PhysicalDomainType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GeneratedModelsType">
+		<xs:sequence>
+			<xs:element name="Shortcut" type="o:ShortcutType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IndexColumnsType">
+		<xs:sequence>
+			<xs:element name="IndexColumn" type="o:IndexColumnType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IndexesType">
+		<xs:sequence>
+			<xs:element name="Index" type="o:IndexType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JoinsType">
+		<xs:sequence>
+			<xs:element name="ReferenceJoin" type="o:ReferenceJoinType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Key.ColumnsType">
+		<xs:sequence>
+			<xs:element name="Column" type="o:ColumnType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KeysType">
+		<xs:sequence>
+			<xs:element name="Key" type="o:KeyType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ObjectType">
+		<xs:choice>
+			<xs:element name="Package" type="o:PackageType"/>
+			<xs:element name="Reference" type="o:ReferenceType"/>
+			<xs:element name="Table" type="o:TableType"/>
+			<xs:element name="View" type="o:ViewType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Object1Type">
+		<xs:choice>
+			<xs:element name="Table" type="o:TableType"/>
+			<xs:element name="Column" type="o:ColumnType"/>
+			<xs:element name="Package" type="o:PackageType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Object2Type">
+		<xs:choice>
+			<xs:element name="Table" type="o:TableType"/>
+			<xs:element name="Column" type="o:ColumnType"/>
+			<xs:element name="Model" type="o:ModelType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="PackagesType">
+		<xs:sequence>
+			<xs:element name="Package" type="o:PackageType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ParentKeyType">
+		<xs:sequence>
+			<xs:element name="Key" type="o:KeyType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhysicalDiagramsType">
+		<xs:sequence>
+			<xs:element name="PhysicalDiagram" type="o:PhysicalDiagramType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PrimaryKeyType">
+		<xs:sequence>
+			<xs:element name="Key" type="o:KeyType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReferencesType">
+		<xs:sequence>
+			<xs:element name="Reference" type="o:ReferenceType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SessionShortcutsType">
+		<xs:sequence>
+			<xs:element name="Shortcut" type="o:ShortcutType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SourceSymbolType">
+		<xs:sequence>
+			<xs:element name="TableSymbol" type="o:TableSymbolType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SymbolsType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="PackageSymbol" type="o:PackageSymbolType"/>
+			<xs:element name="ReferenceSymbol" type="o:ReferenceSymbolType"/>
+			<xs:element name="NoteLinkSymbol" type="o:NoteLinkSymbolType"/>
+			<xs:element name="NoteSymbol" type="o:NoteSymbolType"/>
+			<xs:element name="TableSymbol" type="o:TableSymbolType"/>
+			<xs:element name="TitleSymbol" type="o:TitleSymbolType"/>
+			<xs:element name="ViewSymbol" type="o:ViewSymbolType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="TablesType">
+		<xs:sequence>
+			<xs:element name="Table" type="o:TableType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TargetModelsType">
+		<xs:sequence>
+			<xs:element name="TargetModel" type="o:TargetModelType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="View.TablesType">
+		<xs:sequence>
+			<xs:element name="Table" type="o:TableType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ViewColumn.ColumnsType">
+		<xs:sequence>
+			<xs:element name="Column" type="o:ColumnType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ViewsType">
+		<xs:sequence>
+			<xs:element name="View" type="o:ViewType"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

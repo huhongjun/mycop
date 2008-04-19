@@ -1,0 +1,83 @@
+package ${entity.root-package}.vo;
+
+import java.util.*;
+import com.gever.vo.BaseVO;
+import com.gever.vo.VOInterface;
+
+#parse("velocity/templateCOP/common/JavaClassComment.vsl")
+ 
+public class ${entity.name}VO extends BaseVO implements VOInterface {
+   public ${entity.name}VO(){ }
+    
+#foreach ($field in $entity.fieldlist)
+   private ${field.type} ${field.name};		 	//${field.column-name}
+#end
+
+#foreach ($field in $entity.fieldlist)
+   public ${field.type} get${field.nameFirstUpper}() { return this.${field.name};   
+   }
+   public void set${field.nameFirstUpper}(${field.type} ${field.name}) {this.${field.name} = ${field.name};   
+   }
+#end
+
+#foreach ($field in $entity.fieldlist)
+   private static final int ${field.name}_col = ${velocityCount} - 1; // ID
+#end
+
+    public String getValue(String name) 
+    {
+#foreach ($field in $entity.fieldlist)
+				if("${field.name}".equalsIgnoreCase(name) == true) {
+             return  this.${field.name};
+         }
+#end
+	        return "";
+	    }
+	    
+    public void setValue(String name, String value) 
+    {
+#foreach ($field in $entity.fieldlist)
+    if("${field.name}".equalsIgnoreCase(name) == true) {
+             this.${field.name} = value;
+         }
+		#end
+	         return;
+	    }
+
+    public String getColType(String name) {
+        String colType = new String();
+#foreach ($field in $entity.fieldlist)
+		    	    if("${field.name}".equalsIgnoreCase(name) == true) {
+             colType = "${field.sql-type}";
+         }
+#end
+        return colType;
+    }
+    
+    public String getTableName() { return "${entity.table-name}"; 	     }
+    public String getPkFields()  { return "${entity.primary-key},";    }
+    public String getModifyFields() {
+    	    String fields="";
+#foreach ($field in $entity.fieldlist)
+	#if(${field.primary-key} == "false")        
+        	fields = fields + "${field.name},";
+#end
+#end    	    
+        return fields;
+    }
+    public String getAllFields() {
+    	    String fields="";
+#foreach ($field in $entity.fieldlist)
+        fields = fields + "${field.name},";
+#end    	    
+        return fields;
+    }
+    public void setValues(String[] values) {
+#foreach ($field in $entity.fieldlist)
+		this.${field.name} = values[${field.name}_col];
+#end
+    }
+
+    public void setOtherProperty(String[] values) {
+    }
+}

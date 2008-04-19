@@ -1,0 +1,11 @@
+<QiQuScript >
+	<LoadDoc FileName="'model/input/COP-mysql.pdm.xml'" 
+		NewDocRef="$copDoc"/>
+	<CreateDoc NewDocRef="$copTransformed"/>
+	<SelectFirst NodeRef="$copDoc" XPath="//c:Tables" SelectedEleRef="$tables"/>
+	<CreateEle 	NodeRef="$copTransformed" 
+				EleName="'tablelist'" EleRef="$tables" 
+				CopyAttr="'true'" CopySubEle="'true'"/>
+	<SaveDoc FileName="'model/input/copTransformed.xml'" 
+				DocRef="$copTransformed" Encoding="'UTF-8'"/>
+</QiQuScript>

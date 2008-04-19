@@ -1,0 +1,67 @@
+<templatelist>
+<!-- java class -->	
+<template 
+	FileName="velocity/templateCOP/src/vo/xxxxxxVO.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/vo/xxxxxxVO.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/vo/xxxxxxTreeVO.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/vo/xxxxxxTreeVO.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/dao/xxxxxxFactory.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/dao/xxxxxxFactory.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/dao/xxxxxxDao.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/dao/xxxxxxDao.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/dao/xxxxxxDaoTest.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/dao/xxxxxxDaoTest.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/dao/impl/xxxxxxDaoImpl.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/dao/impl/xxxxxxDaoImpl.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/dao/impl/DefaultxxxxxxFactory.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/dao/impl/DefaultxxxxxxFactory.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/action/xxxxxxAction.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/action/xxxxxxAction.java" scope="entity"/>
+<template 
+	FileName="velocity/templateCOP/src/action/xxxxxxForm.java.vsl"
+    Output="src/main/java/" CustomName="{ROOTPACKAGE}/action/xxxxxxForm.java" scope="entity"/>
+    
+<!-- jsp page -->	
+<template id=""
+	FileName="velocity/templateCOP/webroot/JSP/editxxxxxx.jsp.vsl"
+    Output="src/main/webapp/" CustomName="xxxxxx/editxxxxxx.jsp" scope="entity"/>
+<template id=""
+	FileName="velocity/templateCOP/webroot/JSP/framexxxxxx.jsp.vsl"
+    Output="src/main/webapp/" CustomName="xxxxxx/framexxxxxx.jsp" scope="entity"/>
+<template id=""
+	FileName="velocity/templateCOP/webroot/JSP/treedata.jsp.vsl"
+    Output="src/main/webapp/" CustomName="xxxxxx/treedata.jsp" scope="entity"/>
+<template id=""
+	FileName="velocity/templateCOP/webroot/JSP/listxxxxxx.jsp.vsl"
+    Output="src/main/webapp/" CustomName="xxxxxx/listxxxxxx.jsp" scope="entity"/>
+<template id=""
+	FileName="velocity/templateCOP/webroot/JSP/treexxxxxx.jsp.vsl"
+    Output="src/main/webapp/" CustomName="xxxxxx/treexxxxxx.jsp" scope="entity"/>
+<template id=""
+	FileName="velocity/templateCOP/webroot/JSP/viewxxxxxx.jsp.vsl"
+    Output="src/main/webapp/" CustomName="xxxxxx/viewxxxxxx.jsp" scope="entity"/>
+
+<!-- struts config -->	
+<template id="struts config"
+	FileName="velocity/templateCOP/webroot/WEB-INF/struts-config-xxxxxx.xml.vsl"
+    Output="src/main/webapp/" CustomName="WEB-INF/struts-config-xxxxxx.xml" scope="app"/>
+<template id="struts tiles config"
+	FileName="velocity/templateCOP/webroot/WEB-INF/tiles-defs-xxxxxx.xml.vsl"
+    Output="src/main/webapp/" CustomName="WEB-INF/tiles-defs-xxxxxx.xml" scope="app"/>
+
+<!-- database prepare -->			
+<template id="database tables"
+	FileName="velocity/templateCOP/db/createTables-xxxxxx.sql.vsl"
+    Output="docs/" CustomName="db/createTables-xxxxxx.sql" scope="app"/>
+<template id="struts tiles config"
+	FileName="velocity/templateCOP/db/initData-xxxxxx.sql.vsl"
+    Output="docs/" CustomName="db/initData-xxxxxx.sql" scope="app"/>
+	
+</templatelist>

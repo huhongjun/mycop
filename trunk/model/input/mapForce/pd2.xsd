@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--W3C Schema 由 XMLSpy v2006 U 创建 (http://www.altova.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="object" xmlns:a="attribute" xmlns:c="collection" elementFormDefault="qualified">
+	<xs:import namespace="attribute" schemaLocation="D:\MyEclipseWork\workspace\QiQu-COP\model\input\mapForce\pd1.xsd"/>
+	<xs:import namespace="collection" schemaLocation="D:\MyEclipseWork\workspace\QiQu-COP\model\input\mapForce\pd3.xsd"/>
+	<xs:complexType name="ColumnType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:DefaultValue" minOccurs="0"/>
+			<xs:element ref="a:ListOfValues" minOccurs="0"/>
+			<xs:element ref="a:History" minOccurs="0"/>
+			<xs:element ref="a:DataType" minOccurs="0"/>
+			<xs:element ref="a:Length" minOccurs="0"/>
+			<xs:element ref="a:Mandatory" minOccurs="0"/>
+			<xs:element name="Domain" type="c:DomainType"/>
+			<xs:element ref="a:ExtendedAttributesText" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o100"/>
+					<xs:enumeration value="o101"/>
+					<xs:enumeration value="o102"/>
+					<xs:enumeration value="o103"/>
+					<xs:enumeration value="o104"/>
+					<xs:enumeration value="o105"/>
+					<xs:enumeration value="o106"/>
+					<xs:enumeration value="o107"/>
+					<xs:enumeration value="o109"/>
+					<xs:enumeration value="o111"/>
+					<xs:enumeration value="o112"/>
+					<xs:enumeration value="o113"/>
+					<xs:enumeration value="o114"/>
+					<xs:enumeration value="o115"/>
+					<xs:enumeration value="o116"/>
+					<xs:enumeration value="o117"/>
+					<xs:enumeration value="o118"/>
+					<xs:enumeration value="o119"/>
+					<xs:enumeration value="o120"/>
+					<xs:enumeration value="o126"/>
+					<xs:enumeration value="o127"/>
+					<xs:enumeration value="o128"/>
+					<xs:enumeration value="o129"/>
+					<xs:enumeration value="o131"/>
+					<xs:enumeration value="o132"/>
+					<xs:enumeration value="o133"/>
+					<xs:enumeration value="o134"/>
+					<xs:enumeration value="o135"/>
+					<xs:enumeration value="o136"/>
+					<xs:enumeration value="o138"/>
+					<xs:enumeration value="o139"/>
+					<xs:enumeration value="o140"/>
+					<xs:enumeration value="o141"/>
+					<xs:enumeration value="o142"/>
+					<xs:enumeration value="o143"/>
+					<xs:enumeration value="o144"/>
+					<xs:enumeration value="o145"/>
+					<xs:enumeration value="o146"/>
+					<xs:enumeration value="o147"/>
+					<xs:enumeration value="o148"/>
+					<xs:enumeration value="o155"/>
+					<xs:enumeration value="o156"/>
+					<xs:enumeration value="o157"/>
+					<xs:enumeration value="o158"/>
+					<xs:enumeration value="o159"/>
+					<xs:enumeration value="o160"/>
+					<xs:enumeration value="o161"/>
+					<xs:enumeration value="o162"/>
+					<xs:enumeration value="o163"/>
+					<xs:enumeration value="o164"/>
+					<xs:enumeration value="o165"/>
+					<xs:enumeration value="o166"/>
+					<xs:enumeration value="o167"/>
+					<xs:enumeration value="o168"/>
+					<xs:enumeration value="o176"/>
+					<xs:enumeration value="o177"/>
+					<xs:enumeration value="o178"/>
+					<xs:enumeration value="o179"/>
+					<xs:enumeration value="o180"/>
+					<xs:enumeration value="o181"/>
+					<xs:enumeration value="o182"/>
+					<xs:enumeration value="o183"/>
+					<xs:enumeration value="o184"/>
+					<xs:enumeration value="o185"/>
+					<xs:enumeration value="o186"/>
+					<xs:enumeration value="o187"/>
+					<xs:enumeration value="o188"/>
+					<xs:enumeration value="o189"/>
+					<xs:enumeration value="o190"/>
+					<xs:enumeration value="o191"/>
+					<xs:enumeration value="o192"/>
+					<xs:enumeration value="o200"/>
+					<xs:enumeration value="o201"/>
+					<xs:enumeration value="o202"/>
+					<xs:enumeration value="o203"/>
+					<xs:enumeration value="o204"/>
+					<xs:enumeration value="o205"/>
+					<xs:enumeration value="o206"/>
+					<xs:enumeration value="o207"/>
+					<xs:enumeration value="o208"/>
+					<xs:enumeration value="o210"/>
+					<xs:enumeration value="o211"/>
+					<xs:enumeration value="o212"/>
+					<xs:enumeration value="o213"/>
+					<xs:enumeration value="o214"/>
+					<xs:enumeration value="o215"/>
+					<xs:enumeration value="o216"/>
+					<xs:enumeration value="o217"/>
+					<xs:enumeration value="o218"/>
+					<xs:enumeration value="o219"/>
+					<xs:enumeration value="o221"/>
+					<xs:enumeration value="o222"/>
+					<xs:enumeration value="o223"/>
+					<xs:enumeration value="o224"/>
+					<xs:enumeration value="o225"/>
+					<xs:enumeration value="o226"/>
+					<xs:enumeration value="o227"/>
+					<xs:enumeration value="o229"/>
+					<xs:enumeration value="o230"/>
+					<xs:enumeration value="o231"/>
+					<xs:enumeration value="o232"/>
+					<xs:enumeration value="o233"/>
+					<xs:enumeration value="o234"/>
+					<xs:enumeration value="o235"/>
+					<xs:enumeration value="o236"/>
+					<xs:enumeration value="o237"/>
+					<xs:enumeration value="o238"/>
+					<xs:enumeration value="o239"/>
+					<xs:enumeration value="o241"/>
+					<xs:enumeration value="o242"/>
+					<xs:enumeration value="o243"/>
+					<xs:enumeration value="o244"/>
+					<xs:enumeration value="o246"/>
+					<xs:enumeration value="o247"/>
+					<xs:enumeration value="o248"/>
+					<xs:enumeration value="o249"/>
+					<xs:enumeration value="o250"/>
+					<xs:enumeration value="o251"/>
+					<xs:enumeration value="o252"/>
+					<xs:enumeration value="o254"/>
+					<xs:enumeration value="o255"/>
+					<xs:enumeration value="o256"/>
+					<xs:enumeration value="o257"/>
+					<xs:enumeration value="o258"/>
+					<xs:enumeration value="o259"/>
+					<xs:enumeration value="o260"/>
+					<xs:enumeration value="o261"/>
+					<xs:enumeration value="o262"/>
+					<xs:enumeration value="o263"/>
+					<xs:enumeration value="o264"/>
+					<xs:enumeration value="o266"/>
+					<xs:enumeration value="o267"/>
+					<xs:enumeration value="o268"/>
+					<xs:enumeration value="o269"/>
+					<xs:enumeration value="o270"/>
+					<xs:enumeration value="o271"/>
+					<xs:enumeration value="o272"/>
+					<xs:enumeration value="o273"/>
+					<xs:enumeration value="o274"/>
+					<xs:enumeration value="o275"/>
+					<xs:enumeration value="o276"/>
+					<xs:enumeration value="o277"/>
+					<xs:enumeration value="o278"/>
+					<xs:enumeration value="o279"/>
+					<xs:enumeration value="o281"/>
+					<xs:enumeration value="o282"/>
+					<xs:enumeration value="o283"/>
+					<xs:enumeration value="o284"/>
+					<xs:enumeration value="o285"/>
+					<xs:enumeration value="o286"/>
+					<xs:enumeration value="o287"/>
+					<xs:enumeration value="o289"/>
+					<xs:enumeration value="o290"/>
+					<xs:enumeration value="o292"/>
+					<xs:enumeration value="o293"/>
+					<xs:enumeration value="o295"/>
+					<xs:enumeration value="o296"/>
+					<xs:enumeration value="o297"/>
+					<xs:enumeration value="o298"/>
+					<xs:enumeration value="o300"/>
+					<xs:enumeration value="o301"/>
+					<xs:enumeration value="o303"/>
+					<xs:enumeration value="o304"/>
+					<xs:enumeration value="o305"/>
+					<xs:enumeration value="o306"/>
+					<xs:enumeration value="o307"/>
+					<xs:enumeration value="o308"/>
+					<xs:enumeration value="o309"/>
+					<xs:enumeration value="o310"/>
+					<xs:enumeration value="o311"/>
+					<xs:enumeration value="o312"/>
+					<xs:enumeration value="o313"/>
+					<xs:enumeration value="o314"/>
+					<xs:enumeration value="o316"/>
+					<xs:enumeration value="o317"/>
+					<xs:enumeration value="o318"/>
+					<xs:enumeration value="o319"/>
+					<xs:enumeration value="o321"/>
+					<xs:enumeration value="o322"/>
+					<xs:enumeration value="o323"/>
+					<xs:enumeration value="o324"/>
+					<xs:enumeration value="o325"/>
+					<xs:enumeration value="o326"/>
+					<xs:enumeration value="o328"/>
+					<xs:enumeration value="o329"/>
+					<xs:enumeration value="o331"/>
+					<xs:enumeration value="o332"/>
+					<xs:enumeration value="o333"/>
+					<xs:enumeration value="o334"/>
+					<xs:enumeration value="o335"/>
+					<xs:enumeration value="o336"/>
+					<xs:enumeration value="o337"/>
+					<xs:enumeration value="o338"/>
+					<xs:enumeration value="o340"/>
+					<xs:enumeration value="o341"/>
+					<xs:enumeration value="o342"/>
+					<xs:enumeration value="o343"/>
+					<xs:enumeration value="o344"/>
+					<xs:enumeration value="o345"/>
+					<xs:enumeration value="o346"/>
+					<xs:enumeration value="o347"/>
+					<xs:enumeration value="o348"/>
+					<xs:enumeration value="o349"/>
+					<xs:enumeration value="o350"/>
+					<xs:enumeration value="o351"/>
+					<xs:enumeration value="o352"/>
+					<xs:enumeration value="o353"/>
+					<xs:enumeration value="o354"/>
+					<xs:enumeration value="o355"/>
+					<xs:enumeration value="o356"/>
+					<xs:enumeration value="o358"/>
+					<xs:enumeration value="o359"/>
+					<xs:enumeration value="o360"/>
+					<xs:enumeration value="o361"/>
+					<xs:enumeration value="o362"/>
+					<xs:enumeration value="o364"/>
+					<xs:enumeration value="o365"/>
+					<xs:enumeration value="o366"/>
+					<xs:enumeration value="o367"/>
+					<xs:enumeration value="o368"/>
+					<xs:enumeration value="o370"/>
+					<xs:enumeration value="o371"/>
+					<xs:enumeration value="o372"/>
+					<xs:enumeration value="o373"/>
+					<xs:enumeration value="o374"/>
+					<xs:enumeration value="o375"/>
+					<xs:enumeration value="o376"/>
+					<xs:enumeration value="o377"/>
+					<xs:enumeration value="o378"/>
+					<xs:enumeration value="o379"/>
+					<xs:enumeration value="o380"/>
+					<xs:enumeration value="o381"/>
+					<xs:enumeration value="o382"/>
+					<xs:enumeration value="o383"/>
+					<xs:enumeration value="o384"/>
+					<xs:enumeration value="o385"/>
+					<xs:enumeration value="o386"/>
+					<xs:enumeration value="o387"/>
+					<xs:enumeration value="o388"/>
+					<xs:enumeration value="o389"/>
+					<xs:enumeration value="o390"/>
+					<xs:enumeration value="o391"/>
+					<xs:enumeration value="o392"/>
+					<xs:enumeration value="o393"/>
+					<xs:enumeration value="o395"/>
+					<xs:enumeration value="o396"/>
+					<xs:enumeration value="o397"/>
+					<xs:enumeration value="o398"/>
+					<xs:enumeration value="o399"/>
+					<xs:enumeration value="o401"/>
+					<xs:enumeration value="o402"/>
+					<xs:enumeration value="o403"/>
+					<xs:enumeration value="o404"/>
+					<xs:enumeration value="o407"/>
+					<xs:enumeration value="o408"/>
+					<xs:enumeration value="o409"/>
+					<xs:enumeration value="o410"/>
+					<xs:enumeration value="o411"/>
+					<xs:enumeration value="o517"/>
+					<xs:enumeration value="o518"/>
+					<xs:enumeration value="o519"/>
+					<xs:enumeration value="o521"/>
+					<xs:enumeration value="o522"/>
+					<xs:enumeration value="o524"/>
+					<xs:enumeration value="o525"/>
+					<xs:enumeration value="o527"/>
+					<xs:enumeration value="o528"/>
+					<xs:enumeration value="o529"/>
+					<xs:enumeration value="o530"/>
+					<xs:enumeration value="o531"/>
+					<xs:enumeration value="o532"/>
+					<xs:enumeration value="o533"/>
+					<xs:enumeration value="o534"/>
+					<xs:enumeration value="o535"/>
+					<xs:enumeration value="o536"/>
+					<xs:enumeration value="o537"/>
+					<xs:enumeration value="o538"/>
+					<xs:enumeration value="o539"/>
+					<xs:enumeration value="o540"/>
+					<xs:enumeration value="o541"/>
+					<xs:enumeration value="o542"/>
+					<xs:enumeration value="o543"/>
+					<xs:enumeration value="o544"/>
+					<xs:enumeration value="o545"/>
+					<xs:enumeration value="o546"/>
+					<xs:enumeration value="o547"/>
+					<xs:enumeration value="o549"/>
+					<xs:enumeration value="o550"/>
+					<xs:enumeration value="o551"/>
+					<xs:enumeration value="o553"/>
+					<xs:enumeration value="o554"/>
+					<xs:enumeration value="o555"/>
+					<xs:enumeration value="o557"/>
+					<xs:enumeration value="o558"/>
+					<xs:enumeration value="o559"/>
+					<xs:enumeration value="o561"/>
+					<xs:enumeration value="o562"/>
+					<xs:enumeration value="o563"/>
+					<xs:enumeration value="o565"/>
+					<xs:enumeration value="o566"/>
+					<xs:enumeration value="o567"/>
+					<xs:enumeration value="o569"/>
+					<xs:enumeration value="o570"/>
+					<xs:enumeration value="o571"/>
+					<xs:enumeration value="o573"/>
+					<xs:enumeration value="o574"/>
+					<xs:enumeration value="o575"/>
+					<xs:enumeration value="o576"/>
+					<xs:enumeration value="o577"/>
+					<xs:enumeration value="o578"/>
+					<xs:enumeration value="o579"/>
+					<xs:enumeration value="o580"/>
+					<xs:enumeration value="o582"/>
+					<xs:enumeration value="o583"/>
+					<xs:enumeration value="o584"/>
+					<xs:enumeration value="o585"/>
+					<xs:enumeration value="o586"/>
+					<xs:enumeration value="o587"/>
+					<xs:enumeration value="o588"/>
+					<xs:enumeration value="o589"/>
+					<xs:enumeration value="o590"/>
+					<xs:enumeration value="o592"/>
+					<xs:enumeration value="o593"/>
+					<xs:enumeration value="o594"/>
+					<xs:enumeration value="o595"/>
+					<xs:enumeration value="o597"/>
+					<xs:enumeration value="o598"/>
+					<xs:enumeration value="o599"/>
+					<xs:enumeration value="o600"/>
+					<xs:enumeration value="o601"/>
+					<xs:enumeration value="o602"/>
+					<xs:enumeration value="o603"/>
+					<xs:enumeration value="o604"/>
+					<xs:enumeration value="o605"/>
+					<xs:enumeration value="o607"/>
+					<xs:enumeration value="o608"/>
+					<xs:enumeration value="o609"/>
+					<xs:enumeration value="o610"/>
+					<xs:enumeration value="o611"/>
+					<xs:enumeration value="o612"/>
+					<xs:enumeration value="o614"/>
+					<xs:enumeration value="o615"/>
+					<xs:enumeration value="o616"/>
+					<xs:enumeration value="o617"/>
+					<xs:enumeration value="o619"/>
+					<xs:enumeration value="o620"/>
+					<xs:enumeration value="o621"/>
+					<xs:enumeration value="o622"/>
+					<xs:enumeration value="o623"/>
+					<xs:enumeration value="o624"/>
+					<xs:enumeration value="o625"/>
+					<xs:enumeration value="o626"/>
+					<xs:enumeration value="o627"/>
+					<xs:enumeration value="o628"/>
+					<xs:enumeration value="o629"/>
+					<xs:enumeration value="o630"/>
+					<xs:enumeration value="o631"/>
+					<xs:enumeration value="o633"/>
+					<xs:enumeration value="o634"/>
+					<xs:enumeration value="o635"/>
+					<xs:enumeration value="o636"/>
+					<xs:enumeration value="o637"/>
+					<xs:enumeration value="o638"/>
+					<xs:enumeration value="o639"/>
+					<xs:enumeration value="o640"/>
+					<xs:enumeration value="o641"/>
+					<xs:enumeration value="o642"/>
+					<xs:enumeration value="o643"/>
+					<xs:enumeration value="o645"/>
+					<xs:enumeration value="o646"/>
+					<xs:enumeration value="o649"/>
+					<xs:enumeration value="o650"/>
+					<xs:enumeration value="o651"/>
+					<xs:enumeration value="o652"/>
+					<xs:enumeration value="o654"/>
+					<xs:enumeration value="o655"/>
+					<xs:enumeration value="o656"/>
+					<xs:enumeration value="o693"/>
+					<xs:enumeration value="o694"/>
+					<xs:enumeration value="o695"/>
+					<xs:enumeration value="o696"/>
+					<xs:enumeration value="o697"/>
+					<xs:enumeration value="o698"/>
+					<xs:enumeration value="o699"/>
+					<xs:enumeration value="o700"/>
+					<xs:enumeration value="o701"/>
+					<xs:enumeration value="o702"/>
+					<xs:enumeration value="o703"/>
+					<xs:enumeration value="o704"/>
+					<xs:enumeration value="o705"/>
+					<xs:enumeration value="o706"/>
+					<xs:enumeration value="o707"/>
+					<xs:enumeration value="o709"/>
+					<xs:enumeration value="o710"/>
+					<xs:enumeration value="o711"/>
+					<xs:enumeration value="o712"/>
+					<xs:enumeration value="o713"/>
+					<xs:enumeration value="o714"/>
+					<xs:enumeration value="o715"/>
+					<xs:enumeration value="o716"/>
+					<xs:enumeration value="o717"/>
+					<xs:enumeration value="o718"/>
+					<xs:enumeration value="o720"/>
+					<xs:enumeration value="o721"/>
+					<xs:enumeration value="o722"/>
+					<xs:enumeration value="o723"/>
+					<xs:enumeration value="o724"/>
+					<xs:enumeration value="o725"/>
+					<xs:enumeration value="o726"/>
+					<xs:enumeration value="o727"/>
+					<xs:enumeration value="o728"/>
+					<xs:enumeration value="o729"/>
+					<xs:enumeration value="o730"/>
+					<xs:enumeration value="o731"/>
+					<xs:enumeration value="o733"/>
+					<xs:enumeration value="o734"/>
+					<xs:enumeration value="o735"/>
+					<xs:enumeration value="o736"/>
+					<xs:enumeration value="o737"/>
+					<xs:enumeration value="o738"/>
+					<xs:enumeration value="o739"/>
+					<xs:enumeration value="o741"/>
+					<xs:enumeration value="o742"/>
+					<xs:enumeration value="o743"/>
+					<xs:enumeration value="o744"/>
+					<xs:enumeration value="o745"/>
+					<xs:enumeration value="o99"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o111"/>
+					<xs:enumeration value="o112"/>
+					<xs:enumeration value="o113"/>
+					<xs:enumeration value="o114"/>
+					<xs:enumeration value="o126"/>
+					<xs:enumeration value="o131"/>
+					<xs:enumeration value="o138"/>
+					<xs:enumeration value="o139"/>
+					<xs:enumeration value="o140"/>
+					<xs:enumeration value="o141"/>
+					<xs:enumeration value="o142"/>
+					<xs:enumeration value="o155"/>
+					<xs:enumeration value="o156"/>
+					<xs:enumeration value="o157"/>
+					<xs:enumeration value="o158"/>
+					<xs:enumeration value="o159"/>
+					<xs:enumeration value="o160"/>
+					<xs:enumeration value="o176"/>
+					<xs:enumeration value="o177"/>
+					<xs:enumeration value="o178"/>
+					<xs:enumeration value="o179"/>
+					<xs:enumeration value="o180"/>
+					<xs:enumeration value="o181"/>
+					<xs:enumeration value="o200"/>
+					<xs:enumeration value="o201"/>
+					<xs:enumeration value="o202"/>
+					<xs:enumeration value="o203"/>
+					<xs:enumeration value="o204"/>
+					<xs:enumeration value="o205"/>
+					<xs:enumeration value="o206"/>
+					<xs:enumeration value="o210"/>
+					<xs:enumeration value="o211"/>
+					<xs:enumeration value="o212"/>
+					<xs:enumeration value="o221"/>
+					<xs:enumeration value="o222"/>
+					<xs:enumeration value="o229"/>
+					<xs:enumeration value="o246"/>
+					<xs:enumeration value="o247"/>
+					<xs:enumeration value="o254"/>
+					<xs:enumeration value="o255"/>
+					<xs:enumeration value="o266"/>
+					<xs:enumeration value="o267"/>
+					<xs:enumeration value="o281"/>
+					<xs:enumeration value="o289"/>
+					<xs:enumeration value="o292"/>
+					<xs:enumeration value="o293"/>
+					<xs:enumeration value="o295"/>
+					<xs:enumeration value="o296"/>
+					<xs:enumeration value="o300"/>
+					<xs:enumeration value="o301"/>
+					<xs:enumeration value="o303"/>
+					<xs:enumeration value="o316"/>
+					<xs:enumeration value="o321"/>
+					<xs:enumeration value="o328"/>
+					<xs:enumeration value="o331"/>
+					<xs:enumeration value="o341"/>
+					<xs:enumeration value="o358"/>
+					<xs:enumeration value="o364"/>
+					<xs:enumeration value="o378"/>
+					<xs:enumeration value="o395"/>
+					<xs:enumeration value="o401"/>
+					<xs:enumeration value="o402"/>
+					<xs:enumeration value="o517"/>
+					<xs:enumeration value="o521"/>
+					<xs:enumeration value="o524"/>
+					<xs:enumeration value="o536"/>
+					<xs:enumeration value="o537"/>
+					<xs:enumeration value="o549"/>
+					<xs:enumeration value="o553"/>
+					<xs:enumeration value="o557"/>
+					<xs:enumeration value="o561"/>
+					<xs:enumeration value="o565"/>
+					<xs:enumeration value="o569"/>
+					<xs:enumeration value="o573"/>
+					<xs:enumeration value="o583"/>
+					<xs:enumeration value="o592"/>
+					<xs:enumeration value="o595"/>
+					<xs:enumeration value="o597"/>
+					<xs:enumeration value="o602"/>
+					<xs:enumeration value="o607"/>
+					<xs:enumeration value="o610"/>
+					<xs:enumeration value="o614"/>
+					<xs:enumeration value="o619"/>
+					<xs:enumeration value="o620"/>
+					<xs:enumeration value="o621"/>
+					<xs:enumeration value="o622"/>
+					<xs:enumeration value="o625"/>
+					<xs:enumeration value="o627"/>
+					<xs:enumeration value="o633"/>
+					<xs:enumeration value="o634"/>
+					<xs:enumeration value="o635"/>
+					<xs:enumeration value="o636"/>
+					<xs:enumeration value="o637"/>
+					<xs:enumeration value="o638"/>
+					<xs:enumeration value="o639"/>
+					<xs:enumeration value="o640"/>
+					<xs:enumeration value="o641"/>
+					<xs:enumeration value="o643"/>
+					<xs:enumeration value="o646"/>
+					<xs:enumeration value="o654"/>
+					<xs:enumeration value="o693"/>
+					<xs:enumeration value="o709"/>
+					<xs:enumeration value="o710"/>
+					<xs:enumeration value="o720"/>
+					<xs:enumeration value="o731"/>
+					<xs:enumeration value="o733"/>
+					<xs:enumeration value="o741"/>
+					<xs:enumeration value="o99"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DatabaseType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:Name"/>
+			<xs:element ref="a:Code"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element ref="a:EndScript"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o749"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ExtendedDependencyType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element name="Object1" type="c:Object1Type"/>
+			<xs:element name="Object2" type="c:Object2Type"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o752"/>
+					<xs:enumeration value="o753"/>
+					<xs:enumeration value="o754"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="GroupType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:Name"/>
+			<xs:element ref="a:Code"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o751"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="IndexType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:Name"/>
+			<xs:element ref="a:Code"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element ref="a:Unique"/>
+			<xs:element name="IndexColumns" type="c:IndexColumnsType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o122"/>
+					<xs:enumeration value="o150"/>
+					<xs:enumeration value="o170"/>
+					<xs:enumeration value="o194"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="IndexColumnType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element name="Column" type="c:ColumnType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o123"/>
+					<xs:enumeration value="o124"/>
+					<xs:enumeration value="o125"/>
+					<xs:enumeration value="o151"/>
+					<xs:enumeration value="o152"/>
+					<xs:enumeration value="o153"/>
+					<xs:enumeration value="o154"/>
+					<xs:enumeration value="o171"/>
+					<xs:enumeration value="o172"/>
+					<xs:enumeration value="o173"/>
+					<xs:enumeration value="o174"/>
+					<xs:enumeration value="o175"/>
+					<xs:enumeration value="o195"/>
+					<xs:enumeration value="o196"/>
+					<xs:enumeration value="o197"/>
+					<xs:enumeration value="o198"/>
+					<xs:enumeration value="o199"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="KeyType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:ConstraintName" minOccurs="0"/>
+			<xs:element ref="a:History" minOccurs="0"/>
+			<xs:element name="Key.Columns" type="c:Key.ColumnsType"/>
+		</xs:sequence>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o110"/>
+					<xs:enumeration value="o121"/>
+					<xs:enumeration value="o130"/>
+					<xs:enumeration value="o137"/>
+					<xs:enumeration value="o149"/>
+					<xs:enumeration value="o169"/>
+					<xs:enumeration value="o193"/>
+					<xs:enumeration value="o209"/>
+					<xs:enumeration value="o220"/>
+					<xs:enumeration value="o228"/>
+					<xs:enumeration value="o245"/>
+					<xs:enumeration value="o253"/>
+					<xs:enumeration value="o265"/>
+					<xs:enumeration value="o280"/>
+					<xs:enumeration value="o288"/>
+					<xs:enumeration value="o291"/>
+					<xs:enumeration value="o294"/>
+					<xs:enumeration value="o299"/>
+					<xs:enumeration value="o302"/>
+					<xs:enumeration value="o315"/>
+					<xs:enumeration value="o320"/>
+					<xs:enumeration value="o327"/>
+					<xs:enumeration value="o330"/>
+					<xs:enumeration value="o339"/>
+					<xs:enumeration value="o357"/>
+					<xs:enumeration value="o363"/>
+					<xs:enumeration value="o369"/>
+					<xs:enumeration value="o394"/>
+					<xs:enumeration value="o400"/>
+					<xs:enumeration value="o405"/>
+					<xs:enumeration value="o520"/>
+					<xs:enumeration value="o523"/>
+					<xs:enumeration value="o526"/>
+					<xs:enumeration value="o548"/>
+					<xs:enumeration value="o552"/>
+					<xs:enumeration value="o556"/>
+					<xs:enumeration value="o560"/>
+					<xs:enumeration value="o564"/>
+					<xs:enumeration value="o568"/>
+					<xs:enumeration value="o572"/>
+					<xs:enumeration value="o581"/>
+					<xs:enumeration value="o591"/>
+					<xs:enumeration value="o596"/>
+					<xs:enumeration value="o606"/>
+					<xs:enumeration value="o613"/>
+					<xs:enumeration value="o618"/>
+					<xs:enumeration value="o632"/>
+					<xs:enumeration value="o644"/>
+					<xs:enumeration value="o647"/>
+					<xs:enumeration value="o657"/>
+					<xs:enumeration value="o708"/>
+					<xs:enumeration value="o719"/>
+					<xs:enumeration value="o732"/>
+					<xs:enumeration value="o740"/>
+					<xs:enumeration value="o746"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o110"/>
+					<xs:enumeration value="o121"/>
+					<xs:enumeration value="o130"/>
+					<xs:enumeration value="o137"/>
+					<xs:enumeration value="o149"/>
+					<xs:enumeration value="o169"/>
+					<xs:enumeration value="o193"/>
+					<xs:enumeration value="o209"/>
+					<xs:enumeration value="o220"/>
+					<xs:enumeration value="o228"/>
+					<xs:enumeration value="o245"/>
+					<xs:enumeration value="o253"/>
+					<xs:enumeration value="o265"/>
+					<xs:enumeration value="o280"/>
+					<xs:enumeration value="o288"/>
+					<xs:enumeration value="o291"/>
+					<xs:enumeration value="o294"/>
+					<xs:enumeration value="o299"/>
+					<xs:enumeration value="o302"/>
+					<xs:enumeration value="o315"/>
+					<xs:enumeration value="o320"/>
+					<xs:enumeration value="o327"/>
+					<xs:enumeration value="o330"/>
+					<xs:enumeration value="o339"/>
+					<xs:enumeration value="o357"/>
+					<xs:enumeration value="o363"/>
+					<xs:enumeration value="o369"/>
+					<xs:enumeration value="o394"/>
+					<xs:enumeration value="o400"/>
+					<xs:enumeration value="o405"/>
+					<xs:enumeration value="o520"/>
+					<xs:enumeration value="o523"/>
+					<xs:enumeration value="o526"/>
+					<xs:enumeration value="o548"/>
+					<xs:enumeration value="o552"/>
+					<xs:enumeration value="o556"/>
+					<xs:enumeration value="o560"/>
+					<xs:enumeration value="o564"/>
+					<xs:enumeration value="o568"/>
+					<xs:enumeration value="o572"/>
+					<xs:enumeration value="o581"/>
+					<xs:enumeration value="o591"/>
+					<xs:enumeration value="o596"/>
+					<xs:enumeration value="o606"/>
+					<xs:enumeration value="o613"/>
+					<xs:enumeration value="o618"/>
+					<xs:enumeration value="o632"/>
+					<xs:enumeration value="o644"/>
+					<xs:enumeration value="o647"/>
+					<xs:enumeration value="o657"/>
+					<xs:enumeration value="o708"/>
+					<xs:enumeration value="o719"/>
+					<xs:enumeration value="o732"/>
+					<xs:enumeration value="o740"/>
+					<xs:enumeration value="o746"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ModelType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:History" minOccurs="0"/>
+			<xs:element ref="a:PackageOptionsText" minOccurs="0"/>
+			<xs:element ref="a:ModelOptionsText" minOccurs="0"/>
+			<xs:element ref="a:RepositoryInformation" minOccurs="0"/>
+			<xs:element ref="a:Author" minOccurs="0"/>
+			<xs:element ref="a:Version" minOccurs="0"/>
+			<xs:element ref="a:Description" minOccurs="0"/>
+			<xs:element name="GeneratedModels" type="c:GeneratedModelsType"/>
+			<xs:element name="DBMS" type="c:DBMSType"/>
+			<xs:element name="PhysicalDiagrams" type="c:PhysicalDiagramsType"/>
+			<xs:element name="Packages" type="c:PackagesType"/>
+			<xs:element name="DefaultDiagram" type="c:DefaultDiagramType"/>
+			<xs:element name="Databases" type="c:DatabasesType"/>
+			<xs:element name="Domains" type="c:DomainsType"/>
+			<xs:element name="DefaultGroups" type="c:DefaultGroupsType"/>
+			<xs:element name="ChildExtendedDependencies" type="c:ChildExtendedDependenciesType"/>
+			<xs:element name="TargetModels" type="c:TargetModelsType"/>
+		</xs:sequence>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o2"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o2"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NoteLinkSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Rect"/>
+			<xs:element ref="a:ListOfPoints"/>
+			<xs:element ref="a:ArrowStyle"/>
+			<xs:element ref="a:LineColor"/>
+			<xs:element ref="a:DashStyle"/>
+			<xs:element ref="a:ShadowColor"/>
+			<xs:element name="SourceSymbol" type="c:SourceSymbolType"/>
+			<xs:element name="DestinationSymbol" type="c:DestinationSymbolType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o27"/>
+					<xs:enumeration value="o676"/>
+					<xs:enumeration value="o679"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NoteSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:Text" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Rect" minOccurs="0"/>
+			<xs:element ref="a:TextStyle" minOccurs="0"/>
+			<xs:element ref="a:LineColor" minOccurs="0"/>
+			<xs:element ref="a:FillColor" minOccurs="0"/>
+			<xs:element ref="a:ShadowColor" minOccurs="0"/>
+			<xs:element ref="a:FontName" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o28"/>
+					<xs:enumeration value="o678"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o28"/>
+					<xs:enumeration value="o65"/>
+					<xs:enumeration value="o678"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PackageType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:PackageOptionsText" minOccurs="0"/>
+			<xs:element name="PhysicalDiagrams" type="c:PhysicalDiagramsType"/>
+			<xs:element name="DefaultDiagram" type="c:DefaultDiagramType"/>
+			<xs:element name="Tables" type="c:TablesType"/>
+			<xs:element name="Views" type="c:ViewsType"/>
+			<xs:element name="References" type="c:ReferencesType"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o11"/>
+					<xs:enumeration value="o7"/>
+					<xs:enumeration value="o9"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o11"/>
+					<xs:enumeration value="o7"/>
+					<xs:enumeration value="o9"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PackageSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Rect"/>
+			<xs:element ref="a:AutoAdjustToText"/>
+			<xs:element ref="a:LineColor"/>
+			<xs:element ref="a:FillColor"/>
+			<xs:element ref="a:ShadowColor"/>
+			<xs:element ref="a:FontList"/>
+			<xs:element ref="a:ManuallyResized"/>
+			<xs:element name="Object" type="c:ObjectType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o10"/>
+					<xs:enumeration value="o6"/>
+					<xs:enumeration value="o8"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PhysicalDiagramType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:DisplayPreferences" minOccurs="0"/>
+			<xs:element ref="a:PaperSize" minOccurs="0"/>
+			<xs:element ref="a:PageMargins" minOccurs="0"/>
+			<xs:element ref="a:PageOrientation" minOccurs="0"/>
+			<xs:element ref="a:PaperSource" minOccurs="0"/>
+			<xs:element name="Symbols" type="c:SymbolsType"/>
+		</xs:sequence>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o12"/>
+					<xs:enumeration value="o429"/>
+					<xs:enumeration value="o498"/>
+					<xs:enumeration value="o5"/>
+					<xs:enumeration value="o675"/>
+					<xs:enumeration value="o85"/>
+					<xs:enumeration value="o98"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o12"/>
+					<xs:enumeration value="o429"/>
+					<xs:enumeration value="o5"/>
+					<xs:enumeration value="o675"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PhysicalDomainType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:DataType" minOccurs="0"/>
+			<xs:element ref="a:Length" minOccurs="0"/>
+			<xs:element ref="a:Mandatory" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o108"/>
+					<xs:enumeration value="o240"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o108"/>
+					<xs:enumeration value="o240"/>
+					<xs:enumeration value="o750"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ReferenceType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Generated" minOccurs="0"/>
+			<xs:element ref="a:ForeignKeyConstraintName" minOccurs="0"/>
+			<xs:element ref="a:Cardinality" minOccurs="0"/>
+			<xs:element ref="a:UpdateConstraint" minOccurs="0"/>
+			<xs:element ref="a:DeleteConstraint" minOccurs="0"/>
+			<xs:element name="Object1" type="c:Object1Type"/>
+			<xs:element name="Object2" type="c:Object2Type"/>
+			<xs:element name="ParentKey" type="c:ParentKeyType"/>
+			<xs:element name="Joins" type="c:JoinsType"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o16"/>
+					<xs:enumeration value="o19"/>
+					<xs:enumeration value="o22"/>
+					<xs:enumeration value="o26"/>
+					<xs:enumeration value="o31"/>
+					<xs:enumeration value="o35"/>
+					<xs:enumeration value="o39"/>
+					<xs:enumeration value="o43"/>
+					<xs:enumeration value="o433"/>
+					<xs:enumeration value="o437"/>
+					<xs:enumeration value="o441"/>
+					<xs:enumeration value="o445"/>
+					<xs:enumeration value="o448"/>
+					<xs:enumeration value="o450"/>
+					<xs:enumeration value="o453"/>
+					<xs:enumeration value="o455"/>
+					<xs:enumeration value="o458"/>
+					<xs:enumeration value="o460"/>
+					<xs:enumeration value="o462"/>
+					<xs:enumeration value="o464"/>
+					<xs:enumeration value="o466"/>
+					<xs:enumeration value="o468"/>
+					<xs:enumeration value="o470"/>
+					<xs:enumeration value="o473"/>
+					<xs:enumeration value="o476"/>
+					<xs:enumeration value="o684"/>
+					<xs:enumeration value="o686"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o16"/>
+					<xs:enumeration value="o19"/>
+					<xs:enumeration value="o22"/>
+					<xs:enumeration value="o26"/>
+					<xs:enumeration value="o31"/>
+					<xs:enumeration value="o35"/>
+					<xs:enumeration value="o39"/>
+					<xs:enumeration value="o43"/>
+					<xs:enumeration value="o433"/>
+					<xs:enumeration value="o437"/>
+					<xs:enumeration value="o441"/>
+					<xs:enumeration value="o445"/>
+					<xs:enumeration value="o448"/>
+					<xs:enumeration value="o450"/>
+					<xs:enumeration value="o453"/>
+					<xs:enumeration value="o455"/>
+					<xs:enumeration value="o458"/>
+					<xs:enumeration value="o460"/>
+					<xs:enumeration value="o462"/>
+					<xs:enumeration value="o464"/>
+					<xs:enumeration value="o466"/>
+					<xs:enumeration value="o468"/>
+					<xs:enumeration value="o470"/>
+					<xs:enumeration value="o473"/>
+					<xs:enumeration value="o476"/>
+					<xs:enumeration value="o684"/>
+					<xs:enumeration value="o686"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ReferenceJoinType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element name="Object1" type="c:Object1Type"/>
+			<xs:element name="Object2" type="c:Object2Type"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o421"/>
+					<xs:enumeration value="o422"/>
+					<xs:enumeration value="o423"/>
+					<xs:enumeration value="o424"/>
+					<xs:enumeration value="o425"/>
+					<xs:enumeration value="o426"/>
+					<xs:enumeration value="o427"/>
+					<xs:enumeration value="o428"/>
+					<xs:enumeration value="o658"/>
+					<xs:enumeration value="o659"/>
+					<xs:enumeration value="o660"/>
+					<xs:enumeration value="o661"/>
+					<xs:enumeration value="o662"/>
+					<xs:enumeration value="o663"/>
+					<xs:enumeration value="o664"/>
+					<xs:enumeration value="o665"/>
+					<xs:enumeration value="o666"/>
+					<xs:enumeration value="o667"/>
+					<xs:enumeration value="o668"/>
+					<xs:enumeration value="o669"/>
+					<xs:enumeration value="o670"/>
+					<xs:enumeration value="o671"/>
+					<xs:enumeration value="o672"/>
+					<xs:enumeration value="o673"/>
+					<xs:enumeration value="o674"/>
+					<xs:enumeration value="o747"/>
+					<xs:enumeration value="o748"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ReferenceSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:CenterTextOffset" minOccurs="0"/>
+			<xs:element ref="a:SourceTextOffset" minOccurs="0"/>
+			<xs:element ref="a:DestinationTextOffset" minOccurs="0"/>
+			<xs:element ref="a:Rect"/>
+			<xs:element ref="a:ListOfPoints"/>
+			<xs:element ref="a:CornerStyle" minOccurs="0"/>
+			<xs:element ref="a:ArrowStyle"/>
+			<xs:element ref="a:LineColor"/>
+			<xs:element ref="a:ShadowColor"/>
+			<xs:element ref="a:FontList"/>
+			<xs:element name="SourceSymbol" type="c:SourceSymbolType"/>
+			<xs:element name="DestinationSymbol" type="c:DestinationSymbolType"/>
+			<xs:element name="Object" type="c:ObjectType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o13"/>
+					<xs:enumeration value="o17"/>
+					<xs:enumeration value="o20"/>
+					<xs:enumeration value="o23"/>
+					<xs:enumeration value="o29"/>
+					<xs:enumeration value="o32"/>
+					<xs:enumeration value="o36"/>
+					<xs:enumeration value="o40"/>
+					<xs:enumeration value="o430"/>
+					<xs:enumeration value="o434"/>
+					<xs:enumeration value="o438"/>
+					<xs:enumeration value="o442"/>
+					<xs:enumeration value="o446"/>
+					<xs:enumeration value="o449"/>
+					<xs:enumeration value="o451"/>
+					<xs:enumeration value="o454"/>
+					<xs:enumeration value="o456"/>
+					<xs:enumeration value="o459"/>
+					<xs:enumeration value="o461"/>
+					<xs:enumeration value="o463"/>
+					<xs:enumeration value="o465"/>
+					<xs:enumeration value="o467"/>
+					<xs:enumeration value="o469"/>
+					<xs:enumeration value="o471"/>
+					<xs:enumeration value="o474"/>
+					<xs:enumeration value="o681"/>
+					<xs:enumeration value="o685"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RootObjectType">
+		<xs:sequence>
+			<xs:element name="Children" type="c:ChildrenType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ShortcutType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:TargetStereotype" minOccurs="0"/>
+			<xs:element ref="a:TargetID" minOccurs="0"/>
+			<xs:element ref="a:TargetClassID" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o3"/>
+					<xs:enumeration value="o4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o3"/>
+					<xs:enumeration value="o4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TableType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:History" minOccurs="0"/>
+			<xs:element ref="a:PhysicalOptions" minOccurs="0"/>
+			<xs:element ref="a:Description" minOccurs="0"/>
+			<xs:element name="Columns" type="c:ColumnsType"/>
+			<xs:element name="Keys" type="c:KeysType"/>
+			<xs:element name="Indexes" type="c:IndexesType"/>
+			<xs:element name="PrimaryKey" type="c:PrimaryKeyType"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o45"/>
+					<xs:enumeration value="o47"/>
+					<xs:enumeration value="o477"/>
+					<xs:enumeration value="o478"/>
+					<xs:enumeration value="o479"/>
+					<xs:enumeration value="o480"/>
+					<xs:enumeration value="o481"/>
+					<xs:enumeration value="o482"/>
+					<xs:enumeration value="o483"/>
+					<xs:enumeration value="o484"/>
+					<xs:enumeration value="o485"/>
+					<xs:enumeration value="o486"/>
+					<xs:enumeration value="o487"/>
+					<xs:enumeration value="o489"/>
+					<xs:enumeration value="o49"/>
+					<xs:enumeration value="o491"/>
+					<xs:enumeration value="o493"/>
+					<xs:enumeration value="o495"/>
+					<xs:enumeration value="o496"/>
+					<xs:enumeration value="o497"/>
+					<xs:enumeration value="o50"/>
+					<xs:enumeration value="o500"/>
+					<xs:enumeration value="o502"/>
+					<xs:enumeration value="o504"/>
+					<xs:enumeration value="o506"/>
+					<xs:enumeration value="o508"/>
+					<xs:enumeration value="o510"/>
+					<xs:enumeration value="o512"/>
+					<xs:enumeration value="o514"/>
+					<xs:enumeration value="o516"/>
+					<xs:enumeration value="o52"/>
+					<xs:enumeration value="o54"/>
+					<xs:enumeration value="o56"/>
+					<xs:enumeration value="o57"/>
+					<xs:enumeration value="o58"/>
+					<xs:enumeration value="o59"/>
+					<xs:enumeration value="o60"/>
+					<xs:enumeration value="o61"/>
+					<xs:enumeration value="o62"/>
+					<xs:enumeration value="o64"/>
+					<xs:enumeration value="o67"/>
+					<xs:enumeration value="o687"/>
+					<xs:enumeration value="o688"/>
+					<xs:enumeration value="o689"/>
+					<xs:enumeration value="o69"/>
+					<xs:enumeration value="o691"/>
+					<xs:enumeration value="o692"/>
+					<xs:enumeration value="o70"/>
+					<xs:enumeration value="o72"/>
+					<xs:enumeration value="o74"/>
+					<xs:enumeration value="o75"/>
+					<xs:enumeration value="o76"/>
+					<xs:enumeration value="o77"/>
+					<xs:enumeration value="o79"/>
+					<xs:enumeration value="o80"/>
+					<xs:enumeration value="o84"/>
+					<xs:enumeration value="o87"/>
+					<xs:enumeration value="o89"/>
+					<xs:enumeration value="o91"/>
+					<xs:enumeration value="o93"/>
+					<xs:enumeration value="o95"/>
+					<xs:enumeration value="o97"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o406"/>
+					<xs:enumeration value="o45"/>
+					<xs:enumeration value="o47"/>
+					<xs:enumeration value="o477"/>
+					<xs:enumeration value="o478"/>
+					<xs:enumeration value="o479"/>
+					<xs:enumeration value="o480"/>
+					<xs:enumeration value="o481"/>
+					<xs:enumeration value="o482"/>
+					<xs:enumeration value="o483"/>
+					<xs:enumeration value="o484"/>
+					<xs:enumeration value="o485"/>
+					<xs:enumeration value="o486"/>
+					<xs:enumeration value="o487"/>
+					<xs:enumeration value="o489"/>
+					<xs:enumeration value="o49"/>
+					<xs:enumeration value="o491"/>
+					<xs:enumeration value="o493"/>
+					<xs:enumeration value="o495"/>
+					<xs:enumeration value="o496"/>
+					<xs:enumeration value="o497"/>
+					<xs:enumeration value="o50"/>
+					<xs:enumeration value="o500"/>
+					<xs:enumeration value="o502"/>
+					<xs:enumeration value="o504"/>
+					<xs:enumeration value="o506"/>
+					<xs:enumeration value="o508"/>
+					<xs:enumeration value="o510"/>
+					<xs:enumeration value="o512"/>
+					<xs:enumeration value="o514"/>
+					<xs:enumeration value="o516"/>
+					<xs:enumeration value="o52"/>
+					<xs:enumeration value="o54"/>
+					<xs:enumeration value="o56"/>
+					<xs:enumeration value="o57"/>
+					<xs:enumeration value="o58"/>
+					<xs:enumeration value="o59"/>
+					<xs:enumeration value="o60"/>
+					<xs:enumeration value="o61"/>
+					<xs:enumeration value="o62"/>
+					<xs:enumeration value="o64"/>
+					<xs:enumeration value="o648"/>
+					<xs:enumeration value="o653"/>
+					<xs:enumeration value="o67"/>
+					<xs:enumeration value="o687"/>
+					<xs:enumeration value="o688"/>
+					<xs:enumeration value="o689"/>
+					<xs:enumeration value="o69"/>
+					<xs:enumeration value="o691"/>
+					<xs:enumeration value="o692"/>
+					<xs:enumeration value="o70"/>
+					<xs:enumeration value="o72"/>
+					<xs:enumeration value="o74"/>
+					<xs:enumeration value="o75"/>
+					<xs:enumeration value="o76"/>
+					<xs:enumeration value="o77"/>
+					<xs:enumeration value="o79"/>
+					<xs:enumeration value="o80"/>
+					<xs:enumeration value="o84"/>
+					<xs:enumeration value="o87"/>
+					<xs:enumeration value="o89"/>
+					<xs:enumeration value="o91"/>
+					<xs:enumeration value="o93"/>
+					<xs:enumeration value="o95"/>
+					<xs:enumeration value="o97"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TableSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Rect" minOccurs="0"/>
+			<xs:element ref="a:LineColor" minOccurs="0"/>
+			<xs:element ref="a:FillColor" minOccurs="0"/>
+			<xs:element ref="a:ShadowColor" minOccurs="0"/>
+			<xs:element ref="a:FontList" minOccurs="0"/>
+			<xs:element name="Object" type="c:ObjectType"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o14"/>
+					<xs:enumeration value="o15"/>
+					<xs:enumeration value="o18"/>
+					<xs:enumeration value="o21"/>
+					<xs:enumeration value="o24"/>
+					<xs:enumeration value="o25"/>
+					<xs:enumeration value="o30"/>
+					<xs:enumeration value="o33"/>
+					<xs:enumeration value="o34"/>
+					<xs:enumeration value="o37"/>
+					<xs:enumeration value="o38"/>
+					<xs:enumeration value="o41"/>
+					<xs:enumeration value="o42"/>
+					<xs:enumeration value="o431"/>
+					<xs:enumeration value="o432"/>
+					<xs:enumeration value="o435"/>
+					<xs:enumeration value="o436"/>
+					<xs:enumeration value="o439"/>
+					<xs:enumeration value="o440"/>
+					<xs:enumeration value="o443"/>
+					<xs:enumeration value="o444"/>
+					<xs:enumeration value="o447"/>
+					<xs:enumeration value="o452"/>
+					<xs:enumeration value="o457"/>
+					<xs:enumeration value="o472"/>
+					<xs:enumeration value="o475"/>
+					<xs:enumeration value="o677"/>
+					<xs:enumeration value="o680"/>
+					<xs:enumeration value="o682"/>
+					<xs:enumeration value="o683"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o14"/>
+					<xs:enumeration value="o15"/>
+					<xs:enumeration value="o18"/>
+					<xs:enumeration value="o21"/>
+					<xs:enumeration value="o24"/>
+					<xs:enumeration value="o25"/>
+					<xs:enumeration value="o30"/>
+					<xs:enumeration value="o33"/>
+					<xs:enumeration value="o34"/>
+					<xs:enumeration value="o37"/>
+					<xs:enumeration value="o38"/>
+					<xs:enumeration value="o41"/>
+					<xs:enumeration value="o42"/>
+					<xs:enumeration value="o431"/>
+					<xs:enumeration value="o432"/>
+					<xs:enumeration value="o435"/>
+					<xs:enumeration value="o436"/>
+					<xs:enumeration value="o439"/>
+					<xs:enumeration value="o44"/>
+					<xs:enumeration value="o440"/>
+					<xs:enumeration value="o443"/>
+					<xs:enumeration value="o444"/>
+					<xs:enumeration value="o447"/>
+					<xs:enumeration value="o452"/>
+					<xs:enumeration value="o457"/>
+					<xs:enumeration value="o46"/>
+					<xs:enumeration value="o472"/>
+					<xs:enumeration value="o475"/>
+					<xs:enumeration value="o48"/>
+					<xs:enumeration value="o488"/>
+					<xs:enumeration value="o490"/>
+					<xs:enumeration value="o492"/>
+					<xs:enumeration value="o494"/>
+					<xs:enumeration value="o499"/>
+					<xs:enumeration value="o501"/>
+					<xs:enumeration value="o503"/>
+					<xs:enumeration value="o505"/>
+					<xs:enumeration value="o507"/>
+					<xs:enumeration value="o509"/>
+					<xs:enumeration value="o51"/>
+					<xs:enumeration value="o511"/>
+					<xs:enumeration value="o513"/>
+					<xs:enumeration value="o515"/>
+					<xs:enumeration value="o53"/>
+					<xs:enumeration value="o63"/>
+					<xs:enumeration value="o66"/>
+					<xs:enumeration value="o677"/>
+					<xs:enumeration value="o68"/>
+					<xs:enumeration value="o680"/>
+					<xs:enumeration value="o682"/>
+					<xs:enumeration value="o683"/>
+					<xs:enumeration value="o690"/>
+					<xs:enumeration value="o71"/>
+					<xs:enumeration value="o73"/>
+					<xs:enumeration value="o78"/>
+					<xs:enumeration value="o83"/>
+					<xs:enumeration value="o86"/>
+					<xs:enumeration value="o88"/>
+					<xs:enumeration value="o90"/>
+					<xs:enumeration value="o92"/>
+					<xs:enumeration value="o94"/>
+					<xs:enumeration value="o96"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TargetModelType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:Name"/>
+			<xs:element ref="a:Code"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element ref="a:TargetModelURL"/>
+			<xs:element ref="a:TargetModelID"/>
+			<xs:element ref="a:TargetModelClassID"/>
+			<xs:element name="SessionShortcuts" type="c:SessionShortcutsType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o755"/>
+					<xs:enumeration value="o756"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TitleSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:Text"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Rect"/>
+			<xs:element ref="a:TextStyle"/>
+			<xs:element ref="a:LineColor"/>
+			<xs:element ref="a:FillColor"/>
+			<xs:element ref="a:ShadowColor"/>
+			<xs:element ref="a:FontName"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o55"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ViewType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID" minOccurs="0"/>
+			<xs:element ref="a:Name" minOccurs="0"/>
+			<xs:element ref="a:Code" minOccurs="0"/>
+			<xs:element ref="a:CreationDate" minOccurs="0"/>
+			<xs:element ref="a:Creator" minOccurs="0"/>
+			<xs:element ref="a:ModificationDate" minOccurs="0"/>
+			<xs:element ref="a:Modifier" minOccurs="0"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:Generated" minOccurs="0"/>
+			<xs:element ref="a:SQLQuery" minOccurs="0"/>
+			<xs:element ref="a:TaggedSQLQuery" minOccurs="0"/>
+			<xs:element name="Columns" type="c:ColumnsType"/>
+			<xs:element name="View.Tables" type="c:View.TablesType"/>
+		</xs:sequence>
+		<xs:attribute name="Ref">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o82"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Id">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o414"/>
+					<xs:enumeration value="o82"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ViewColumnType">
+		<xs:sequence>
+			<xs:element ref="a:ObjectID"/>
+			<xs:element ref="a:Name"/>
+			<xs:element ref="a:Code"/>
+			<xs:element ref="a:CreationDate"/>
+			<xs:element ref="a:Creator"/>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Modifier"/>
+			<xs:element ref="a:Comment" minOccurs="0"/>
+			<xs:element ref="a:DataType" minOccurs="0"/>
+			<xs:element ref="a:Length" minOccurs="0"/>
+			<xs:element name="ViewColumn.Columns" type="c:ViewColumn.ColumnsType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o412"/>
+					<xs:enumeration value="o413"/>
+					<xs:enumeration value="o415"/>
+					<xs:enumeration value="o416"/>
+					<xs:enumeration value="o417"/>
+					<xs:enumeration value="o418"/>
+					<xs:enumeration value="o419"/>
+					<xs:enumeration value="o420"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ViewSymbolType">
+		<xs:sequence>
+			<xs:element ref="a:ModificationDate"/>
+			<xs:element ref="a:Rect"/>
+			<xs:element ref="a:AutoAdjustToText"/>
+			<xs:element ref="a:LineColor"/>
+			<xs:element ref="a:FillColor"/>
+			<xs:element ref="a:ShadowColor"/>
+			<xs:element ref="a:FontList"/>
+			<xs:element ref="a:ManuallyResized"/>
+			<xs:element name="Object" type="c:ObjectType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="o81"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

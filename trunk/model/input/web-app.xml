@@ -1,0 +1,6 @@
+<!DOCTYPE root>
+<web-app encoding="" defaultTitle="" welcome-file="" name="">
+	<tagliblist>
+		<taglib uri="" location=""/>
+	</tagliblist>
+</web-app>

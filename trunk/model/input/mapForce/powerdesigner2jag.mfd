@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping version="6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<component name="defaultmap1" blackbox="0" uid="68170480" editable="1">
+		<properties SelectedLanguage="xslt"/>
+		<structure>
+			<children>
+				<component name="document" library="xml" uid="154544616" kind="14">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="594" lty="71" rbx="745" rby="536"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="0:jag" expanded="1">
+								<entry name="0:entitylist" expanded="1" inpkey="176346296">
+									<entry name="0:entity" expanded="1">
+										<entry name="0:@name" inpkey="176349672"/>
+										<entry name="0:@description" inpkey="176304816"/>
+										<entry name="0:fieldlist">
+											<entry name="0:field" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="jag.xsd" inputinstance="jagModel_transformed.xml" outputinstance="jagModel_transformed.xml" instanceroot="{}jag"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="157520160" kind="14">
+					<properties/>
+					<view ltx="13" lty="-1" rbx="283" rby="544"/>
+					<data>
+						<root scrollposition="506">
+							<header>
+								<namespaces>
+									<namespace uid="attribute"/>
+									<namespace uid="collection"/>
+									<namespace uid="object"/>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="3:Model" expanded="1">
+								<entry name="3:RootObject" expanded="1">
+									<entry name="2:Children" expanded="1">
+										<entry name="1:Model" expanded="1">
+											<entry name="2:Packages" expanded="1">
+												<entry name="1:Package" expanded="1">
+													<entry name="2:Tables" expanded="1" outkey="174287560">
+														<entry name="1:Table" expanded="1">
+															<entry name="0:Name" outkey="174342648"/>
+															<entry name="0:Comment" outkey="174344880"/>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="pd.xsd" inputinstance="COP-mysql.pdm.xml" outputinstance="COP-mysql.pdm.xml" instanceroot="{}Model"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges>
+					<edge edgekey="174383248"/>
+					<edge edgekey="182317576"/>
+					<edge edgekey="182322120"/>
+				</edges>
+				<vertices>
+					<vertex vertexkey="174287560">
+						<edges>
+							<edge vertexkey="176346296" edgekey="182317576"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="174342648">
+						<edges>
+							<edge vertexkey="176349672" edgekey="174383248"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="174344880">
+						<edges>
+							<edge vertexkey="176304816" edgekey="182322120"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

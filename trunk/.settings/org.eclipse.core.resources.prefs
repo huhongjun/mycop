@@ -1,0 +1,8 @@
+#Wed Aug 02 19:14:56 GMT+08:00 2006
+eclipse.preferences.version=1
+encoding//model/input/copTransformed.xml=GBK
+encoding//model/input/jagModel_transformed.xml=gb2312
+encoding//velocity/templateCOP/src/iBatis/sql-map-config.xml.vsl=UTF-8
+encoding//velocity/templateCOP/src/vo/xxxxxxVO.java.vsl=gb2312
+encoding//velocity/templateCOP/webroot/JSP/treexxxxxx.jsp.vsl=GB2312
+encoding//velocity/templateCOP/webroot/WEB-INF/tiles-defs-xxxxxx.xml.vsl=UTF-8

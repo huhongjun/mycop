@@ -1,0 +1,20 @@
+#foreach($entity in ${entitylist.entitylist})
+drop table if exists ${entity.table-name};
+
+/*==============================================================*/
+/* Table: ${entity.table-name}                                  */
+/*==============================================================*/
+create table ${entity.table-name}
+(
+#foreach($field in ${entity.fieldlist})
+	${field.column-name}	 ${field.sql-type} #if(${field.required}=="true") not null #end,
+#end
+#foreach($field in ${entity.fieldlist})
+#if(${field.primary-key} == "true")
+   primary key (${field.column-name})
+#end
+#end
+);
+
+
+#end

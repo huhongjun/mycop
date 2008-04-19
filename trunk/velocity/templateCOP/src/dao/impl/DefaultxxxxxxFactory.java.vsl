@@ -1,0 +1,18 @@
+package ${entity.root-package}.dao.impl;
+
+import ${entity.root-package}.dao.${entity.name}Factory;
+import ${entity.root-package}.dao.${entity.name}Dao;
+
+#parse("velocity/templateCOP/common/JavaClassComment.vsl")
+
+public class Default${entity.name}Factory extends ${entity.name}Factory{
+    public Default${entity.name}Factory() {
+    }
+    /**
+     * @param dbData datasource
+     * @return ${entity.name}DAO instance
+     */
+     public ${entity.name}Dao create${entity.name}DAO(String dbData){
+         return new ${entity.name}DaoImpl(dbData);
+     }
+}

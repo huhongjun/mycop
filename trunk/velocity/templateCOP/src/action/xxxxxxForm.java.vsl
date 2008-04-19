@@ -1,0 +1,10 @@
+package ${entity.root-package}.action;
+
+import com.gever.goa.base.BaseForm;
+
+#parse("velocity/templateCOP/common/JavaClassComment.vsl")
+
+public class ${entity.name}Form extends BaseForm{
+    public ${entity.name}Form() {}
+
+}

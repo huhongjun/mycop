@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<filelist>
+  <file name="src/main/java/com\gever\goa\book/vo/BookVO.java"/>
+  <file name="src/main/java/com\gever\goa\user/vo/UserVO.java"/>
+  <file name="src/main/java/com\gever\goa\book/vo/BookTreeVO.java"/>
+  <file name="src/main/java/com\gever\goa\user/vo/UserTreeVO.java"/>
+  <file name="src/main/java/com\gever\goa\book/dao/BookFactory.java"/>
+  <file name="src/main/java/com\gever\goa\user/dao/UserFactory.java"/>
+  <file name="src/main/java/com\gever\goa\book/dao/BookDao.java"/>
+  <file name="src/main/java/com\gever\goa\user/dao/UserDao.java"/>
+  <file name="src/main/java/com\gever\goa\book/dao/BookDaoTest.java"/>
+  <file name="src/main/java/com\gever\goa\user/dao/UserDaoTest.java"/>
+  <file name="src/main/java/com\gever\goa\book/dao/impl/BookDaoImpl.java"/>
+  <file name="src/main/java/com\gever\goa\user/dao/impl/UserDaoImpl.java"/>
+  <file name="src/main/java/com\gever\goa\book/dao/impl/DefaultBookFactory.java"/>
+  <file name="src/main/java/com\gever\goa\user/dao/impl/DefaultUserFactory.java"/>
+  <file name="src/main/java/com\gever\goa\book/action/BookAction.java"/>
+  <file name="src/main/java/com\gever\goa\user/action/UserAction.java"/>
+  <file name="src/main/java/com\gever\goa\book/action/BookForm.java"/>
+  <file name="src/main/java/com\gever\goa\user/action/UserForm.java"/>
+  <file name="src/main/webapp/Book/editBook.jsp"/>
+  <file name="src/main/webapp/User/editUser.jsp"/>
+  <file name="src/main/webapp/Book/frameBook.jsp"/>
+  <file name="src/main/webapp/User/frameUser.jsp"/>
+  <file name="src/main/webapp/Book/treedata.jsp"/>
+  <file name="src/main/webapp/User/treedata.jsp"/>
+  <file name="src/main/webapp/Book/listBook.jsp"/>
+  <file name="src/main/webapp/User/listUser.jsp"/>
+  <file name="src/main/webapp/Book/treeBook.jsp"/>
+  <file name="src/main/webapp/User/treeUser.jsp"/>
+  <file name="src/main/webapp/Book/viewBook.jsp"/>
+  <file name="src/main/webapp/User/viewUser.jsp"/>
+  <file name="src/main/webapp/WEB-INF/struts-config-qiquGenerated.xml"/>
+  <file name="src/main/webapp/WEB-INF/tiles-defs-qiquGenerated.xml"/>
+  <file name="docs/db/createTables-qiquGenerated.sql"/>
+  <file name="docs/db/initData-qiquGenerated.sql"/>
+</filelist>

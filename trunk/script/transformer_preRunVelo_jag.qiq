@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<QiQuScript>
+	<LoadDoc FileName="'model/input/jagModel.xml'" NewDocRef="$jagDoc"/>
+
+	<For NodeRef="$jagDoc" XPath="//*[@name]" IteratorEleRef="$eleWithName">
+		<Set Ref="$eleWithName.nameFirstUpper" Value="toFirstUpperCase($eleWithName.name)"/>
+	</For>
+	<SaveDoc FileName="'model/input/jagModel_transformed.xml'" DocRef="$jagDoc" Encoding="'GBK'"/>
+</QiQuScript>
