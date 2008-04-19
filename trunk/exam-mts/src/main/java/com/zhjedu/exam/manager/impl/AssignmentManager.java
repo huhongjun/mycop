@@ -1,5 +1,6 @@
 package com.zhjedu.exam.manager.impl;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import com.zhjedu.exam.domain.ZjQuiz;
 import com.zhjedu.exam.manager.IAssignmentManager;
 import com.zhjedu.util.BaseManager;
 import com.zhjedu.util.Constants;
+import com.zhjedu.util.DateTimeUtil;
 import com.zhjedu.util.PageObject;
 
 public class AssignmentManager extends BaseManager implements
@@ -38,9 +40,14 @@ public class AssignmentManager extends BaseManager implements
 			counthql = counthql + " and t.status='" + status + "'";
 			hql = hql + " and t.status='" + status + "'";
 		}
-		if("0".equals(status) || "1".equals(status)){ //当试卷为未交卷状态时进行时间控制
-			counthql = counthql + " and t.zjQuiz.timeopen<=" + System.currentTimeMillis() + " and t.zjQuiz.timeclose>=" + System.currentTimeMillis();
-			hql = hql + " and t.zjQuiz.timeopen<=" + System.currentTimeMillis() + " and t.zjQuiz.timeclose>=" + System.currentTimeMillis();
+		try {
+			if("0".equals(status) || "1".equals(status)){ //当试卷为未交卷状态时进行时间控制  DateTimeUtil.getTime(System.currentTimeMillis(),2)
+				counthql = counthql + " and t.zjQuiz.timeopen<=" + System.currentTimeMillis() + " and t.zjQuiz.timeclose>=" + DateTimeUtil.getTimeStamp(DateTimeUtil.getTime(System.currentTimeMillis(),2), 2);
+				hql = hql + " and t.zjQuiz.timeopen<=" + System.currentTimeMillis() + " and t.zjQuiz.timeclose>=" + DateTimeUtil.getTimeStamp(DateTimeUtil.getTime(System.currentTimeMillis(),2), 2);
+			}
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		
 		int page = 1;
@@ -64,7 +71,7 @@ public class AssignmentManager extends BaseManager implements
 //			String hql = "select count(*) from ZjQuizExam as t where t.userid= :userid and t.zjQuiz.zjCourse= :courseid and t.status='0'";
 			String hql = "select count(*) from ZjQuizExam as t,ZjQuiz as q "
 				+ "where t.zjQuiz=q.id and t.userid= :userid and q.delflag='0' and q.status='0' and t.status='0'";
-			hql = hql + " and t.zjQuiz.timeopen<=" + System.currentTimeMillis() + " and t.zjQuiz.timeclose>=" + System.currentTimeMillis();
+			hql = hql + " and t.zjQuiz.timeopen<=" + System.currentTimeMillis() + " and t.zjQuiz.timeclose>=" + DateTimeUtil.getTimeStamp(DateTimeUtil.getTime(System.currentTimeMillis(),2), 2);
 //			String hql = "select count(*) from ZjQuizExam as t where t.userid= :userid and t.status='0'";
 			Query query = this.getSession().createQuery(hql);
 			query.setString("userid", userid);

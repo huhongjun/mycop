@@ -36,11 +36,11 @@ background-image=url(assignment_s/image/x-00100.gif);
   <script>
     flag = 0;
 
-    function secBoard(status){
+    function secBoard(status,quiz){
     	flag = status;
        if(status!=null)
        {
-       window.location.href="Quiz.do?method=getStudentQuizList&status="+status+"&quizType=2";
+       window.location.href="Quiz.do?method=getStudentQuizList&status="+status+"&quizType=2&quiz="+quiz;
        }
     }
     function select(){
@@ -69,17 +69,14 @@ background-image=url(assignment_s/image/x-00100.gif);
   String status = request.getAttribute("status").toString();
   String quizType = request.getAttribute("quizType").toString();  
   String quizid="";
-  String courseid="";
   
   if(request.getAttribute("quizid")!=null){
   	quizid = (String)request.getAttribute("quizid");
   }
-  if(request.getAttribute("courseid")!=null){
-  	courseid = (String)request.getAttribute("courseid");
-  }
+ 
    %>
    <input type=hidden name="quizid" value="<%=quizid %>"/>
-   <input type=hidden name="course" value="<%=courseid %>"/>
+
   <div align="center">
   <div align="left"> <img src="<%=request.getContextPath() %>/image/x-10105.gif" width="300" height="70" />
       <table border="0" cellspacing="1" cellpadding="1" id="secTable">

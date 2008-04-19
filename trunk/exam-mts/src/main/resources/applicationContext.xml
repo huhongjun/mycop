@@ -49,6 +49,7 @@
              	<value>com/zhjedu/exam/domain/ZjManeuver.hbm.xml</value>
              	<value>com/zhjedu/exam/domain/ZjManeuverItem.hbm.xml</value>
              	<value>com/zhjedu/exam/domain/ZjQuizMidEc.hbm.xml</value>
+             	<value>com/zhjedu/exam/domain/ZjQuestionOptionListOn.hbm.xml</value>
              </list>
           </property> 
           <property name="hibernateProperties">

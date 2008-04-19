@@ -23,56 +23,39 @@ function userlogin()
 <html:form method="post" action="/Login.do" target="_parent">
 	<html:hidden property="method" value="login" />
 	<html:hidden property="userType" value="1" />
-<TABLE height="100%" width="101%">
-<TR>
-    <TD vAlign="middle" align="center" class="login-bg"><table width="600" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="40"><table width="510"  border="0" align="center" cellpadding="0" cellspacing="0" background="image/login-exam.jpg">
       <tr>
-        <td><img src="<%=request.getContextPath()%>/image/login-title-pic1.jpg" width="300" height="60" border="0"></td>
-      </tr>
-      <tr>
-        <td><table width="600" height="400" border="0" align="center" cellpadding="0" cellspacing="0" background="<%=request.getContextPath()%>/image/login_bg_01.jpg">
+        <td height="278" valign="top"><table width="50%"  border="0" align="center" cellpadding="0" cellspacing="0" class="13">
           <tr>
-            <td width="280" rowspan="2" align="center">&nbsp;</td>
-            <td width="320" align="left" valign="middle"><table width="300" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td height="200" align="center" valign="middle" background="<%=request.getContextPath()%>/image/form_bg_01.gif"><table width="260" border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td height="10" align="center"></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td width="29%" align="center" class="login-text">用户名：</td>
-                    <td width="71%"><span class="wenzi">
-                      <input class="cm-input-bg" name="userName" type="text" size="14" maxlength="14" />
-                    </span></td>
-                  </tr>
-                  <tr>
-                    <td align="center" class="login-text">密&nbsp; 码：</td>
-                    <td><span class="wenzi">
-                      <input class="cm-input-bg" type="password" name="password" value="12345" size="14" maxlength="14"/>
-                    </span></td>
-                  </tr>
-                  <tr>
-                    <td class="login-text" colspan="2" align="center"><%if(request.getAttribute("info") != null){out.print("<font color=\"red\">" + request.getAttribute("info") + "</font>");} %></td>
-                  </tr>
-                  <tr>
-                    <td>&nbsp;</td>
-                    <td valign="middle" class="wenzi"><input class="cm-button-bg" type="button" name="Submit52" value="登陆" onClick="userlogin();"/>
-                        <input class="cm-button-bg" type="reset" name="Submit22" value="取消" />
-                    </td>
-                  </tr>
-                </table></td>
-              </tr>
-            </table></td>
-          </tr>
+            <td width="24%" height="110">&nbsp;</td>
+            <td width="76%">&nbsp;</td>
+            </tr>
           <tr>
-            <td valign="bottom">&nbsp;</td>
+            <td height="40" class="13" nowrap><font style="font-size:12px"><strong>用户名：</strong></font></td>
+            <td><input type="text" name="userName" style="width:150px;"></td>
+            </tr>
+          <tr>
+            <td height="40" class="13" nowrap><font style="font-size:12px"><strong>密　码：</strong></font></td>
+            <td><input type="password" name="password" style="width:150px;"></td>
           </tr>
+          
+          <tr>
+            <td class="login-text" colspan="2" align="center"><%if(request.getAttribute("info") != null){out.print("<font color=\"red\">" + request.getAttribute("info") + "</font>");} %></td>
+          </tr>
+          
+          <tr>
+            <td colspan="2" height="40" align="center"><div id="submitForm"><span class="button"><input type="button" value=" 登录 " onClick="userlogin();" /></span>　<span class="button"><input type="reset" value=" 重置 "/></span></div></td>
+          </tr>
+         
         </table></td>
-      </tr>
-    </table></TD>
-</TR>
-</TABLE>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+
+
 </html:form>
 </BODY>
 </HTML>

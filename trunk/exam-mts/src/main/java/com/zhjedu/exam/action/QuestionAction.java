@@ -190,6 +190,7 @@ public class QuestionAction extends BaseAction {
 		}
 		ZjQuestion tmp = this.getQuestionService().getQuestion(parent);
 		PageObject po = this.getQuestionService().getQuestionObject(map,page);
+		request.setAttribute("question", tmp);
 		request.setAttribute("content", tmp.getQuestioncontext());
 		request.setAttribute("parent", parent);
 		request.setAttribute("po", po);
@@ -434,6 +435,7 @@ public class QuestionAction extends BaseAction {
 		if(request.getParameter("actiontype")!=null){
 			actiontype = request.getParameter("actiontype");
 		}
+		request.setAttribute("question", question);
 		request.setAttribute("content",questioncontext );
 		request.setAttribute("parent", questionid);
 		if(actiontype.equals("1")){
@@ -655,8 +657,11 @@ public class QuestionAction extends BaseAction {
 		question.setDistinguish(tmp.getDistinguish());
 		question.setKnowledge(tmp.getKnowledge());
 		question.setSource(tmp.getSource());
-		String content = request.getParameter("content");
-		question.setQuestioncontext(content);
+		String questioncontext = request.getParameter("questioncontext");
+		if(questioncontext==null){
+			questioncontext = "";
+		}
+		question.setQuestioncontext(questioncontext);
 		String[] answer = request.getParameterValues("answer");
 		if(answer!=null&&answer.length>0){
 			question.setAnswers(StringUtil.combineStringArray(answer, ","));
@@ -731,6 +736,7 @@ public class QuestionAction extends BaseAction {
 	    }
 		String questionid = this.getQuestionService().saveQuestion(question);
 		request.setAttribute("parent", parent);
+		
 		return listChild(mapping, actionForm, request, response);
 	}
 	

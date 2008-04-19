@@ -14,12 +14,23 @@ function sbt(){
 		
 		var t = false;
 		var rtflag = true;
-		
+		if(isNaN(document.QuestionForm.defaultgrade.value))   
+          {
+          	alert("默认分值必须为数字!");   
+  			document.QuestionForm.defaultgrade.value="";
+  			document.QuestionForm.defaultgrade.focus();
+          	rtflag = false; 
+          	return false;    
+          } 
+          else{
+          	rtflag = true;
+          }
 		if(content== ""||content==null){
 			alert("请输入题目内容!");
 			rtflag=false;
 			return false;
 		}
+		
 		var answers = QuestionForm.answers;
 		if(answers!=null){
 			for(var l = 0; l < answers.length; l ++){

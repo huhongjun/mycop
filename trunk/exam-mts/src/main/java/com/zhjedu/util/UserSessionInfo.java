@@ -69,4 +69,31 @@ public class UserSessionInfo {
 		}
 		return returnScore;
 	}
+	
+	public static String getQuestionNo(int i){
+		String[] x = new String[20];
+		x[0] = "一";
+		x[1] = "二";
+		x[2] = "三";
+		x[3] = "四";
+		x[4] = "五";
+		x[5] = "六";
+		x[6] = "七";
+		x[7] = "八";
+		x[8] = "九";
+		x[9] = "十";
+		x[10] = "十一";
+		x[11] = "十二";
+		x[12] = "十三";
+		x[13] = "十四";
+		x[14] = "十五";
+		x[15] = "十六";
+		x[16] = "十七";
+		x[17] = "十八";
+		x[18] = "十九";
+		x[19] = "二十";
+		if(i >= x.length)
+			i = 0;
+		return x[i];
+	}
 }

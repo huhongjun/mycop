@@ -128,7 +128,6 @@ function selectscope(quizid){
 				
 	    	}
 	    }
-	    alert(scopechar);
 	    document.QuizForm.ec.value = scopechar;
 	    document.QuizForm.method.value = "addQuizToMidEC";
 	    document.QuizForm.quiz.value = quizid;

@@ -11,9 +11,9 @@
 <%
 	String quizId = request.getParameter("quizId");
 %>
-<frameset rows="*,40" frameborder="no" border="0" framespacing="0">
+<frameset rows="60,*" frameborder="no" border="0" framespacing="0">
+  <frame src="<%=request.getContextPath()%>/joinExam.do?method=quizInfo&quizId=<%=quizId %>" name="bottomFrame" scrolling="no" noresize="noresize" id="bottomFrame" style='BORDER-BOTTOM:#000000 1px solid;'/>
   <frame src="<%=request.getContextPath()%>/joinExam.do?method=quizQuestionInfo&quizId=<%=quizId %>" name="mainFrame" id="mainFrame" />
-  <frame src="<%=request.getContextPath()%>/joinExam.do?method=quizInfo&quizId=<%=quizId %>" name="bottomFrame" scrolling="no" noresize="noresize" id="bottomFrame" />
 </frameset>
 <noframes><body>
 </body>

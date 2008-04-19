@@ -12,43 +12,22 @@
 -->
 </style>
 <script>
-	function checkquestion()
-	{        
-		if(!checkcont())return false;
-     	if(!setcont())return false;
-
-    	if(document.all.answerarea.innerHTML.length<=0)
-    	{
-        	alert("没有单选题答案选项，请点击生成答案选项按钮");
-       		return false;
-    	}
-   		if(document.all.answerarea.innerHTML.indexOf("CHECKED")<=0)
-    	{
-        	alert("没有选择正确答案");
-        	return false;
-    	}
-     	frmmain.q_probcont.value=changeSelecthtml(Composition.document.body.innerHTML);
-    	return true;
+	function sbt(){
+		var flag=false;
+        if(isNaN(document.QuestionForm.defaultgrade.value))   
+          {
+          	alert("默认分值必须为数字!");   
+  			document.QuestionForm.defaultgrade.value="";
+  			
+          	flag = false;   
+          } 
+          else{
+          	flag = true;
+          }
+         
+          return flag;
 	}
-	function submitquestion()
-	{
-    	if(!checkcont())return false;
-     	if(!setcont())return false;
- 		frmmain.q_probcont.value=changeSelecthtml(Composition.document.body.innerHTML);
-    	if(document.all.answerarea.innerHTML.length<=0)
-    	{
-        	alert("没有单选题答案选项，请点击生成答案选项按钮");
-        	return ;
-    	}
-    	if(document.all.answerarea.innerHTML.indexOf("CHECKED")<=0)
-    	{
-        	alert("没有选择正确答案");
-        	return;
-    	}
-        
-
-    	frmmain.submit();
-	}
+	
 	function contentonload()
 	{
    		Composition.document.body.innerHTML=changebyte(hq_content.innerHTML);
@@ -57,7 +36,7 @@
    		hq_content.innerHTML="";
 	}
 </script>
-<html:form method="post" action="/Question.do">
+<html:form method="post" action="/Question.do" onsubmit="if(!sbt()){return false;}">
 	<html:hidden property="id" name="question"/>
 	<html:hidden property="parent" name="question"/>
 	<html:hidden property="qtype" value="<%=(String)request.getAttribute("qtype") %>"/>
@@ -161,7 +140,7 @@
 					<p align="right" class="style1">默认分值</p>
 				</td>
 				<td align="center">
-					<p align="left"><html:text property="defaultgrade" name="question" size="20" style="float: left"/><span class="style1">分</span></p>
+					<p align="left"><html:text property="defaultgrade" name="question" size="20" style="float: left"  /><span class="style1">分</span></p>
 				</td>
 				<td align="right">
 						<p align="right" class="style1">试题状态</p>

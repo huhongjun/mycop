@@ -25,25 +25,57 @@ function sbt(){
 </script>
 <script language="javascript">
 	function submitquestion(action){
-		if(QuestionForm.content.value == "" || QuestionForm.content.value == null){
+		var editor=FCKeditorAPI.GetInstance("questioncontext");   
+		var content=FCKeditorAPI.GetInstance("questioncontext").GetXHTML(true);//editor.EditorDocument.body.innerHTML; 
+	
+		var t = false;
+		var rtflag = true;
+		if(isNaN(document.QuestionForm.defaultgrade.value))   
+          {
+          	alert("默认分值必须为数字!");   
+  			document.QuestionForm.defaultgrade.value="";
+  			document.QuestionForm.defaultgrade.focus();
+          	rtflag = false;   
+          } 
+          else{
+          	rtflag = true;
+          }
+		if(content== ""||content==null){
 			alert("请输入题目内容!");
-			QuestionForm.content.focus();
+			rtflag=false;
 			return false;
 		}
+	    
 		QuestionForm.actiontype.value=action;
 		QuestionForm.submit();
-		return true;
+		return rtflag;
 	}
 	function addsubquestion(action){
-		if(QuestionForm.content.value == "" || QuestionForm.content.value == null){
+		var editor=FCKeditorAPI.GetInstance("questioncontext");   
+		var content=FCKeditorAPI.GetInstance("questioncontext").GetXHTML(true);//editor.EditorDocument.body.innerHTML; 
+	
+		var t = false;
+		var rtflag = true;
+		if(isNaN(document.QuestionForm.defaultgrade.value))   
+          {
+          	alert("默认分值必须为数字!");   
+  			document.QuestionForm.defaultgrade.value="";
+  			document.QuestionForm.defaultgrade.focus();
+          	rtflag = false;  
+          	return false;  
+          } 
+          else{
+          	rtflag = true;
+          }
+		if(content== ""||content==null){
 			alert("请输入题目内容!");
-			QuestionForm.content.focus();
+			rtflag=false;
 			return false;
 		}
 		QuestionForm.method.value="addsubquestion";
 		QuestionForm.actiontype.value=action;
 		QuestionForm.submit();
-		return true;
+		return rtflag;
 	}
 	
 </script>

@@ -54,6 +54,7 @@ public class joinExamAction extends BaseAction {
 			}
 		}
 		request.setAttribute("quizQuestion", rd);
+		request.setAttribute("quiz", quiz);
 		return mapping.findForward("quizYulan");
 	}	
 	
@@ -79,6 +80,7 @@ public class joinExamAction extends BaseAction {
 				rd = this.getJoinExamService().getQuestionbyQuizid(userid, quizId, false);
 			}
 		}
+		request.setAttribute("quiz", quiz);
 		request.setAttribute("quizQuestion", rd);
 		return mapping.findForward("quizQuestionInfo");
 	}

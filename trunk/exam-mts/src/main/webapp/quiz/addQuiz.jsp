@@ -37,9 +37,24 @@ background-image=url(image/x-00100.gif);
 </head>
 <script language="javascript">
 function save(flag){
+ 	if(document.QuizForm.examType==null||document.QuizForm.examType.value==""){
+ 		alert("请选择考试类型");
+ 		document.QuizForm.examType.focus();
+ 		return;
+ 	}
+ 	else if(document.QuizForm.name==null||document.QuizForm.name.value==""){
+ 		alert("请输入考试名称");
+ 		document.name.focus();
+ 		return;
+ 	}
+ 	else if(document.QuizForm.password==null||document.QuizForm.password.value==""){
+ 		alert("请输入监考密码");
+ 		document.password.focus();
+ 		return;
+ 	}
 	var scopes = document.all("scope");
 	var scopenum = scopes.options.length;
-	var scopechar = ",";
+	var scopechar = "";
 	for(var j = 0; j < scopenum; j ++){
 		var scope = scopes.options[j];
 		scopechar = scopechar + "," + scope.value;
@@ -115,8 +130,6 @@ function selectscope(){
 							</td>
 							<td width="90%" height="21">
 								<html:select size="1" property="examType" name="quiz">
-									<html:option value=""></html:option>
-									<html:option value="1">模拟考试</html:option>
 									<html:option value="2">入学考试</html:option>
 								</html:select>
 								&nbsp;&nbsp;&nbsp;
@@ -224,45 +237,31 @@ function selectscope(){
 							</td>
 						</tr>
 						<tr>
-							<td height="21" bgcolor="#FFFFFF" width="65%" colspan="2">
-							</td>
-						</tr>
-						
-						<tr>
-							<td align="center" colspan="2">
-								&nbsp;
-							</td>
-						</tr>
+					<td align="left" colspan="4">
+					<p align="center">
+						<input type="button" onClick="save('0');" value="保存" name="B7" src="" />
+						<input type="button" onClick="history.go(-1)" value="返回" name="B1" />
+						<input name="B12" type="button" onClick="save('1');" value="进入策略" src="" />
+									&nbsp;
+					</p>
+					</td>
+			</tr>
+			<tr>
+				<td align="left" colspan="4">
+					<p align="left"><span class="style1"><font color="#FF0000">
+						保存按钮 -- 点击将保存考试信息并组建默认策略，使用此功能请确保题库题量足够。<br/>
+						进入策略 -- 点击将保存考试信息并进入策略维护界面。</font></span>
+					</p>
+				</td>
+			</tr>
 					</table>
 				</td>
 			</tr>
+			
 		</table>
+		
 		</div>
-		<div align="center">
-		<table width="79%" border="0" cellpadding="2" cellspacing="0" class="tbsort">
-		  <tbody>
-              <tr>
-										<td align="left" colspan="4">
-											<p align="center">
-												<input type="button" onClick="save('0');" value="保存" name="B7" src="" />
-												<input type="button" onClick="history.go(-1)" value="返回" name="B1" />
-												<input name="B12" type="button" onClick="save('1');" value="进入策略" src="" />
-												&nbsp;
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td align="left" colspan="4">
-											<p align="left"><span class="style1"><font color="#FF0000">
-												保存按钮 -- 点击将保存考试信息并组建默认策略，使用此功能请确保题库题量足够。<br/>
-												进入策略 -- 点击将保存考试信息并进入策略维护界面。</font></span>
-											</p>
-										</td>
-									</tr>
-              
-          </tbody>
-        </table>
-	</div>
+
 </html:form>
 </body>
 </html>
