@@ -1,0 +1,36 @@
+webapp、java之外的其它目录
+======================================================================================================					
+
+src/main/resources	配置文件和struts属性文件
+	->com.gever	内容不多，主要是登录用的
+		ApplicationResources.properties
+		ApplicationResources_zh_CN.properties	
+		privilege
+			ApplicationResources.properties		没有内容
+	properties
+		messages.properties ibatis用
+	css-config.xml
+	debug.properties
+	error.properties		存放错误信息的属性文件
+	gever_config.properties	代码行为如分页等的配置、定制
+	log4j.properties
+	readme.txt
+	sql-map-config.xml	ibatis用
+	system.properties	数据库链接配置
+
+===============web test/docs=====================================================================	
+
+src/test/java		单元测试类java源码
+bin
+docs				文档
+
+====================================================================================
+	site	maven2.0生成的开发站点，三种文档格式
+		apt->	文档模板
+		fml->	？
+		xdoc->	？xml格式的文档
+		site.xml	站点定义
+testDir				运行junit单元测试时需要的目录
+webroot
+readme-huhj.txt		项目日记
+readme				本文件

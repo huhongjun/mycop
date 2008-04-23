@@ -1,0 +1,63 @@
+#
+# 指定sqlHelper用到的数据库方言定义类，用于生成数据库特有的sql
+#
+#database.dialect=com.gever.database.dialect.DB2Dialect
+#database.dialect=com.gever.database.dialect.OracleDialect
+database.dialect=com.gever.jdbc.database.dialect.MySQLDialect
+
+#
+# 分页配置，指定每页行数
+#
+pager.rowsPerPage=10
+
+# 分页配置，指定索引？ 2,3,4,5,6,7,8,9,10
+pager.indexSize=9
+
+# ？
+privilege=false
+
+# ？
+normal.port=8080
+
+#SSL
+ssl.port=8443
+
+# 指定存取系统日志的dao实现类
+# LogDAOFactory Instance
+#
+#Sysman.LogDAOFactoryClassName=com.gever.sysman.log.dao.LogDAOFactory
+Sysman.LogDAOFactoryClassName=com.gever.sysman.log.dao.impl.oracle.OracleLogDAOFactory
+
+# 指定顶级工厂，然后由之获得dao和sqlFactory实现对象
+# MenuSetupFactory Instance
+#
+#Sysman.MenuSetupFactoryClassName=com.gever.menusetup.dao.impl.DefaultMenuSetupFactory
+#Sysman.MenuSetupFactoryClassName=com.gever.menusetup.dao.impl.oracle.OracleMenuSetupFactory
+Sysman.MenuSetupFactoryClassName=com.gever.web.menusetup.dao.impl.mysql.MySQLMenuSetupFactory
+
+# 同上
+# Sysman.UserMenuDAOFactory instance
+#
+#Sysman.UserMenuDAOFactory=com.gever.homepage.dao.impl.DefaultUserMenuDAOFactory
+#Sysman.UserMenuDAOFactory=com.gever.homepage.dao.impl.oracle.OracleUserMenuDAOFactory
+Sysman.UserMenuDAOFactory=com.gever.web.homepage.dao.impl.mysql.MySQLUserMenuDAOFactory
+
+# 同上
+# OrganizationFactory Instance
+#
+#Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.DefaultOrganizationFactory
+#Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.oracle.OracleOrganizationFactory
+Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.mysql.MySQLOrganizationFactory
+
+# 同上
+# PrivilegeFactory Instance
+#
+#Sysman.PrivilegeFactoryClassName=com.gever.sysman.privilege.dao.impl.DefaultPrivilegeFactory
+#Sysman.PrivilegeFactoryClassName=com.gever.sysman.privilege.dao.impl.oracle.OraclePrivilegeFactory
+Sysman.PrivilegeFactoryClassName=com.gever.sysman.privilege.dao.impl.mysql.MySQLPrivilegeFactory
+
+#
+# ？
+#
+MenSelectedCatalogs=departments	//都好间隔，可以指定多个
+MenSelectedCatalog.departments.className=com.gever.web.menselect.impl.MenSelect

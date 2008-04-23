@@ -1,0 +1,401 @@
+src/main/java		java源码
+	com
+		package.html	包说明文件,生成java api文档时用到
+		gever
+==================================================================================
+config
+	Constants.java		一个常量196处引用，指定数据库连接名称（系统配置文件system.properties中配置了三个数据库链接，分别是gdp、goa和unittest），这个应该可以去掉
+	Environment.java	用于读取属性文件的属性定义，如gever_config.properties（默认），system.properties，可以归入util类
+		：spring中提供，配置为bean即可
+db
+	DAOException.java	DAO操作的exception处理；spring中有很全的异常处理树
+exception
+	action	继承struts机制，错误处理页面流程【已转移到struts下】
+		DAOExceptionHandler.java
+		DefaultExceptionHandler.java
+	DefaultException.java
+	ErrorConfig.java	error.properties(错误信息属性文件)单态读取，可以考虑和Environment合并，然后定义两个常量分别指定属性文件
+	ErrorConstant.java	为异常、错误定义消息常量，【已删】
+goa	协同办公
+	admin	码表管理【BaseVO、VOInterface、BaseAction、BaseForm、BaseDAO、pager】
+			//怎么在iBatis上构建同样一套体系
+		action
+			DutyAction	继承自BaseAction
+			DutyForm	继承自baseForm，空类
+		dao		
+			impl
+				DefaultAdminFactory、DutyDaoImpl、......
+			AdminFactory、DutyDao、......
+		vo		vo：职级、岗位、学历、婚姻、民族、政治面貌、性别、unit
+	base	核心基类
+		ActionBase	定义标准动作，如toList、toEdit等，命令中心doActionCenter
+		BaseAction->ActionBase->Struts..Action
+		BaseDAO
+		BaseForm->struts..ActionForm	Form基类，分页，上下文，当前vo
+		BaseTreeVO	匹配XMLLoadTree的数据结构
+		Constant	常量定义：动作、session
+		GoaActionConfig	Action环境对象保存
+	dailyoffice	日常办公
+		bbs			论坛
+		calendararrange	日历
+		impowermgr	授权管理
+		mailmgr		邮件管理
+		message		内部消息
+		reportmgr	目标管理？
+		smsmgr		短信
+		targetmng	目标管理：周、月、年、五年
+		tools		常用工具：名片册、提醒、世界之窗
+		worklog		个人月、周、年目标；团队日志、个人日志
+		workreport	工作汇报
+	infoservice 信息服务：地址、客户、信息服务、标准模板、信息类型
+	innermgr.hr	功能已删，留下两个类
+	menselect	人员选取工具类【研究】
+	util
+		timer	页面定时刷新工具类，考虑提升级别作为系统功能
+			AutoTasks	后台线程
+			HtmlTimer	定时查询邮件
+			MessageBox
+			TimerConfig	读取定时人物设置（timer.xml）
+			TimverVO
+		ConstantSet
+		DepartmentStructute	部门结构类，考虑换个地方
+	web
+		listener.ActiveUserListener	监听用户登陆，管理在线用户对象和人数统计，提升】
+		servlet
+			DownloadServlet	
+			InitServlet	初始化servlet：log4j、【已转】
+			RsToFile	log文件导出的servlet，有重复？
+		taglib	是否可以合并
+			BeanWriteTag-》org.apache.struts.taglib.bean.WriteTag ？
+			ButtonTag-》
+			LinkTag
+			SplitPageTag
+			SubmitTag
+		util
+			DownLoadFile	downloadfile.jsp专用
+			RequesrUtils
+				1.类=》取CSS路径：应该可以去除关联，Constant.CSS_PATH无效，/jsp/homepage/viewuser.jsp、sendmessage.jsp 用到<link href="<%=com.gever.goa.web.util.RequestUtils.getCSSPath(pageContext)%>" id="goastylecss" rel="stylesheet" type="text/css">
+				2.类=》template下8个jsp文件，用到是否登录和取css路径。这几个文件有用吗？
+			TemplateUtils 报表模板操作通用方法类
+			UploadFile    上传附件文件
+			
+jdbc		自主开发的数据库持久化框架
+	connection
+		impl
+			DBCP链接池实现
+			JDBC连接池实现
+			JNDI连接池实现
+		ConnectionProvider	接口定义
+		ConnectionProviderFactory 连接池工厂
+	database.dialet	数据库方言
+	ibatis	基于ibatis的持久化方案=》应该与jdbc平行
+	sqlhelper	持久化框架的核心类
+		DataTypes 常量：数据类型、数据库操作类型、查询结果存储方式，应该定义成三个类
+		DefaultSQLHelper	实现类
+		SQLHelper 			抽象类
+		SQLHelperUtil		辅助类,数据库类别是静态常量，在InitServlet中初始化(Servlet参数中指定数据库类型？)
+	
+struts	struts分页控制
+	action.BasePagerAction->Action	没用
+	taglib.pager
+	AbstractPageControlHelper		抽象类，采用嵌套子类的方式使用
+	PageControl		包含分页用到的变量数据
+	PageHelper		分页工具类，好像和AbstractPageControlHelper重复
+sysman	
+		//说明：系统管理，采用和goa不一样的开发基础，有自己的baseAction
+		//说明：基本上用jdbc写的，少数用了sqlhelper，容易修改。
+	->api	organization api，参考R1
+		OrganizationUtil->BaseDAO	sql、jdbc，用到基类的地方：log、this.dbdata,可以不继承
+	basedata	数据导出，执行外部命令；是否要在数据库服务器上才行？
+	db.SequenceMan	序列号管理，和IdManager有点像，表GEVERID
+	export	导出资源表数据，sql、jdbc
+	level	【sql、jdbc】
+		dao				
+			impl
+				DefaultDAO	没有继承BaseDAO，写死sql，直接执行jdbc api
+			LevelDAO		接口定义
+		model			上面用的是vo，此处用了接口
+			impl
+				DefaultLevel
+			Level
+		webapp.action
+			LevelAction->com.gever.sysman.util.BaseAction
+	log	【BaseVO、SQLHelper成套使用】
+		->action
+			LogAction
+		->dao
+			->impl.oracle
+			LogDao			I
+			LogDAOFactory
+			LogDaoImpl->LogDao	sql、SQLHelper			
+		->form
+			LogForm	searchVO、vo
+		->util
+			IdManager	只给LogDaoImpl用，有同名类，表T_SYSTEM_ID
+			RsToFileServlet log记录导出为文件，sql、jdbc
+			RsToFileUtil 供RsToFileServlet使用
+		->vo
+			LogVO	extends BaseVO implements VOInterface
+	organization
+		dao
+			->impl
+				->mysql
+					......
+				->oracle
+					......
+				DefaultDepartmentDAO	sql/jdbc
+				DefaultJobDAO
+				DefaultOrganizationFactory
+				DefaultSQLFactory
+				DefaultUserDAO
+				DefaultUserDepartmentDAO
+				DefaultUserJobDAO
+				DepOrderDAOIMP
+				sql.properties
+			OrganizationFactory
+			SQLFactory
+			DepartmentDAO	
+			......
+		model
+			->impl
+				DefaultDepartment
+				DefaultJob
+				DefaultUser
+				DefaultUserDepartment
+				DefaultUserJob	
+			Department		I
+			Job				I
+			User			I
+			UserDepartment	I
+			UserJob			I
+		tree
+			DepartmentTreeNode->GeverTreeNode
+		webapp
+			->action
+				DepartmentAction-》BaseAction	用到分页抽象类
+				......
+			->taglib【已删】
+				MessageTag 可能没用
+	privilege
+		dao
+			->impl
+				DefaultOperationDAO				sql、jdbc
+				DefaultPermissionDAO			sql、jdbc
+				DefaultPermissionMapDAO			sql、jdbc
+				DefaultPrivilegeFactory			实例化本包下的类
+				DefaultResourceDAO				sql、jdbc
+				DefaultRoleDAO》RoleDAO			sql、jdbc
+				DefaultSQLFactory》SQLFactory	com/gever/sysman/privilege/dao/impl/sql.properties
+				DefaultUserDAO》UserDAO			sql、JDBC					
+				ResOrderDAOIMP》ResOrderDAO 		sql、JDBC
+			OperationDAO
+			PermissionDAO
+			PermissionMapDAO
+			PrivilegeFactory
+			ResOrderDAO
+			ResourceDAO
+			RoleDAO
+			SQLFactory
+			UserDAO
+		model
+			->impl
+				......
+			I_User
+			Operation
+			PermissionMap
+			Privilege
+			Resource
+			Role
+			RolePermission
+			UserPermission
+		tree
+			ResourceOrderTreeAction->BaseAction？
+				
+			ResourceTreeNode->GeverTreeNode 仅用于ResourceAction
+		util
+			Constants			用于get、set
+			Extensible			用途？子类有privilege.model下的Operation、PermissionMap、Resource、Role众接口
+			PermissionMapACL	？涉及/WEB-INF/action_privilege/下的xml文件，只BaseAction用到
+			PermissionUtil		在session中检查是否有对某资源、某操作的权限
+			UniQueryConfig		PrivilegeUserAction用到一个常量：UniQueryConfig.DEFAULT_SQL_NAME，全是get，没有set，【可删】。
+		webapp
+			action
+				GetConfigAction->DispatchAction		?
+				GetResOpTreeAction->BaseAction	维护权限与操作代码的关系？
+					
+				LoginAction->BaseAction
+					welcome
+						获得配置文件中的参数，放入request，转向login
+					login
+						get：ActionForm.name/password
+						set：isLogon
+					logout	remove：Constants.USERID、Constants.USER_PERMISSION
+							session失效：request.getSession(true).invalidate();
+							转向登录页面
+					getRequestAddress 解析获取了那个部分
+					checkLicense	【为空】
+					getDeptCodes	传入Collection存放那种对象？
+						系统约束：部门名称和ID中不能有间隔符-","或空格
+					getPermission	帐号状态：激活（status=1）、过期（ValidDate）、权限
+						set：	Constants.USERID/			String
+								Constant.USER_PERMISSION/	Collection
+								Constant.USER_FILTER		String 用户职级
+								Constant.USER_NAME			String 用户名
+								Constant.USER_ID			String 用户ID
+								Constant.NAME				String 名？
+								com.gever.sysman.privilege.util.Constants.USERNAME String 名？
+								Constant.DEPT_CODES		
+								Constant.DEPT_NAMES
+								Constant.LIST_DEPTS		Collection 用户所在的部门?
+								isLogon					"true"/"false"
+								onstant.IS_ADMIN		用户类型"1"是系统管理员
+					getRandom		【未用】
+					makeReturnType	用到gever_config中的定义的端口号
+						set：FORWARD_URL，mapping.findForward("ssl_forward");
+						在ssl_forward.jsp中根据FORWARD_URL属性值重定向		
+				PermissionAction
+				PermissionMapAction
+				PrivilegeUserAction
+				ResourceOperationAction
+				RoleAction
+			taglib
+				DefaultMenuPermissionTag->TagSupport 判断当前用户是否有系统默认菜单定义权限，传入两个参数-代表系统默认菜单定义权限，然后调用PermissionUtil。没有输出，只是用来屏蔽标记中间的内容。
+				PermissionButton->BaseHandlerTag	用到页面	/jsp/errors.jsp,login.jsp; 输出按钮；传入optid/resid或rescode/optcode
+				PermissionImgButton->org.apache.struts.taglib.html.ImageTag
+					用到页面	/jsp/errors.jsp,login.jsp; 输出图片按钮；传入optid/resid或rescode/optcode
+				PermissionTag->TagSupport 用到页面/jsp/errors.jsp,login.jsp;没有输出,只做权限检测
+					传入:resource/resourcecode/action，【好像没用】
+	util	sysman用到的util
+		BaseAction->DispatchAction	保存登录日志；超时检测；权限判断；只在.sysman/.web下用到【待研】
+			用到struts的global forward=》timeout_page/access_deny
+		OrderList	增加JSP视图列表排序功能；存储需要排序数据的结构。有数据库相关代码，考虑放入配置文件中。只在.sysman下用到。
+			如何使用：
+				1.DAO：	private String[] orderby;
+					    public void setOrderby(String[] s){ this.orderby = s; }
+				2.sql:  语句改造 - sql = OrderList.getInstance().formatSQL(orderby,sql);
+				3.Action: LevelAction.getPagerData()->evelDAO.setOrderby(ss)
+				4.JSP:  
+				5.order_inc.inc
+util
+	->crypto	加密、解码
+	->log
+		Log		日志-用log4j，用到一个配置文件，在InitServlet参数中指定并加载初始化
+	->queue
+		Queue			现只用于GeverTreeNode
+	->sysinfo
+		DiskInfoView	磁盘信息：盘符、总空间、已用空间、可用空间
+		MemoryStatusView	内存
+		RunTime				运行时环境信息
+	->tree
+		EmptyQueueException	队列为空时触发的异常，Queue用到
+		GeverTreeNode	树节点操作类，作为基类被继承	
+		NodeObject		节点对象,用于GeverTreeNode			
+	Codes.java		?有用于cell文件处理
+	DateTimeUtils	不好的地方，用到ActiveUsers获取数据库类别，然后设定数据库相关sql函数-toDate、toDateTime，在4个dao和baseAction中用到，有4个BaseAction的子类用到，均用来生成where条件。
+	DateUtil		【已删，并入DateUtils】
+	EncodeUtil		多语言字元字符转换类（如UNICODE转换 GBK等）
+	IdMng			序列号生成器，[年][日][分钟][用户id][随机数]，用于生成文件路径、文件名、表记录序列号等。
+	NumberUtil		将字符型数据转换成各种整型数据
+	PropertiesUtil	?
+	StringUtil		【已删】
+	StringUtils		字符串操作
+	SumUtils		字串数字转换、数字运算
+vo
+	BaseTreeVO->BaseVO implements VOInterface 所有树形视图都是它的子类，不只是用于显示菜单，所以要实现VOInterface
+	BaseVO		所有VO的父类，没有任何内容
+	VOInterface	为VO扩展了一些与数据库相关的操作
+web
+	css.dao		应该是在InitServlet中用到，现相关代码已删。替代方式：css应用目录放那个那个就起作用。或者在配置文件中指定，也就是说没有个性化css了。
+		impl
+			DefaultUserCssDAO 实现UserCssDAO,配置文件css-config.xml,表T_User_CSS
+		UserCssDAO	接口
+		UserCssDAOFactory
+	homepage
+		action.UserMenuAction	获得当前用户的所有菜单；发现用户没有任何菜单时调用CreateDefaultUserMenuDAO
+			get：strUserID
+			set：menus、xmldata
+		dao
+			->impl
+				->mysql
+					MySQLUserMenuDAO->DefaultUserMenuDao 覆盖resetUserMenus方法？
+					MySQLUserMenuDAOFactory->DefaultUserMenuDAOFactory 覆盖getUserMenuDao，实例化本包内的类MySQLUserMenuDAO
+				->oracle
+					OracleUserMenuDAO->DefaultUserMenuDao 覆盖resetUserMenus方法？
+					OracleUserMenuDAOFactory->DefaultUserMenuDAOFactory 覆盖getUserMenuDao，实例化本包内的类OracleUserMenuDAO								
+				CreateDefaultUserMenuDAO	实现CreateDefaultMenuDAO，调用DefaultSQLHelper直接执行delete、insert语句
+					功能：为指定用户创建默认菜单，在T_USER_MENU中将DEFAULT_USER_ID=-1？的记录复制给userId用户
+				DefaultUserMenuDao			实现UserMenuDao，resetUserMenus方法已有实现
+				DefaultUserMenuDAOFactory	继承UserMenuDAOFactory
+			CreateDefaultMenuDAO	创建默认菜单
+			UserMenuDao			接口
+			UserMenuDAOFactory	抽象类，实例化->gerver-config、默认类
+		form.UserMenuForm
+		taglib
+			GetNodePath	显示导航路径，读取菜单数据生成的javascript驻留页面上的parent.document.forms[0].nodePathName.value
+			MenuTag？只在jsp/homepage/main.jsp中用到
+			SplitPageTag 有用，可能与goa下同名tag重复？
+		vo
+			UserMenuVO->BaseVO->VOInterface
+	menselect	重复？
+		action.MenSelectAction->BaseAction
+			转入：jsp/org/dept/department-edit.jsp,department-new.jsp
+				弹出窗口javascript:manSelectedPopupWin-》manSelectedPopupWin.do
+			输入：	isMultilSelected="true|false"
+					isConfMultil=
+					hiddenConf=	（,做间隔符，隐藏那些可选的条件）
+					selectedIds=	（,做间隔符）
+			输出：	userlist			Collection-UserVO
+					selectedIds			String	- ,间隔
+					manSelectedCatalogs	Collection - MenSelectedCatalog
+			处理：	从gever-config配置中读取类别名，参数：MenSelectedCatalogs=
+					通过hiddenConf过滤MenSelectedCatalogs；=》实际效果是减少了加载的MenSelectedCatalog借口实现类；
+					加载MenSelectedCatalog借口实现类，存入manSelectedCatalogs，放入request
+			转向：/manSelectedPopupWin.do->selectman->path="/jsp/menselect/men_select.jsp" 
+				request:isMutilSelected,
+						isConfMutil,
+						selectedIds,
+						userlist,
+						manSelectedCatalogs
+				结束时doOk()->window.opener.manSelectedPopupWinReturn(returnIDString,returnNameString)[弹出窗口页的函数]->setParams()赋值到页面某编辑字段
+				[很复杂，要研究]
+		impl
+			MenSelect->MenSelectedCatalog ？
+		MenSelectedCatalog	接口，代表什么？
+	menusetup
+		action	（继承自sysman.util.BaseAction）
+			DefaultMenuSetupAction	【已删】
+			MenuSetupAction			在struts配置文件中引用
+		dao		改用iBatis能简化很多？MenuSetup、UserMenu、sysman.organization、sysman.previlege
+			impl
+				mysql->
+					MySQLMenuSetupFactory	配置文件中指定，覆盖方法用本包中类实例化，否则用基类方法实例化上层类
+					MySQLFactory
+					sql.properties
+				oracle->
+					OracleMenuSetupDao		用到sqlhelper
+					OracleMenuSetupFactory	配置文件中指定，同上
+					OracleSQLFactory		获得sql语句
+					sql.properties
+				DefaultMenuSetupDao	用到了SQLFactory从properties中取sql
+				DefaultMenuSetupFactory->MenuSetupFactory	配置文件中指定，生成DefaultSQLFactory、DefaultMenuSetupDao实例
+				DefaultSQLFactory	指定了sql.properties,实现get借口，通过查询名获得sql语句
+				sql.properties		DefaultMenuSetupDao的sql语句
+			MenuSetupDao		接口
+			MenuSetupFactory	抽象类，默认getInstance方法，实例化实体类-默认类或配置文件[指向mysql或oracle包下的×，然后实例化得到的是该包下的具体类]
+			SQLFactory			接口，方法get(String)
+		form.MenuSetupForm	
+	servlet
+		DBTestServlet	数据库操作测试servlet类，带参数：source=数据源，SQL=sql语句
+		InitServlet [原类已删，goa下移到此处]不是重复(goa.web.servlet下有同名类，web.xml用的是goa下的)，功能简单些，没有autotask、activeusers等，可以删除？
+			功能：debug->Log初始化；SQLHelperUtil设置数据库类型；ActiveUsers初始化；定时器运行；异常处理消息解析类实例化；CSS配置删掉了；
+	taglib
+		ContextTag	定义gever-gdp.tld;jsp页面用到，全在jsp目录下，即goa未用-exam: <gdp:context/> ,实际效果：填入web context如gdp
+	util
+		ActiveUsers	单态，静态数据。
+			上下文环境：session时间、公司名、数据库类型；环境队列保存：在线用户数组、邮箱消息数组、业务数组
+			viewuser.jsp/sendmessage.jsp	获得在线用户
+			DateTimeUtils
+			LoginAction、InitServlet、ActiveUserListener 数据写入
+			其它DAO什么的，都是用来判断数据库
+		SetCharacterEncodingFilter.java	文字编码过滤起，在web.xml中设定
+		URLBuilder	唯一方法，为url增加参数-键值对，只在Tag类中用到，用于增加指定页面的参数

@@ -1,0 +1,133 @@
+===============web app=====================================================================	
+src/
+	main/webapp
+		admin->		基础数据管理/静态码表维护（建议改名）
+		cell->		华表电子表格控件，只能用于ie
+		common->	
+			htmleditor
+			menu
+			xtree	开源项目XMLLoadTree
+			xtreeEx
+		css
+		dailyoffice
+			.....
+		ddlfile		数据库定义文件导出后存放在此
+		images
+		infoservice
+		js
+		jscript
+		jsp
+			basedata	基础数据？
+			error
+			homepage	主页
+				images
+				empty.html
+				frame.jsp
+				left.jsp		主界面左边的窄条-一溜图标
+					问题：/admin/homepage/hiddenleft.do
+					功能：快捷导航；实施信息-邮件、在线消息、在线用户
+				viewuser.jsp	在线用户列表
+			log			系统日志
+			login		登录
+			menselect	人员选择
+			->menusetup	菜单设置
+				default
+				frame
+				hidedata
+				lefttree	两棵树：tree-用户菜单，tree1-系统默认菜单，用WebFXLoadTree加载；用权限tag控制tree1相关代码
+				menudel
+				menuedit
+				menuhide
+				menusetup
+				xtree
+			->organization	组织：部门、员工、岗位
+			->privilege		权限：职级、opt-操作、权限映射、资源、角色、用户、
+			jsp_css.jsp		动态指定css文件
+			order_inc.inc	支持点击标题排序的页面需在jsp中包含本文件，具体用法做一sample
+			sys_css.jsp		get:csslist,set:cssList[应该可以在这里加入动态设定css的功能]
+		menselect		人员选择
+		template
+		tree
+		uploadfiles
+			bbs		论坛附件？
+			mailbox	？
+			manage	？
+			template	模板，那些模块用到
+			syslog.txt		系统日志
+		util
+			selenium	功能测试开源套件，需在Firefox端安装selenium ide
+				copTest	COP测试脚本
+			dbtest.jsp			数据库测试
+			debug.jsp			调试设置页面
+			downloadfile.jsp	样例-下载文件
+		WEB-INF
+			dtd
+			jspf
+				templates
+					footer.jspf
+					footer2.jspf
+					header.jspf
+					header2.jspf
+			lib
+			taglib
+				gever-gdp.tld	用途：context，一个tag，并入？
+					com.gever.web.taglib.ContextTag
+				gever-goa.tld	用途：
+					com.gever.goa.web.taglib.SplitPageTag
+					com.gever.goa.web.taglib.BeanWriteTag
+					com.gever.goa.web.taglib.LinkTag
+					com.gever.goa.web.taglib.SubmitTag
+					com.gever.goa.web.taglib.ButtonTag
+				gever-menu.tld	主页面菜单专用
+					com.gever.web.homepage.taglib.MenuTag
+					com.gever.web.homepage.taglib.GetNodePath
+					com.gever.web.homepage.taglib.SplitPageTag
+				gever-pager.tld	struts分页专用
+					com.gever.struts.taglib.pager.PagerTag
+					com.gever.struts.taglib.pager.FirstPageTag
+					com.gever.struts.taglib.pager.PrevPageTag
+					com.gever.struts.taglib.pager.NextPageTag
+					com.gever.struts.taglib.pager.LastPageTag
+					com.gever.struts.taglib.pager.ListPageTag
+					com.gever.struts.taglib.pager.IndexPageTag
+				gever-perm.tld	权限控制
+					com.gever.sysman.privilege.webapp.taglib.PermissionImgButton
+					com.gever.sysman.privilege.webapp.taglib.PermissionButton
+					com.gever.sysman.privilege.webapp.taglib.PermissionTag
+					com.gever.sysman.privilege.webapp.taglib.DefaultMenuPermissionTag
+			basedata-config.xml		数据库专属导入、导出命令设置
+			database-config.xml		指定表名清单，将为这些指定表创建ddl
+			
+			struts-config-admin.xml			基础数据和dailyoffice消息
+				少量jsp引用，大部分tiles；jsp目录-tiles=>/admin
+			struts-config-dailyoffice.xml	日常办公
+				绝大多数tiles，一个jsp引用;	jsp目录-tiles=>dailyoffice
+			struts-config-infoservice.xml	信息服务
+				1.只有两处用到jsp文件，其余全是tiles定义=》/infoservice/treedata.jsp
+				2.考虑也设置为tiles变量;jsp目录-tiles=>infoservice
+			struts-config-organization.xml  sysman.organization
+				好像没用tiles定义，全部直指jsp文件;jsp目录-/jsp
+			struts-config-privilege.xml		sysman.privilege,export,level
+				删除loginAction.do,因struts-config中已有且此处定义未用到。
+				直指jsp;jsp目录-/jsp
+			struts-config.xml
+				直指jsp；	jsp目录-/jsp
+			说明：	1、tiles命名应该采用统一的能表明tiles特征、tiles所属配置文件的前缀名；
+					2.一搜就知道struts配置、jsp中是否用到
+					3、用到的地方：互相引用、JSP中引用、struts配置文件使用
+					4、tiles.[*1].[*2]	=> *1是所属tiles配置文件的标志;*2应用模块标志
+					5、总的来说，只有goa用了tiles；
+			tiles-defs-dailyoffice.xml	
+				前缀：dailyoffice、targetmng、monthtarget、monthsum、weektarget、
+					target、teamwork、worklog、personweektarget、docmng、admin、
+					message，有不存在的jsp引用
+			tiles-defs-infoservice.xml	前缀：infoservice、customer、type
+			tiles-defs-main.xml			前缀：main/view/edit/tree open void
+			tiles-defs-staticdata.xml	前缀：admin
+			tiles-defs-login.xml	三个：LoginLayout、gerver.gdp.login、gever.gdp.relogin
+
+			timer.xml
+			validation-privilege.xml、validator-rules.xml
+			web.xml
+		404.jsp
+		index.jsp
