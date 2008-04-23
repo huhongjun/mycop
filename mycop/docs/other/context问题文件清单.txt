@@ -1,0 +1,9 @@
+问题描述：
+在脚本文件中指定context值，而不是有程序自动读取；
+造成应用程序名称改变时需要手工修改。
+例如：var context = "/gdca";
+
+问题文件：
+/jscript/Validator.js
+/jscript/pub.js
+/cell/goascript/public.js
