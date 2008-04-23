@@ -1,0 +1,43 @@
+<html>
+<head><link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>toolset-mail-groupsetup</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">toolset-mail-groupsetup</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/infoservice/grouplist.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>fid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>modify</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>vo.group_name</td>
+	<td>HuHJ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>document.IsAddressListForm.save[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[2]/td[2]</td>
+	<td>HuHJ</td>
+</tr>
+</tbody></table>
+</body>
+</html>

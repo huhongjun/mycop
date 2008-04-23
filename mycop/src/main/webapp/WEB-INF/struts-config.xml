@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="MenSelectForm" type="com.gever.goa.menselect.action.MenSelectForm" />
+		<form-bean name="personBaseInfo" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="resumes" type="java.util.Set"/>
+			<form-property name="age" type="java.lang.String"/>
+		</form-bean>
+		<form-bean name="strutsUploadForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="filename" type="org.apache.struts.upload.FormFile"/>
+		</form-bean>
+		<form-bean name="uploadForm" type="com.gever.sysman.privilege.webapp.action.UploadForm"/>
+		<form-bean name="UserMenuForm" type="com.gever.web.homepage.form.UserMenuForm"/>
+		<form-bean name="MenuSetupForm" type="com.gever.web.menusetup.form.MenuSetupForm"/>
+		<form-bean name="loginForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="password" type="java.lang.String"/>
+		<form-property name="capassword" type="java.lang.String"/>
+		</form-bean>
+		<form-bean name="LogForm" type="com.gever.sysman.log.form.LogForm"/>
+	</form-beans>
+
+	<global-exceptions>            
+		<exception 
+			handler="com.gever.struts.action.DefaultExceptionHandler"          
+			key="err.sys" type="com.gever.exception.DefaultException" 
+			scope="request" path="/info_error.jsp"/>
+     	
+     	<exception 
+			handler="com.gever.struts.action.DAOExceptionHandler"        
+			key="err.sys"  type="com.gever.db.DAOException"
+			scope="request"  path="/info_error.jsp"/>
+    </global-exceptions>
+	
+	<global-forwards>
+		<forward name="TREE_DATA"  	path="/tree/treedata.jsp"/>
+		<forward name="error_page" path="/jsp/error/info_error.jsp" redirect="true"/>
+		<forward name="ERR_FORWARD" path="/jsp/error/info_error.jsp" redirect="true"/>
+		<forward name="info_ok_page" path="/jsp/error/info_ok.jsp" redirect="true"/>
+		<forward name="info_page" path="/jsp/error/info.jsp" redirect="true"/>
+		<forward name="timeout_page" path="/jsp/error/timeOut.jsp" redirect="true"/>
+		<forward name="access_deny" path="/jsp/error/deny.jsp" redirect="true"/>
+		<forward name="licence_error" path="/jsp/error/licence.jsp" redirect="true"/>
+        <forward name="ssl_forward" path="/jsp/ssl_forward.jsp" redirect="false"/>
+	</global-forwards>
+	
+	<action-mappings>
+		<action type="com.gever.sysman.basedata.action.BaseDataAction" validate="false" parameter="action" scope="request" path="/basedata/BaseDataAction">
+		  <forward name="toExport" path="/jsp/basedata/sys_data.jsp" />
+		</action>
+		<action name="loginForm" type="com.gever.sysman.privilege.webapp.action.LoginAction" 
+			validate="false"  input="gever.gdp.login" parameter="action" scope="request" path="/Login">
+			<forward name="success" path="/jsp/homepage/frame.jsp" redirect="true"/>		
+			<forward name="login" path="/jsp/login.jsp" redirect="false"/>
+		</action>
+		<action path="/homepage/maintop" type="com.gever.web.homepage.action.UserMenuAction" scope="request"  name="UserMenuForm"  parameter="action" validate="false">  
+			<forward name="homepage" path="/jsp/homepage/main.jsp"/>
+		</action>
+
+		<action path="/menusetup/left" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="xtree" path="/jsp/menusetup/xtree.jsp"/>
+			<forward name="left" path="/jsp/menusetup/lefttree.jsp"/>
+		</action>
+
+		<action path="/menusetup/right" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="index" path="/jsp/menusetup/default.jsp"/>
+			<forward name="left" path="/jsp/menusetup/lefttree.jsp"/>
+		</action>
+		<action path="/menusetup/hide" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="index" path="/menusetup/righ.do?action=toHome&#38;nodeid=-1"/>
+			<forward name="hide" path="/jsp/menusetup/menuhide.jsp"/>
+		</action>
+
+		<action path="/menusetup/hidedata" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="hidedata" path="/jsp/menusetup/hidedata.jsp"/>
+		</action>
+		<action path="/menusetup/edit" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="index" path="/menusetup/right.do?action=toHome&#38;nodeid=-1&#38;isLoad=true" redirect="true"/>
+			<forward name="edit" path="/jsp/menusetup/menuedit.jsp"/>
+		</action>
+		<action path="/menusetup/menusetup" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="index" path="/menusetup/righ.do?action=toHome"/>
+			<forward name="menusetup" path="/jsp/menusetup/menusetup.jsp"/>
+		</action>
+		<action path="/menusetup/del" type="com.gever.web.menusetup.action.MenuSetupAction" scope="request"  name="MenuSetupForm"  parameter="action" validate="false">  
+			<forward name="del" path="/jsp/menusetup/menudel.jsp"/>
+		</action>
+		<action   path="/log/loglist" type="com.gever.sysman.log.action.LogAction" name="LogForm"
+              scope="session" parameter="action"  validate="false">
+			<forward name="list"     path="/jsp/log/loglist.jsp"/>
+		</action>
+		<action type="com.gever.sysman.privilege.webapp.action.GetConfigAction" validate="false" parameter="action" scope="session" path="/getConfigAction">	
+			<forward name="showRoot" path="/jsp/privilege/strutsConfigRoot.jsp" redirect="false"/>
+			<forward name="showconfig" path="/jsp/privilege/getConfigTree.jsp" redirect="false"/>
+			<forward name="showmethod" path="/jsp/privilege/getMthodTree.jsp" redirect="false"/>
+		</action>
+		<action type="com.gever.web.menselect.action.MenSelectAction" validate="false" parameter="action" scope="session" path="/manSelectedPopupWin">	
+			<forward name="selectman" path="/jsp/menselect/men_select.jsp" redirect="false"/>
+		</action>
+		
+		<action name="MenSelectForm" parameter="toList" path="/menselect/menselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="index" path="/menselect/menselect.jsp" redirect="false" />
+		</action>
+		<action name="MenSelectForm" parameter="toList" path="/menselect/mailmanselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="index" path="/menselect/mailmanselect.jsp" redirect="false" />
+		</action>
+		<action name="MenSelectForm" parameter="toOutList" path="/menselect/mailoutmanselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="index" path="/menselect/mailoutmanselect.jsp" redirect="false" />
+		</action>
+		<action name="MenSelectForm" parameter="initUserArray" path="/menselect/inituserinfo" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="index" path="/menselect/inituserinfo.jsp" redirect="false" />
+		</action>
+		<action name="MenSelectForm" parameter="toList" path="/menselect/manselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="index" path="/menselect/manselect.jsp" redirect="false" />
+		</action>
+		<action name="MenSelectForm" parameter="toList" path="/menselect/warehousemanselect" scope="session" type="com.gever.cams.system.action.ManSelectAction" validate="false">
+			  <forward name="index" path="/menselect/warehousemanselect.jsp" redirect="false" />
+		</action>
+		<action name="MenSelectForm" parameter="toDept" path="/menselect/deptselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="dept" path="/menselect/deptselect.jsp" redirect="false" />
+		</action>
+		 <action name="MenSelectForm" parameter="toTheam" path="/menselect/theamselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+			  <forward name="theam" path="/menselect/theamselect.jsp" redirect="false" />
+		</action>
+	</action-mappings>
+
+   	<message-resources parameter="com.gever.ApplicationResources" />
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" 
+        	value="/WEB-INF/tiles-defs-main.xml, 
+					/WEB-INF/tiles-defs-login.xml, 
+					/WEB-INF/tiles-defs-infoservice.xml,
+					/WEB-INF/tiles-defs-dailyoffice.xml,
+					/WEB-INF/tiles-defs-staticdata.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+</struts-config>

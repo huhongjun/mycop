@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--export-->
+  <db type="db2" current="false">
+    <command alldb="true" structure="false">java  com.gever.sysman.basedata.impl.DB2CommandImpl</command>
+    <command alldb="true" structure="true">db2cmd /c db2look -d @@dbname -a -e -c > @@filename ; java com.gever.sysman.basedata.impl.DB2CommandImpl</command>
+    <command alldb="false" structure="true">db2cmd /c db2look -d @@dbname -t @@tablenames -a -e -c > @@filename ; java com.gever.sysman.basedata.impl.DB2CommandImpl</command>
+    <command alldb="false" structure="false">java com.gever.sysman.basedata.impl.DB2CommandImpl</command>
+  </db>
+  <db type="mysql" current="true" >
+    <command alldb="true" structure="false">cmd /c mysqldump @@dbname --no-data > @@filename</command>
+    <command alldb="true" structure="true">cmd /c mysqldump @@dbname --no-data --add-drop-table > @@filename</command>
+    <command alldb="false" structure="true">cmd /c mysqldump @@dbname @@tablenames --no-data > @@filename</command>
+    <command alldb="false" structure="false">cmd /c mysqldump @@dbname @@tablenames --no-data > @@filename</command>
+  </db>
+  <db type="oracle" current="false">
+    <command alldb="true" structure="false">exp SYSTEM/manager FULL=y FILE=@@filename ROWS=n</command>
+    <command alldb="true" structure="true">exp SYSTEM/manager FULL=y FILE=@@filename ROWS=n</command>
+    <command alldb="false" structure="true">exp SYSTEM/manager TABLES=(@@tablenames) FILE=@@filename ROWS=n</command>
+    <command alldb="false" structure="false">exp SYSTEM/manager TABLES=(@@tablenames) FILE=@@filename ROWS=n</command>
+  </db>
+<!--
+</export>
+<import>
+  <db type="db2" current="true">
+    <command>db2cmd db2 -tvf @@filename</command>
+  </db>
+  <db type="mysql" current="false">
+    <command>cmd /c  @@filename</command>
+  </db>
+  <db type="oracle" current="false">
+    <command>cmd /c  @@filename</command>
+  </db>
+</import>
+-->
+</root>

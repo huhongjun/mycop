@@ -1,0 +1,45 @@
+<html>
+<head>
+<link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>infoservice-law-dffg-query</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">infoservice-law-dffg-query</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/infoservice/lawtree.do?action=toTree</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/infoservice/lawlist.do?paraFlag=1&nodeid=DFFG</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>广东省电子交易条例</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>document.IsInfoManageForm2.fid[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>copy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>政策法规编辑</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

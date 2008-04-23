@@ -1,0 +1,49 @@
+<html>
+<head><link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>toolset-cardcase-new</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">toolset-cardcase-new</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/tools/listCardcaseType.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>名片类别列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>document.CardcaseTypeForm.add[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>vo.type_name</td>
+	<td>Selenium测试</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>vo.remark</td>
+	<td>测试</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>document.CardcaseTypeForm.save[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[2]/td[2]</td>
+	<td>Selenium测试</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

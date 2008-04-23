@@ -1,0 +1,632 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by zxczf (gever) --><struts-config>
+	<form-beans>
+
+	    <!--CY ADD targetmng and worklog start-->
+		<form-bean name="YearTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.YearTargetForm" />
+		<form-bean name="YearSumForm" type="com.gever.goa.dailyoffice.targetmng.action.YearSumForm" />
+		<form-bean name="MonthTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthTargetForm" />
+		<form-bean name="MonthSumForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthSumForm" />
+		<form-bean name="WeekTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.WeekTargetForm" />
+		<form-bean name="FiveYearLayoutForm" type="com.gever.goa.dailyoffice.targetmng.action.FiveYearLayoutForm" />
+		<form-bean name="WorkLogForm" type="com.gever.goa.dailyoffice.worklog.action.WorkLogForm" />
+		<form-bean name="TeamWorkLogSetForm" type="com.gever.goa.dailyoffice.worklog.action.TeamWorkLogSetForm" />
+		<form-bean name="PersonYearTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonYearTargetForm" />
+		<form-bean name="PersonMonthTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonMonthTargetForm" />
+		<form-bean name="PersonWeekTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonWeekTargetForm" />
+		<!--CY ADD targetmng and worklog end-->
+
+		<!--lihaidong add report start-->
+		<form-bean name="TargetForm" type="com.gever.goa.dailyoffice.reportmgr.action.TargetForm" />
+		<!--lihaidong add report end-->
+                <!--YY ADD doworkreport start-->
+		 <form-bean name="DoImpowerForm" type="com.gever.goa.dailyoffice.impowermgr.action.DoImpowerForm" />
+		 <form-bean name="DoWorkReportForm" type="com.gever.goa.dailyoffice.workreport.action.DoWorkReportForm" />
+		 <form-bean name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeForm" />
+				<!--YY ADD doworkreport end-->
+         <!--NIKON ADD bbs start-->
+		<form-bean name="TopBoardForm" type="com.gever.goa.dailyoffice.bbs.action.TopBoardForm" />
+		<form-bean name="SBoardForm" type="com.gever.goa.dailyoffice.bbs.action.SBoardForm" />
+		<form-bean name="BBSUserForm" type="com.gever.goa.dailyoffice.bbs.action.UserForm" />
+		<form-bean name="MainForm" type="com.gever.goa.dailyoffice.bbs.action.MainForm" />
+         <!--NIKON ADD bbs end-->
+         <!--XYZ ADD begin-->
+    	<form-bean name="CardcaseForm" type="com.gever.goa.dailyoffice.tools.action.CardcaseForm" />
+    	<form-bean name="TicklerForm" type="com.gever.goa.dailyoffice.tools.action.TicklerForm">
+    	</form-bean>
+    	<form-bean name="CardcaseTypeForm" type="com.gever.goa.dailyoffice.tools.action.CardcaseTypeForm">
+    	</form-bean>
+		<form-bean name="TopicForm" type="com.gever.goa.dailyoffice.bbs.action.BBSTopicForm" />
+    <!--XYZ ADD end-->
+       <!-- mailmgr begin dong -->
+
+	   <!--ÓÊ¼þ¹ÜÀí start-->
+		 <!--ÓÊ¼þ²ÎÊýÉèÖÃ start-->
+	   <form-bean name="MailInfoForm" type="com.gever.goa.dailyoffice.mailmgr.action.MailInfoForm" />			   <!--ÓÊ¼þ²ÎÊýÉèÖÃ end-->
+
+		  <!--pop3ÓÊ¼þ²ÎÊýÉèÖÃ start-->
+			<form-bean name="Pop3ConfigForm" type="com.gever.goa.dailyoffice.mailmgr.action.Pop3ConfigForm" />
+		  <!--pop3ÓÊ¼þ²ÎÊýÉèÖÃ end-->
+
+		   <!--mailbox start-->
+			<form-bean name="MailboxForm" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxForm" />
+			<!--mailbox end-->
+
+			<!--maiboxmgr start by lihaidong -->
+				<form-bean name="MailboxMgrForm" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxMgrForm" />
+			<!--maiboxmgr end by lihaidong -->
+
+	   <!--ÓÊ¼þ¹ÜÀí end-->
+
+       <form-bean name="MailMgrForm" type="com.gever.goa.dailyoffice.mailmgr.action.MailMgrForm" />
+       <form-bean name="MailDirectoryForm" type="com.gever.goa.dailyoffice.mailmgr.action.MailDirectoryForm" />
+	</form-beans>
+	<!-- ´íÎó´¦ÀíHANDLER Í³Ò»´¦ÀíDEFAULTEXCEPTION-->
+	<global-exceptions>
+
+    </global-exceptions>
+
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+         <!--µÇÂ½ACTION-->
+<!--CY ADD WorkLog Start-->
+        <!--¹¤×÷ÈÕÖ¾-->
+		<action path="/dailyoffice/worklog/listworklog" name="WorkLogForm" type="com.gever.goa.dailyoffice.worklog.action.WorkLogAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="worklog.listworklog" redirect="false" />
+			<forward name="edit" path="/dailyoffice/worklog/editworklog.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/worklog/viewworklog.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/editworklog" name="WorkLogForm" type="com.gever.goa.dailyoffice.worklog.action.WorkLogAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="worklog.editworklog" redirect="false" />
+			<forward name="index" path="/dailyoffice/worklog/listworklog.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/viewworklog" name="WorkLogForm" type="com.gever.goa.dailyoffice.worklog.action.WorkLogAction" validate="false" parameter="toView" scope="session">
+			<forward name="view" path="worklog.viewworklog" redirect="false" />
+			<forward name="edit" path="/dailyoffice/worklog/editworklog.do" redirect="true" />
+			<forward name="index" path="/dailyoffice/worklog/listworklog.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/saveworklogadvice" name="WorkLogForm" type="com.gever.goa.dailyoffice.worklog.action.WorkLogAction" validate="false" parameter="saveAdvice" scope="session">
+			<forward name="index" path="/dailyoffice/worklog/viewworklog.do" redirect="true" />
+		</action>
+
+		<!--ÍÅ¶ÓÈÕÖ¾-->
+		<action path="/dailyoffice/worklog/listteamworklog" name="TeamWorkLogSetForm" type="com.gever.goa.dailyoffice.worklog.action.TeamWorkLogSetAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="worklog.listteamworklog" redirect="false" />
+	             <forward name="set" path="/dailyoffice/worklog/setteamworklog.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/worklog/setteamworklog" type="com.gever.goa.dailyoffice.worklog.action.TeamWorkLogSetAction" name="TeamWorkLogSetForm" scope="session" parameter="toSet" validate="false">
+      			<forward name="set" path="worklog.setteamworklog" redirect="false" />
+	                <forward name="index" path="/dailyoffice/worklog/listteamworklog.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/worklog/treeteamworklog" name="TeamWorkLogSetForm" type="com.gever.goa.dailyoffice.worklog.action.TeamWorkLogSetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="teamworklog.lefttree" redirect="false" />
+		</action>
+		<!--¸öÈËÄê¶ÈÄ¿±ê-->
+        <action path="/dailyoffice/worklog/listpersonyeartarget" name="PersonYearTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonYearTargetAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="worklog.listpersonyeartarget" redirect="false" />
+			<forward name="edit" path="/dailyoffice/worklog/editpersonyeartarget.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/worklog/viewpersonyeartarget.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/editpersonyeartarget" name="PersonYearTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonYearTargetAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="worklog.editpersonyeartarget" redirect="false" />
+			<forward name="index" path="/dailyoffice/worklog/listpersonyeartarget.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/viewpersonyeartarget" name="PersonYearTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonYearTargetAction" validate="false" parameter="toView" scope="session">
+			<forward name="view" path="worklog.viewpersonyeartarget" redirect="false" />
+			<forward name="edit" path="/dailyoffice/worklog/editpersonyeartarget.do" redirect="true" />
+			<forward name="index" path="/dailyoffice/worklog/listpersonyeartarget.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/treepersonyeartarget" name="PersonYearTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonYearTargetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="personyeartarget.lefttree" redirect="false" />
+		</action>
+		<!--¸öÈËÔÂ¶ÈÄ¿±ê-->
+		<action path="/dailyoffice/worklog/listpersonmonthtarget" name="PersonMonthTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonMonthTargetAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="worklog.listpersonmonthtarget" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/worklog/editpersonmonthtarget.do" redirect="true" />
+		     <forward name="view" path="/dailyoffice/worklog/viewpersonmonthtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/worklog/editpersonmonthtarget" name="PersonMonthTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonMonthTargetAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="worklog.editpersonmonthtarget" redirect="false" />
+		     <forward name="index" path="/dailyoffice/worklog/listpersonmonthtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/worklog/viewpersonmonthtarget" name="PersonMonthTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonMonthTargetAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="worklog.viewpersonmonthtarget" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/worklog/editpersonmonthtarget.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/worklog/listpersonmonthtarget.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/treepersonmonthtarget" name="PersonMonthTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonMonthTargetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="personmonthtarget.lefttree" redirect="false" />
+		</action>
+		<!--¸öÈËÖÜÄ¿±ê-->
+		<action path="/dailyoffice/worklog/listpersonweektarget" name="PersonWeekTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonWeekTargetAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="worklog.listpersonweektarget" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/worklog/editpersonweektarget.do" redirect="true" />
+		     <forward name="view" path="/dailyoffice/worklog/viewpersonweektarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/worklog/editpersonweektarget" name="PersonWeekTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonWeekTargetAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="worklog.editpersonweektarget" redirect="false" />
+		     <forward name="index" path="/dailyoffice/worklog/listpersonweektarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/worklog/viewpersonweektarget" name="PersonWeekTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonWeekTargetAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="worklog.viewpersonweektarget" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/worklog/editpersonweektarget.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/worklog/listpersonweektarget.do" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/worklog/treepersonweektarget" name="PersonWeekTargetForm" type="com.gever.goa.dailyoffice.worklog.action.PersonWeekTargetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="personweektarget.lefttree" redirect="false" />
+		</action>
+		<!--CY ADD WorkLog End-->
+		<!--CY ADD TargetMng Start-->
+		<!--Äê¶ÈÄ¿±êstart-->
+		<action path="/dailyoffice/targetmng/listyeartarget" name="YearTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.YearTargetAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="targetmng.listyeartarget" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/targetmng/edityeartarget.do" redirect="true" />
+		     <forward name="view" path="/dailyoffice/targetmng/viewyeartarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/edityeartarget" name="YearTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.YearTargetAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="targetmng.edityeartarget" redirect="false" />
+		     <forward name="index" path="/dailyoffice/targetmng/listyeartarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/viewyeartarget" name="YearTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.YearTargetAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="targetmng.viewyeartarget" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/targetmng/edityeartarget.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/targetmng/listyeartarget.do" redirect="true" />
+		</action>
+		<!--Äê¶ÈÄ¿±êend-->
+		<!--Äê¶È×Ü½ástart-->
+		<action path="/dailyoffice/targetmng/listyearsum" name="YearSumForm" type="com.gever.goa.dailyoffice.targetmng.action.YearSumAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="targetmng.listyearsum" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/targetmng/edityearsum.do" redirect="true" />
+		     <forward name="view" path="/dailyoffice/targetmng/viewyearsum.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/edityearsum" name="YearSumForm" type="com.gever.goa.dailyoffice.targetmng.action.YearSumAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="targetmng.edityearsum" redirect="false" />
+		     <forward name="index" path="/dailyoffice/targetmng/listyearsum.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/viewyearsum" name="YearSumForm" type="com.gever.goa.dailyoffice.targetmng.action.YearSumAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="targetmng.viewyearsum" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/targetmng/edityearsum.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/targetmng/listyearsum.do" redirect="true" />
+		</action>
+		<!--Äê¶È×Ü½áend-->
+		<!--ÔÂ¶ÈÄ¿±êstart-->
+		<action path="/dailyoffice/targetmng/listmonthtarget" name="MonthTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthTargetAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="targetmng.listmonthtarget" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/targetmng/editmonthtarget.do" redirect="true" />
+		     <forward name="view" path="/dailyoffice/targetmng/viewmonthtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/editmonthtarget" name="MonthTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthTargetAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="targetmng.editmonthtarget" redirect="false" />
+		     <forward name="index" path="/dailyoffice/targetmng/listmonthtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/viewmonthtarget" name="MonthTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthTargetAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="targetmng.viewmonthtarget" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/targetmng/editmonthtarget.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/targetmng/listmonthtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/treemonthtarget" name="MonthTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthTargetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="monthtarget.lefttree" redirect="false" />
+		</action>
+		<!--ÔÂ¶ÈÄ¿±êend-->
+		<!--ÔÂ¶È×Ü½ástart-->
+		<action path="/dailyoffice/targetmng/listmonthsum" name="MonthSumForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthSumAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="targetmng.listmonthsum" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/targetmng/editmonthsum.do" redirect="true" />
+		     <forward name="view" path="/dailyoffice/targetmng/viewmonthsum.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/editmonthsum" name="MonthSumForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthSumAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="targetmng.editmonthsum" redirect="false" />
+		     <forward name="index" path="/dailyoffice/targetmng/listmonthsum.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/viewmonthsum" name="MonthSumForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthSumAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="targetmng.viewmonthsum" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/targetmng/editmonthsum.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/targetmng/listmonthsum.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/treemonthsum" name="MonthSumForm" type="com.gever.goa.dailyoffice.targetmng.action.MonthSumAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="monthsum.lefttree" redirect="false" />
+		</action>
+		<!--ÔÂ¶È×Ü½áend-->
+		<!--ÖÜÄ¿±êstart-->
+		<action path="/dailyoffice/targetmng/listweektarget" name="WeekTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.WeekTargetAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="targetmng.listweektarget" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/targetmng/editweektarget.do" redirect="true" />
+				 <forward name="view" path="/dailyoffice/targetmng/viewweektarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/editweektarget" name="WeekTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.WeekTargetAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="targetmng.editweektarget" redirect="false" />
+		     <forward name="index" path="/dailyoffice/targetmng/listweektarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/viewweektarget" name="WeekTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.WeekTargetAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="targetmng.viewweektarget" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/targetmng/editweektarget.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/targetmng/listweektarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/treeweektarget" name="WeekTargetForm" type="com.gever.goa.dailyoffice.targetmng.action.WeekTargetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="weektarget.lefttree" redirect="false" />
+		</action>
+		<!--ÖÜÄ¿±êend-->
+		<!--ÎåÄê¹æ»®start-->
+		<action path="/dailyoffice/targetmng/listfiveyearlayout" name="FiveYearLayoutForm" type="com.gever.goa.dailyoffice.targetmng.action.FiveYearLayoutAction" validate="false" parameter="toList" scope="session">
+	             <forward name="index" path="targetmng.listfiveyearlayout" redirect="false" />
+	             <forward name="edit" path="/dailyoffice/targetmng/editfiveyearlayout.do" redirect="true" />
+				<forward name="view" path="/dailyoffice/targetmng/viewfiveyearlayout.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/editfiveyearlayout" name="FiveYearLayoutForm" type="com.gever.goa.dailyoffice.targetmng.action.FiveYearLayoutAction" validate="false" parameter="toEdit" scope="session">
+		     <forward name="edit" path="targetmng.editfiveyearlayout" redirect="false" />
+		     <forward name="index" path="/dailyoffice/targetmng/listfiveyearlayout.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/targetmng/viewfiveyearlayout" name="FiveYearLayoutForm" type="com.gever.goa.dailyoffice.targetmng.action.FiveYearLayoutAction" validate="false" parameter="toView" scope="session">
+		     <forward name="view" path="targetmng.viewfiveyearlayout" redirect="false" />
+		     <forward name="edit" path="/dailyoffice/targetmng/editfiveyearlayout.do" redirect="true" />
+		     <forward name="index" path="/dailyoffice/targetmng/listfiveyearlayout.do" redirect="true" />
+		</action>
+		<!--ÎåÄê¹æ»®end-->
+		<!--CY ADD TargetMng End-->
+        <!--YY ADD doworkreport start-->
+        <action path="/dailyoffice/workreport/treeworkreport" name="DoWorkReportForm" type="com.gever.goa.dailyoffice.workreport.action.DoWorkReportAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="dailyoffice.workreport.lefttree" redirect="false" />
+		</action>
+ 		 <action path="/dailyoffice/workreport/editworkreport" name="DoWorkReportForm" type="com.gever.goa.dailyoffice.workreport.action.DoWorkReportAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="dailyoffice.workreport.editworkreport" redirect="false" />
+			<forward name="index" path="/dailyoffice/workreport/listworkreport.do" redirect="true" />
+                </action>
+ 		 <action path="/dailyoffice/workreport/viewworkreport" name="DoWorkReportForm" type="com.gever.goa.dailyoffice.workreport.action.DoWorkReportAction" validate="false" parameter="toView" scope="session">
+			<forward name="view" path="dailyoffice.workreport.viewworkreport" redirect="false" />
+			<forward name="index" path="/dailyoffice/workreport/listworkreport.do" redirect="true" />
+			<forward name="edit" path="/dailyoffice/workreport/editworkreport.do" redirect="true" />
+
+                </action>
+		<action path="/dailyoffice/workreport/listworkreport" name="DoWorkReportForm" type="com.gever.goa.dailyoffice.workreport.action.DoWorkReportAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="dailyoffice.workreport.listworkreport" redirect="false" />
+			<forward name="edit" path="/dailyoffice/workreport/editworkreport.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/workreport/viewworkreport.do" redirect="true" />
+
+		</action>
+
+		<!--lihaidong add report start-->
+
+		<action path="/dailyoffice/reportmgr/treetarget" name="TargetForm" type="com.gever.goa.dailyoffice.reportmgr.action.TargetAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="target.lefttree" redirect="false" />
+		</action>
+		<action path="/dailyoffice/reportmgr/listtarget" name="TargetForm" type="com.gever.goa.dailyoffice.reportmgr.action.TargetAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="target.listtarget" redirect="false" />
+			<forward name="edit" path="/dailyoffice/reportmgr/edittarget.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/reportmgr/viewtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/reportmgr/edittarget" name="TargetForm" type="com.gever.goa.dailyoffice.reportmgr.action.TargetAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="index" path="/dailyoffice/reportmgr/listtarget.do" redirect="true" />
+			<forward name="edit" path="target.edittarget" redirect="false" />
+			<forward name="view" path="/dailyoffice/reportmgr/viewtarget.do" redirect="true" />
+		</action>
+		<action path="/dailyoffice/reportmgr/viewtarget" name="TargetForm" type="com.gever.goa.dailyoffice.reportmgr.action.TargetAction" validate="false" parameter="toView" scope="session">
+			<forward name="index" path="/dailyoffice/reportmgr/listtarget.do" redirect="true" />
+			<forward name="edit" path="/dailyoffice/reportmgr/edittarget.do" redirect="true" />
+			<forward name="view" path="target.viewtarget" redirect="false" />
+		</action>
+		<!--lihaidong add report end-->
+                <!--YY ADD doworkreport end-->
+                <!--YY ADD doimpower start-->
+ 		 <action path="/dailyoffice/impowermgr/editimpower" name="DoImpowerForm" type="com.gever.goa.dailyoffice.impowermgr.action.DoImpowerAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="dailyoffice.impowermgr.editimpower" redirect="false" />
+			<forward name="index" path="/dailyoffice/impowermgr/listimpower.do" redirect="true" />
+                </action>
+ 		 <action path="/dailyoffice/impowermgr/viewimpower" name="DoImpowerForm" type="com.gever.goa.dailyoffice.impowermgr.action.DoImpowerAction" validate="false" parameter="toView" scope="session">
+			<forward name="view" path="dailyoffice.impowermgr.viewimpower" redirect="false" />
+			<forward name="index" path="/dailyoffice/impowermgr/listimpower.do" redirect="true" />
+			<forward name="edit" path="/dailyoffice/impowermgr/editimpower.do" redirect="true" />
+
+                </action>
+		<action path="/dailyoffice/impowermgr/listimpower" name="DoImpowerForm" type="com.gever.goa.dailyoffice.impowermgr.action.DoImpowerAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="dailyoffice.impowermgr.listimpower" redirect="false" />
+			<forward name="edit" path="/dailyoffice/impowermgr/editimpower.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/impowermgr/viewimpower.do" redirect="true" />
+		</action>
+                <!--YY ADD doimpower end-->
+                <!--YY ADD calendararrange start-->
+ 		 <action path="/dailyoffice/calendararrange/editcalendarbydept" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toEditRight" scope="session">
+			<forward name="editright" path="dailyoffice.calendararrange.editcalendarbydept" redirect="false" />
+			<forward name="monthindex" path="/dailyoffice/calendararrange/listcalendarbymonth.do" redirect="true" />
+			<forward name="weekindex" path="/dailyoffice/calendararrange/listcalendarbyweek.do" redirect="true" />
+                </action>
+		<action path="/dailyoffice/calendararrange/treecalendararrange" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toTree" scope="session">
+			<forward name="index" path="dailyoffice.calendararrange.lefttree" redirect="false" />
+		</action>
+ 		 <action path="/dailyoffice/calendararrange/viewcalendar" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toView" scope="session">
+			<forward name="view" path="dailyoffice.calendararrange.viewcalendar" redirect="false" />
+                 	<forward name="edit" path="/dailyoffice/calendararrange/editcalendar.do" redirect="true" />
+			<forward name="index" path="/dailyoffice/calendararrange/listcalendar.do" redirect="true" />
+         </action>
+ 		 <action path="/dailyoffice/calendararrange/editcalendar" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="dailyoffice.calendararrange.editcalendar" redirect="false" />
+			<forward name="index" path="/dailyoffice/calendararrange/listcalendar.do" redirect="true" />
+			<forward name="monthindex" path="/dailyoffice/calendararrange/listcalendarbymonth.do" redirect="true" />
+			<forward name="weekindex" path="/dailyoffice/calendararrange/listcalendarbyweek.do" redirect="true" />
+                </action>
+		<action path="/dailyoffice/calendararrange/listcalendar" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="dailyoffice.calendararrange.listcalendar" redirect="false" />
+			<forward name="edit" path="/dailyoffice/calendararrange/editcalendar.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/calendararrange/viewcalendar.do" redirect="true" />
+			<forward name="monthindex" path="/dailyoffice/calendararrange/listcalendarbymonth.do" redirect="true" />
+			<forward name="weekindex" path="/dailyoffice/calendararrange/listcalendarbyweek.do" redirect="true" />
+                </action>
+		<action path="/dailyoffice/calendararrange/listcalendarbymonth" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toListMonth" scope="session">
+			<forward name="monthindex" path="dailyoffice.calendararrange.listcalendarbymonth" redirect="false" />
+			<forward name="edit" path="/dailyoffice/calendararrange/editcalendar.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/calendararrange/viewcalendar.do" redirect="true" />
+			<forward name="weekindex" path="/dailyoffice/calendararrange/listcalendarbyweek.do" redirect="true" />
+			<forward name="editright" path="/dailyoffice/calendararrange/editcalendarbydept.do" redirect="true" />
+			</action>
+		<action path="/dailyoffice/calendararrange/listcalendarbyweek" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toListWeek" scope="session">
+			<forward name="weekindex" path="dailyoffice.calendararrange.listcalendarbyweek" redirect="false" />
+			<forward name="edit" path="/dailyoffice/calendararrange/editcalendar.do" redirect="true" />
+			<forward name="view" path="/dailyoffice/calendararrange/viewcalendar.do" redirect="true" />
+			<forward name="monthindex" path="/dailyoffice/calendararrange/listcalendarbymonth.do" redirect="true" />
+			<forward name="editright" path="/dailyoffice/calendararrange/editcalendarbydept.do" redirect="true" />
+			</action>
+					<action path="/dailyoffice/calendararrange/updatecalendarright" name="CalendarArrangeForm" type="com.gever.goa.dailyoffice.calendararrange.action.CalendarArrangeAction" validate="false" parameter="toUpdateRight" scope="session">
+			<forward name="editright" path="/dailyoffice/calendararrange/editcalendarbydept.do" redirect="true" />
+			<forward name="monthindex" path="/dailyoffice/calendararrange/listcalendarbymonth.do" redirect="true" />
+			<forward name="weekindex" path="/dailyoffice/calendararrange/listcalendarbyweek.do" redirect="true" />
+			</action>
+                <!--YY ADD calendararrange end-->
+
+     <!-- ´ó BBS Ä£¿é -->
+	    <!-- BBS.MNG.TOPBOARD  BEGIN-->
+				<action path="/dailyoffice/bbs/mng/topboard" name="TopBoardForm" type="com.gever.goa.dailyoffice.bbs.action.TopBoardAction" validate="false" parameter="toList" scope="session">
+					<forward name="index" path="dailyoffice.bbs.mng.listtopboard" redirect="false" />
+					<forward name="edit" path="/dailyoffice/bbs/mng/edittopboard.do" redirect="true" />
+					<forward name="view" path="/dailyoffice/bbs/mng/viewtopboard.do" redirect="true" />
+				</action>
+
+				<action path="/dailyoffice/bbs/mng/edittopboard" name="TopBoardForm" type="com.gever.goa.dailyoffice.bbs.action.TopBoardAction" validate="false" parameter="toEdit" scope="session">
+					<forward name="edit" path="dailyoffice.bbs.mng.edittopboard" />
+					<forward name="index" path="/dailyoffice/bbs/mng/topboard.do" redirect="true" />
+				</action>
+
+				<action path="/dailyoffice/bbs/mng/viewtopboard" name="TopBoardForm" type="com.gever.goa.dailyoffice.bbs.action.TopBoardAction" validate="false" parameter="toView" scope="session">
+					<forward name="view" path="dailyoffice.bbs.mng.viewtopboard" />
+					<forward name="index" path="/dailyoffice/bbs/mng/topboard.do" redirect="true" />
+				</action>
+		<!-- BBS.MNG.TOPBOARD  END-->
+
+		<!-- BBS.MNG.SBOARD  BEGIN-->
+			<action path="/dailyoffice/bbs/mng/sboard" name="SBoardForm" type="com.gever.goa.dailyoffice.bbs.action.SBoardAction" validate="false" parameter="toList" scope="session">
+				<forward name="index" path="dailyoffice.bbs.mng.listsboard" redirect="false" />
+				<forward name="edit" path="/dailyoffice/bbs/mng/editsboard.do" redirect="true" />
+				<forward name="view" path="/dailyoffice/bbs/mng/viewsboard.do" redirect="true" />
+			</action>
+
+			<action path="/dailyoffice/bbs/mng/editsboard" name="SBoardForm" type="com.gever.goa.dailyoffice.bbs.action.SBoardAction" validate="false" parameter="toEdit" scope="session">
+				<forward name="edit" path="dailyoffice.bbs.mng.editsboard" />
+				<forward name="index" path="/dailyoffice/bbs/mng/sboard.do" redirect="true" />
+			</action>
+
+			<action path="/dailyoffice/bbs/mng/viewsboard" name="SBoardForm" type="com.gever.goa.dailyoffice.bbs.action.SBoardAction" validate="false" parameter="toView" scope="session">
+				<forward name="view" path="dailyoffice.bbs.mng.viewsboard" />
+				<forward name="index" path="/dailyoffice/bbs/mng/sboard.do" redirect="true" />
+			</action>
+		<!-- BBS.MNG.SBOARD  END-->
+
+		<!-- BBS.MNG.USER  BEGIN-->
+			<action path="/dailyoffice/bbs/mng/bbsuser" name="BBSUserForm" type="com.gever.goa.dailyoffice.bbs.action.UserAction" validate="false" parameter="toList" scope="session">
+				<forward name="index" path="dailyoffice.bbs.mng.listbbsuser" redirect="false" />
+				<forward name="edit" path="/dailyoffice/bbs/mng/editbbsuser.do" redirect="true" />
+				<forward name="view" path="/dailyoffice/bbs/mng/viewbbsuser.do" redirect="true" />
+			</action>
+
+			<action path="/dailyoffice/bbs/mng/editbbsuser" name="BBSUserForm" type="com.gever.goa.dailyoffice.bbs.action.UserAction" validate="false" parameter="toEdit" scope="session">
+				<forward name="edit" path="dailyoffice.bbs.mng.editbbsuser" />
+				<forward name="index" path="/dailyoffice/bbs/mng/bbsuser.do" redirect="true" />
+			</action>
+
+			<action path="/dailyoffice/bbs/mng/viewbbsuser" name="BBSUserForm" type="com.gever.goa.dailyoffice.bbs.action.UserAction" validate="false" parameter="toView" scope="session">
+				<forward name="view" path="dailyoffice.bbs.mng.viewbbsuser" />
+				<forward name="index" path="/dailyoffice/bbs/mng/bbsuser.do" redirect="true" />
+			</action>
+		<!-- BBS.MNG.USER  END-->
+
+		<!-- BBS.TOPBOARD  BEGIN-->
+			<action path="/dailyoffice/bbs/topboard" name="TopBoardForm" type="com.gever.goa.dailyoffice.bbs.action.TopBoardAction" validate="false" parameter="toAll" scope="session">
+				<forward name="index" path="dailyoffice.bbs.listtopboard" redirect="false" />
+
+			</action>
+
+		<!-- BBS.TOPBOARD  END-->
+
+		<!-- BBS.MAIN  BEGIN-->
+			<action path="/dailyoffice/bbs/main" name="MainForm" type="com.gever.goa.dailyoffice.bbs.action.BBSMainAction" validate="false" parameter="toMain" scope="session">
+				<forward name="main" path="/dailyoffice/bbs/bbsframe.jsp" redirect="false" />
+				<forward name="index" path="dailyoffice.bbs.tree" redirect="false" />
+				<forward name="reg" path="/dailyoffice/bbs/user.do" redirect="true" />
+			</action>
+
+		<!-- BBS.MAIN  END-->
+
+		<!-- BBS.BBSUSER  BEGIN-->
+			<action path="/dailyoffice/bbs/user" name="BBSUserForm" type="com.gever.goa.dailyoffice.bbs.action.UserAction" validate="false" parameter="toReg" scope="session">
+				<forward name="edit" path="dailyoffice.bbs.editbbsuser" redirect="false" />
+				<forward name="index" path="/dailyoffice/bbs/main.do" redirect="true" />
+				<forward name="topic" path="/dailyoffice/bbs/listTopic.do" redirect="true" />
+			</action>
+
+		<!-- BBS.BBSUSER  END-->
+
+		<!-- BBS.SBOARD  BEGIN-->
+			<action path="/dailyoffice/bbs/sboard" name="SBoardForm" type="com.gever.goa.dailyoffice.bbs.action.SBoardAction" validate="false" parameter="toAll" scope="session">
+				<forward name="index" path="dailyoffice.bbs.listsboard" redirect="false" />
+			</action>
+
+		<!-- BBS.SBOARD  END-->
+
+	 <!--BBS.TOPIC begin-->
+                <action path="/dailyoffice/bbs/topiclist" name="TopicForm" validate="false" type="com.gever.goa.dailyoffice.bbs.action.BBSTopicAction" parameter="toEditTopicList">
+                    	<forward name="index" path="dailyoffice.bbs.topiclist" />
+                    	<forward name="list" path="/dailyoffice/bbs/topiclist.do" redirect="true" />
+                </action>
+                <action path="/dailyoffice/bbs/listTopic" name="TopicForm" validate="false" type="com.gever.goa.dailyoffice.bbs.action.BBSTopicAction" parameter="toListTopic">
+                        <forward name="index" path="dailyoffice.bbs.listTopic" />
+						<forward name="edit" path="/dailyoffice/bbs/editTopic.do" redirect="true" />
+                </action>
+                <action path="/dailyoffice/bbs/editTopic" name="TopicForm" validate="false" type="com.gever.goa.dailyoffice.bbs.action.BBSTopicAction" parameter="toEditTopic">
+                        <forward name="edit" path="dailyoffice.bbs.editTopic" />
+                        <forward name="index" path="/dailyoffice/bbs/listTopic.do" redirect="true" />
+						<forward name="list" path="/dailyoffice/bbs/topiclist.do" redirect="true" />
+                </action>
+               <!--BBS.TOPIC end-->
+
+    <!-- ´ó BBS ½áÊø-->
+
+                <!--YY ADD doworkreport end-->
+
+       <!--XYZ ADD Card begin-->
+    <action name="CardcaseForm" parameter="toList" path="/dailyoffice/tools/listCardcase" scope="session" type="com.gever.goa.dailyoffice.tools.action.CardcaseAction" validate="false">
+      <forward name="index" path="dailyoffice.tools.listCardcase" redirect="false" />
+      <forward name="edit" path="/dailyoffice/tools/editCardcase.do" redirect="true" />
+    </action>
+    <action name="CardcaseForm" parameter="toEdit" path="/dailyoffice/tools/editCardcase" type="com.gever.goa.dailyoffice.tools.action.CardcaseAction" validate="false">
+      <forward name="edit" path="dailyoffice.tools.editCardcase" redirect="false" />
+      <forward name="index" path="/dailyoffice/tools/listCardcase.do" redirect="true" />
+    </action>
+    <action name="CardcaseForm" parameter="toView" path="/dailyoffice/tools/viewCardcase" type="com.gever.goa.dailyoffice.tools.action.CardcaseAction" validate="false">
+    <forward name="view" path="dailyoffice.tools.viewCardcase" />
+	<forward name="index" path="dailyoffice.tools.listCardcase" redirect="false" />
+    </action>
+    <action path="/dailyoffice/tools/listTickler" name="TicklerForm" parameter="toList" type="com.gever.goa.dailyoffice.tools.action.TicklerAction" validate="false">
+      <forward name="index" path="dailyoffice.tools.listTickler" redirect="false" />
+      <forward name="edit" path="/dailyoffice/tools/editTickler.do" redirect="true" />
+    </action>
+    <action path="/dailyoffice/tools/editTickler" name="TicklerForm" parameter="toEdit" type="com.gever.goa.dailyoffice.tools.action.TicklerAction" validate="false">
+      <forward name="edit" path="dailyoffice.tools.editTickler" redirect="false" />
+      <forward name="index" path="/dailyoffice/tools/listTickler.do" redirect="true" />
+    </action>
+    <action path="/dailyoffice/tools/viewTickler" name="TicklerForm" parameter="toView" type="com.gever.goa.dailyoffice.tools.action.TicklerAction" validate="false">
+      <forward name="view" path="dailyoffice.tools.viewTickler" />
+	  <forward name="index" path="/dailyoffice/tools/listTickler.do" redirect="false" />
+    </action>
+    <action path="/dailyoffice/tools/listCardcaseType" name="CardcaseTypeForm" type="com.gever.goa.dailyoffice.tools.action.CardcaseTypeAction" parameter="toList" validate="false">
+      <forward name="index" path="dailyoffice.tools.listCardcaseType" redirect="false" />
+      <forward name="edit" path="/dailyoffice/tools/editCardcaseType.do" redirect="true" />
+    </action>
+    <action path="/dailyoffice/tools/editCardcaseType" name="CardcaseTypeForm" type="com.gever.goa.dailyoffice.tools.action.CardcaseTypeAction" parameter="toEdit" validate="false">
+    <forward name="edit" path="dailyoffice.tools.editCardcaseType" redirect="false" />
+    <forward name="index" path="/dailyoffice/tools/listCardcaseType.do" redirect="true" />
+    </action>
+    <action path="/dailyoffice/tools/viewCardcaseType" name="CardcaseTypeForm" type="com.gever.goa.dailyoffice.tools.action.CardcaseTypeAction" parameter="toView" validate="false">
+    <forward name="view" path="dailyoffice.tools.viewCardcaseType" />
+	<forward name="index" path="/dailyoffice/tools/listCardcaseType.do" redirect="false" />
+
+    </action>
+    <action path="/dailyoffice/tools/treeCardType" type="com.gever.goa.dailyoffice.tools.action.CardcaseTypeAction" name="CardcaseTypeForm" validate="false" parameter="toTree" scope="session">
+     <forward name="index" path="dailyoffice.tools.cardlefttree" redirect="false" />
+    </action>
+
+	 <action path="/dailyoffice/mailmgr/mailinfo/mailinfo" name="MailInfoForm" type="com.gever.goa.dailyoffice.mailmgr.action.MailInfoAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="dailyoffice.mailmgr.mailinfo.mailinfo" redirect="false" />
+	</action>
+	<!--mailconfig end-->
+
+		<!--pop3mailconfig by lihaidong start-->
+			<action path="/dailyoffice/mailmgr/pop3config/pop3configlist" name="Pop3ConfigForm" type="com.gever.goa.dailyoffice.mailmgr.action.Pop3ConfigAction" parameter="toList" validate="false" scope="session">
+
+				<forward name="index" path="dailyoffice.mailmgr.pop3config.pop3configlist" redirect="false" />
+
+				<forward name="edit" path="/dailyoffice/mailmgr/pop3config/pop3configedit.do" redirect="true" />
+
+				<forward name="view" path="dailyoffice.mailmgr.pop3config.pop3configview" redirect="true" />
+			</action>
+
+			<action path="/dailyoffice/mailmgr/pop3config/pop3configedit" name="Pop3ConfigForm" type="com.gever.goa.dailyoffice.mailmgr.action.Pop3ConfigAction" parameter="toEdit" validate="false" scope="session">
+
+				<forward name="index" path="/dailyoffice/mailmgr/pop3config/pop3configlist.do" redirect="true" />
+
+				<forward name="edit" path="dailyoffice.mailmgr.pop3config.pop3configedit" redirect="false" />
+			</action>
+
+			<action path="/dailyoffice/mailmgr/pop3config/pop3configview" name="Pop3ConfigForm" type="com.gever.goa.dailyoffice.mailmgr.action.Pop3ConfigAction" parameter="toView" validate="false" scope="session">
+
+				<forward name="index" path="/dailyoffice/mailmgr/pop3config/pop3configlist.do" redirect="true" />
+
+				<forward name="edit" path="/dailyoffice/mailmgr/pop3config/pop3configedit.do" redirect="true" />
+
+				<forward name="view" path="dailyoffice.mailmgr.pop3config.pop3configview" redirect="false" />
+			</action>
+
+
+		<!--pop3mailconfig  by lihaidong end-->
+
+
+	 <!--mailbox start by lihaidong-->
+
+	<action path="/dailyoffice/mailmgr/mailimportandexport/mailboxindex" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxAction" name="MailboxForm" scope="session" validate="false" parameter="toList">
+			<forward name="index" path="dailyoffice.mailmgr.mailimportandexport.mailboxindex" redirect="false" />
+	</action>
+
+	<action path="/dailyoffice/mailmgr/mailimportandexport/import" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxAction" name="MailboxForm" validate="false" scope="session">
+			<forward name="index" path="/dailyoffice/mailmgr/mailimportandexport/mailboxindex.do" redirect="true" />
+	</action>
+
+	<action path="/dailyoffice/mailmgr/mailimportandexport/export" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxAction" name="MailboxForm" validate="false" scope="session">
+			<forward name="index" path="/dailyoffice/mailmgr/mailimportandexport/mailboxindex.do" redirect="true" />
+	</action>
+
+	 <!--mailbox end by lihaidong-->
+
+	<!--mailboxmgr start by lihaidong-->
+
+		<action path="/dailyoffice/mailmgr/mailboxmgr/mailboxtreemgr" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxMgrAction" name="MailboxMgrForm" parameter="toTree" validate="false" scope="session">
+				<forward name="index" path="dailyoffice.mailmgr.mailboxmgr.mailboxtree" redirect="false" />
+		</action>
+
+		<action path="/dailyoffice/mailmgr/mailboxmgr/mailboxmgrlist" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxMgrAction" name="MailboxMgrForm" parameter="toList" validate="false" scope="session">
+				<forward name="index" path="dailyoffice.mailmgr.mailboxmgr.mailboxmgrlist" redirect="true" />
+		</action>
+
+		<action path="/dailyoffice/mailmgr/mailboxmgr/mailboxmgrupdate" type="com.gever.goa.dailyoffice.mailmgr.action.MailboxMgrAction" name="MailboxMgrForm" parameter="toList" validate="false" scope="session">
+				<forward name="index" path="/dailyoffice/mailmgr/mailboxmgr/mailboxmgrlist.do" redirect="true" />
+		</action>
+	<!--mailboxmgr end by lihaidong-->
+     <!--Incept pop3mail created by dong-->
+     <action path="/dailyoffice/mailmgr/inceptexteriormaillist" type="com.gever.goa.dailyoffice.mailmgr.action.Pop3ConfigAction" name="Pop3ConfigForm" validate="false" parameter="toInceptPop3List" scope="session">
+     <forward name="index" path="dailyoffice.mailmgr.inceptexteriormaillist" redirect="false" />
+     </action>
+
+     <action path="/dailyoffice/mailmgr/writemail" type="com.gever.goa.dailyoffice.mailmgr.action.MailMgrAction" name="MailMgrForm" validate="false" parameter="toEdit" scope="session">
+     <forward name="edit" path="dailyoffice.mailmgr.writemail" redirect="false" />
+     <forward name="result" path="/dailyoffice/mailmgr/mailsendresult.do" redirect="true" />
+     <forward name="index" path="/dailyoffice/mailmgr/maillist.do" redirect="true" />
+     </action>
+
+     <action path="/dailyoffice/mailmgr/mailsendresult" type="com.gever.goa.dailyoffice.mailmgr.action.MailMgrAction" name="MailMgrForm" validate="false" parameter="toResult" scope="session">
+     <forward name="result" path="dailyoffice.mailmgr.mailsendresult" redirect="false" />
+     </action>
+
+     <action path="/dailyoffice/mailmgr/maillist" type="com.gever.goa.dailyoffice.mailmgr.action.MailMgrAction" name="MailMgrForm" validate="false" parameter="toList" scope="session">
+     <forward name="index" path="dailyoffice.mailmgr.maillist" redirect="false" />
+     </action>
+     <action path="/dailyoffice/mailmgr/mailview" type="com.gever.goa.dailyoffice.mailmgr.action.MailMgrAction" name="MailMgrForm" validate="false" parameter="toView" scope="session">
+     <forward name="view" path="dailyoffice.mailmgr.mailview" redirect="false" />
+     <forward name="index" path="/dailyoffice/mailmgr/maillist.do" redirect="true" />
+     </action>
+     <action path="/dailyoffice/mailmgr/maildirectorylist" type="com.gever.goa.dailyoffice.mailmgr.action.MailDirectoryAction" name="MailDirectoryForm" validate="false" parameter="toList" scope="session">
+     <forward name="index" path="dailyoffice.mailmgr.maildirectorylist" redirect="false" />
+     </action>
+     <action path="/dailyoffice/mailmgr/maildiredit" type="com.gever.goa.dailyoffice.mailmgr.action.MailDirectoryAction" name="MailDirectoryForm" validate="false" parameter="toEdit" scope="session">
+     <forward name="edit" path="dailyoffice.mailmgr.maildiredit" redirect="false" />
+     <forward name="index" path="/dailyoffice/mailmgr/maildirectorylist.do" redirect="true" />
+     </action>
+     <!-- dong add mailmgr end -->
+	</action-mappings>
+   <!-- -->
+  <message-resources parameter="com.gever.ApplicationResources" />
+</struts-config>

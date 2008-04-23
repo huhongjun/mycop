@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Insert Table</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="HTML 4.0" name=vs_targetSchema>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR><LINK 
+href="../css/dialog.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript>
+function attr(name, value) {
+	if (!value || value == "") return "";
+	return ' ' + name + '="' + value + '"';
+}
+
+   function explore(obj, pnt) {
+      var i;
+      for (i in obj) {
+         alert(i +"="+obj[i]);
+      }
+   }
+
+function insertTable() {
+
+
+   // use DOM functions to create the table in the dlg_ins_table window
+   // and then return the innerHTML of the DIV containing the table
+
+	var nRows = rows.value ? parseInt(rows.value) : 2;
+	var nCols = cols.value ? parseInt(cols.value) : 2;
+
+   // create the div that will contain the table
+   var d = document.body.appendChild( document.createElement("DIV") );
+
+   // create the table in the div
+   var t = d.appendChild( document.createElement("TABLE") );
+   var tb = t.appendChild( document.createElement("TBODY") );
+   
+	for (var i = 0; i < nRows; i++) {
+      var tr = tb.appendChild( document.createElement("TR") );
+		for (var j = 0; j < nCols; j++) {
+            var td = tr.appendChild( document.createElement("TD") );
+            td.style.height = rowHeight.value;
+            td.style.width = colWidth.value;
+		}
+	}
+
+   // set table properties
+   t.border = borderWidth.value;
+   t.bordercolor = borderColor.value;
+   t.cellspacing = cellSpacing.value;
+   t.cellpadding = cellPadding.value;
+   t.bgcolor = backgroundColor.value;
+
+   window.returnValue = d.innerHTML;
+   window.close();
+}
+
+function cancel() {
+	window.returnValue = null;
+	window.close();
+}
+</SCRIPT>
+</HEAD>
+<BODY 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+leftMargin=0 topMargin=0 scroll=no>
+<TABLE class="dialog" height="100%" cellSpacing=2 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD colSpan=5>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>Layout</TD>
+          <TD vAlign=center width="90%">
+            <HR width="100%">
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD width=10>&nbsp;</TD>
+      <TD width=70>行数:</TD>
+    <TD vAlign=center><INPUT size=5 value=2 name=rows></TD>
+      <TD width=70>填充：</TD>
+    <TD vAlign=center><INPUT size=5 value=0 name=cellPadding></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+      <TD>列数:</TD>
+    <TD vAlign=center><INPUT size=5 value=2 name=cols></TD>
+      <TD>单元格间距:</TD>
+    <TD vAlign=center><INPUT size=5 value=0 name=cellSpacing></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+      <TD>行高:</TD>
+    <TD vAlign=center><INPUT size=5 value=20 name=rowHeight></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+      <TD>列宽:</TD>
+    <TD vAlign=center><INPUT size=5 value=100 name=colWidth></TD></TR>
+  <TR>
+    <TD colSpan=5>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+              <TD>边界</TD>
+          <TD vAlign=center width="90%">
+            <HR width="100%">
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+      <TD>宽:</TD>
+    <TD vAlign=center><INPUT size=5 value=1 name=borderWidth></TD>
+      <TD>颜色:</TD>
+    <TD vAlign=center><INPUT size=10 value=black name=borderColor></TD></TR>
+  <TR>
+    <TD colSpan=5>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+              <TD>背景</TD>
+          <TD vAlign=center width="90%">
+            <HR width="100%">
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+      <TD>颜色:</TD>
+    <TD vAlign=center><INPUT size=15 name=backgroundColor></TD></TR>
+  <TR>
+    <TD colSpan=5>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD vAlign=center width="100%" colSpan=2>
+            <HR width="100%">
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>
+    <TD align=right colSpan=4><INPUT class=button title="Insert Table" onclick=insertTable() type=button value=确定> 
+<INPUT class=button title="Cancel Dialog" onclick=cancel() type=button value=取消></TD></TR></TBODY></TABLE></BODY></HTML>

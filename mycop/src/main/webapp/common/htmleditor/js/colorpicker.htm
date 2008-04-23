@@ -1,0 +1,251 @@
+<HTML><HEAD><TITLE>颜色选择器</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<SCRIPT src="slidebar.js" type=text/javascript></SCRIPT>
+
+<STYLE type=text/css>TD {
+	FONT-SIZE: 10px; FONT-FAMILY: verdana
+}
+.outerSlideContainer {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN-LEFT: 0px; BORDER-LEFT: 0px; WIDTH: 150px; BORDER-BOTTOM: 0px; HEIGHT: 6px
+}
+.gradContainer {
+	BORDER-RIGHT: window 1px inset; BORDER-TOP: window 1px inset; FONT-SIZE: 1px; Z-INDEX: 4; MARGIN-LEFT: 5px; OVERFLOW: hidden; BORDER-LEFT: window 1px inset; WIDTH: 140px; BORDER-BOTTOM: window 1px inset; POSITION: absolute; HEIGHT: 6px
+}
+.sliderHandle {
+	BORDER-RIGHT: white 0px outset; BORDER-TOP: white 0px outset; Z-INDEX: 5; OVERFLOW: hidden; BORDER-LEFT: white 0px outset; WIDTH: 11px; CURSOR: hand; BORDER-BOTTOM: white 0px outset; HEIGHT: 14px
+}
+.sliderHandle IMG {
+	WIDTH: 11px; HEIGHT: 14px
+}
+.lineContainer {
+	MARGIN-LEFT: 5px; WIDTH: 139px; POSITION: absolute; HEIGHT: 6px
+}
+.line {
+	FILTER: alpha(style=1); OVERFLOW: hidden; WIDTH: 139px; HEIGHT: 6px
+}
+#colorBox {
+	BORDER-RIGHT: window 1px inset; BORDER-TOP: window 1px inset; MARGIN-LEFT: 2px; BORDER-LEFT: window 1px inset; WIDTH: 20px; BORDER-BOTTOM: window 1px inset; HEIGHT: 20px
+}
+#colorImage {
+	BORDER-RIGHT: window 1px inset; BORDER-TOP: window 1px inset; BORDER-LEFT: window 1px inset; WIDTH: 164px; CURSOR: hand; BORDER-BOTTOM: window 1px inset; HEIGHT: 20px
+}
+INPUT {
+	BORDER-RIGHT: window 1px inset; PADDING-RIGHT: 0px; BORDER-TOP: window 1px inset; PADDING-LEFT: 0px; FONT-SIZE: 10px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: window 1px inset; WIDTH: 25px; PADDING-TOP: 0px; BORDER-BOTTOM: window 1px inset
+}
+INPUT.button {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: white 1px solid; FONT-SIZE: 12px; BORDER-LEFT: white 1px solid; WIDTH: 40px; BORDER-BOTTOM: black 1px solid
+}
+
+BODY {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: buttonface; MARGIN: 5px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+
+function hsvToRgb(hsv) {
+	var rgb = new Object();
+	var i, f, p, q, t;
+
+
+	if (hsv.s == 0) {
+		// achromatic (grey)
+		rgb.r = rgb.g = rgb.b = hsv.v;
+		return rgb;
+	}
+	hsv.h /= 60;			// sector 0 to 5
+	i = Math.floor( hsv.h );
+	f = hsv.h - i;			// factorial part of h
+	p = hsv.v * ( 1 - hsv.s );
+	q = hsv.v * ( 1 - hsv.s * f );
+	t = hsv.v * ( 1 - hsv.s * ( 1 - f ) );
+	switch( i ) {
+		case 0:
+			rgb.r = hsv.v;
+			rgb.g = t;
+			rgb.b = p;
+			break;
+		case 1:
+			rgb.r = q;
+			rgb.g = hsv.v;
+			rgb.b = p;
+			break;
+		case 2:
+			rgb.r = p;
+			rgb.g = hsv.v;
+			rgb.b = t;
+			break;
+		case 3:
+			rgb.r = p;
+			rgb.g = q;
+			rgb.b = hsv.v;
+			break;
+		case 4:
+			rgb.r = t;
+			rgb.g = p;
+			rgb.b = hsv.v;
+			break;
+		default:		// case 5:
+			rgb.r = hsv.v;
+			rgb.g = p;
+			rgb.b = q;
+			break;
+	}
+	
+	return rgb;
+}
+
+/*
+var t = new Object();
+t.h = 180;
+t.s = 0.5;
+t.v = 0.5;
+
+alert(hsvToRgb(t).r)*/
+
+function calculateRGB() {
+	if (window.event.button == 1 && dragobject == null) {
+		var hsv = new Object();
+		var h = window.event.srcElement.offsetHeight;
+		var y = window.event.offsetY;
+		
+		hsv.h = 360 * window.event.offsetX / window.event.srcElement.offsetWidth;
+		
+		if (y > h/2) {
+			hsv.s = 1.0;
+			hsv.v = 2 * (h - y) / h;
+		}
+		else {
+			hsv.v = 1.0;
+			hsv.s = y / (h/2);
+		}
+		
+		var rgb = hsvToRgb(hsv);
+				
+		public_setColor(rgb.r, rgb.g, rgb.b);
+		
+	}
+}
+
+function update(el) {
+	var red   = Math.round(255*redSlider.value);
+	var green = Math.round(255*greenSlider.value);
+	var blue  = Math.round(255*blueSlider.value);
+	
+	var color = "RGB(" + red + "," + green + "," + blue + ")";
+
+	colorBox.style.backgroundColor = color;
+	
+	redLeft.style.background = "RGB(" + 0 + "," + green + "," + blue + ")";
+	redRight.style.background = "RGB(" + 255 + "," + green + "," + blue + ")";
+	greenLeft.style.background = "RGB(" + red + "," + 0 + "," + blue + ")";
+	greenRight.style.background = "RGB(" + red + "," + 255 + "," + blue + ")";
+	blueLeft.style.background = "RGB(" + red + "," + green + "," + 0 + ")";
+	blueRight.style.background = "RGB(" + red + "," + green + "," + 255 + ")";
+	
+	redInput.value = Math.round(red);
+	greenInput.value = Math.round(green);
+	blueInput.value = Math.round(blue);
+	
+	raiseIt();
+}
+
+function updateInput(slider) {
+	var v = parseInt(window.event.srcElement.value);
+	
+	if (!isNaN(v)) {
+		setValue(slider, Math.min(256, v)/256);
+		raiseIt();
+	}
+}
+
+function clickOnGrad(sliderEl) {
+	setValue(sliderEl, Math.min(Math.abs((event.offsetX+1)/event.srcElement.offsetWidth), 1.0));
+}
+
+function init() {
+	public_setColor(0.5, 0.5, 0.5);
+}
+
+function public_setColor(r, g, b) {
+	setValue(redSlider, Math.min(1.0, r));
+	setValue(greenSlider, Math.min(1.0, g));
+	setValue(blueSlider, Math.min(1.0, b));
+	
+	raiseIt();
+}
+
+function public_getColor() {
+	var o = new Object();
+	o.r = redSlider.value;
+	o.g = greenSlider.value;
+	o.b = blueSlider.value;	
+
+	return o;
+}
+
+function raiseIt() {
+	var o = new Object();
+	o.r = redSlider.value;
+	o.g = greenSlider.value;
+	o.b = blueSlider.value;
+	
+	if (window.external.raiseEvent)
+		window.external.raiseEvent("oncolorchange", o);
+}
+function getPickColor(blFlag){
+	parent.callbackPickColor(colorBox.style.backgroundColor,blFlag);
+}
+
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY  oncopy="return false;" oncontextmenu="return false"
+onselectstart="window.event.returnValue = false; window.event.cancelBubble = true;" 
+ondragstart="return false" scroll=no onload=init() leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0">
+<div style="position:absolute;left:0;top:0;background-color:;width:220;height:140;border-top: 1px solid black;border-left: 1px solid black;	border-bottom: 1px solid black;	border-right: 1px solid black;">
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD style="TEXT-ALIGN: right">R</TD>
+    <TD><SPAN class=outerSlideContainer>
+      <DIV class=gradContainer onclick=clickOnGrad(redSlider)></DIV>
+      <DIV class=lineContainer id=redRight style="BACKGROUND: rgb(255,0,0)">
+      <DIV class=line id=redLeft style="BACKGROUND: rgb(0,0,0)"></DIV></DIV>
+      <DIV class=sliderHandle id=redSlider 
+      title="Drag me to change the amount of red" onchange="update(this)" 
+      value="0" type="x"><IMG src="arrow.gif"></DIV></SPAN></TD>
+    <TD><INPUT onselectstart="window.event.cancelBubble = true" id=redInput 
+      onchange=updateInput(redSlider)> </TD></TR>
+  <TR>
+    <TD style="TEXT-ALIGN: right">G</TD>
+    <TD><SPAN class=outerSlideContainer>
+      <DIV class=gradContainer onclick=clickOnGrad(greenSlider)></DIV>
+      <DIV class=lineContainer id=greenRight style="BACKGROUND: rgb(0,255,0)">
+      <DIV class=line id=greenLeft style="BACKGROUND: rgb(0,0,0)"></DIV></DIV>
+      <DIV class=sliderHandle id=greenSlider 
+      title="Drag me to change the amount of green" onchange="update(this)" 
+      value="0" type="x"><IMG src="arrow.gif"></DIV></SPAN></TD>
+    <TD><INPUT onselectstart="window.event.cancelBubble = true" id=greenInput 
+      onchange=updateInput(greenSlider)> </TD></TR>
+  <TR>
+    <TD style="TEXT-ALIGN: right">B</TD>
+    <TD><SPAN class=outerSlideContainer>
+      <DIV class=gradContainer onclick=clickOnGrad(blueSlider)></DIV>
+      <DIV class=lineContainer id=blueRight style="BACKGROUND: rgb(0,0,255)">
+      <DIV class=line id=blueLeft style="BACKGROUND: rgb(0,0,0)"></DIV></DIV>
+      <DIV class=sliderHandle id=blueSlider 
+      title="Drag me to change the amount of blue" onchange="update(this)" 
+      value="0" type="x"><IMG src="arrow.gif"></DIV></SPAN></TD>
+    <TD><INPUT onselectstart="window.event.cancelBubble = true" id=blueInput 
+      onchange=updateInput(blueSlider)> </TD></TR></TBODY></TABLE><IMG 
+onmousemove=calculateRGB() 
+onselectstart="window.event.returnValue = false; window.event.cancelBubble = true;" 
+onmousedown=calculateRGB() id=colorImage 
+title="选择颜色" 
+src="color.jpg"> <SPAN id=colorBox></SPAN>
+<table><tr><td><input value="确定" class="button" type="button" onclick="getPickColor(true)"></td><td><input value="取消"  class="button" type="button" onclick="getPickColor(false)"></td></tr></table>
+</div>
+</BODY></HTML>

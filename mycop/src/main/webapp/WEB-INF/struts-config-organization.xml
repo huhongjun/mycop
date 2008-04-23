@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts
+Configuration
+1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+<form-beans>
+    <form-bean name="DepartmentForm" type="org.apache.struts.validator.DynaValidatorForm" dynamic="true">
+			<form-property name="id" type="java.lang.String" initial="" />
+			<form-property name="code" type="java.lang.String" initial="" />
+			<form-property name="name" type="java.lang.String" initial="" />
+			<form-property name="description" type="java.lang.String" initial="" />
+			<form-property name="departmentType" type="java.lang.String" initial="" />
+			<form-property name="parentDepartment" type="java.lang.String" initial="" />
+			<form-property name="parentDepartmentName" type="java.lang.String" initial="" />
+			<form-property name="functionary" type="java.lang.String" initial="" />
+                        <form-property name="page" type="java.lang.String" initial="0"/>
+    </form-bean>
+<!--libiaoadd2004-11-24-->
+	<form-bean name="orderDepForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id1" type="java.lang.String"/>
+			<form-property name="id2" type="java.lang.String"/>
+		</form-bean>
+<!--libiaoaddend2004-11-24-->
+
+	 <form-bean name="JobForm" type="org.apache.struts.validator.DynaValidatorForm" dynamic="true">
+			<form-property name="id" type="java.lang.String" initial="" />
+			<form-property name="name" type="java.lang.String" initial="" />
+			<form-property name="description" type="java.lang.String" initial="" />
+			<form-property name="department" type="java.lang.String" initial="" />
+			<form-property name="departmentName" type="java.lang.String" initial="" />
+                        <form-property name="page" type="java.lang.String" initial="0"/>
+    </form-bean>
+
+    <form-bean name="OUserForm" type="org.apache.struts.validator.DynaValidatorForm" dynamic="true">
+			<form-property name="id" type="java.lang.String" initial="" />
+			<form-property name="userName" type="java.lang.String" initial="" />
+			<form-property name="password" type="java.lang.String" initial="" />
+			<form-property name="repassword" type="java.lang.String" initial="" />
+			<form-property name="userType" type="java.lang.String" initial="" />
+			<form-property name="level" type="java.lang.String" initial="" />
+			<form-property name="status" type="java.lang.String" initial="" />
+			<form-property name="validDate" type="java.lang.String" initial="" />
+			<form-property name="name" type="java.lang.String" initial="" />
+			<form-property name="code" type="java.lang.String" initial="" />
+			<form-property name="gender" type="java.lang.String" initial="" />
+                        <form-property name="page" type="java.lang.String" initial="0"/>
+    </form-bean>
+
+    <form-bean name="UserDepartmentForm" type="org.apache.struts.validator.DynaValidatorForm" dynamic="true">
+			<form-property name="user" type="java.lang.String" initial="" />
+			<form-property name="department" type="java.lang.String" initial="" />
+                        <form-property name="page" type="java.lang.String" initial="0"/>
+    </form-bean>
+
+    <form-bean name="UserJobForm" type="org.apache.struts.validator.DynaValidatorForm" dynamic="true">
+			<form-property name="user" type="java.lang.String" initial="" />
+			<form-property name="userName" type="java.lang.String" initial="" />
+			<form-property name="job" type="java.lang.String" initial="" />
+			<form-property name="jobName" type="java.lang.String" initial="" />
+                        <form-property name="page" type="java.lang.String" initial="0"/>
+    </form-bean>
+</form-beans>
+	<global-exceptions>
+		<exception
+		handler="com.gever.struts.action.DefaultExceptionHandler"
+		key="err.sys"
+		type="com.gever.exception.DefaultException"
+     	scope="request"
+     	path="/info_error.jsp"/>
+     	<exception 
+     	handler="com.gever.struts.action.DAOExceptionHandler"        
+        key="err.sys"
+        type="com.gever.db.DAOException"
+        scope="request"
+        path="/info_error.jsp"/>
+    </global-exceptions>
+	<global-forwards>
+		<forward name="error_page" path="/../jsp/error/info_error.jsp" redirect="true"/>
+		<forward name="info_ok_page" path="/../jsp/error/info_ok.jsp" redirect="true"/>
+		<forward name="info_page" path="/../jsp/error/info.jsp" redirect="true"/>
+		<forward name="timeout_page" path="/../jsp/error/timeOut.jsp" redirect="true"/>
+		<forward name="access_deny" path="/../jsp/error/deny.jsp" redirect="true"/>
+		<forward name="licence_error" path="/../jsp/error/licence.jsp" redirect="true"/>
+        <forward name="ssl_forward" path="/../jsp/ssl_forward.jsp" redirect="true"/>
+	</global-forwards>
+<action-mappings>
+    <action path="/DepartmentAction" name="DepartmentForm" type="com.gever.sysman.organization.webapp.action.DepartmentAction" validate="false" parameter="action" scope="request" >
+        <forward name="create" path="/../jsp/organization/department/department-new.jsp" />
+        <forward name="update" path="/../jsp/organization/department/department-edit.jsp"/>
+        <forward name="list" path="/../jsp/organization/department/department-list.jsp" />
+	    <forward name="view" path="/../jsp/organization/department/department-browse.jsp" />
+        <forward name="seldptjob" path="/../jsp/organization/department/department-job-select.jsp" />
+		<forward name="seldptuser" path="/../jsp/organization/department/department-employee-select.jsp" />
+		<forward name="getroottree" path="/../jsp/organization/department/tree/department-tree.jsp" />
+		<forward name="getchildtree" path="/../jsp/organization/department/tree/department-child-xml.jsp" />
+        <forward name="getdialogtree" path="/../jsp/organization/department/tree/department-tree-dialog.jsp" />
+    </action>
+<!--libiaoadd2004-11-24 ,//2004-12-2 modify-->
+<action name="orderDepForm" type="com.gever.sysman.organization.webapp.action.OrderDepartmentAction" validate="false" parameter="action" scope="session" path="/depOrderAction">
+		<forward name="ordertree" path="/../jsp/organization/department/order.jsp" redirect="false"/>
+		<forward name="orderdepartment" path="/../jsp/organization/department/department_order.jsp" redirect="false"/>
+
+		</action>
+		<!--libiao add 2004-11-30-->
+		<action type="com.gever.sysman.organization.webapp.action.GetFunctionaryAction" validate="false" parameter="action" scope="session" path="/getFunctionary">
+		<forward name="getfunctionary" path="/../jsp/organization/department/department-selectman.jsp" redirect="false"/>
+		</action>
+		
+<!--libiaoadd end 2004-11-24-->
+    <action path="/JobAction" name="JobForm" type="com.gever.sysman.organization.webapp.action.JobAction" validate="false" parameter="action" scope="session">
+        <forward name="create" path="/../jsp/organization/job/job-new.jsp"/>
+        <forward name="update" path="/../jsp/organization/job/job-edit.jsp"/>
+        <forward name="list" path="/../jsp/organization/job/job-list.jsp"/>
+		<forward name="view" path="/../jsp/organization/job/job-browse.jsp"/>
+		<forward name="seljobuser" path="/../jsp/organization/job/job-employee-select.jsp"/>
+    </action>
+
+    <action path="/EmployeeAction" name="OUserForm" type="com.gever.sysman.organization.webapp.action.UserAction" validate="false" parameter="action" scope="session">
+        <forward name="create" path="/../jsp/organization/employee/employee-new.jsp" />
+        <forward name="update" path="/../jsp/organization/employee/employee-edit.jsp"/>
+        <forward name="list" path="/../jsp/organization/employee/employee-list.jsp"/>
+		<forward name="view" path="/../jsp/organization/employee/employee-browse.jsp"/>
+		<forward name="password" path="/../jsp/organization/employee/employee-password.jsp"/>
+		<forward name="seldptuser" path="/../jsp/organization/employee/employee-department-select.jsp"/>
+		<forward name="seljobuser" path="/../jsp/organization/employee/employee-job-select.jsp"/>
+
+    </action>
+
+	<action path="/EmployeeDepartmentAction" name="UserDepartmentForm" type="com.gever.sysman.organization.webapp.action.UserDepartmentAction" validate="false" parameter="action" scope="request">
+        <!--forward name="create" path=""/-->
+        <forward name="list" path=""/>
+        <!--forward name="list" path=""/-->
+	    <!--forward name="view" path=""/-->
+    </action>
+
+    <action path="/EmployeeJobAction" name="UserJobForm" type="com.gever.sysman.organization.webapp.action.UserJobAction" validate="false" parameter="action" scope="request">
+        <!--forward name="create" path=""/-->
+        <!--forward name="update" path=""/-->
+        <forward name="list" path=""/>
+		<!--forward name="view" path=""/-->
+    </action>
+		<!--libiaoadd-->
+		<action type="com.gever.sysman.privilege.webapp.action.GetConfigAction" validate="false" parameter="action" scope="session" path="/getConfigAction">	
+			<forward name="showRoot" path="/../jsp/privilege/strutsConfigRoot.jsp" redirect="false"/>
+			<forward name="showconfig" path="/../jsp/privilege/getConfigTree.jsp" redirect="false"/>
+			<forward name="showmethod" path="/../jsp/privilege/getMthodTree.jsp" redirect="false"/>
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="com.gever.privilege.ApplicationResource"/>
+</struts-config>

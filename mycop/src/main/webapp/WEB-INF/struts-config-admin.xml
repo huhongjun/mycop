@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by zxczf (gever) -->
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="NationForm"   type="com.gever.goa.admin.action.NationForm"/>
+		<form-bean name="UnitForm"   type="com.gever.goa.admin.action.UnitForm"/>
+		<form-bean name="DutyForm"   type="com.gever.goa.admin.action.DutyForm"/>
+		<form-bean name="PolityForm"   type="com.gever.goa.admin.action.PolityForm"/>
+		<form-bean name="MarriageForm"   type="com.gever.goa.admin.action.MarriageForm"/>
+		<form-bean name="JobForm"   type="com.gever.goa.admin.action.JobForm"/>
+		<form-bean name="KnowledgeForm"   type="com.gever.goa.admin.action.KnowledgeForm"/>
+		<form-bean name="SexForm"   type="com.gever.goa.admin.action.SexForm"/>
+		<form-bean name="MessageForm"   type="com.gever.goa.dailyoffice.message.action.MessageForm"/>
+	    		
+	</form-beans>
+	
+	<global-exceptions>            
+    </global-exceptions>
+	
+	<global-forwards>
+		<forward name="error_page" path="/jsp/error/info_error.jsp" redirect="true"/>
+		<forward name="info_ok_page" path="/jsp/error/info_ok.jsp" redirect="true"/>
+		<forward name="info_page" path="/jsp/error/info.jsp" redirect="true"/>
+	</global-forwards>
+	<action-mappings>
+		<action path="/admin/listnation" name="NationForm" type="com.gever.goa.admin.action.NationAction" validate="false" parameter="toList" scope="session">
+			<forward name="index" path="admin.listnation" redirect="false" /> 
+			<forward name="edit" path="/admin/editnation.do" redirect="true" /> 
+			<forward name="view" path="/admin/viewnation.do" redirect="true" /> 
+		</action>
+		<action path="/admin/editnation" name="NationForm" type="com.gever.goa.admin.action.NationAction" validate="false" parameter="toEdit" scope="session">
+			<forward name="edit" path="admin.editnation" redirect="false" /> 
+			  <forward name="index" path="/admin/listnation.do" redirect="true" /> 
+		</action>
+	
+		<action path="/admin/viewnation" name="NationForm" type="com.gever.goa.admin.action.NationAction" validate="false" parameter="toView" scope="session">
+			 <forward name="view" path="admin.viewnation" redirect="true" /> 
+			 <forward name="edit" path="/admin/editnation.do" redirect="true" /> 
+			 <forward name="index" path="/admin/listnation.do" redirect="true" /> 
+		</action>
+
+        <action path="/admin/listunit" name="UnitForm" type="com.gever.goa.admin.action.UnitAction" validate="false" parameter="toList" scope="session">
+		  <forward name="index" path="admin.listunit" redirect="false" /> 
+		  <forward name="edit" path="/admin/editunit.do" redirect="true" /> 
+		  <forward name="view" path="/admin/viewunit.do" redirect="true" /> 
+	    </action>
+	  
+	 <action path="/admin/editunit" name="UnitForm" type="com.gever.goa.admin.action.UnitAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editunit" redirect="false" /> 
+	  <forward name="index" path="/admin/listunit.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewunit" name="UnitForm" type="com.gever.goa.admin.action.UnitAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewunit" redirect="true" /> 
+	  <forward name="edit" path="/admin/editunit.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listunit.do" redirect="true" /> 
+	  </action>
+	  
+         <action path="/admin/listduty" name="DutyForm" type="com.gever.goa.admin.action.DutyAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="admin.listduty" redirect="false" /> 
+	  <forward name="edit" path="/admin/editduty.do" redirect="true" /> 
+	  <forward name="view" path="/admin/viewduty.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/admin/editduty" name="DutyForm" type="com.gever.goa.admin.action.DutyAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editduty" redirect="false" /> 
+	  <forward name="index" path="/admin/listduty.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewduty" name="DutyForm" type="com.gever.goa.admin.action.DutyAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewduty" redirect="true" /> 
+	  <forward name="edit" path="/admin/editduty.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listduty.do" redirect="true" /> 
+	  </action>
+	  
+         <action path="/admin/listpolity" name="PolityForm" type="com.gever.goa.admin.action.PolityAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="admin.listpolity" redirect="false" /> 
+	  <forward name="edit" path="/admin/editpolity.do" redirect="true" /> 
+	  <forward name="view" path="/admin/viewpolity.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/admin/editpolity" name="PolityForm" type="com.gever.goa.admin.action.PolityAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editpolity" redirect="false" /> 
+	  <forward name="index" path="/admin/listpolity.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewpolity" name="PolityForm" type="com.gever.goa.admin.action.PolityAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewpolity" redirect="true" /> 
+	  <forward name="edit" path="/admin/editpolity.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listpolity.do" redirect="true" /> 
+	  </action>
+	  
+         <action path="/admin/listmarr" name="MarriageForm" type="com.gever.goa.admin.action.MarriageAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="admin.listmarr" redirect="false" /> 
+	  <forward name="edit" path="/admin/editmarr.do" redirect="true" /> 
+	  <forward name="view" path="/admin/viewmarr.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/admin/editmarr" name="MarriageForm" type="com.gever.goa.admin.action.MarriageAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editmarr" redirect="false" /> 
+	  <forward name="index" path="/admin/listmarr.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewmarr" name="MarriageForm" type="com.gever.goa.admin.action.MarriageAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewmarr" redirect="true" /> 
+	  <forward name="edit" path="/admin/editmarr.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listmarr.do" redirect="true" /> 
+	  </action>
+	  
+         <action path="/admin/listjob" name="JobForm" type="com.gever.goa.admin.action.JobAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="admin.listjob" redirect="false" /> 
+	  <forward name="edit" path="/admin/editjob.do" redirect="true" /> 
+	  <forward name="view" path="/admin/viewjob.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/admin/editjob" name="JobForm" type="com.gever.goa.admin.action.JobAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editjob" redirect="false" /> 
+	  <forward name="index" path="/admin/listjob.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewjob" name="JobForm" type="com.gever.goa.admin.action.JobAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewjob" redirect="true" /> 
+	  <forward name="edit" path="/admin/editjob.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listjob.do" redirect="true" /> 
+	  </action>
+         <action path="/admin/listknow" name="KnowledgeForm" type="com.gever.goa.admin.action.KnowledgeAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="admin.listknow" redirect="false" /> 
+	  <forward name="edit" path="/admin/editknow.do" redirect="true" /> 
+	  <forward name="view" path="/admin/viewknow.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/admin/editknow" name="KnowledgeForm" type="com.gever.goa.admin.action.KnowledgeAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editknow" redirect="false" /> 
+	  <forward name="index" path="/admin/listknow.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewknow" name="KnowledgeForm" type="com.gever.goa.admin.action.KnowledgeAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewknow" redirect="true" /> 
+	  <forward name="edit" path="/admin/editknow.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listknow.do" redirect="true" /> 
+	  </action>
+	  
+	   <action path="/admin/listsex" name="SexForm" type="com.gever.goa.admin.action.SexAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="admin.listsex" redirect="false" /> 
+	  <forward name="edit" path="/admin/editsex.do" redirect="true" /> 
+	  <forward name="view" path="/admin/viewsex.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/admin/editsex" name="SexForm" type="com.gever.goa.admin.action.SexAction" validate="false" parameter="toEdit" scope="session">
+	  <forward name="edit" path="admin.editsex" redirect="false" /> 
+	  <forward name="index" path="/admin/listsex.do" redirect="true" /> 
+	  </action>
+	
+	 <action path="/admin/viewsex" name="SexForm" type="com.gever.goa.admin.action.SexAction" validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="admin.viewsex" redirect="true" /> 
+	  <forward name="edit" path="/admin/editsex.do" redirect="true" /> 
+	  <forward name="index" path="/admin/listsex.do" redirect="true" /> 
+	  </action>
+		
+      <action path="/dailyoffice/message/listmessage" name="MessageForm" type="com.gever.goa.dailyoffice.message.action.MessageAction" validate="false" parameter="toList" scope="session">
+	  <forward name="index" path="dailyoffice.message.listmessage" redirect="false" /> 
+	  <forward name="edit" path="/dailyoffice/message/editmessage.do" redirect="true" /> 
+	  <forward name="view" path="/dailyoffice/message/viewmessage.do" redirect="true" /> 
+	  </action>
+	  
+	  <action path="/dailyoffice/message/editmessage" name="MessageForm" type="com.gever.goa.dailyoffice.message.action.MessageAction" validate="false" parameter="toEdit" scope="session">
+	   <forward name="index" path="/dailyoffice/message/listmessage.do" redirect="true" /> 
+	  <forward name="view" path="/dailyoffice/message/viewmessage.do" redirect="true" /> 
+	  <forward name="edit" path="dailyoffice.message.editmessage" redirect="true" /> 
+
+	  </action>
+	  <action path="/dailyoffice/message/message" name="MessageForm" type="com.gever.goa.dailyoffice.message.action.MessageAction" validate="false" parameter="toEdit" scope="session">
+	   <forward name="index" path="admin.homepage.viewuser" redirect="true" /> 
+      	 <forward name="shortness" path="admin.homepage.viewuser" redirect="true" /> 
+	  </action>
+	 <action path="/dailyoffice/message/viewmessage" name="MessageForm" 
+	 			type="com.gever.goa.dailyoffice.message.action.MessageAction"
+	 			 validate="false" parameter="toView" scope="session">
+	  <forward name="view" path="dailyoffice.message.viewmessage" redirect="true" /> 
+	  <forward name="edit" path="/dailyoffice/message/editmessage.do" redirect="true" /> 
+	  <forward name="index" path="/dailyoffice/message/listmessage.do" redirect="true" /> 
+	  </action>
+	  
+	 <action path="/dailyoffice/message/treemessage"
+				name="MessageForm"
+				type="com.gever.goa.dailyoffice.message.action.MessageAction"
+				validate="false"
+				parameter="toTree"
+				scope="session">
+		<forward name="index" path="message.lefttree" redirect="false"/>
+	</action>
+		
+  </action-mappings>
+
+  <message-resources parameter="com.gever.ApplicationResources" />
+</struts-config>

@@ -1,0 +1,59 @@
+.toolbar{
+	background: buttonface;
+	border-top: 1px solid buttonhighlight;
+	border-left: 1px solid buttonhighlight;
+	border-bottom: 1px solid buttonshadow;
+	border-right: 1px solid buttonshadow;
+	padding: 1px;
+	font: menu;
+	/*display:inline*/
+}
+.toolbarspliter{
+}
+.toolbarspliter span{
+	height:100%;
+	width:2px;
+	border-right: 1px solid buttonhighlight;
+	border-left: 1px solid buttonshadow;
+}
+.toolbarhandler span{
+	height:100%;
+	width:2px;
+	border-right: 1px solid buttonshadow;
+	border-left: 1px solid buttonhighlight;
+}
+
+.toolbarbutton {
+	border: 1px solid buttonface;
+	padding: 1px;
+	text-align: center;
+	cursor: default;
+}
+.toolbarbutton IMG	{/*filter: gray();*/}
+
+.buttonflat{
+	background : ;
+	border : 1px solid buttonface;
+	padding : 1px;
+	cursor: default;
+}
+
+.buttonraised{
+	border-Left:1px solid buttonhighlight;
+	border-Right:1px solid buttonshadow;
+	border-Top:1px solid buttonhighlight;
+	border-Bottom:1px solid buttonshadow;
+	padding:1px;
+	cursor: default;
+}
+.buttonpressed{
+	border-Left   : 1px solid buttonshadow;
+	border-Right  : 1px solid buttonhighlight;
+	border-Top    : 1px solid buttonshadow;
+	border-Bottom : 1px solid buttonhighlight;
+	padding-Top    : 2px;
+	padding-Left   : 2px;
+	padding-Bottom : 0px;
+	padding-Right  : 0px;
+	cursor: default;
+}

@@ -1,0 +1,23 @@
+.editor{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	overflow:hidden
+}
+.editor table{
+	border-top: 0px solid black;
+	border-left: 0px solid black;
+	border-bottom: 0px solid black;
+	border-right: 0px solid black;
+}
+
+.toolbarcontainer{
+	background-color:buttonface;
+}
+.editorframe{
+	border-top: 0px solid black;
+	border-left: 0px solid black;
+	border-bottom: 0px solid black;
+	border-right: 0px solid black;
+}

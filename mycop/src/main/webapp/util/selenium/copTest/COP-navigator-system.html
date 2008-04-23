@@ -1,0 +1,235 @@
+<html>
+<head>
+<link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>COP-navigator-system</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COP-navigator-system</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/basedata/BaseDataAction.do?action=toExport&rnd=1153840028492</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>系统数据导出</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/privilege/levelAction.do?action=list&rnd=1153840040509</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>行政级别列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/organization/DepartmentAction.do?action=list&departid=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>公司 列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/organization/JobAction.do?action=list&departid=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>公司 岗位列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/organization/EmployeeAction.do?action=list&departid=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>人员管理</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/privilege/permissionMapAction.do?action=toCreate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>关系映射维护</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/privilege/userAction.do?action=list&rnd=1153840165148</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>用户列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/privilege/roleAction.do?action=list&rnd=1153840176715</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>角色列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/privilege/operationAction.do?action=list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>操作列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/privilege/resourceAction.do?action=getListChild&resid=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>资源列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/log/loglist.do?action=list&rnd=1153840222361</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>操作日志列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listunit.do?rnd=1153840232105</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>单位信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listpolity.do?rnd=1153840242950</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>政治面貌</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listjob.do?rnd=1153840252053</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>职称信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listduty.do?rnd=1153840261947</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>职务信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listknow.do?rnd=1153840271141</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>学历信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listnation.do?rnd=1153840280905</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>民族信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listmarr.do?rnd=1153840291450</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>婚姻信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listsex.do?rnd=1153840302676</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>性别信息</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/bbs/mng/topboard.do?rnd=1153840314844</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>一级论坛</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/bbs/mng/bbsuser.do?rnd=1153840326350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>论坛人员</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/mailmgr/mailboxmgr/mailboxmgrlist.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>邮箱管理</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

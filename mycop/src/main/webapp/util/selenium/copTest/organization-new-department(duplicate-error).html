@@ -1,0 +1,44 @@
+<html>
+<head>
+<link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>organization-new-department(duplicate-error)</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">organization-new-department(duplicate-error)</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://localhost:8080/gdp/organization/DepartmentAction.do?action=list&departid=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>code</td>
+	<td>sales1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>sales1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>组织编码已存在，创建部门失败！</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

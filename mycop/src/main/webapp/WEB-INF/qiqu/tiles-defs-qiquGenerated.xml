@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+  <definition extends="tree.template" name="Book.lefttree">
+    <put name="body" value="/qiqu/Book/treeBook.jsp" />
+  </definition>
+  <definition extends="main.template" name="Book.listBook">
+    <put name="body" value="/qiqu/Book/listBook.jsp" />
+  </definition>
+  <definition extends="edit.template" name="Book.editBook">
+    <put name="body" value="/qiqu/Book/editBook.jsp" />
+  </definition>
+  <definition extends="view.template" name="Book.viewBook">
+    <put name="body" value="/qiqu/Book/viewBook.jsp" />
+  </definition>
+  <definition extends="tree.template" name="User.lefttree">
+    <put name="body" value="/qiqu/User/treeUser.jsp" />
+  </definition>
+  <definition extends="main.template" name="User.listUser">
+    <put name="body" value="/qiqu/User/listUser.jsp" />
+  </definition>
+  <definition extends="edit.template" name="User.editUser">
+    <put name="body" value="/qiqu/User/editUser.jsp" />
+  </definition>
+  <definition extends="view.template" name="User.viewUser">
+    <put name="body" value="/qiqu/User/viewUser.jsp" />
+  </definition>
+</tiles-definitions>

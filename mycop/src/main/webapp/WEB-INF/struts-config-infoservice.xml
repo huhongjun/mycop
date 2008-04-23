@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by zxczf (gever) -->
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+
+        <!--KOBE BEGIN-->
+		<form-bean name="SysInfoTypeForm"   type="com.gever.goa.infoservice.action.SysInfoTypeForm"/>
+		<form-bean name="IsInfoServeForm"   type="com.gever.goa.infoservice.action.IsInfoServeForm"/>
+		<!--IsInfoServeForm2 Îª±ðÃû,²¿ÃÅÐÅÏ¢µÄjspÎÄ¼þÓÃ-->
+		<form-bean name="IsInfoServeForm2"
+		type="com.gever.goa.infoservice.action.IsInfoServeForm"/>
+		<!--IsInfoServeForm3 Îª±ðÃû,ÐÐÒµÐÂÎÅµÄjspÎÄ¼þÓÃ-->
+		<form-bean name="IsInfoServeForm3"
+		type="com.gever.goa.infoservice.action.IsInfoServeForm"/>
+		<!--IsInfoServeForm4 Îª±ðÃû,¹ÜÀíÖÆ¶ÈµÄjspÎÄ¼þÓÃ-->
+		<form-bean name="IsInfoServeForm4"
+		type="com.gever.goa.infoservice.action.IsInfoServeForm"/>
+		<form-bean name="IsDoTypesForm"   type="com.gever.goa.infoservice.action.IsDoTypesForm"/>
+		<form-bean name="IsInfoManageForm"   type="com.gever.goa.infoservice.action.IsInfoManageForm"/>
+		<!--IsInfoMangeForm2 Îª±ðÃû,Õþ²ß·¨¹æµÄjspÎÄ¼þÓÃ-->
+		<form-bean name="IsInfoManageForm2"
+		type="com.gever.goa.infoservice.action.IsInfoManageForm"/>
+		<!--IsInfoMangeForm3 Îª±ðÃû,ÎÄµµ×ÊÁÏµÄjspÎÄ¼þÓÃ-->
+		<form-bean name="IsInfoManageForm3"
+		type="com.gever.goa.infoservice.action.IsInfoManageForm"/>
+		<form-bean name="IsStandardModelForm"   type="com.gever.goa.infoservice.action.IsStandardModelForm"/>
+		<form-bean name="IsAddressListForm"   type="com.gever.goa.infoservice.action.IsAddressListForm"/>
+
+	</form-beans>
+
+
+	<global-exceptions></global-exceptions>
+
+	<global-forwards></global-forwards>
+	
+
+	<action-mappings>
+
+        <!--KOBE BEGIN-->
+		<!--ÐÅÏ¢·þÎñ-->
+		<!--¿Í»§×ÊÁÏÐÅÏ¢-->
+
+		<!--ÐÅÏ¢ÀàÐÍÉèÖÃ-->
+		<action path="/infoservice/list" name="SysInfoTypeForm"  type="com.gever.goa.infoservice.action.SysInfoTypeAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.list" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/dotype.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/dotypeview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/dotype" name="SysInfoTypeForm"  type="com.gever.goa.infoservice.action.SysInfoTypeAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.dotype" redirect="false"/>	
+		    <forward name="index" path="/infoservice/list.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/dotypeview" name="SysInfoTypeForm"  type="com.gever.goa.infoservice.action.SysInfoTypeAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.dotypeview" redirect="true"/>
+		    <forward name="index" path="/infoservice/list.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/dotype.do" redirect="true"/>	    
+		</action>
+
+		<!--×éÖ¯ÐÅÏ¢-->
+		<action path="/infoservice/orginfolist" name="IsInfoServeForm"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.orginfolist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/orginfo.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/orgview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/orginfo" name="IsInfoServeForm"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.orginfo" redirect="false"/>	
+		    <forward name="index" path="/infoservice/orginfolist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/orgview" name="IsInfoServeForm"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.orgview" redirect="true"/>
+		    <forward name="index" path="/infoservice/orginfolist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/orginfo.do" redirect="true"/>	    
+		</action>
+
+		<action path="/infoservice/orginfotree" name="IsInfoServeForm"  type="com.gever.goa.infoservice.action.IsInfoServeAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.orginfotree" redirect="false"/>
+		</action>
+		<!--ÐÐÒµÐÂÎÅ-->
+		<action path="/infoservice/tradenewslist" name="IsInfoServeForm3"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.tradenewslist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/tradenewsedit.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/tradenewsview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/tradenewsedit" name="IsInfoServeForm3"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.tradenewsedit" redirect="false"/>	
+		    <forward name="index" path="/infoservice/tradenewslist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/tradenewsview" name="IsInfoServeForm3"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.tradenewsview" redirect="true"/>
+		    <forward name="index" path="/infoservice/tradenewslist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/tradenewsedit.do" redirect="true"/>	    
+		</action>
+
+		<action path="/infoservice/tradenewstree" name="IsInfoServeForm3"  type="com.gever.goa.infoservice.action.IsInfoServeAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.tradenewstree" redirect="false"/>
+		</action>
+
+		<!--¹ÜÀíÖÆ¶È-->
+		<action path="/infoservice/managesystemlist" name="IsInfoServeForm4"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.managesystemlist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/managesystemedit.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/managesystemview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/managesystemedit" name="IsInfoServeForm4"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.managesystemedit" redirect="false"/>	
+		    <forward name="index" path="/infoservice/managesystemlist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/managesystemview" name="IsInfoServeForm4"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.managesystemview" redirect="true"/>
+		    <forward name="index" path="/infoservice/managesystemlist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/managesystemedit.do" redirect="true"/>	    
+		</action>
+
+		<action path="/infoservice/managesystemtree" name="IsInfoServeForm4"  type="com.gever.goa.infoservice.action.IsInfoServeAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.managesystemtree" redirect="false"/>
+		</action>
+
+		<!--²¿ÃÅÐÅÏ¢-->
+		<action path="/infoservice/deptinfolist" name="IsInfoServeForm2"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.deptinfolist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/deptinfo.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/deptview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/deptinfo" name="IsInfoServeForm2"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.deptinfo" redirect="false"/>	
+		    <forward name="index" path="/infoservice/deptinfolist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/deptview" name="IsInfoServeForm2"  type="com.gever.goa.infoservice.action.IsInfoServeAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.deptview" redirect="true"/>
+		    <forward name="index" path="/infoservice/deptinfolist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/deptinfo.do" redirect="true"/>	    
+		</action>
+
+		<action path="/infoservice/deptinfotree" name="IsInfoServeForm2"  type="com.gever.goa.infoservice.action.IsInfoServeAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.deptinfotree" redirect="false"/>
+		</action>
+
+		<!--Àà±ðÉèÖÃ-->
+		<action path="/infoservice/typelist" name="IsDoTypesForm"  type="com.gever.goa.infoservice.action.IsDoTypeAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.typelist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/lawdotype.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/lawdotypeview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/lawdotype" name="IsDoTypesForm"  type="com.gever.goa.infoservice.action.IsDoTypeAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.lawdotype" redirect="false"/>	
+		    <forward name="index" path="/infoservice/typelist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/lawdotypeview" name="IsDoTypesForm"  type="com.gever.goa.infoservice.action.IsDoTypeAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.lawdotypeview" redirect="true"/>
+		    <forward name="index" path="/infoservice/typelist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/lawdotype.do" redirect="true"/>
+       </action>
+
+	   <action path="/infoservice/typetree"
+		name="IsDoTypesForm"
+		type="com.gever.goa.infoservice.action.IsDoTypeAction"
+		validate="false"
+		parameter="toTree"
+		scope="session" >
+			<forward name="index" path="type.lefttree" redirect="false"/>
+		</action>
+		
+		<!--¹«¹²ÐÅÏ¢-->
+		<action path="/infoservice/publicinfolist" name="IsInfoManageForm"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.publicinfolist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/publicinfo.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/publicview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/publicinfo" name="IsInfoManageForm"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.publicinfo" redirect="false"/>	
+		    <forward name="index" path="/infoservice/publicinfolist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/publicview" name="IsInfoManageForm"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.publicview" redirect="true"/>
+		    <forward name="index" path="/infoservice/publicinfolist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/publicinfo.do" redirect="true"/>    
+		</action>
+
+		<action path="/infoservice/publicinfotree" name="IsInfoManageForm"  type="com.gever.goa.infoservice.action.IsInfoManageAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.publicinfotree" redirect="false"/>
+		</action>
+
+		<!--Õþ²ß·¨¹æ-->
+		<action path="/infoservice/lawlist" name="IsInfoManageForm2"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.lawlist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/law.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/lawview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/law" name="IsInfoManageForm2"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.law" redirect="false"/>	
+		    <forward name="index" path="/infoservice/lawlist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/lawview" name="IsInfoManageForm2"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.lawview" redirect="true"/>
+		    <forward name="index" path="/infoservice/lawlist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/law.do" redirect="true"/>		    
+		</action>
+
+		<action path="/infoservice/lawtree" name="IsInfoManageForm2"  type="com.gever.goa.infoservice.action.IsInfoManageAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.lawtree" redirect="false"/>
+		</action>
+
+		<!--¹«¹²ÐÅÏ¢-->
+		<action path="/infoservice/docinfolist" name="IsInfoManageForm3"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.docinfolist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/docinfoedit.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/docinfoview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/docinfoedit" name="IsInfoManageForm3"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.docinfoedit" redirect="false"/>	
+		    <forward name="index" path="/infoservice/docinfolist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/docinfoview" name="IsInfoManageForm3"  type="com.gever.goa.infoservice.action.IsInfoManageAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.docinfoview" redirect="true"/>
+		    <forward name="index" path="/infoservice/docinfolist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/docinfoedit.do" redirect="true"/>    
+		</action>
+
+		<action path="/infoservice/docinfotree" name="IsInfoManageForm3"  type="com.gever.goa.infoservice.action.IsInfoManageAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.docinfotree" redirect="false"/>
+		</action>
+
+		<!--±ê×¼Ä£°å-->
+		<action path="/infoservice/templatelist" name="IsStandardModelForm"  type="com.gever.goa.infoservice.action.IsStandardModelAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.templatelist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/template.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/templateview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/template" name="IsStandardModelForm"  type="com.gever.goa.infoservice.action.IsStandardModelAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.template" redirect="false"/>	
+		    <forward name="index" path="/infoservice/templatelist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/templateview" name="IsStandardModelForm"  type="com.gever.goa.infoservice.action.IsStandardModelAction"
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.templateview" redirect="true"/>
+		    <forward name="index" path="/infoservice/templatelist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/template.do" redirect="true"/>	    
+		</action>
+
+		<action path="/infoservice/templatetree" name="IsStandardModelForm"  type="com.gever.goa.infoservice.action.IsStandardModelAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.templatetree" redirect="false"/>
+			<forward name="TREE_DATA"  	path="/infoservice/treedata.jsp"/>
+		</action>
+
+		<!--Í¨Ñ¶Â¼-->
+		<action path="/infoservice/communication" name="HrArchiveForm2"  type="com.gever.goa.infoservice.action.CommuAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.communication" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/communicationedit.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/communicationview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/communicationedit" name="HrArchiveForm2"  type="com.gever.goa.infoservice.action.CommuAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.communicationedit" redirect="false"/>	
+		    <forward name="index" path="/infoservice/communication.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/communicationview" name="HrArchiveForm2"  type="com.gever.goa.infoservice.action.CommuAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.communicationview" redirect="true"/>
+		    <forward name="index" path="/infoservice/communication.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/communicationedit.do" redirect="true"/>   
+		</action>
+		<action path="/infoservice/communicationtree" name="HrArchiveForm2"  type="com.gever.goa.infoservice.action.CommuAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.communicationtree" redirect="false"/>
+		</action>
+
+		<!--Èº×éÉèÖÃ-->
+		<action path="/infoservice/grouplist" name="IsAddressListForm"  type="com.gever.goa.infoservice.action.IsAddressListAction" 
+		validate="false"   
+		parameter="toList" 
+		scope="session" >
+		    <forward name="index" path="infoservice.grouplist" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/group.do" redirect="true"/>
+		    <forward name="view" path="/infoservice/groupview.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/group" name="IsAddressListForm"  type="com.gever.goa.infoservice.action.IsAddressListAction" 
+		validate="false"   
+		parameter="toEdit" 
+		scope="session" >
+		    <forward name="edit" path="infoservice.group" redirect="false"/>	
+		    <forward name="index" path="/infoservice/grouplist.do" redirect="true"/>
+		</action>
+
+		<action path="/infoservice/groupview" name="IsAddressListForm"  type="com.gever.goa.infoservice.action.IsAddressListAction" 
+		validate="false"   
+		parameter="toView" 
+		scope="session" >
+		    <forward name="view" path="infoservice.groupview" redirect="true"/>
+		    <forward name="index" path="/infoservice/grouplist.do" redirect="false"/>	
+		    <forward name="edit" path="/infoservice/group.do" redirect="true"/>		    
+		</action>
+
+		<action path="/infoservice/grouptree" name="IsAddressListForm"  type="com.gever.goa.infoservice.action.IsAddressListAction"
+		validate="false"   
+		parameter="toTree" 
+		scope="session" >
+			<forward name="index" path="infoservice.grouptree" redirect="false"/>
+			<forward name="TREE_DATA"  	path="/infoservice/treedata.jsp"/>
+		</action>
+
+	    <!--KOBE END-->
+
+	</action-mappings>
+    <message-resources parameter="com.gever.ApplicationResources" />
+</struts-config>

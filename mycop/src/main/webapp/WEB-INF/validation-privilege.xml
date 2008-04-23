@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by zxczf (zxczf) -->
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+	<global>
+		<constant>
+			<constant-name>phone</constant-name>
+			<constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>zip</constant-name>
+			<constant-value>^\d{6}\d*$</constant-value>
+		</constant>
+	</global>
+	<formset>
+	    <form name="userForm">
+		    <field property="user" depends="required,maxlength">
+				<arg0 key="privilege.user.user"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+			<field property="name" depends="required,maxlength">
+				<arg0 key="privilege.user.name"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+		
+		</form>
+		<form name="RoleForm">
+			<field property="name" depends="required,maxlength">
+				<arg0 key="privilege.role.name"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="description" depends="maxlength">
+				<arg0 key="privilege.role.description"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="ResourceForm">
+			<field property="name" depends="required,maxlength">
+				<arg0 key="privilege.resource.name"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="description" depends="maxlength">
+				<arg0 key="privilege.resource.description"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="parentResourceID" depends="long">
+				<arg0 key="privilege.resource.parentResourceID"/>
+			</field>
+			<field property="resourceType" depends="required">
+				<arg0 key="privilege.resource.resourceType"/>
+			</field>
+		</form>
+		<form name="OperationForm">
+			<field property="name" depends="required,maxlength">
+				<arg0 key="privilege.privilege.name"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="description" depends="maxlength">
+				<arg0 key="privilege.privilege.description"/>
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+		</form>
+	</formset>
+</form-validation>
