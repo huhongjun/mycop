@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+  <properties resource="properties/database.properties"/>
+
+  <transactionManager type="JDBC">
+    <dataSource type="SIMPLE">
+      <property value="org.gjt.mm.mysql.Driver" name="JDBC.Driver"/>
+      <property value="jdbc:mysql://127.0.0.1:3308/cop" name="JDBC.ConnectionURL"/>
+      <property value="root" name="JDBC.Username"/>
+      <property value="root" name="JDBC.Password"/>
+    </dataSource>
+  </transactionManager>
+
+  <sqlMap resource="com/gever/goa/dailyoffice/worklog/dao/impl/sql/WorkLog.xml"/>
+
+</sqlMapConfig>

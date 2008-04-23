@@ -1,0 +1,23 @@
+
+关于COP（协同办公平台） 
+~~~~~~~~~~~~~~
+
+  对平台的整个组织架构、岗位、人员、权限以及相关的基础数据、业务流程进行维护管理。
+  功能包括组织管理、用户管理、角色管理、流程管理、数据字典、日志管理、数据备份与恢复等。
+  
+  
+  
+ ---
+开发框架技术背景
+---
+
+*1、view
+	JavaScript/DOM/HTML/JSP/CSS/Tag
+*2、control
+	Struts、SQL
+*3、model
+
+*4、Tools 和语言
+	Eclipse、QiQU
+	Java、Velocity
+	XML 
