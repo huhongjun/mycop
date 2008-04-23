@@ -1,0 +1,135 @@
+<html>
+<head>
+<link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>COP-navigator-toolset</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COP-navigator-toolset</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/mailmgr/maildirectorylist.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>文件夹管理</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/mailmgr/writemail.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>发送内部邮件</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/mailmgr/maillist.do?mailDirId=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>邮件总数：</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/mailmgr/mailinfo/mailinfo.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>参数设置</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/message/listmessage.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>短信息列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/message/listmessage.do?action=toList&nodeid=0&rnd=1153841090759</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>消息内容</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/tools/listTickler.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>备忘录列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/tools/listCardcaseType.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>名片类别列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/tools/listCardcase.do?nodeid=-1&nodename=%B9%AB%B9%B2%C3%FB%C6%AC%BC%D0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>电话</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/menusetup/right.do?action=toHome&nodeid=-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>菜单列表</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/tools/wannianli.html?rnd=1153841160249</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>万年日历</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/bbs/user.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>用户信息</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+	     <form-bean name="orderTreeForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id1" type="java.lang.String"/>
+			<form-property name="id2" type="java.lang.String"/>
+		</form-bean>
+		<form-bean name="ExportDDLForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+		</form-bean>
+		
+		<form-bean name="roleForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="description" type="java.lang.String"/>
+			<form-property name="roletype" type="java.lang.String"/>
+                        <form-property name="page" type="java.lang.String" initial="0"/>
+		</form-bean>
+		<form-bean name="UserForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="user" type="java.lang.String"/>
+			<form-property name="password" type="java.lang.String"/>
+			<form-property name="repassword" type="java.lang.String"/>
+			<form-property name="pin" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="code" type="java.lang.String"/>
+			<form-property name="sex" type="java.lang.String"/>
+			<form-property name="usertype" type="java.lang.String"/>
+			<form-property name="status" type="java.lang.String"/>
+			<form-property name="validdate" type="java.lang.String"/>
+			<form-property name="level" type="java.lang.String"/>
+			<form-property name="gender" type="java.lang.String"/>
+			<form-property name="keyword" type="java.lang.String"/>
+            <form-property name="page" type="java.lang.String" initial="0"/>
+		</form-bean>
+		<form-bean name="resourceForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="parentid" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="description" type="java.lang.String"/>
+			<form-property name="resourceType" type="java.lang.String"/>
+			<form-property name="link" type="java.lang.String"/>
+			<form-property name="target" type="java.lang.String"/>
+			<form-property name="code" type="java.lang.String"/>
+            <form-property name="page" type="java.lang.String" initial="0"/>
+		</form-bean>
+		<form-bean name="OperationForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="description" type="java.lang.String"/>
+			<form-property name="Resource_ID" type="java.lang.String"/>
+			<form-property name="code" type="java.lang.String"/>
+		</form-bean>
+		<form-bean name="permissionForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="role" type="java.lang.String"/>
+			<form-property name="resource" type="java.lang.String"/>
+			<form-property name="operation" type="java.lang.String"/>
+			<form-property name="page" type="java.lang.String" initial="0"/>
+		</form-bean>
+		<form-bean name="permissionMapForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="actionpath" type="java.lang.String"/>
+			<form-property name="methodname" type="java.lang.String"/>
+			<form-property name="rescode" type="java.lang.String"/>
+			<form-property name="resoptcode" type="java.lang.String"/>
+			<form-property name="exportddl" type="java.lang.String"/>
+		</form-bean>
+		<form-bean name="levelForm" type="org.apache.struts.action.DynaActionForm" dynamic="true">
+			<form-property name="id" type="java.lang.String"/>
+			<form-property name="code" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="description" type="java.lang.String"/>
+			
+            <form-property name="page" type="java.lang.String" initial="0"/>
+		</form-bean>
+	</form-beans>
+
+	<global-exceptions>
+		<exception handler="com.gever.struts.action.DefaultExceptionHandler"
+			key="err.sys" type="com.gever.exception.DefaultException"
+			scope="request" path="/info_error.jsp"/>
+     	<exception handler="com.gever.struts.action.DAOExceptionHandler"        
+			key="err.sys" type="com.gever.db.DAOException"
+			scope="request"	path="/info_error.jsp"/>
+    </global-exceptions>
+	<global-forwards>
+		<forward name="error_page" path="/../jsp/error/info_error.jsp" redirect="true"/>
+		<forward name="info_ok_page" path="/../jsp/error/info_ok.jsp" redirect="true"/>
+		<forward name="info_page" path="/../jsp/error/info.jsp" redirect="true"/>
+		<forward name="timeout_page" path="/../jsp/error/timeOut.jsp" redirect="true"/>
+		<forward name="access_deny" path="/../jsp/error/deny.jsp" redirect="true"/>
+		<forward name="licence_error" path="/../jsp/error/licence.jsp" redirect="true"/>
+        <forward name="ssl_forward" path="/../jsp/ssl_forward.jsp" redirect="true"/>
+	</global-forwards>
+
+	<action-mappings>
+		
+		<action name="roleForm" type="com.gever.sysman.privilege.webapp.action.RoleAction"  validate="false" parameter="action" scope="session" path="/roleAction">
+			<forward name="list" path="/../jsp/privilege/listRole.jsp" redirect="false"/>
+			<forward name="viewRole" path="/../jsp/viewRole.jsp" redirect="false"/>
+			<forward name="edit" path="/../jsp/privilege/role/role-edit.jsp" redirect="false"/>
+            <forward name="listRoleByUser" path="/../jsp/privilege/user/listRoleByUser.jsp" redirect="false"/>
+			<forward name="addUserRole" path="/../jsp/privilege/user/addUserRoles.jsp" redirect="false"/>
+			<forward name="saveUserRole" path="/../jsp/privilege/user/listUserRoles.jsp" redirect="false"/>
+			<forward name="deleteUserRole" path="/../jsp/privilege/user/listUserRoles.jsp" redirect="false"/>
+			<forward name="userlist" path="/../jsp/privilege/role/role-user-select.jsp" redirect="false"/>
+			<forward name="selectman" path="/../jsp/privilege/role/selectman1.jsp" redirect="false"/>
+			<forward name="deleteList" path="/userAction.do?action=listRoleUsers" redirect="false"/>
+		</action>
+		<action name="UserForm" type="com.gever.sysman.privilege.webapp.action.PrivilegeUserAction" validate="true" parameter="action" scope="session" path="/userAction">
+		<forward name="success" path="/../jsp/privilege/user/succeed.jsp" redirect="false"/>
+			<forward name="list" path="/../jsp/privilege/listUser.jsp" redirect="false"/>
+			<forward name="listRoleUsers" path="/../jsp/privilege/role/listRoleUsers.jsp" redirect="false"/>
+			<forward name="toCreate" path="/../jsp/privilege/user/user-new.jsp" />
+			<forward name="create" path="/../jsp/privilege/user/user-new.jsp" />
+			<forward name="update" path="/../jsp/privilege/user/user-edit.jsp"/>
+			<forward name="view" path="/../jsp/privilege/user/user-browse.jsp"/>
+			<forward name="password" path="/../jsp/privilege/user/user-password.jsp"/>
+			<forward name="password2" path="/../jsp/privilege/user/admin-password.jsp"/>
+			<forward name="listUserRoles" path="/../jsp/privilege/user/listUserRoles.jsp" redirect="false"/>
+			<forward name="selectRoleByUser" path="/../jsp/privilege/user/user-role-select.jsp"/>
+			<forward name="userlist" path="/../jsp/privilege/role/role-user-select.jsp" redirect="false"/>
+			<forward name="selectUser" path="/../jsp/privilege/role/selectman1.jsp" redirect="false"/>
+			<forward name="select-man-to-list" path="/../jsp/privilege/role/listRoleUsers.jsp" redirect="false"/>
+			<forward name="toSelectUser" path="roleAction.do?action=selectUser" redirect="false"/>
+		</action>
+		<action name="resourceForm" type="com.gever.sysman.privilege.webapp.action.ResourceAction" validate="false" parameter="action" scope="session" path="/resourceAction">
+			<forward name="create" path="/../jsp/privilege/resource/res-new.jsp" redirect="false"/>
+			<forward name="getListChild" path="/../jsp/privilege/listResource.jsp" redirect="false"/>
+			<forward name="view" path="/../jsp/privilege/resource/res-edit.jsp" redirect="false"/>
+			<forward name="edit" path="/../jsp/privilege/resource/res-edit.jsp" redirect="false"/>
+			<forward name="addResource" path="/../jsp/privilege/listResource.jsp" redirect="false"/>
+			<forward name="update" path="/../jsp/privilege/listResource.jsp" redirect="false"/>
+			<forward name="delete" path="/../jsp/privilege/listResource.jsp" redirect="false"/>
+            		<forward name="tree" path="/../jsp/privilege/resource/tree.jsp" redirect="false"/>
+			<forward name="smallTree" path="/../jsp/privilege/resource/smallTree.jsp" redirect="false"/>
+			<forward name="getTreeChild" path="/../jsp/privilege/resource/tree/res-child-xml.jsp" redirect="false"/>
+			<forward name="getTreeRoot" path="/../jsp/privilege/resource/tree/res-tree.jsp" redirect="false"/>
+		</action>
+		<!--libiaoadd-->
+<action type="com.gever.sysman.privilege.webapp.action.GetResOpTreeAction" validate="false" parameter="action" scope="session" path="/getResOpTreeAction">
+		<forward name="getTreeChild" path="/../jsp/privilege/resOpTree-child-xml.jsp" redirect="false"/>
+		<forward name="getTreeRoot" path="/../jsp/privilege/resOpTree.jsp" redirect="false"/>
+		<forward name="getResOpByResID" path="/../jsp/privilege/resOp-child-xml.jsp" redirect="false"/>
+
+</action>
+		<action type="com.gever.sysman.privilege.webapp.action.GetConfigAction" validate="false" parameter="action" scope="session" path="/getConfigAction">	
+			<forward name="showRoot" path="/../jsp/privilege/strutsConfigRoot.jsp" redirect="false"/>
+			<forward name="showconfig" path="/../jsp/privilege/getConfigTree.jsp" redirect="false"/>
+			<forward name="showmethod" path="/../jsp/privilege/getMthodTree.jsp" redirect="false"/>
+		</action>
+
+		<action type="com.gever.sysman.export.webapp.action.ExportDDLAction" validate="false" parameter="action" scope="session" path="/openddlAction">	
+		<forward name="openddl" path="/../jsp/privilege/openddl.jsp" redirect="false"/>
+		</action>	
+		
+		<action name="orderTreeForm" type="com.gever.sysman.privilege.tree.ResourceOrderTreeAction" validate="false" parameter="action" scope="session" path="/resourceOrderAction">
+		<forward name="ordertree" path="/../jsp/privilege/order.jsp" redirect="false"/>
+        <forward name="optorder" path="/../jsp/privilege/opt/opt_order.jsp" redirect="false"/>
+		<forward name="orderresource" path="/../jsp/privilege/orderResource.jsp" redirect="false"/>
+		</action>
+		<!--libiaoend 2004-12-2 libia modify-->
+		<action name="OperationForm" type="com.gever.sysman.privilege.webapp.action.ResourceOperationAction" validate="false" parameter="action" scope="request" path="/operationAction">
+			<forward name="list" path="/../jsp/privilege/listOperation.jsp" redirect="false"/>
+			<forward name="create" path="/../jsp/privilege/opt/opt-new.jsp" redirect="false"/>
+			<forward name="edit" path="/../jsp/privilege/opt/opt-edit.jsp" redirect="false"/>
+			<forward name="delete" path="/editPrivilege.jsp" redirect="false"/>
+			<forward name="update" path="/editPrivilege.jsp" redirect="false"/>
+			<forward name="getTreeChild" path="/../jsp/privilege/opt/tree/res-child-xml.jsp" redirect="false"/>
+			<forward name="getTreeRoot" path="/../jsp/privilege/opt/tree/res-tree.jsp" redirect="false"/>
+		</action>
+		<action name="permissionForm" type="com.gever.sysman.privilege.webapp.action.PermissionAction" validate="false" parameter="action" scope="session" path="/permissionAction">
+			<forward name="permTree" path="/../jsp/privilege/xtree/ptree.jsp" redirect="false"/>
+			<forward name="xtree" path="/../jsp/privilege/xtree/xtree.jsp" redirect="false"/>
+			<forward name="role_perm_table" path="/../jsp/privilege/roleright.jsp" redirect="false"/>
+			<forward name="savaRolePerm" path="/../jsp/privilege/roleright.jsp" redirect="false"/>
+			<forward name="list" path="/../jsp/privilege/listRole.jsp" redirect="false"/>
+			<forward name="user_perm_table" path="/../jsp/privilege/userright.jsp" redirect="false"/>
+			<forward name="savaUserPerm" path="/../jsp/privilege/userright.jsp" redirect="false"/>
+			<forward name="userlist" path="/../jsp/privilege/listUser.jsp" redirect="false"/>
+		</action>
+		<!-- modified by eddy on 20041126 \\\-->
+		<action name="permissionMapForm" type="com.gever.sysman.privilege.webapp.action.PermissionMapAction" validate="false" parameter="action" scope="request" path="/permissionMapAction">
+			<forward name="list" path="/../jsp/privilege/permap/listPermisMap.jsp" redirect="false"/>
+			<forward name="toCreate" path="/../jsp/privilege/permap/content.jsp" redirect="false"/>
+			<forward name="toMethodList" path="/../jsp/privilege/permap/bottom.jsp" redirect="false"/>
+			<forward name="openddl" path="/../jsp/privilege/openddl.jsp" redirect="false"/>
+		</action>
+		<!-- modified by eddy on 20041126 ///-->
+			
+			
+			<!--level action start   by fangxiao 2004-12-4-->
+		<action name="levelForm" type="com.gever.sysman.level.webapp.action.LevelAction"  validate="false" parameter="action" scope="session" path="/levelAction">
+			<forward name="list" path="/../jsp/privilege/list_level.jsp" redirect="false"/>
+			<forward name="edit" path="/../jsp/privilege/level/level-edit.jsp" redirect="false"/>
+		</action>
+		<!-- level action end  by  fangxiao 2004-12-4-->
+	</action-mappings>
+	<message-resources parameter="com.gever.ApplicationResources" />
+
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                              /WEB-INF/validation-privilege.xml"/>
+	</plug-in>
+</struts-config>

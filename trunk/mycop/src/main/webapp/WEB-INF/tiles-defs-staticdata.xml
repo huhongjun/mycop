@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+  <definition extends="main.template" name="admin.listunit">
+    <put name="body" value="/admin/listunit.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editunit">
+    <put name="body" value="/admin/editunit.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewunit">
+    <put name="body" value="/admin/viewunit.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="admin.listduty">
+    <put name="body" value="/admin/listduty.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editduty">
+    <put name="body" value="/admin/editduty.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewduty">
+    <put name="body" value="/admin/viewduty.jsp" />
+  </definition>
+  <definition extends="main.template" name="admin.listpolity">
+    <put name="body" value="/admin/listpolity.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editpolity">
+    <put name="body" value="/admin/editpolity.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewpolity">
+    <put name="body" value="/admin/viewpolity.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="admin.listnation">
+    <put name="body" value="/admin/listnation.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editnation">
+    <put name="body" value="/admin/editnation.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewnation">
+    <put name="body" value="/admin/viewnation.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="admin.listmarr">
+    <put name="body" value="/admin/listmarr.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editmarr">
+    <put name="body" value="/admin/editmarr.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewmarr">
+    <put name="body" value="/admin/viewmarr.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="admin.listjob">
+    <put name="body" value="/admin/listjob.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editjob">
+    <put name="body" value="/admin/editjob.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewjob">
+    <put name="body" value="/admin/viewjob.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="admin.listknow">
+    <put name="body" value="/admin/listknow.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editknow">
+    <put name="body" value="/admin/editknow.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewknow">
+    <put name="body" value="/admin/viewknow.jsp" />
+  </definition>
+  <definition extends="main.template" name="admin.listsex">
+    <put name="body" value="/admin/listsex.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editsex">
+    <put name="body" value="/admin/editsex.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewsex">
+    <put name="body" value="/admin/viewsex.jsp" />
+  </definition>
+
+</tiles-definitions>

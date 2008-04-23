@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>新建网页 1</title>
+</head>
+<link rel="stylesheet" href="../css/toolbar.css">
+<link rel="stylesheet" href="../css/editor.css">
+
+<script src="../js/toolbar.js"></script>
+<script src="../js/editor.js"></script>
+<script src="../js/colorpicker.js"></script>
+
+<body>
+<script>
+var editor=new Editor("e1",500,300);
+</script>
+<!--得到源代码的请用:e1.getValue()-->
+<input type="button" onclick="alert(e1.getValue())" value="显示源码">
+</body>
+
+</html>

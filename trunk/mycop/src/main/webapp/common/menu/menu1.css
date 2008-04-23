@@ -1,0 +1,178 @@
+/*颜色方案:#bcbcbc,#bcbcbc*/
+
+body.menuContainer	{font-size:12px;background: #bcbcbc; border: 0px solid black; margin: 0;}
+
+
+/* 菜单边框样式 */
+table.menu	{
+	position: absolute;
+	visibility: hidden;
+	background: #bcbcbc;
+	font: menu;
+	border: 1px solid black;/*边框样式 */
+	left: 0px;
+	top: 0px;
+	font-size:12px;
+
+}
+
+
+table.menu table.menu {font-size:12px;display: none; visibility: hidden;}
+
+.menuContainer .menu		{visibility: visible;}
+.menuContainer .menu .menu	{visibility: hidden; display: block;}
+
+.menu tr	{font-size:12px;}
+
+/*菜单项的所有单元格*/
+.menu td					{font-size:12px;padding: 0;}
+
+table.menu td.keyshortcut	{font-size:12px;font: menu;}
+
+/*菜单项不可用时样式*/
+table.menu tr.disabled		{color: buttonshadow;}
+/*菜单项不可用时图片样式*/
+table.menu tr.disabled td.icon img	{border: 0px solid #bcbcbc; margin: 1px;
+									filter: alpha(opacity=50);}
+
+/* 鼠标移上去后 */
+
+/* 正常情况左边td样式 */
+table.menu tr td.icon,
+table.menu tr td.left				{font-size:12px;text-align: center; border:  1px solid #bcbcbc;	border-right:  0px;}
+
+/* 鼠标移上去后左边td样式 */
+table.menu tr.highlight	td.icon,
+table.menu tr.highlight	td.left		{border-left:  1px solid #dddddd;
+									border-top:    1px solid #dddddd;
+									border-bottom: 1px solid #dddddd;
+									background-color:#cccccc}
+/* 正常情况图片边框样式 */
+table.menu tr td.icon img			{/*filter: gray();*/ border: 1px solid #bcbcbc;
+									margin: 0px;}
+
+/* 鼠标移上去后图片边框样式 */
+table.menu tr.highlight td.icon img	{border-left:  1px solid #bcbcbc;
+									border-top:    1px solid #bcbcbc;
+									border-bottom: 1px solid #bcbcbc;
+									border-right:  1px solid #bcbcbc;
+									filter: default;}
+
+/* 正常情况中间td边框样式 */
+table.menu tr td.middle				{border:		0;
+									border-left:	1px solid #bcbcbc;
+									border-top:		1px solid #bcbcbc;
+									border-bottom:	1px solid #bcbcbc;
+									padding:		3px;
+									padding-top:	0px;
+									padding-bottom:	0px}
+/* 鼠标移上去后中间td边框样式 */
+table.menu tr.highlight	td.middle	{border:		0;
+									border-left:	1px solid #dddddd;
+									border-top:		1px solid #dddddd;
+									border-bottom:	1px solid #dddddd;
+									background-color:#cccccc}
+
+/* 正常情况右边td边框样式 */
+table.menu tr td.more,
+table.menu tr td.right				{font-family: webdings; width: 20px; text-align: right; padding-right: 1px;
+									border: 1px solid #bcbcbc; border-left:  0px;}
+
+/* 鼠标移上去后右边td边框样式 */
+table.menu tr.highlight	td.more,
+table.menu tr.highlight	td.right	{border-left:  0px;
+									border-top:    1px solid #dddddd;
+									border-bottom: 1px solid #dddddd;
+									border-right:  1px solid #dddddd;
+									background-color:#cccccc}
+
+
+
+
+
+
+/*菜单栏*/
+
+.root			{font-size:12px;background: ; width: 20px; font: menu; text-align: center; cursor: default;
+				border: 1px solid #CCCCCC; padding: 1px; padding-left: 1px; padding-right: 1px; margin: 0px;}
+.aroot			{font-size:12px;background: ; width: 20px; font: menu; text-align: center; cursor: default;
+				border: 1px solid #bcbcbc; padding: 1px; padding-left: 1px; padding-right: 1px; margin: 0px;}
+.root A {
+	text-decoration: none;
+	color:black;
+}
+
+.menua{
+	font-size:12px;
+	background: ;
+	width: 0px;
+	font: menu; 
+	text-align: center; 
+	cursor: default;
+	border: 1px solid #CCCCCC;
+	padding: 1px;
+	padding-left: 1px; 
+	padding-right: 1px; 
+	margin: 0px;
+}
+.menuaover{
+	font-size:12px;
+	background: ;
+	width: 0px;
+	font: menu; 
+	text-align: center; 
+	cursor: default;
+	border: 1px solid #dddddd;
+	padding: 1px;
+	padding-left: 1px; 
+	padding-right: 1px; 
+	margin: 0px;
+}
+
+a.menu4:link {
+	font-size:12px;
+	color: #000000;
+	text-decoration: none;
+	background-color: ;
+	border: 1px solid #cccccc;
+	margin: 1px;
+	padding-top: 0px;
+}
+
+a.menu4:visited {
+	font-size:12px;
+	color:#000000;
+	text-decoration: none;
+	background-color: ;
+	border: 1px solid #cccccc;
+	margin: 1px;
+	padding-top: 0px;
+}
+/*带有下拉菜单的文字状态2*/
+a.menu4:hover {
+	font-size:12px;
+	color:#000000;
+	background-color: ;
+	border: 1px solid #dddddd;
+	margin: 1px;
+	padding-top: 0px;
+}
+
+.rootHighlight	{font-size:12px;background: ; width: 20px; font: menu; text-align: center; cursor: default;
+				padding: 1px; padding-left: 1px; padding-right: 1px;
+				border-width: 1px; border-style: solid;
+				border-color: #dddddd #dddddd #dddddd #dddddd;}
+.rootActive		{font-size:12px;background: #bcbcbc; width: 20px; font: menu; text-align: center; cursor: default;
+				padding-bottom: 0px; padding-left: 2px; padding-right: 0px;
+				padding-top: 2px;
+				border-width: 1px; border-style: solid;
+				border-color: buttonshadow buttonhighlight buttonhighlight buttonshadow;}
+
+.root .menu				{font-size:12px;visibility: hidden;}
+.rootActive .menu		{font-size:12px;visibility: hidden;}
+.rootHighlight .menu	{font-size:12px;visibility: hidden;}
+
+/*菜单背景色*/
+#menuBar	{font-size:12px;background: ;}
+#menuBar span	{font-size:12px}
+

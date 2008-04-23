@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) -->
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+		    <form-bean name="BookForm"   type="com.gever.goa.book.action.BookForm"/>
+		    <form-bean name="UserForm"   type="com.gever.goa.user.action.UserForm"/>
+		</form-beans>
+
+	<global-exceptions>
+</global-exceptions>
+
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+				<action path="/Book/listBook" name="BookForm"  
+						type="com.gever.goa.book.action.BookAction"
+				validate="false"   parameter="toList" scope="session" >
+			<forward name="index" path="Book.listBook" redirect="false"/>
+			<forward name="edit" path="/qiqu/Book/editBook.do" redirect="true"/>
+				<forward name="view" path="/qiqu/Book/viewBook.do" redirect="true" /> 
+					</action>
+
+		<action path="/Book/editBook" name="BookForm"  
+				type="com.gever.goa.book.action.BookAction"
+				validate="false"   parameter="toEdit" scope="session" >
+			<forward name="edit" path="Book.editBook" redirect="false"/>
+			<forward name="index" path="/qiqu/Book/listBook.do" redirect="true"/>
+		</action>
+		
+			<action path="/Book/viewBook" name="BookForm" 
+			type="com.gever.goa.book.action.BookAction" 
+			validate="false" 			parameter="toView" scope="session">
+	  <forward name="view" path="Book.viewBook" redirect="false" /> 
+	  <forward name="edit" path="/qiqu/Book/editBook.do" redirect="true" /> 
+	  <forward name="index" path="/qiqu/Book/listBook.do" redirect="true" /> 
+	</action>
+	  
+			<action path="/Book/treeBook" 		name="BookForm"
+		type="com.gever.goa.book.action.BookAction"
+		validate="false" 		parameter="toTree" 		scope="session" >
+			<forward name="index" path="Book.lefttree" redirect="false"/>
+		</action>
+					<action path="/User/listUser" name="UserForm"  
+						type="com.gever.goa.user.action.UserAction"
+				validate="false"   parameter="toList" scope="session" >
+			<forward name="index" path="User.listUser" redirect="false"/>
+			<forward name="edit" path="/qiqu/User/editUser.do" redirect="true"/>
+				<forward name="view" path="/qiqu/User/viewUser.do" redirect="true" /> 
+					</action>
+
+		<action path="/User/editUser" name="UserForm"  
+				type="com.gever.goa.user.action.UserAction"
+				validate="false"   parameter="toEdit" scope="session" >
+			<forward name="edit" path="User.editUser" redirect="false"/>
+			<forward name="index" path="/qiqu/User/listUser.do" redirect="true"/>
+		</action>
+		
+			<action path="/User/viewUser" name="UserForm" 
+			type="com.gever.goa.user.action.UserAction" 
+			validate="false" 			parameter="toView" scope="session">
+	  <forward name="view" path="User.viewUser" redirect="false" /> 
+	  <forward name="edit" path="/qiqu/User/editUser.do" redirect="true" /> 
+	  <forward name="index" path="/qiqu/User/listUser.do" redirect="true" /> 
+	</action>
+	  
+			<action path="/User/treeUser" 		name="UserForm"
+		type="com.gever.goa.user.action.UserAction"
+		validate="false" 		parameter="toTree" 		scope="session" >
+			<forward name="index" path="User.lefttree" redirect="false"/>
+		</action>
+			</action-mappings>
+	
+	<message-resources 
+	parameter="com.gever.goa.ApplicationResources" />
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" 
+        	value="/WEB-INF/tiles-defs-main.xml,
+        	/WEB-INF/qiqu/tiles-defs-qiqugenerated.xml" />
+        	
+        <set-property property="moduleAware" value="true" />
+</plug-in>
+	</struts-config>

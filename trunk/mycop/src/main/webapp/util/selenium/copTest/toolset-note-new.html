@@ -1,0 +1,49 @@
+<html>
+<head><link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>toolset-note-new</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">toolset-note-new</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/dailyoffice/tools/listTickler.do</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>备忘录编辑</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>vo.content</td>
+	<td>测试备忘录编辑功能</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>vo.remind_flag</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>document.TicklerForm.save[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>//tr[6]/td/table.1.0</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

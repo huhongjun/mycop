@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<root>
+	<!--
+	<timer>
+		<className>com.gever.goa.dailyoffice.smsmgr.dao.impl.SmsProductFs</className>
+		<checkMethod>checkInceptSms</checkMethod>
+		<doMethod>inceptSms</doMethod>
+		<checkSeconds>180</checkSeconds>
+		<isDao>true</isDao>
+	</timer>
+	<timer>
+		<className>com.gever.goa.dailyoffice.smsmgr.dao.impl.SmsProductFs</className>
+		<checkMethod>checkTimingSend</checkMethod>
+		<doMethod>sendingSms</doMethod>
+		<checkSeconds>180</checkSeconds>
+		<isDao>true</isDao>
+	</timer>	
+	<timer>
+		<className>com.gever.goa.innermgr.meetmgr.dao.impl.MeetMgrDAOImpl</className>
+		<checkMethod>checkMeetInfo</checkMethod>
+		<doMethod>doUpdateMeetInfo</doMethod>
+		<checkSeconds>120</checkSeconds>
+		<isDao>true</isDao>
+	</timer>
+	<timer>
+		<className>com.gever.goa.dailyoffice.message.dao.impl.MessageDaoImpl</className>
+		<checkMethod>check</checkMethod>
+		<doMethod>doUpdateMessage</doMethod>
+		<checkSeconds>120</checkSeconds>
+		<isDao>true</isDao>
+	</timer>
+	<timer>
+		<className>com.gever.goa.archive.dao.impl.ArcBorrowApplyDaoImpl</className>
+		<checkMethod>checkArchiveRight</checkMethod>
+		<doMethod>updateArchiveRight</doMethod>
+		<checkSeconds>120</checkSeconds>
+		<isDao>true</isDao>
+	</timer>
+	<timer>
+		<className>com.gever.goa.util.timer.HtmlTimer</className>
+		<checkMethod>checkTimer</checkMethod>
+		<doMethod>doSearch</doMethod>
+		<checkSeconds>60</checkSeconds>
+		<isDao>false</isDao>
+	</timer>
+	<timer>
+		<className>com.gever.goa.innermgr.hr.util.BirthdayAwokeUtil</className>
+		<checkMethod>isAowke</checkMethod>
+		<doMethod>doAwoke</doMethod>
+		<checkSeconds>7200</checkSeconds>
+		<isDao>false</isDao>
+	</timer>
+	-->
+</root>

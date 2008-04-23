@@ -1,0 +1,71 @@
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="HTML 4.0" name=vs_targetSchema>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR><LINK 
+href="../css/dialog.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript>
+function attr(name, value) {
+	if (!value || value == "") return "";
+	return ' ' + name + '="' + value + '"';
+}
+function insertLink() {
+	window.returnValue = '<a' + attr("title", alt.value) + attr("href", url.value)	+ '>'+title.value+'</a>';
+	window.close();
+}
+function cancel() {
+	window.returnValue = null;
+	window.close();
+}
+
+</SCRIPT>
+</HEAD>
+<BODY 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+leftMargin=0 topMargin=0 scroll=no >
+<TABLE class=dlg height="100%" cellSpacing=2 cellPadding=0 width="100%">
+  <TBODY>
+    <TR> 
+      <TD colSpan=3> <TABLE width="100%">
+          <TBODY>
+            <TR> 
+              <TD noWrap>超链接</TD>
+              <TD vAlign=center width="100%"> <HR width="100%"> </TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR> 
+      <TD width=9>&nbsp;</TD>
+      <TD width=38 align="right" nowrap>地址:</TD>
+      <TD vAlign=center><INPUT size=50 value=""
+      name=url></TD>
+    </TR>
+    <TR> 
+      <TD height=24>&nbsp;</TD>
+      <TD align="right" nowrap>显示文字</TD>
+      <TD vAlign=center><INPUT size=50 value=""
+      name=title></TD>
+    </TR>
+    <TR> 
+      <TD height=21>&nbsp;</TD>
+      <TD width=38 align="right" nowrap>提示:</TD>
+      <TD vAlign=center> <INPUT size=50 name=alt></TD>
+    </TR>
+    <TR> 
+      <TD colSpan=3> <TABLE width="100%">
+          <TBODY>
+            <TR> 
+              <TD vAlign=center width="100%" colSpan=2> <HR width="100%"> </TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD> 
+      <TD align=right colSpan=2><input class="button" type="button" value="插入" title="插入超链接" onclick="insertLink()">
+ <INPUT class=button title="Cancel Dialog" onclick=cancel() type=button value=关闭></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY></HTML>

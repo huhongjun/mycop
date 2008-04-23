@@ -1,0 +1,155 @@
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="HTML 4.0" name=vs_targetSchema>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR><LINK 
+href="../css/dialog.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript>
+var image = null     
+var editmode = false 
+if (dialogArguments != null) {
+   editmode = true;
+   document.write("<title>编辑图片</title>");
+} else {
+   document.write("<title>插入图片</title>");
+
+}
+
+function attr(name, value) {
+	if (!value || value == "") return "";
+	return ' ' + name + '="' + value + '"';
+}
+function insertImage() {
+	window.returnValue = '<IMG' + attr("alt", alt.value) + attr("src", url.value)
+							+ attr("align", align[align.selectedIndex].value)
+							+ ((width.value)?attr("width", width.value):"")
+							+ ((height.value)?attr("height", height.value):"")
+							+ ((vspace.value)?attr("vspace", vspace.value):"")
+							+ ((hspace.value)?attr("hspace", hspace.value):"")
+							+ ((border.value)?attr("border", border.value):attr("border",0))
+							+ '/>';
+	window.close();
+}
+function cancel() {
+	window.returnValue = null;
+	window.close();
+}
+
+
+function setDefaults() {
+   if (dialogArguments != null) {
+      image = dialogArguments;
+      editmode = true;
+      fm = document.forms[0];
+      if (image.src)
+	  	 url.value = image.src
+	  if  (image.alt)
+	  	 alt.value = image.alt
+	  if (image.width)
+         width.value = image.width
+      if (image.height)
+         height.value = image.height
+      if (image.vspace)
+         vspace.value = image.vspace
+      if (image.hspace)
+         hspace.value = image.hspace
+      if (image.border)
+         border.value = image.border
+      if (image.align) {
+         for (var i = 0; i < align.options.length; i++) {
+            if (align.options[i].value == image.align) {
+               align.options[i].selected = true;
+               break;
+            }
+         }        
+      }
+   }
+}
+
+function updateImage() {
+   image.width = width.value;
+   image.height = height.value;
+   image.vspace = vspace.value;
+   image.hspace = hspace.value;
+   image.border = border.value;
+   image.align = align.options[ align.selectedIndex ].value;
+   window.returnValue = null
+   window.close();
+}
+
+
+
+</SCRIPT>
+</HEAD>
+<BODY 
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+leftMargin=0 topMargin=0 scroll=no onload=setDefaults()>
+<TABLE class=dlg height="100%" cellSpacing=2 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD colSpan=5>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+              <TD noWrap>图片属性</TD>
+          <TD vAlign=center width="100%">
+            <HR width="100%">
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD width=9>&nbsp;</TD>
+      <TD width=38 nowrap>地址:</TD>
+    <TD vAlign=center colSpan=3><INPUT size=50 value=""
+      name=url></TD></TR>
+  <TR>
+    <TD height=10>&nbsp;</TD>
+      <TD width=38 nowrap>提示:</TD>
+    <TD width="255" vAlign=center><INPUT size=25 name=alt></TD>
+      <TD width=59 nowrap>对齐方式:</TD>
+    <TD width="394" vAlign=center><SELECT name=align> <OPTION value=left 
+        selected>Left</OPTION> <OPTION value=absBottom>Abs Bottom</OPTION> 
+        <OPTION value=absMiddle>Abs Middle</OPTION> <OPTION 
+        value=baseline>Baseline</OPTION> <OPTION value=bottom>Bottom</OPTION> 
+        <OPTION value=middle>Middle</OPTION> <OPTION value=right>Right</OPTION> 
+        <OPTION value=textTop>Text Top</OPTION> <OPTION 
+      value=top>Top</OPTION></SELECT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD vAlign=top align=middle colSpan=4>
+      <TABLE width=351 align=left border=0>
+          <TBODY>
+        <TR>
+              <TD width=33 nowrap>边框:</TD>
+              <TD width="19" nowrap>
+<INPUT size=2 value=0 name=border></TD>
+              <TD width=21 nowrap>宽:</TD>
+              <TD width="20" vAlign=center nowrap>
+<INPUT size=3 name=width></TD>
+              <TD width=23 nowrap>高:</TD>
+              <TD width="25" vAlign=center nowrap>
+<INPUT size=3 name=height></TD>
+              <TD width=57 nowrap>垂直间距:</TD>
+              <TD width="17" vAlign=center nowrap>
+<input size=2 value=0 name=vspace></TD>    
+              <TD width=56 nowrap>水平间距:</TD>
+              <TD width="38" vAlign=center nowrap>
+<INPUT size=2 value=0 
+      name=hspace></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD colSpan=5>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD vAlign=center width="100%" colSpan=2>
+            <HR width="100%">
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>
+    <TD align=right colSpan=4>
+      <SCRIPT language=JavaScript>
+if (editmode) {
+   document.write("<input class=\"button\" type=\"button\" value=\"更新\" title=\"更新图片\" onclick=\"updateImage()\">");
+} else {
+   document.write("<input class=\"button\" type=\"button\" value=\"插入\" title=\"插入图片\" onclick=\"insertImage()\">");
+}
+</SCRIPT>
+<INPUT class=button title="Cancel Dialog" onclick=cancel() type=button value=关闭></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+  <definition name="main.template" path="/template/mainTemplate.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+  <definition name="view.template" path="/template/mainViewTemplate.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+  <definition name="edit.template" path="/template/mainEditTemplate.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+  <definition name="tree.template" path="/template/mainTreeTemplate.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+	
+  <definition name="open.main.template" path="/template/opentemplate.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+  <definition name="open.view.template" path="/template/opentemplateview.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+  <definition name="open.edit.template" path="/template/opentemplateedit.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+	
+  <definition name="void.template" path="/template/voidTemplate.jsp">
+    <put name="title" value="协同信息平台" />
+  </definition>
+
+</tiles-definitions>

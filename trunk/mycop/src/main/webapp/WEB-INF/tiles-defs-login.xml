@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+   <definition name="LoginLayout" path="/jsp/login/loginLayout.jsp">
+		<put name="input"  value="/jsp/login/input.jsp" />
+	  	<put name="message" value="/jsp/empty.jsp" />
+   </definition>
+    <!-- login begin-->
+	<definition name="gever.gdp.login" extends="LoginLayout">
+	<put name="input"  value="/jsp/login/input.jsp" />
+	</definition>
+  	<!-- no login ,return-->
+	<definition name="gever.gdp.relogin" extends="LoginLayout">
+	  	<put name="message" value="/jsp/login/showerr.jsp" />
+	</definition>
+</tiles-definitions>

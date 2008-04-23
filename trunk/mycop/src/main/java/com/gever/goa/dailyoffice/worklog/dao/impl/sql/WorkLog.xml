@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="WorkLog">
+
+  <typeAlias alias="worklog" type="com.gever.goa.dailyoffice.worklog.vo.WorkLogVO"/>
+  <typeAlias alias="worklogcontent" type="com.gever.goa.dailyoffice.worklog.vo.WorkLogContentVO"/>
+
+  <select id="getLogTotalStrByUseridAndCurdate" resultClass="string" parameterClass="string">
+	SELECT 
+		LOG_CONTENT 
+	FROM DO_WORK_LOG
+	WHERE SERIAL_NUM = #serial_num#
+  </select>
+  
+  <select id="getSerialNumByUseridAndCurdate" resultClass="string" parameterClass="worklog">
+	SELECT 
+		SERIAL_NUM 
+	FROM DO_WORK_LOG
+	WHERE USER_CODE = #user_code# AND FILL_DATE = #fill_date# 
+  </select>
+  <select id="getWorkLogContentByUserIdAndCurDate" resultClass="byte" parameterClass="worklog">
+	SELECT 
+		LOG_CONTENT 
+	FROM DO_WORK_LOG
+	WHERE USER_CODE = #user_code# AND FILL_DATE = #fill_date# 
+  </select>
+
+  <select id="getCurDayWorkLog" resultClass="worklog" parameterClass="worklog">
+	SELECT 
+		SERIAL_NUM,CREATE_TIME,DEPT_CODE,USER_CODE,FILL_DATE,LOG_CONTENT  
+	FROM DO_WORK_LOG
+	WHERE USER_CODE = #user_code# AND FILL_DATE = #fill_date# 
+  </select>
+  <update id="updateLogContent" parameterClass="worklogcontent">
+    UPDATE DO_LOG_CONTENT SET 
+      LOG_CONTENT = #log_content#,
+      REMARK = #remark# 
+    WHERE TSERIAL_NUM = #tserial_num#
+  </update>   
+  <delete id="deleteLogContent" parameterClass="string">
+    DELETE FROM DO_LOG_CONTENT 
+    WHERE TSERIAL_NUM = #tserial_num#
+  </delete>   
+  <insert id="insertLogContent" parameterClass="worklogcontent">
+    INSERT INTO DO_LOG_CONTENT
+      (serial_num,tserial_num,remark,log_content)
+    VALUES
+      (#serial_num#, #tserial_num#, #remark#, #log_content#)
+  </insert>
+
+</sqlMap>

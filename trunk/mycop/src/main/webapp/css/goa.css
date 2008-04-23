@@ -1,0 +1,253 @@
+@import url(disabled.css);
+.bodybg {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #eeeeee;
+	font-size: 12px;
+}
+/*页面背景边距*/
+.menu1{
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: bottom;
+
+}
+/*菜单字体，黑色*/
+.menu2 {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+/*菜单字体，白色*/
+.listcellrow2  {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666666;
+	font-size: 12px;
+	color: #000000;
+	line-height: 15px;
+
+}
+/*表格粗边框*/
+.listcellrow {
+	overflow: hidden;
+	white-space: normal;
+	height: 17px;
+	font-size: 12px;
+	border-top: 0px solid #999999;
+	border-right: 0px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+
+	}
+/*表格细边框*/
+.listcellrow3 {
+	overflow: hidden;
+	white-space: normal;
+	font-size: 14px;
+	border-top: 0px solid #666666;
+	border-right: 0px solid #666666;
+	border-bottom: 2px solid #666666;
+	border-left: 0px solid #666666;
+	font-family: "宋体";
+	font-weight: bold;
+	line-height: 20px;
+	color: #9F0000;
+}
+.listcellrow4 {
+	overflow: hidden;
+	white-space: normal;
+	height: 17px;
+	font-size: 12px;
+	border-top: 0px solid #999999;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+	}
+/*表格细边框*/
+.f14 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #9F0000;
+	line-height: 24px;
+}
+/*首页显示功能栏目标题*/
+.f12 {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 15px;
+	color: #000000;
+}
+/*普通文字样式*/
+.TableTitleText {
+	font-family: "宋体";
+	font-size: 24px;
+	font-weight: bold;
+	color: #9F0000;
+	word-spacing: 5px;
+	letter-spacing: 5px;
+	text-align: center;
+
+}
+/*页面，表格标题文字样式*/
+.Listtitle {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #9F0000;
+}
+/*表格字段文字样式及表格背景色*/
+.InputLabelCell {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bolder;
+	color: #9F0000;
+	vertical-align: middle;
+}
+/*普通文字加粗，用于搜索输入框前面的提示文字*/
+.input {
+	font-family: "宋体";
+	font-size: 12px;
+	border: 1px solid #333333;
+	width: 100%;
+
+}
+/*输入框样式，宽度100%*/
+.input2 {
+	font-family: "宋体";
+	font-size: 12px;
+	border: 1px solid #333333;
+
+}
+/*用来控制输入框的样式为下划线*/
+.input0 {
+	font-family: "宋体";
+	font-size: 12px;
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	border-bottom: 1px solid #666666;
+	background: transparent;
+}
+/*用来控制输入框的样式为下划线*/
+.input9 {
+	font-family: "宋体";
+	font-size: 18px;
+	font-weight: bold;
+	color: #9F0000;
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	border-bottom: 1px solid #666666;
+	background: transparent;
+}
+/*输入框样式2，宽度不定*/
+.button {
+	font-size: 12px;
+	color: #9F0000;
+	background-color: #eeeeee;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	height: 18px;
+	border-top: 1px outset;
+	border-right: 1px outset;
+	border-bottom: 1px outset;
+	border-left: 1px outset;
+	vertical-align: top;
+
+}
+/*按钮样式*/
+a.menu3:link {
+	text-decoration: none;
+	color: #000000;
+	background-color: #eeeeee;
+	border: 1px solid #eeeeee;
+}
+/*带有下拉菜单的文字状态1*/
+a.menu3:visited {
+	color: #000000;
+	text-decoration: none;
+	background-color: #eeeeee;
+	border: 1px solid #eeeeee;
+
+}
+/*带有下拉菜单的文字状态2*/
+a.menu3:hover {
+	background-color: #eeeeee;
+	border: 1px solid #cccccc;
+	color: #000000;
+}
+/*带有下拉菜单的文字状态3*/
+.InputAreaCell {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 17px;
+	color: #000000;
+}
+.logo {
+	font-family: "宋体";
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+}
+/*系统名称、标语口号字体*/
+.topbg {
+	background-color: #9F0000;
+/*top背景色*/
+}.tablebk {
+	border: 1px solid #999999;
+	background-color: #CCCCCC;
+}
+
+/*邮箱界面样式*/
+.mailbody {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #9F0000;
+}
+.mailbody2 {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #FFF9EC;
+}
+.mailtdbg {
+	background-color: #9F0000;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+.mailtdbg2 {
+	background-color: #FFC097;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}
+/*************************************/
+/* 2005-05-17 李炽明 增加 begin      */
+/*************************************/
+.labelinput {
+	font-family: "宋体";
+	font-size: 12px;
+	border: 0px solid #333333;
+	width: 100%;
+	background-color: #eeeeee;
+}
+.bottomline{
+border-bottom:	1px solid #ffffff;
+}
+.pm_main_table {
+	border:		1px Solid #B7D4F0;
+}
+/*************************************/
+/* 2005-05-17 李炽明 增加 end        */
+/*************************************/

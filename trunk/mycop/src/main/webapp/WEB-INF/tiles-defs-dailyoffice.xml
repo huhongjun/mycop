@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+   <definition extends="main.template" name="dailyoffice.mailmgr.mailboxmgr.extermailbox">
+    <put name="body" value="/dailyoffice/mailmgr/mailboxmgr/extermailbox.jsp" />
+  </definition>
+	<definition extends="edit.template" name="dailyoffice.mailmgr.mailboxmgr.exmailedit">
+    <put name="body" value="/dailyoffice/mailmgr/mailboxmgr/exmailedit.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="targetmng.listyeartarget">
+    <put name="body" value="/dailyoffice/targetmng/listyeartarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.edityeartarget">
+    <put name="body" value="/dailyoffice/targetmng/edityeartarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.viewyeartarget">
+    <put name="body" value="/dailyoffice/targetmng/viewyeartarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.listyearsum">
+    <put name="body" value="/dailyoffice/targetmng/listyearsum.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.edityearsum">
+    <put name="body" value="/dailyoffice/targetmng/edityearsum.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.viewyearsum">
+    <put name="body" value="/dailyoffice/targetmng/viewyearsum.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.listmonthtarget">
+    <put name="body" value="/dailyoffice/targetmng/listmonthtarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.editmonthtarget">
+    <put name="body" value="/dailyoffice/targetmng/editmonthtarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.viewmonthtarget">
+    <put name="body" value="/dailyoffice/targetmng/viewmonthtarget.jsp" />
+  </definition>
+  <definition extends="tree.template" name="monthtarget.lefttree">
+    <put name="body" value="/dailyoffice/targetmng/treemonthtarget.jsp" />
+  </definition>
+
+
+  <definition extends="main.template" name="targetmng.listmonthsum">
+    <put name="body" value="/dailyoffice/targetmng/listmonthsum.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.editmonthsum">
+    <put name="body" value="/dailyoffice/targetmng/editmonthsum.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.viewmonthsum">
+    <put name="body" value="/dailyoffice/targetmng/viewmonthsum.jsp" />
+  </definition>
+  <definition extends="tree.template" name="monthsum.lefttree">
+    <put name="body" value="/dailyoffice/targetmng/treemonthsum.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.listweektarget">
+    <put name="body" value="/dailyoffice/targetmng/listweektarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.editweektarget">
+    <put name="body" value="/dailyoffice/targetmng/editweektarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.viewweektarget">
+    <put name="body" value="/dailyoffice/targetmng/viewweektarget.jsp" />
+  </definition>
+  <definition extends="tree.template" name="weektarget.lefttree">
+    <put name="body" value="/dailyoffice/targetmng/treeweektarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.listfiveyearlayout">
+    <put name="body" value="/dailyoffice/targetmng/listfiveyearlayout.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.editfiveyearlayout">
+    <put name="body" value="/dailyoffice/targetmng/editfiveyearlayout.jsp" />
+  </definition>
+  <definition extends="main.template" name="targetmng.viewfiveyearlayout">
+    <put name="body" value="/dailyoffice/targetmng/viewfiveyearlayout.jsp" />
+  </definition>
+   <!--lihaidong add reportmgr start-->
+  <definition extends="tree.template" name="target.lefttree">
+    <put name="body" value="/dailyoffice/reportmgr/treetarget.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="target.listtarget">
+    <put name="body" value="/dailyoffice/reportmgr/listtarget.jsp" />
+  </definition>
+
+  <definition extends="edit.template" name="target.edittarget">
+    <put name="body" value="/dailyoffice/reportmgr/edittarget.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="target.viewtarget">
+    <put name="body" value="/dailyoffice/reportmgr/viewtarget.jsp" />
+  </definition>
+  <!--lihaidong add reportmgr end-->
+  <definition extends="tree.template" name="teamworklog.lefttree">
+    <put name="body" value="/dailyoffice/worklog/treeteamworklog.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.listworklog">
+    <put name="body" value="/dailyoffice/worklog/listworklog.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.editworklog">
+    <put name="body" value="/dailyoffice/worklog/editworklog.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.viewworklog">
+    <put name="body" value="/dailyoffice/worklog/viewworklog.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.listteamworklog">
+    <put name="body" value="/dailyoffice/worklog/listteamworklog.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.setteamworklog">
+    <put name="body" value="/dailyoffice/worklog/setteamworklog.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.listpersonyeartarget">
+    <put name="body" value="/dailyoffice/worklog/listpersonyeartarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.editpersonyeartarget">
+    <put name="body" value="/dailyoffice/worklog/editpersonyeartarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.viewpersonyeartarget">
+    <put name="body" value="/dailyoffice/worklog/viewpersonyeartarget.jsp" />
+  </definition>
+  <definition extends="tree.template" name="personyeartarget.lefttree">
+    <put name="body" value="/dailyoffice/worklog/treepersonyeartarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.listpersonmonthtarget">
+    <put name="body" value="/dailyoffice/worklog/listpersonmonthtarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.editpersonmonthtarget">
+    <put name="body" value="/dailyoffice/worklog/editpersonmonthtarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.viewpersonmonthtarget">
+    <put name="body" value="/dailyoffice/worklog/viewpersonmonthtarget.jsp" />
+  </definition>
+  <definition extends="tree.template" name="personmonthtarget.lefttree">
+    <put name="body" value="/dailyoffice/worklog/treepersonmonthtarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.listpersonweektarget">
+    <put name="body" value="/dailyoffice/worklog/listpersonweektarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.editpersonweektarget">
+    <put name="body" value="/dailyoffice/worklog/editpersonweektarget.jsp" />
+  </definition>
+  <definition extends="main.template" name="worklog.viewpersonweektarget">
+    <put name="body" value="/dailyoffice/worklog/viewpersonweektarget.jsp" />
+  </definition>
+  <definition extends="tree.template" name="personweektarget.lefttree">
+    <put name="body" value="/dailyoffice/worklog/treepersonweektarget.jsp" />
+  </definition>
+  <definition extends="tree.template" name="dailyoffice.workreport.lefttree">
+    <put name="body" value="/dailyoffice/workreport/treeworkreport.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.workreport.viewworkreport">
+    <put name="body" value="/dailyoffice/workreport/viewworkreport.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.workreport.editworkreport">
+    <put name="body" value="/dailyoffice/workreport/editworkreport.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.workreport.listworkreport">
+    <put name="body" value="/dailyoffice/workreport/listworkreport.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.impowermgr.viewimpower">
+    <put name="body" value="/dailyoffice/impowermgr/viewimpower.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.impowermgr.editimpower">
+    <put name="body" value="/dailyoffice/impowermgr/editimpower.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.impowermgr.listimpower">
+    <put name="body" value="/dailyoffice/impowermgr/listimpower.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.calendararrange.editcalendarbydept">
+    <put name="body" value="/dailyoffice/calendararrange/editcalendarbydept.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.calendararrange.editcalendar">
+    <put name="body" value="/dailyoffice/calendararrange/editcalendar.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.calendararrange.listcalendar">
+    <put name="body" value="/dailyoffice/calendararrange/listcalendar.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.calendararrange.viewcalendar">
+    <put name="body" value="/dailyoffice/calendararrange/viewcalendar.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.calendararrange.listcalendar">
+    <put name="body" value="/dailyoffice/calendararrange/listcalendar.jsp" />
+  </definition>
+  <definition extends="tree.template" name="dailyoffice.calendararrange.lefttree">
+    <put name="body" value="/dailyoffice/calendararrange/treecalendararrange.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.calendararrange.listcalendarbyweek">
+    <put name="body" value="/dailyoffice/calendararrange/listcalendarbyweek.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.calendararrange.listcalendarbymonth">
+    <put name="body" value="/dailyoffice/calendararrange/listcalendarbymonth.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.tools.listCardcase">
+    <put direct="false" name="body" value="/dailyoffice/tools/listcardcase.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.tools.editCardcase">
+    <put name="body" value="/dailyoffice/tools/editcardcase.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.tools.viewCardcase">
+    <put name="body" value="/dailyoffice/tools/viewcardcase.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.tools.listCardcaseType">
+    <put direct="false" name="body" value="/dailyoffice/tools/listcardtype.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.tools.editCardcaseType">
+    <put name="body" value="/dailyoffice/tools/editcardtype.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.tools.viewCardcaseType">
+    <put name="body" value="/dailyoffice/tools/viewcardtype.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.tools.listTickler">
+    <put name="body" value="/dailyoffice/tools/listtickler.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.tools.editTickler">
+    <put name="body" value="/dailyoffice/tools/edittickler.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.tools.viewTickler">
+    <put name="body" value="/dailyoffice/tools/viewtickler.jsp" />
+  </definition>
+  <definition extends="tree.template" name="dailyoffice.tools.cardlefttree">
+    <put name="body" value="/dailyoffice/tools/cardtypetree.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.tools.listWorldwindow">
+    <put direct="false" name="body" value="/dailyoffice/tools/listworldwindow.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.tools.editWorldwindow">
+    <put name="body" value="/dailyoffice/tools/editworldwindow.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.tools.viewWorldwindow">
+    <put name="body" value="/dailyoffice/tools/viewworldwindow.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.tools.listWorldwindowType">
+    <put direct="false" name="body" value="/dailyoffice/tools/listwindowtype.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.tools.editWorldwindowType">
+    <put name="body" value="/dailyoffice/tools/editwindowtype.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.tools.viewWorldwindowType">
+    <put name="body" value="/dailyoffice/tools/viewwindowtype.jsp" />
+  </definition>
+  <definition extends="tree.template" name="dailyoffice.tools.windowlefttree">
+    <put name="body" value="/dailyoffice/tools/windowtypetree.jsp" />
+  </definition>
+
+    <definition extends="main.template" name="docmng.receivedocmng.list">
+    <put name="body" value="/docmng/receivedocmng/list.jsp" />
+  </definition>
+  <definition extends="edit.template" name="admin.editsex">
+    <put name="body" value="/admin/editsex.jsp" />
+  </definition>
+  <definition extends="view.template" name="admin.viewsex">
+    <put name="body" value="/admin/viewsex.jsp" />
+  </definition>
+    <definition extends="view.template" name="docmng.receivedocmng.viewsub">
+    <put name="body" value="/docmng/receivedocmng/viewsub.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="dailyoffice.message.listmessage">
+    <put name="body" value="/dailyoffice/message/listmessage.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.message.editmessage">
+    <put name="body" value="/dailyoffice/message/editmessage.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.message.viewmessage">
+    <put name="body" value="/dailyoffice/message/viewmessage.jsp" />
+	</definition>
+	 <definition extends="view.template" name="admin.homepage.viewuser">
+    <put name="body" value="/admin/homepage/viewuser.jsp" />
+
+  </definition>
+  <definition extends="tree.template" name="message.lefttree">
+    <put name="body" value="/dailyoffice/message/treemessage.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="dailyoffice.bbs.mng.listtopboard">
+    <put name="body" value="/dailyoffice/bbs/mng/listtopboard.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.mng.edittopboard">
+    <put name="body" value="/dailyoffice/bbs/mng/edittopboard.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.bbs.mng.viewtopboard">
+    <put name="body" value="/dailyoffice/bbs/mng/viewtopboard.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.mng.addtopboard">
+    <put name="body" value="/dailyoffice/bbs/mng/edittopboard.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.bbs.mng.listbbsuser">
+    <put name="body" value="/dailyoffice/bbs/mng/listbbsuser.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.mng.editbbsuser">
+    <put name="body" value="/dailyoffice/bbs/mng/editbbsuser.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.editbbsuser">
+    <put name="body" value="/dailyoffice/bbs/user/editbbsuser.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.bbs.mng.viewbbsuser">
+    <put name="body" value="/dailyoffice/bbs/mng/viewbbsuser.jsp" />
+  </definition>
+  <definition extends="tree.template" name="dailyoffice.bbs.tree">
+    <put name="body" value="/dailyoffice/bbs/treebbs.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.bbs.listtopboard">
+    <put name="body" value="/dailyoffice/bbs/listtopboard.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.bbs.mng.listsboard">
+    <put name="body" value="/dailyoffice/bbs/mng/listsboard.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.mng.editsboard">
+    <put name="body" value="/dailyoffice/bbs/mng/editsboard.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.bbs.mng.viewsboard">
+    <put name="body" value="/dailyoffice/bbs/mng/viewsboard.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.mng.addsboard">
+    <put name="body" value="/dailyoffice/bbs/mng/editsboard.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.bbs.listsboard">
+    <put name="body" value="/dailyoffice/bbs/listsboard.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.bbs.listTopic">
+    <put name="body" value="/dailyoffice/bbs/topic/listtopic.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.bbs.editTopic">
+    <put name="body" value="/dailyoffice/bbs/topic/edittopic.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.bbs.topiclist">
+    <put name="body" value="/dailyoffice/bbs/topic/topiclist.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.listsmsoutbox">
+    <put name="body" value="/dailyoffice/smsmgr/listsmsoutbox.jsp" />
+  </definition>
+<definition extends="open.main.template" name="dailyoffice.smsmgr.modcorp">
+    <put name="body" value="/dailyoffice/smsmgr/modcorp.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.listsmsinbox">
+    <put name="body" value="/dailyoffice/smsmgr/listsmsinbox.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.listsmsoutbox">
+    <put name="body" value="/dailyoffice/smsmgr/listsmsoutbox.jsp" />
+  </definition>
+  <definition extends="open.view.template" name="dailyoffice.smsmgr.viewsmsoutbox">
+    <put name="body" value="/dailyoffice/smsmgr/viewsmsoutbox.jsp" />
+  </definition>
+  <definition extends="open.view.template" name="dailyoffice.smsmgr.viewsmsinbox">
+    <put name="body" value="/dailyoffice/smsmgr/viewsmsinbox.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.sendover">
+    <put name="body" value="/dailyoffice/smsmgr/sendover.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.listsmsinbox">
+    <put name="body" value="/dailyoffice/smsmgr/listsmsinbox.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.listsmserrinbox">
+    <put name="body" value="/dailyoffice/smsmgr/listsmserrinbox.jsp" />
+  </definition>
+  <definition extends="open.main.template" name="dailyoffice.smsmgr.viewsmserrinbox">
+    <put name="body" value="/dailyoffice/smsmgr/viewsmserrinbox.jsp" />
+  </definition>
+  <definition extends="tree.template" name="dailyoffice.smsmgr.treeleftacl">
+    <put name="body" value="/dailyoffice/smsmgr/treeleftacl.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.smsmgr.listsmsacl">
+    <put name="body" value="/dailyoffice/smsmgr/listsmsacl.jsp" />
+  </definition>
+  <definition extends="open.edit.template" name="dailyoffice.smsmgr.writesms">
+    <put name="body" value="/dailyoffice/smsmgr/writesms.jsp" />
+  </definition>
+  <definition extends="open.view.template" name="dailyoffice.smsmgr.viewsmsinbox">
+    <put name="body" value="/dailyoffice/smsmgr/viewsmsinbox.jsp" />
+  </definition>
+  <definition extends="open.view.template" name="dailyoffice.smsmgr.viewsmsoutbox">
+    <put name="body" value="/dailyoffice/smsmgr/viewsmsoutbox.jsp" />
+  </definition>
+  <definition extends="open.edit.template" name="dailyoffice.smsmgr.writesms">
+    <put name="body" value="/dailyoffice/smsmgr/writesms.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.mailmgr.pop3config.pop3configlist">
+    <put name="body" value="/dailyoffice/mailmgr/pop3config/pop3configlist.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.mailmgr.pop3config.pop3configview">
+    <put name="body" value="/dailyoffice/mailmgr/pop3config/pop3configview.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.mailmgr.pop3config.pop3configedit">
+    <put name="body" value="/dailyoffice/mailmgr/pop3config/pop3configedit.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.mailmgr.mailimportandexport.mailboxindex">
+    <put name="body" value="/dailyoffice/mailmgr/mailimportandexport/mailboxindex.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.mailmgr.writemail">
+    <put name="body" value="/dailyoffice/mailmgr/writemail.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.mailmgr.maillist">
+    <put name="body" value="/dailyoffice/mailmgr/maillist.jsp" />
+  </definition>
+  <definition extends="view.template" name="dailyoffice.mailmgr.mailview">
+    <put name="body" value="/dailyoffice/mailmgr/mailview.jsp" />
+  </definition>
+ <definition extends="void.template" name="dailyoffice.mailmgr.mailsendresult">
+    <put name="body" value="/dailyoffice/mailmgr/mailsendresult.jsp" />
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.mailmgr.maildiredit">
+    <put name="body" value="/dailyoffice/mailmgr/maildiredit.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.mailmgr.maildirectorylist">
+    <put name="body" value="/dailyoffice/mailmgr/maildirectorylist.jsp" />
+  </definition>
+  <definition extends="main.template" name="dailyoffice.mailmgr.inceptexteriormaillist">
+    <put name="body" value="/dailyoffice/mailmgr/inceptexteriormaillist.jsp" />
+  </definition>
+  <!--Mailmgr start by lihaidong -->
+	<!--pop3mailconfig start-->
+	<definition extends="main.template" 		name="dailyoffice.mailmgr.pop3config.pop3configlist">
+    <put name="body" value="/dailyoffice/mailmgr/pop3config/pop3configlist.jsp"/>
+  </definition>
+	<definition extends="view.template" name="dailyoffice.mailmgr.pop3config.pop3configview">
+   <put name="body" value="/dailyoffice/mailmgr/pop3config/pop3configview.jsp"/>
+  </definition>
+  <definition extends="edit.template" name="dailyoffice.mailmgr.pop3config.pop3configedit">
+    <put name="body" value="/dailyoffice/mailmgr/pop3config/pop3configedit.jsp"/>
+  </definition>
+  <!--pop3mailconfig end-->
+
+ <!--mailbox start-->
+	<definition extends="main.template" 		name="dailyoffice.mailmgr.mailimportandexport.mailboxindex">
+    <put name="body" value="/dailyoffice/mailmgr/mailimportandexport/mailboxindex.jsp"/>
+  </definition>
+  <!--mailbox end-->
+
+  <!--mailinfo start by lihaidong-->
+	<definition extends="edit.template" name="dailyoffice.mailmgr.mailinfo.mailinfo">
+    <put name="body" value="/dailyoffice/mailmgr/mailinfo/mailinfo.jsp"/>
+  </definition>
+
+  <!--mailinfo end by lihaidong-->
+  <!--mailboxmgr start by lihaidong-->
+	<definition extends="tree.template" name="dailyoffice.mailmgr.mailboxmgr.mailboxtree">
+    <put name="body" value="/dailyoffice/mailmgr/mailboxmgr/mailboxtree.jsp"/>
+  </definition>
+
+  <definition extends="main.template" name="dailyoffice.mailmgr.mailboxmgr.mailboxmgrlist">
+    <put name="body" value="/dailyoffice/mailmgr/mailboxmgr/mailboxmgrlist.jsp"/>
+  </definition>
+ <!-- add by chenyw-->
+
+</tiles-definitions>

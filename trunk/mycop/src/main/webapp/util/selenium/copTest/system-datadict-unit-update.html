@@ -1,0 +1,58 @@
+<html>
+<head><link href="selenium-testcase.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>system-datadict-unit-update</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">system-datadict-unit-update</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/gdp/admin/listunit.do?rnd=1153281376847</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>GDCA信息平台</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>fid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>copy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>vo.remark</td>
+	<td>Selenium test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>vo.e_mail</td>
+	<td>huhj2008@126.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>document.UnitForm.save[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>GDCA信息平台</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[2]/td[2]</td>
+	<td>天行软件</td>
+</tr>
+</tbody></table>
+</body>
+</html>

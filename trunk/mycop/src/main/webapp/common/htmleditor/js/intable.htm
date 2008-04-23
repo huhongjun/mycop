@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Insert Table</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="HTML 4.0" name=vs_targetSchema>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR><LINK 
+href="../css/dialog.css" type=text/css rel=stylesheet>
+<SCRIPT LANGUAGE="JavaScript" src="colorpicker.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+var table=null;
+var editmode = false 
+if (dialogArguments != null) {
+   editmode = true;
+   table=dialogArguments;
+   document.write("<title>编辑表格</title>");
+   
+} else {
+   document.write("<title>插入表格</title>");
+
+}
+function setDefaults(){
+	if(editmode){
+		borderWidth.value=table.border;
+		cellSpacing.value=table.cellSpacing;
+		cellPadding.value= table.cellPadding;
+		rowHeight.value=table.rows[0].cells[0].style.height;
+		colWidth.value=table.rows[0].cells[0].style.width;
+		borderColor.value=table.borderColor;
+		borderColorLight.value=table.borderColorLight;
+		borderColorDark.value=table.borderColorDark;
+		backgroundColor.value=table.bgColor;
+		sborderColor.style.backgroundColor=table.borderColor;
+		sborderColorLight.style.backgroundColor=table.borderColorLight;
+		sborderColorDark.style.backgroundColor=table.borderColorDark;
+		sbackgroundColor.style.backgroundColor=table.bgColor;
+		rows.value=table.rows.length;
+		cols.value=table.rows[0].cells.length;
+
+
+		if(table.style.borderCollapse=="collapse"){
+			borderCollapse.checked=true;
+		}else{
+			borderCollapse.checked=false;
+		}
+	}
+	
+}
+
+function attr(name, value) {
+	if (!value || value == "") return "";
+	return ' ' + name + '="' + value + '"';
+}
+
+function explore(obj, pnt) {
+  var i;
+  for (i in obj) {
+	 alert(i +"="+obj[i]);
+  }
+}
+
+function insertTable() {
+	var nRows = rows.value ? parseInt(rows.value) : 2;
+	var nCols = cols.value ? parseInt(cols.value) : 2;
+	var rHeight=rowHeight.value?parseInt(rowHeight.value) : 20;
+	var cWidth=colWidth.value?parseInt(colWidth.value) : 100;
+	
+	var d = document.body.appendChild( document.createElement("DIV") );
+	if(table==null){
+		table = d.appendChild( document.createElement("TABLE") );
+	}
+	var tb = table.appendChild( document.createElement("TBODY") );
+	
+	for (var i = 0; i < nRows; i++) {
+		var tr = tb.appendChild( document.createElement("TR") );
+		for (var j = 0; j < nCols; j++) {
+			var td = tr.appendChild( document.createElement("TD") );
+			td.style.height = rHeight;
+			td.style.width =cWidth;
+		}
+	}
+
+   table.border = borderWidth.value;
+   table.borderColor = borderColor.value;
+   table.cellSpacing = cellSpacing.value;
+   table.cellPadding = cellPadding.value;
+   table.bgColor = backgroundColor.value;
+   table.borderColorLight = borderColorLight.value;
+   table.borderColorDark = borderColorDark.value;
+   
+	if(borderCollapse.checked){
+		table.style.borderCollapse="collapse";
+	}else{
+		table.style.borderCollapse="separate";
+	}
+
+   window.returnValue = d.innerHTML;
+   window.close();
+}
+function updateTable() {
+	var nRows = rows.value ? parseInt(rows.value) : 2;
+	var nCols = cols.value ? parseInt(cols.value) : 2;
+	var rHeight=rowHeight.value?parseInt(rowHeight.value) : 20;
+	var cWidth=colWidth.value?parseInt(colWidth.value) : 100;
+	if(nRows<table.rows.length){
+		var delCount=table.rows.length-nRows;
+		for (var i = 0; i <delCount ; i++) {
+			table.deleteRow();
+		}
+	}else if(nRows>table.rows.length){
+		var addCount=nRows-table.rows.length;
+		for (var i = 0; i <addCount ; i++) {
+			var row=table.insertRow();
+			var prow=row.previousSibling;
+			for(var j=0;j<prow.cells.length;j++){
+				row.insertCell();
+			}
+		}	
+	}
+	if(nCols<table.rows[0].cells.length){
+		for (var i = 0; i < table.rows.length; i++) {
+			var delCount=table.rows[i].cells.length-nCols;
+			for(var j=0;j<delCount;j++){
+				table.rows[i].deleteCell();
+			}
+		}
+	}else if(nCols>table.rows[0].cells.length){
+		for (var i = 0; i < table.rows.length; i++) {
+			var addCount=nCols-table.rows[i].cells.length;
+			for(var j=0;j<addCount;j++){
+				var cell=table.rows[i].insertCell();
+				cell.style.width=cell.previousSibling.style.width;
+				cell.style.height=cell.previousSibling.style.height;
+
+			}
+		}
+	}
+	
+
+   table.border = borderWidth.value;
+   table.borderColor = borderColor.value;
+   table.cellSpacing = cellSpacing.value;
+   table.cellPadding = cellPadding.value;
+   table.bgColor = backgroundColor.value;
+   table.borderColorLight = borderColorLight.value;
+   table.borderColorDark = borderColorDark.value;
+	if(borderCollapse.checked){
+		table.style.borderCollapse="collapse";
+	}else{
+		table.style.borderCollapse="separate";
+	}
+	
+   window.returnValue = null;
+   window.close();
+}
+
+function cancel() {
+	window.returnValue = null;
+	window.close();
+}
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+function showColor(flag){
+	var picker=ColorPicker.createColorPicker();
+	switch(flag){
+		case 0:
+			picker.show(null,"setBorderColor");	
+			break;
+		case 1:
+			picker.show(null,"setBorderColorLight");	
+			break;
+		case 2:
+			picker.show(null,"setBorderColorDark");	
+			break;
+		case 3:
+			picker.show(null,"setBackgroundColor");	
+			break;
+	}
+}
+function setBorderColor(color){
+	sborderColor.value=color;
+	sborderColor.style.backgroundColor=color;
+}
+
+function setBorderColorLight(color){
+	borderColorLight.value=color;
+	sborderColorLight.style.backgroundColor=color;
+
+}
+function setBorderColorDark(color){
+	borderColorDark.value=color
+	sborderColorDark.style.backgroundColor=color;
+
+}
+function setBackgroundColor(color){
+	backgroundColor.value=color
+	sbackgroundColor.style.backgroundColor=color
+
+}
+
+</SCRIPT>
+
+<style>
+.spancolor{
+	font-size:12px;
+	width:18;
+	height:18;
+	background-color:;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+
+}
+INPUT.button{
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: white 1px solid; FONT-SIZE: 12px; BORDER-LEFT: white 1px solid; WIDTH: 30px; BORDER-BOTTOM: black 1px solid
+
+}
+</style>
+</HEAD>
+<BODY  onload="setDefaults()"
+style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" 
+leftMargin=0 topMargin=0 scroll=no>
+<TABLE class="dialog" height="100%" cellSpacing=2 cellPadding=0 width="100%">
+  <TBODY>
+    <TR> 
+      <TD colSpan=5> <TABLE width="100%">
+          <TBODY>
+            <TR> 
+              <TD>布局</TD>
+              <TD vAlign=center width="90%"> <HR width="100%"> </TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR> 
+      <TD width=10>&nbsp;</TD>
+      <TD width=32 nowrap>行数:</TD>
+      <TD width="90" vAlign=center><INPUT size=5 value=2 name=rows></TD>
+      <TD width=66 nowrap>单元格衬距:</TD>
+      <TD vAlign=center><INPUT size=5 value=0 name=cellPadding></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD nowrap>列数:</TD>
+      <TD vAlign=center><INPUT size=5 value=2 name=cols></TD>
+      <TD nowrap>单元格间距:</TD>
+      <TD vAlign=center><INPUT size=5 value=0 name=cellSpacing></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD nowrap>行高:</TD>
+      <TD vAlign=center><INPUT size=5 value=20 name=rowHeight></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD nowrap>列宽:</TD>
+      <TD vAlign=center><INPUT size=5 value=100 name=colWidth></TD>
+    </TR>
+    <TR> 
+      <TD colSpan=5> <TABLE width="100%">
+          <TBODY>
+            <TR> 
+              <TD nowrap>边框</TD>
+              <TD vAlign=center width="90%"> <HR width="100%"> </TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR> 
+      <TD height="22">&nbsp;</TD>
+      <TD>宽:</TD>
+      <TD vAlign=center><input size=5 value=1 name=borderWidth></TD>
+      <TD>亮边框:</TD>
+      <TD vAlign=center> <span id="sborderColorLight"  class="spancolor"  ></span><input style="display:none" size=10 value=black name=borderColorLight><input class="button"  type="button" value="选择" onclick="showColor(1)"></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD>颜色</TD>
+      <TD vAlign=center><span id="sborderColor" class="spancolor" ></span><input style="display:none" size=10 value=black name=borderColor><input class="button"  type="button" value="选择" onclick="showColor(0)"></TD>
+      <TD>暗边框</TD>
+      <TD vAlign=center> <span id="sborderColorDark" class="spancolor" ></span><input style="display:none" size=10 value=black name=borderColorDark><input class="button"  type="button" value="选择" onclick="showColor(2)"></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD colspan="4">折叠表格边框: <input type="checkbox" name="borderCollapse"></TD>
+    </TR>
+    <TR> 
+      <TD colSpan=5> <TABLE width="100%">
+          <TBODY>
+            <TR> 
+              <TD>背景</TD>
+              <TD vAlign=center width="90%"> <HR width="100%"> </TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD>颜色:</TD>
+      <TD vAlign=center> <span id="sbackgroundColor"  class="spancolor"  ></span><input style="display:none" size=15 name=backgroundColor><input class="button" type="button" value="选择" onclick="showColor(3)"></TD>
+    </TR>
+    <TR> 
+      <TD colSpan=5> <TABLE width="100%">
+          <TBODY>
+            <TR> 
+              <TD vAlign=center width="100%" colSpan=2> <HR width="100%"> </TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD> 
+      <TD align=right colSpan=4> <SCRIPT language=JavaScript>
+			if (!editmode) {
+			document.write("<input class=\"button\" type=\"button\" value=\"插入\" title=\"插入表格\" onclick=\"insertTable()\">");
+			} else {
+			document.write("<input class=\"button\" type=\"button\" value=\"更新\" title=\"更新表格\" onclick=\"updateTable()\">");
+			}
+		</SCRIPT> <INPUT class=button title="Cancel Dialog" onclick=cancel() type=button value=取消></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY></HTML>

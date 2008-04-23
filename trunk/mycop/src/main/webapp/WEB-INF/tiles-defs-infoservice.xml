@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+  <definition extends="main.template" name="infoservice.communication">
+    <put name="body" value="/infoservice/communication.jsp" />
+  </definition>
+   <definition extends="tree.template" name="infoservice.communicationtree">
+    <put name="body" value="/infoservice/communicationtree.jsp" />
+  </definition>
+   <definition extends="edit.template" name="infoservice.communicationedit">
+    <put name="body" value="/infoservice/communicationedit.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.communicationview">
+    <put name="body" value="/infoservice/communicationview.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.customerlist">
+    <put name="body" value="/infoservice/customerlist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.customerinfo">
+    <put name="body" value="/infoservice/customerinfo.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.customerview">
+    <put name="body" value="/infoservice/customerview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="customer.lefttree">
+    <put name="body" value="/infoservice/customertree.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.providerlist">
+    <put name="body" value="/infoservice/providerlist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.providerinfo">
+    <put name="body" value="/infoservice/providerinfo.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.providerview">
+    <put name="body" value="/infoservice/providerview.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.linkmanlist">
+    <put name="body" value="/infoservice/linkmanlist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.linkman">
+    <put name="body" value="/infoservice/linkman.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.linkmanview">
+    <put name="body" value="/infoservice/linkmanview.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.list">
+    <put name="body" value="/infoservice/list.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.dotype">
+    <put name="body" value="/infoservice/dotype.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.dotypeview">
+    <put name="body" value="/infoservice/dotypeview.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.orginfolist">
+    <put name="body" value="/infoservice/orginfolist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.orginfo">
+    <put name="body" value="/infoservice/orginfo.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.orgview">
+    <put name="body" value="/infoservice/orgview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.orginfotree">
+    <put name="body" value="/infoservice/orginfotree.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.tradenewslist">
+    <put name="body" value="/infoservice/tradenewslist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.tradenewsedit">
+    <put name="body" value="/infoservice/tradenewsedit.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.tradenewsview">
+    <put name="body" value="/infoservice/tradenewsview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.tradenewstree">
+    <put name="body" value="/infoservice/tradenewstree.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="infoservice.managesystemlist">
+    <put name="body" value="/infoservice/managesystemlist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.managesystemedit">
+    <put name="body" value="/infoservice/managesystemedit.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.managesystemview">
+    <put name="body" value="/infoservice/managesystemview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.managesystemtree">
+    <put name="body" value="/infoservice/managesystemtree.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="infoservice.deptinfolist">
+    <put name="body" value="/infoservice/deptinfolist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.deptinfo">
+    <put name="body" value="/infoservice/deptinfo.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.deptview">
+    <put name="body" value="/infoservice/deptview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.deptinfotree">
+    <put name="body" value="/infoservice/deptinfotree.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.typelist">
+    <put name="body" value="/infoservice/typelist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.lawdotype">
+    <put name="body" value="/infoservice/lawdotype.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.lawdotypeview">
+    <put name="body" value="/infoservice/lawdotypeview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="type.lefttree">
+    <put name="body" value="/infoservice/typetree.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.publicinfolist">
+    <put name="body" value="/infoservice/publicinfolist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.publicinfo">
+    <put name="body" value="/infoservice/publicinfo.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.publicview">
+    <put name="body" value="/infoservice/publicview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.publicinfotree">
+    <put name="body" value="/infoservice/publicinfotree.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.lawlist">
+    <put name="body" value="/infoservice/lawlist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.law">
+    <put name="body" value="/infoservice/law.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.lawview">
+    <put name="body" value="/infoservice/lawview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.lawtree">
+    <put name="body" value="/infoservice/lawtree.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="infoservice.docinfolist">
+    <put name="body" value="/infoservice/docinfolist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.docinfoedit">
+    <put name="body" value="/infoservice/docinfoedit.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.docinfoview">
+    <put name="body" value="/infoservice/docinfoview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.docinfotree">
+    <put name="body" value="/infoservice/docinfotree.jsp" />
+  </definition>
+
+  <definition extends="main.template" name="infoservice.templatelist">
+    <put name="body" value="/infoservice/templatelist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.template">
+    <put name="body" value="/infoservice/template.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.templateview">
+    <put name="body" value="/infoservice/templateview.jsp" />
+  </definition>
+  <definition extends="tree.template" name="infoservice.templatetree">
+    <put name="body" value="/infoservice/templatetree.jsp" />
+  </definition>
+  <definition extends="main.template" name="infoservice.grouplist">
+    <put name="body" value="/infoservice/grouplist.jsp" />
+  </definition>
+  <definition extends="edit.template" name="infoservice.group">
+    <put name="body" value="/infoservice/group.jsp" />
+  </definition>
+  <definition extends="view.template" name="infoservice.groupview">
+    <put name="body" value="/infoservice/groupview.jsp" />
+  </definition>
+    <definition extends="tree.template" name="infoservice.grouptree">
+    <put name="body" value="/infoservice/grouptree.jsp" />
+  </definition>
+</tiles-definitions>
