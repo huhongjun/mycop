@@ -1,0 +1,3 @@
+取所有我需要的资源
+	select * from t_resource b where b.parent_id in(select a.id from t_resource a where a.parent_id in(10,70,90));
+

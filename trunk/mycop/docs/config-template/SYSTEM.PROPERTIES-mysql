@@ -1,0 +1,111 @@
+#��ݿ�����
+# .conntype Ӧ��l�ӳ����� 1 APACHI��DPCP 2 JNDI 3 JDBC
+# .jndiname Ӧ�÷����������ļ�
+# .driver   l�ӵ�
+# .url      l�ӵ�URL�ַ�
+# .user     �û����
+# .password �û�����
+# .maxconn  ������l����
+# .minconn  ���ٿ���l����
+# .maxactive ���l����
+# .timeout  l�ӵĿ���ʱ��
+# .waittime ȡl�ӵ�ʱ�����û�п���l�����ĵȴ�ʱ��
+# .managetype ������� 1,0 ��DBCP��Դ�ľ�ʱ�Ĺ��?
+# .pstype    �Ƿ�ʹ��prepared statements catch Y 1 N 0
+# .pscount   pool prepared statements catch �� 0 ��������
+
+#gdp.conntype=1
+#gdp.driver=COM.ibm.db2.jdbc.app.DB2Driver
+#gdp.url=jdbc:db2:ZT
+#gdp.minconn=20000
+#gdp.maxconn=200000
+#gdp.maxactive=50
+#gdp.waittime=3000
+#gdp.timeout=4000
+#gdp.user=administrator
+#gdp.password=123hhj
+#gdp.pstype=0
+
+#UniQuery.conntype=1
+#UniQuery.driver=COM.ibm.db2.jdbc.app.DB2Driver
+#UniQuery.url=jdbc:db2:ZT
+#UniQuery.minconn=200
+#UniQuery.maxconn=2000
+#UniQuery.maxactive=50
+#UniQuery.waittime=3000
+#UniQuery.timeout=4000
+#UniQuery.user=administrator
+#UniQuery.password=123hhj
+#UniQuery.pstype=0
+
+#-----------------
+# mysql
+#-----------------
+gdp.conntype=3
+gdp.driver=com.mysql.jdbc.Driver
+gdp.url=jdbc:mysql://localhost:3306/cop
+gdp.minconn=5
+gdp.maxconn=20
+gdp.maxactive=50
+gdp.waittime=3000
+gdp.timeout=4000
+gdp.user=root
+gdp.password=
+gdp.pstype=0
+
+UniQuery.conntype=1
+UniQuery.driver=com.mysql.jdbc.Driver
+UniQuery.url=jdbc:mysql://localhost:3306/cop
+UniQuery.minconn=5
+UniQuery.maxconn=20
+UniQuery.maxactive=50
+UniQuery.waittime=3000
+UniQuery.timeout=4000
+UniQuery.user=root
+UniQuery.password=
+UniQuery.pstype=0
+
+#-----------------
+# oracle
+#-----------------
+#gdp.conntype=3
+#gdp.driver=oracle.jdbc.driver.OracleDriver
+#gdp.url=jdbc:oracle:thin:@localhost:1521:ORCL
+#gdp.minconn=5
+#gdp.maxconn=20
+#gdp.maxactive=50
+#gdp.waittime=3000
+#gdp.timeout=4000
+#gdp.user=image
+#gdp.password=sysadm
+#gdp.pstype=0
+
+#UniQuery.conntype=1
+#UniQuery.driver=oracle.jdbc.driver.OracleDriver
+#UniQuery.url=jdbc:oracle:thin:@localhost:1521:ORCL
+#UniQuery.minconn=5
+#UniQuery.maxconn=20
+#UniQuery.maxactive=50
+#UniQuery.waittime=3000
+#UniQuery.timeout=4000
+#UniQuery.user=image
+#UniQuery.password=sysadm
+#UniQuery.pstype=0
+
+#pfms.conntype=1
+#pfms.driver=COM.ibm.db2.jdbc.app.DB2Driver
+#pfms.url=jdbc:db2:gimp
+#pfms.minconn=5
+#pfms.maxconn=20
+#pfms.maxactive=50
+#pfms.waittime=3000
+#pfms.timeout=4000
+#pfms.user=gever
+#pfms.password=gevermis
+#pfms.pstype=0
+
+# gdp.conntype=2
+# gdp.jndiname=gdp
+
+# UniQuery.conntype=2
+# UniQuery.jndiname=gdp
