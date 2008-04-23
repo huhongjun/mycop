@@ -1,0 +1,25 @@
+权限管理开发指南
+
+资源[rescode] 1-n 操作[optcode]
+
+权限tag
+
+
+jsp
+0.	<%@ taglib uri="/WEB-INF/taglib/gever-perm" prefix="perm" %>
+1.	<perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">
+		var tree1 = new WebFXLoadTree("系统默认菜单",  context+"/menusetup/leftDefault.do?action=toXTree&isFolder=1&nodeid=0","javascript:toRightDefault()",null, null, null, null,'0');
+	</perm:defaultmenu>
+	
+2.	<perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">
+	  tree1.expand(); //系统默认菜单树
+	</perm:defaultmenu>
+
+3.		<perm:defaultmenu rescode="GDP-MRCD" optcode="ALL">
+		  tree1.reload(); //系统默认菜单树
+		</perm:defaultmenu>
+4.
+<perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">
+  document.write(tree1);
+</perm:defaultmenu>
+	

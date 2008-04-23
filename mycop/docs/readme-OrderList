@@ -1,0 +1,61 @@
+OrderList	增加JSP视图列表排序功能；存储需要排序数据的结构。有数据库相关代码，考虑放入配置文件中。只在.sysman下用到。
+	OrderList.desc="desc";
+	OrderList.level_key= = "level_key"; 
+
+如何使用：
+1.DAO：	private String[] orderby;
+		    public void setOrderby(String[] s){ this.orderby = s; }
+2.sql	语句改造：sql = OrderList.getInstance().formatSQL(orderby,sql);
+
+3.LevelAction.getPagerData()
+		get：OrderList.level_key，OrderList.desc
+		set：OrderList.level_key，
+		levelDAO.setOrderby(ss)
+	------------------------------------------------------------------
+        OrderList _order = OrderList.getInstance();
+        String orderby = request.getParameter(OrderList.level_key);
+        String desc = request.getParameter(OrderList.desc);
+
+        if (!_order.isNull(orderby) && !_order.isNull(desc)) {
+            String[] ss = { orderby, desc };
+            request.getSession(true).setAttribute(OrderList.level_key,
+                ss);
+            levelDAO.setOrderby(ss);
+        } else {
+            String[] ss = (String[]) request.getSession(true)
+                                            .getAttribute(OrderList.level_key);
+
+            if (ss != null) {
+                levelDAO.setOrderby(ss);
+            }
+        }							
+4.JSP
+0-
+	<%@ page import="com.gever.sysman.util.OrderList" %>
+1-
+    //==============================================================================
+    // 胡勇添加，增加列表排序功能
+    var ns = navigator.appName == "Netscape";
+	<%  
+		String key_value = OrderList.getInstance().level_key;
+    	String uri = "/privilege/levelAction.do";
+	%>  
+	<%@ include file="../order_inc.inc" %>
+    //==============================================================================
+2- 列表标题行
+	<td width="10%" class="Listtitle" id="<%=mapList[0]%>" onclick="order('<%=mapList[0]%>',event)">编号</td>
+3-
+	//==============================================================================
+	// 胡勇添加，切换图片显示
+	if((event_id != null) && (event_id != "null")){
+	    swapImages();
+	} else {
+	    if(orderby != "null"){
+	        event_id = orderby;
+	        swapImages();
+	    }
+	}
+	//==============================================================================
+
+5. order_inc.inc
+	

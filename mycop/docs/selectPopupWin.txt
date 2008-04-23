@@ -1,0 +1,56 @@
+1、初始启动页面
+	<html:button 
+		property="selectnotice" 
+		value="选择人员" 
+		styleClass="button"  
+		onclick="javascript:openSelectWindow('menselect','vo.notice','vo.noticename');"/>
+	传给pub.js,使之能打开正确的弹出窗口，并指定返回值的填入对象的id（'vo.notice','vo.noticename'）
+
+2、pub.js:
+	function openSelectWindow(type,id,name) {
+	var context = '/gdp';
+	var url = '';
+	var date = new Date();
+	var rnd="rnd="+date.getTime();
+    var height = 380;
+	switch(type) {
+		case 'menselect':
+            url = context+"/menselect/menselect.do" ;
+            break;
+        case 'deptselect':
+			url = context+"/menselect/deptselect.do" ;
+            break;
+        case 'manselect':
+        	height = 380;
+            url = context+"/menselect/manselect.do" ;
+            break;
+        case 'theamselect':
+		    url=context+"/menselect/theamselect.do";
+	        break;
+    }
+	url = addPara(url,rnd);
+	var userIds = document.all[id].value;	//已有的id值
+	alert('userIds:' + userIds+'url:'+url);
+   	var vReturnValue = window.showModalDialog(url,userIds,"dialogHeight: " + height + "px; dialogWidth: 450px; center: Yes; help: no; resizable: no; status: no;");
+5、   	alert('vReturnValue.id is ' + vReturnValue.id);
+   	if(vReturnValue.id != '-1') {
+       document.all[id].value = vReturnValue.id;
+       document.all[name].value = vReturnValue.name;
+   }
+}
+
+3、 <action name="MenSelectForm" parameter="toDept" path="/menselect/deptselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+      <forward name="dept" path="/menselect/deptselect.jsp" redirect="false" />
+    </action>
+	Action操作：
+		initData()
+		toDept()
+			MenSelectDao.getDeptInfoArray()
+				getTreeOrderInfo
+				initInfoArray
+			MenSelectForm.setInitUserInfoArray(*)
+			/menselect/deptselect.jsp
+			
+4、/menselect/deptselect.jsp
+
+

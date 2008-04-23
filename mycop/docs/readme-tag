@@ -1,0 +1,17 @@
+<%@ taglib uri="/WEB-INF/taglib/gever-pager.tld" prefix="smile" %>
+<%@ taglib uri="/WEB-INF/taglib/gever-menu" prefix="gmenu" %>
+<%@ taglib uri="/WEB-INF/taglib/gever-perm" prefix="perm" %>
+<%@ taglib uri="/WEB-INF/taglib/gever-gdp.tld" prefix="gdp" %>
+
+<%@ taglib uri="/WEB-INF/taglib/gever-goa.tld" prefix="goa" %>
+
+用法【收集所有Tag的用法并分门别类】：
+1.	<perm:button styleClass="button" property="export" value="����" onclick="doExport()" rescode="GDP-JCSJ" optcode="ALL"/>
+	
+2.
+	<perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">
+		var tree1 = new WebFXLoadTree("系统默认菜单",  context+"/menusetup/leftDefault.do?action=toXTree&isFolder=1&nodeid=0","javascript:toRightDefault()",null, null, null, null,'0');
+	</perm:defaultmenu>
+3.  <goa:write  name="DutyForm" property="vo.remarks" filter="false"/>
+
+注：考虑检查是否有相应的资源编码、操作编码
