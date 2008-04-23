@@ -1,0 +1,269 @@
+/*******************************************************************************
+ *
+ *						项目日记
+ *
+ *******************************************************************************/
+2008/1/1
+	如何做demo展示：数据库、运行命令？
+	修改tomcat-users.xml如果没有，则加入，maven默认使用admin密码为空登录tomcat管理控制台。
+	
+	配置tomcat maven插件的登录参数
+	
+	mvn tomcat:list(对应的是当前运行的Tomcat，不涉及目录)
+	修改演示版，mysql和Tomcat都不再使用绝对路径
+2007/10/18
+	启动mysql(maven 执行测试用到)
+	eclipse junit 全部通过
+	mvn package=》生成war包，手工放到Tomcat下
+		1、QiQu生成的测试类编译应用出错；
+		2、单元测试出错；
+	-Dmaven.test.skip=true
+
+
+2007/6/25
+	发现一个bug，当有两个资源的资源编码一样时，他们的权限上按钮都是灰的。 
+2007/6/24
+	参考springside写文档
+	
+	以springside为基础的框架启动开发，但采用cop的前端和ui。还有主页，结构不变，jscript重整。
+	
+2007/6/23
+	代办要事：
+		1、去痕；
+			正则表达式搜索：@author .+?$	（@author空格再加后面至少一个字符至行尾）
+			用superSearch提取所有作者名字；便于搜索其它地方；不敢用它修改，担心字符集问题；
+			
+		2、sysman、goa开发模式与模板；
+		3、集成spring+ibatis开发模式与模板；
+		4、父表子表模板、父表(层级树型)子表模板、树型表模板、华表模板控件使用模板、
+			部门-人员【人员移动模板】
+		5、测试类没有跟着调整包名，调整包名，继续增加测试覆盖；增加功能测试覆盖；
+		
+		模板内容加入生成测试类、样本数据用于测试；js
+		
+	重整：很多页面有重复的Javascript代码；
+	知识点：DOM、Frameset、IFrame
+2007/6/21
+	重构能做的事情：
+		1.修改局部变量名
+		2.修改字段名，同时重构set、get函数
+		3.物理位置移动
+		4.抽取一段代码成为函数
+		5.匿名类、嵌套类
+		6.方法在继承链中的移动 pull up/push down
+		7.提取接口 Extract Interface
+		8.Extract Local Variable 重构取出一段被直接使用的表达式，然后将这个表达式首先赋值给一个局部变量。然后在原先使用那个表达式的地方使用这个变量。
+		9.Extract Constant
+		10.Refactor > Encapsulate Field
+		11.Change Method Signature 改变方法的参数、可见性以及返回值的类型
+		12.Introduce Factory 右键点击类的构造函数先
+	Struts Tiles的好处：
+		1.便于JSP目录、文件名重构，因为对目录、文件名的引用都写在xml文件中；
+		
+2007/6/20
+	MailDirDAO中提示mysql sql语句语法错误
+	文本文件搜索-全部类型：*.jsp, *.tld, *.xml,*.js,*.properties,*.java,*.inc,*.jspf,*.html
+	
+	下一步：
+		页面整理；
+		主题关注-分页、排序、类的组合团队作业；
+		数据库整理；
+		补充单元测试代码；
+2007/6/19
+	1.涉及类路径的文件类别：
+		java
+		jsp		import/全名引用
+		inc		import
+		struts配置文件	
+		tld：tag类
+		web.xml：servlet、filter、listener
+		properties配置文件：指定运行时加载的类
+2007/6/18
+	1、改为从页首记日记，倒序；
+	2、tips：
+	3、先拆sysman和goa；
+	cop.t_action_opt_map 不存在
+
+	考虑一个问题：修改数据库设计会怎样
+	DAO有两种实现：
+		直接调用JDBC API；调用SQLHelper；iBatis
+2007/6/18
+	myeclipse(搞错了，是Sysdeo Tomcat plugin的) 开发经验：将tomcat的work目录纳入源码编译可以多发现一些问题，如tag的；为正确编译需要加入tomcat的jasper-runtime.jar		
+	jsp 文件校验时报mapList不能解析，而编译的java文件无错。正常，因为mapList的定义在一个外部包含文件中。
+				
+2007.6.17
+	考虑开发client api;
+	常量类太多；
+	框架还是不错的；
+	拆封为四部分：	(要是像sakai就好了)
+		framework(sample)-》有homepage，能作为一个web app跑起来
+		sysman（organization api）
+		tools
+		dailyoffice
+		infoservice
+	重整要点：
+		struts相关合到一处
+	web application:
+		action/webapp.action
+		dao
+			impl
+		form
+		taglib
+		util
+		vo/model
+	struts-config-privilege.xml路径错误 /info_error.jsp
+	历史问题：
+		struts找不到message key的问题：因为本机是英文版，因此找英文属性文件，但英文属性文件有两个，其中一个没有内容，但有限用了他，如此而已。
+		解决办法：删掉即可。另外，属性文件中的文本不需：
+		
+		原来为调试方便改了frame border宽度，现在可调回。
+		
+		frameborder=1	=》0		menusetup.jsp,main.jsp
+		
+		重整计划：
+			采用myeclispse新建项目，然后用搭积木的方式逐步重建系统
+			基础jar包=》framework=》sysman=》tools=》dailyoffice=》infoservice
+			代码中不能有sql和表结构相关内容
+			能否用ibatis改造数据库存取代码
+2007.6.11
+	研究东方创远的eLearning时用Myeclipse重整的版本
+	调试一个即时可用的demo版zip包。
+	(Mysql+Tomcat+COP.war)
+	运行出错，错误信息指明少了一个表。
+	
+	如何重整：spring、iBatis
+
+2007.5.26
+	运行环境：maven、MYsql(cop/copunittest)
+
+2007.5.23 记住文件的字符集是什么，在eclipse中用到	
+			
+2006/8/1
+	CSS设计－通过initServlet从css-config.xml中读取,TODO
+
+删除了用户通用查询页面user_query。jsp，action中代码为删
+	通用查询可能挺有价值的
+Tag:
+	goa:text 从未使用
+	css/worldwindow相关内容可清除
+	submit有13处用到，应该不算多
+	pagination从未使用，在pagelink即splitpage上改进
+	menu中也有一个分页集成标签，且有应用
+
+sys-data.jsp 直接用java代码读取basedata*.xml
+
+主模块＝》gever.ApplicationResources
+	struts-config.xml（登陆、menu、menselect）	=>tiles-main-defs.xml,tiles-defs.xml
+	struts-config-admin.xml（基础数据、message）		=>tiles-defs.xml(＝＝》删除，都放在第一个配置文件中)
+	struts-config-infoservice.xml（infoservice）		=>
+	struts-config-dailyoffice.xml（邮件、日程、名片夹、bbs、纪事、授权、目标、汇报、总结、日志）
+	[上面几个都用到tiles，最好组织在一起]
+	
+模块organization＝》com.gever.privilege.ApplicationResource
+	struts-config-organization.xml（组织管理）＝》tiles-organization-defs.xml【没用＝＝》删除】
+	
+模块privilege＝》gever.ApplicationResources
+	struts-config-privilege.xml（权限管理）		＝》tiles-privilege-defs.xml【没用，无相应jsp文件＝＝》删除】
+												＝》		validator-rules.xml【struts自带的】
+														validation-privilege.xml【有用】
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－														
+两个privilege（loginAction.do）和主模块(login.do)
+	登出：/privilege/loginAction.do?action=logout
+	登入：	<gdp:context/>/Login.do?action=welcome
+			<%=context%>/Login.do?action=login
+
+
+
+重整问题：
+	引号中的类名，如factory 模式中；
+	sql.properties路径
+
+
+2006/7/30
+	弹出选择窗口统一在pub.js的function openSelectWindow(type,id,name)
+	
+	<html:button property="selectnotice" value="选择人员" styleClass="button"  onclick="javascript:openSelectWindow('menselect','vo.notice','vo.noticename');"/>
+
+
+2006/7/26
+	idManager和SequenceMan很象，使用不同表：t_system_id,geverid
+
+广东金宇恒科技有限公司
+@author 翁乃彬
+GDCA信息平台
+金宇恒办公自动化平台
+
+
+华表设计器：远程路径 http://localhost:8080/gdca/cell/template/fiveyearlayout_template.cll
+
+mvn tomcat:list
+mvn tomcat:info
+mvn tomcat:deploy
+mvn tomcat:resources
+mvn tomcat:roles
+mvn package tomcat:redeploy
+mvn war:exploded tomcat:redeploy
+mvn war:inplace tomcat:redeploy
+mvn tomcat:redeploy
+mvn tomcat:undeploy
+mvn tomcat:start
+mvn tomcat:sessions
+mvn tomcat:stop
+mvn war:exploded tomcat:exploded
+mvn war:inplace tomcat:inplace=>在webapp目录下组装war目录所需文件并发布到tomcat
+
+
+Set MAVEN_OPTS=-Xmx512m
+mvn site
+
+修改项目：
+	sysman 1.5
+	gdca 0818
+
+gdp1.5的源码和测试直接在sysman1.5中修改，本身不再更新
+
+2006/7/13 从sysman 1.5反过来更新了gdp1。5
+2006.7.4
+文档待办：
+	1、启动流程整理；
+	2、
+
+/WEB-INF/database-config.xml用于指定数据库备份涉及的数据库名、表名清单
+通过解析database-config.xml文件得到要导出的数据库名及表名
+ *    和要导出文件位置，解析basedata-config.xml(有参数current指定那个配置起作用)文件得到要导出数据的不同数据库的命令
+ *    执行命令导出ddl文件
+ddlfile用于存放导出的sql语句
+TestSQLHelper 在mysql中要注意自增序列。
+要第二次测试才ok
+
+2006.7.4 之前
+源自 SYSMAN1.5 NEW,即SYSMAN 1.2
+
+
+用的DB2数据库，Oracle的脚本与丁晓波的备份一致，但与这个版本的程序不一致
+那么GDCA中用的Sysman又是哪个版本呢？
+
+SYSMAN 1.5没有web文件，但与new的web文件一起用时有问题
+
+
+和数据库有关的配置参数
+	system.properties
+	/Shark.conf
+	
+	/shark目录下的XPDL在jawe 1.4.2中可用
+	
+	admin=MD5(21-23-2F-29-7A-57-A5-A7-43-89-4A-0E-4A-80-1F-C3)
+	
+	
+	
+	把GDP的源码合并进来，有3个重复，删掉了sysman的3个重复类
+	
+	
+在organization和privilege下都有UserDAO接口类和实现类DefaultUserDAO，但好像没有重复
+
+2006.2.3
+	还有无源码的部分：uniquery tag，在gdp-base....jar
+	删掉类DefaultExceptionHandler，因为gdca中有重复而此处未用
+	
+	
+	file://d://mavenworkshop//sysman//target//sysman
