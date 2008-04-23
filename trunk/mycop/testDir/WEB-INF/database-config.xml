@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+<database name="cop">
+  <table name="T_RESOURCE"/>
+  <table name="T_ROLE"/>
+  <table name="T_LEVEL"/>
+  <table name="T_JOB"/>
+</database>
+</root>

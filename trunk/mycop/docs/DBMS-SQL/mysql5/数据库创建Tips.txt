@@ -1,0 +1,33 @@
+1、mysql安装，默认字符集选utf8，端口3308，root/root
+	数据库 cop
+	数据库 copunittest(可以拷贝)；
+	设置环境变量，便于用mysql命令执行脚本文件；
+
+2、SQL脚本执行次序
+
+1/mysqlCrebase.sql	PowerDesigner生成，需要将"替换为`；
+	sqlyog、sqlexplorer都ok
+
+2/initData-SuperUser(utf8).sql
+	sqlyog不行
+	sqlexplorer ok(写字板打开后手工拷入eclipse执行)
+
+3/initData-Setup(utf8).sql
+	sqlexplorer ok(写字板打开后手工拷入eclipse执行)
+
+5/createTestTable.sql(cop中无test表测试时会出错，可见测试用例还是用了cop库)
+
+4/创建数据库copunittest，拷贝cop
+	测试用的这个库
+
+【注: sql-all.sql在sqlyog和sqlexplorer中都能执行，但似乎在sqlexplorer中执行后，程序才能正常显示菜单】
+
+3、SQLYog的中文问题
+SQLYOG是一款MYSQL的客户端，在查看中文数据的时候，默认情况下是出现乱码的，
+需要运行以下命令，修改显示的编码：
+SET character_set_client = utf8;
+SET character_set_results = gb2312;
+SET character_set_connection = utf8;
+
+然后就可以直接修改记录，输入中文；也可以考入中文脚本。
+
