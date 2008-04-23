@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<root>
+<!-- default css group (required)-->
+<default id="0">
+  <css name="gdp.css" location="/css/css.css"/>
+  <css name="goa.css" location="/css/xtree.css"/>
+  <css name="gis.css" location="/css/xmenu.css"/>
+  <css name="gdp.css" location="/css/uniquery.css"/>
+</default>
+<!-- user define css groups-->
+<css-group id="3">
+  <css name="gdp.css" location="/css/css.css"/>
+  <css name="goa.css" location="/css/xtree.css"/>
+  <css name="gis.css" location="/css/xmenu.css"/>
+  <css name="gdp.css" location="/css/uniquery.css"/>
+</css-group>
+<css-group id="2">
+  <css name="gdp2.css" location="/css/gdp2.css"/>
+  <css name="goa2.css" location="/css/goa2.css"/>
+  <css name="gis2.css" location="/css/gis2.css"/>
+</css-group>
+</root>
