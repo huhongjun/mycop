@@ -13,3 +13,7 @@
  .classpath			Eclipse项目文件
  .project			Eclipse项目文件
  pom.xml			Maven配置文件
+ 
+ 2008/4/24
+      cvs 工作目录是有意这样安排，为的是changelog的maven 2 插件能正常工作
+      mvn changelog：changelog
