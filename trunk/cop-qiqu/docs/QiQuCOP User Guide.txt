@@ -1,0 +1,32 @@
+model/
+	input/
+		mapForce/
+			jag.xsd 				jag模型定义,现在只能是层级+列表结构，且列表必须是***list
+			pd.xsd					PowerDesigner模型定义
+		jagModel.xml				jag模型实例
+	output/
+script
+	DoTransform.bat					命令行运行外部执行文件完成PD与jaga文件的转换；
+	ExtractorXmi_Powerdesigner.xslt.qiq		执行xslt文件完成PD与jaga文件的转换；
+	MapTojag.xslt					Mapforce生成的xslt转换文件；
+	runVelo.qiq			模板处理主文件；
+							加载模型文件实例，读取数据；
+							循环=》加载模板文件清单，逐个处理
+								velocity放入全局数据；
+								entity范围的模板文件处理；
+									velocity放入全部entity；
+									设置输出文件名；
+									处理模板文件
+								app范围的模板文件处理；
+									设置输出文件名；
+									处理模板文件；
+							循环=》加载模板文件清单，逐个处理
+	runVeloClean.qiq				清除所有的生成文件；
+	transformer_preRunVelo_jag.qiq	模板处理之前模型文件按的预处理；
+	veloOutputList.xml				模板处理时所有生成文件的清单，用于runVeloClean的清理；
+	
+velocity/
+	templateCOP/	COP源代码模板
+		veloList.xml	列出模板文件路径；指定输出位置；自定义输出文件名；指定作用范围(模型XPath)
+	templateSCORM/	SCORM课件模板
+		veloList.xml	
