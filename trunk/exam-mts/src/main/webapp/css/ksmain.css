@@ -25,5 +25,5 @@
 .btn_add_bg{ background:url(../image/btn-add-bg.gif) no-repeat center center; width:109px;text-indent:25px; }
 .btn_edit_bg{ background:url(../image/btn-edit-bg.gif) no-repeat center center; width:109px;text-indent:25px; }
 .btn_del_bg{ background:url(../image/btn-del-bg.gif) no-repeat center center; width:109px;text-indent:25px;}
-.btn_cm{font-size: 12px;width:60px; height:21px;padding:0px;	background: url(../image/btn_cm.jpg) no-repeat center center;border-style: none;}
-.btn_cm_small{font-size: 12px;width:45px; height:21px;padding:0px;background: url(../image/btn_cm_small.jpg) no-repeat center center;border-style: none;}
+.btn_cm{font-size: 12px;width:60px; height:21px;padding:0px;padding-top:3px;	background: url(../image/btn_cm.jpg) no-repeat center center;border-style: none;}
+.btn_cm_small{font-size: 12px;width:45px; height:21px;padding:0px;padding-top:3px;background: url(../image/btn_cm_small.jpg) no-repeat center center;border-style: none;}

@@ -249,18 +249,22 @@
 		else{}
 	}
 	function addOption(){
-	 	if(document.getElementById("options_e").innerHTML == ""){
-			document.getElementById("options_e").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"E\"/>&nbsp;E.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+		if(document.getElementById("options_c").innerHTML == ""){
+			document.getElementById("options_c").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"C\"/>&nbsp;C.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\" maxlength=\"200\" />&nbsp;<br />";
+		}else if(document.getElementById("options_d").innerHTML == ""){
+			document.getElementById("options_d").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"D\"/>&nbsp;D.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\" maxlength=\"200\" />&nbsp;<br />";
+		}else if(document.getElementById("options_e").innerHTML == ""){
+			document.getElementById("options_e").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"E\"/>&nbsp;E.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}else if(document.getElementById("options_f").innerHTML == ""){
-			document.getElementById("options_f").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+			document.getElementById("options_f").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}else if(document.getElementById("options_g").innerHTML == ""){
-			document.getElementById("options_g").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"G\"/>&nbsp;G.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+			document.getElementById("options_g").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}else if(document.getElementById("options_h").innerHTML == ""){
-			document.getElementById("options_h").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"H\"/>&nbsp;H.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+			document.getElementById("options_h").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}else if(document.getElementById("options_i").innerHTML == ""){
-			document.getElementById("options_i").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"I\"/>&nbsp;I.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+			document.getElementById("options_i").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}else if(document.getElementById("options_j").innerHTML == ""){
-			document.getElementById("options_j").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"J\"/>&nbsp;J.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+			document.getElementById("options_j").innerHTML = "<input type=\"checkbox\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"/>&nbsp;<br />";
 		}
 		else{
 			alert("最多只能有10个选项!");

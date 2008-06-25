@@ -251,7 +251,11 @@
 		else{}
 	}
 	function addOption(){
-		if(document.getElementById("options_e").innerHTML == ""){
+		if(document.getElementById("options_c").innerHTML == ""){
+			document.getElementById("options_c").innerHTML = "<input type=\"radio\" name=\"answer\" value=\"C\"/>&nbsp;C.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+		}else if(document.getElementById("options_d").innerHTML == ""){
+			document.getElementById("options_d").innerHTML = "<input type=\"radio\" name=\"answer\" value=\"D\"/>&nbsp;D.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
+		}else if(document.getElementById("options_e").innerHTML == ""){
 			document.getElementById("options_e").innerHTML = "<input type=\"radio\" name=\"answer\" value=\"E\"/>&nbsp;E.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";
 		}else if(document.getElementById("options_f").innerHTML == ""){
 			document.getElementById("options_f").innerHTML = "<input type=\"radio\" name=\"answer\" value=\"F\"/>&nbsp;F.&nbsp;<input type=\"text\" name=\"optionContent\" size=\"100\"  />&nbsp;<br />";

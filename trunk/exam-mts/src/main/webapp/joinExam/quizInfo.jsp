@@ -21,10 +21,20 @@ body,table,tr,td,input,select,div,textarea,font	{font-family: "宋体";font-size
 }
 </style>
 <bean:define id="timelimit" name="quiz" property="timelimit"/>
+<bean:define id="totalhour" name="quizExam" property="totalhour"/>
 <%
 	if(Integer.parseInt(timelimit.toString()) > 0){	//做倒计时控制
+		int t = Integer.parseInt(timelimit.toString());
+		if(Integer.parseInt(totalhour.toString()) > 0){
+			t = Integer.parseInt(totalhour.toString());
 %>
-<body onload="javascript:show_date_time(<%=Integer.parseInt(timelimit.toString()) * 60 %>)" style="margin-top:0">&nbsp; 
+	<script language="javascript">
+		alert("请注意：您已参加过但没有完成此次考试，此次考试的剩余时间还有<%=t%>分钟！");
+	</script>
+<%
+		}
+%>
+<body onload="javascript:show_date_time(<%=t * 60 %>)" style="margin-top:0">&nbsp; 
 <% 
 	}else{ 
 %>
@@ -32,20 +42,21 @@ body,table,tr,td,input,select,div,textarea,font	{font-family: "宋体";font-size
 <%
 	}
 %>
+<input type="hidden" value="0" name="totalhour" />
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="41%" height="30">考试名称：<bean:write name="quiz" property="name"/> </td>
     <td width="12%">姓名：<%=UserSessionInfo.getStudentRealName(request) %> </td>
     <td width="22%">考试剩余时间：<span id="nowtime"></span></td>
     <td width="25%"><div align="center">
+      <input type="button" name="Submit" value=" 保 存 " onclick="save()" class="btnBlue"/>
       <input type="button" name="Submit" value=" 检 查 " onclick="parent.mainFrame.window.checkFinish()" class="btnBlue"/>
-      <input type="button" name="Submit2" value=" 交 卷 " onclick="parent.mainFrame.window.sbt()" class="btnBlue"/>
+      <input type="button" name="Submit2" value=" 交 卷 " onclick="parent.mainFrame.window.sbt3()" class="btnBlue"/>
     </div></td>
   </tr>
 </table>
 </body>
 </html>
-
 <script language="JavaScript" type="text/JavaScript">
 function show_date_time(n){
 	if(n > -1){
@@ -62,10 +73,15 @@ function show_date_time(n){
 	}
 
 }
-//-------------------------
+
 function TimeMsg(a, b){
 	var c = parseInt(a / b); //取整
 	var d = a % b //取余
+	document.getElementsByName("totalhour").value = c;
 	document.getElementById("nowtime").innerHTML = c + "分" + d + "秒";
+}
+
+function save(){
+	parent.mainFrame.window.sbt2(document.getElementsByName("totalhour").value);
 }
 </script>

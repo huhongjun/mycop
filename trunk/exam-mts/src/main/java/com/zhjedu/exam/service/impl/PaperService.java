@@ -58,7 +58,7 @@ public class PaperService implements IPaperService {
 					quizQuestion.setPaper(paperId);
 					quizQuestion.setQuestion((ZjQuestion)questionList.get(i));
 					quizQuestion.setBelongto(0L);
-					quizQuestion.setGrade((long)score);
+					quizQuestion.setGrade((double)score);
 					paperQuestionList.add(quizQuestion);
 				}
 			}

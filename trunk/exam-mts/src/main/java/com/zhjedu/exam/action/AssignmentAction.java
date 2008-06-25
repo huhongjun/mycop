@@ -1,20 +1,11 @@
 package com.zhjedu.exam.action;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
-import com.dfcw.zjproject.zj.model.AssignmentModel;
 import com.zhjedu.exam.action.BaseAction;
-import com.zhjedu.exam.domain.ZjQuestion;
-import com.zhjedu.exam.domain.ZjQuiz;
-import com.zhjedu.exam.manager.IAssignmentManager;
-import com.zhjedu.exam.manager.impl.AssignmentManager;
 import com.zhjedu.util.PageObject;
 import com.zhjedu.util.UserSessionInfo;
 

@@ -1,7 +1,6 @@
 package com.zhjedu.exam.action;
-import org.apache.struts.actions.DispatchAction;
 
-import com.zhjedu.exam.domain.ZjUser;
+import org.apache.struts.actions.DispatchAction;
 import com.zhjedu.exam.service.IAssignmentService;
 import com.zhjedu.exam.service.IAssignmentWService;
 import com.zhjedu.exam.service.IJoinExamService;

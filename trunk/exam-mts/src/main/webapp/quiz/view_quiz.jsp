@@ -16,6 +16,7 @@ background-image=url(image/x-00100.gif);
 .style1 {font-size: 12px}
 -->
 </style>
+<link href="<%=request.getContextPath()%>/css/ksmain.css" rel="stylesheet" type="text/css" />
 <script type="text/JavaScript">
 <!--
 function MM_goToURL() { //v3.0
@@ -41,12 +42,10 @@ function secBoard(quiz,status){
           <td width="96%" height="30" colspan="4"><p align="center"> <span class="style1">考试信息 </span>　</p></td>
         </tr>
         <tr bgcolor="#EEF7FF">
-          
           <td width="96%" height="28"><span class="style1"> 考试名称：</span></td>
           <td width="96%" height="28" align="left"><html:text property="name" name="quiz" size="29" /></td>
         </tr>
         <tr bgcolor="#F7FBFF">
-          
           <td width="96%" height="24" align="center"><p align="left" class="style1"> 考试方式：</p></td>
           <td height="24" align="left"><html:select property="examType" name="quiz" size="1">
            
@@ -57,7 +56,6 @@ function secBoard(quiz,status){
           </td>
         </tr>
         <tr bgcolor="#EEF7FF">
-          
           <td width="96%" align="center"><p align="left" class="style1">计分方式</p></td>
           <td width="96%" align="left"><html:select property="grademethod" size="1" name="quiz">
             <html:option value="0">最后成绩</html:option>
@@ -71,7 +69,7 @@ function secBoard(quiz,status){
         <bean:define id="tmp1" name="quiz" property="timeopen"/>
         <bean:define id="tmp2" name="quiz" property="timeclose"/>                  
         
-        <tr bgcolor="#EEF7FF">
+        <tr bgcolor="#F7FBFF">
           <td width="96%"><span class="style1"> 有 效 期：</span></td>
           <td width="96%"><input type="text" name="T7" size="29" value="<%=DateTimeUtil.getTime((Long)tmp1,2) %>--<%=DateTimeUtil.getTime((Long)tmp2,2) %>" /></td>
           
@@ -81,10 +79,13 @@ function secBoard(quiz,status){
           <td width="96%"><input type=text name="oughtnumber" value=<%=(String)request.getAttribute("oughtnumber") %> size="29" /></td>
           
         </tr>
-        <tr bgcolor="#EEF7FF">
+        <tr bgcolor="#F7FBFF">
           <td width="96%"><span class="style1"> 实际参加人数：</span></td>
           <td width="96%"><input type=text name="factnumber" value=<%=(String)request.getAttribute("factnumber") %> size="29" /></td>
-          
+        </tr>
+        <tr bgcolor="#EEF7FF">
+          <td width="96%" height="28"><span class="style1"> 监考密码：</span></td>
+          <td width="96%" height="28" align="left"><html:text property="password" name="quiz" size="29" /></td>
         </tr>
         <tr bgcolor="#F7FBFF">
           <td width="96%" height="53"><span class="style1"> 备&nbsp;&nbsp;&nbsp; 注：</span></td>
@@ -94,9 +95,9 @@ function secBoard(quiz,status){
         
         <tr>
           <td align="center" colspan="4">&nbsp;
-                <input type="button" onclick="secBoard('<bean:write property="id" name="quiz"/>','3')" value="已完成考试" name="B9" />
+                <input type="button" class="btn_cm" onclick="secBoard('<bean:write property="id" name="quiz"/>','3')" value="已完成考试" name="B9" />
             &nbsp;&nbsp;&nbsp;
-            <input name="B7" type="button" onclick="javascript:history.go(-1)" value="返回" />
+            <input name="B7" class="btn_cm_small" type="button" onclick="javascript:history.go(-1)" value="返回" />
             &nbsp; </td>
         </tr>
       </table>

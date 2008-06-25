@@ -35,6 +35,8 @@ public class ZjQuizExam implements java.io.Serializable {
 	private String postil = "";
 
 	private String reador = "";
+	
+	private String midExamCourseId = "";
 
 	private ZjQuiz zjQuiz;
 	
@@ -69,7 +71,7 @@ public class ZjQuizExam implements java.io.Serializable {
 	/** full constructor */
 	public ZjQuizExam(String quiz, String paper, String userid, Long sequence,
 			Long timestart, Long timefinish, Long totalhour, Double grade,
-			String examLocation, String status, String postil, String reador,ZjQuiz zjQuiz) {
+			String examLocation, String status, String postil, String reador, String midExamCourseId, ZjQuiz zjQuiz) {
 		this.quiz = quiz;
 		this.paper = paper;
 		this.userid = userid;
@@ -82,6 +84,7 @@ public class ZjQuizExam implements java.io.Serializable {
 		this.status = status;
 		this.postil = postil;
 		this.reador = reador;
+		this.midExamCourseId = midExamCourseId;
 		this.zjQuiz = zjQuiz;
 	}
 
@@ -197,6 +200,14 @@ public class ZjQuizExam implements java.io.Serializable {
 
 	public void setStudent(StudentModel student) {
 		this.student = student;
+	}
+
+	public String getMidExamCourseId() {
+		return midExamCourseId;
+	}
+
+	public void setMidExamCourseId(String midExamCourseId) {
+		this.midExamCourseId = midExamCourseId;
 	}
 
 }

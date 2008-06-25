@@ -6,6 +6,7 @@
 <%@ taglib uri="/WEB-INF/FCKeditor.tld" prefix="FCK"%>
 <%@ page import="com.zhjedu.util.DateTimeUtil"%>
 <link href="<%=request.getContextPath() %>/css/wxj.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/ksmain.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 <!--
 .sec1 {cursor: hand;
@@ -71,9 +72,9 @@ function selectscope(){
 			var category = scope.options[k];
 			scopechar += category.value + ",";
 		}
-		var strFeatures = "dialogWidth: 700px; dialogHeight: 450px; center: yes; scroll:no;help: no; status: no; edge: raised;";
+		var strFeatures = "dialogWidth: 800px; dialogHeight: 600px; center: yes; scroll:no;help: no; status: no; edge: raised;";
 	    var result = new Array;
-	    result = window.showModalDialog("<%=request.getContextPath()%>/quiz/selectCatScope.jsp", strFeatures);
+	    result = window.showModalDialog("<%=request.getContextPath()%>/quiz/selectCatScope.jsp","", strFeatures);
 	    if(result != null){
 	    	for(var i = 0; i < result.length; i ++){
 	    		var info = result[i];
@@ -110,14 +111,14 @@ function selectscope(){
 			<tr>
 				<td width="100%" height="30">
 					<p class="style1">
-						您现在的位置是：考试中心 / 考试管理 / 添加考试 /
+						您现在的位置是：考试中心 / 考试管理 / 添加 编辑考试 /
 					</p>
 				</td>
 			</tr>
 			<tr>
 				<td height="30" align="left" valign="middle" bgcolor="#7FBEE6">
 					<div align="center">
-						<span class="style3">添加考试</span>
+						<span class="style3">添加/编辑考试</span>
 					</div>
 				</td>
 			</tr>
@@ -185,7 +186,7 @@ function selectscope(){
 								
 							</td>
 						</tr>
-						<tr bgcolor="#F7FBFF">
+						<tr bgcolor="#EEF7FF">
 							<td width="11%" height="21">
 								<span class="style1"> 考试时限</span>
 							</td>
@@ -193,7 +194,7 @@ function selectscope(){
 								<html:text property="timelimit" name="quiz" />
 							</td>
 						</tr>
-						<tr bgcolor="#EEF7FF">
+						<tr bgcolor="#F7FBFF">
 							<td height="21" width="11%">
 								<span class="style1"> 是否可用</span>
 							</td>
@@ -206,7 +207,7 @@ function selectscope(){
 
 							</td>
 						</tr>
-						<tr bgcolor="#F7FBFF">
+						<tr bgcolor="#EEF7FF">
 							<td height="21" width="11%">
 								<span class="style1"> 迟到时间</span>
 							</td>
@@ -220,7 +221,7 @@ function selectscope(){
 							</td>
 						</tr>
 						
-						<tr bgcolor="#EEF7FF">
+						<tr bgcolor="#F7FBFF">
 							<td height="21" width="11%">
 								<span class="style1"> 监考密码</span>
 							</td>
@@ -228,7 +229,7 @@ function selectscope(){
 								<html:text property="password" name="quiz"/>
 							</td>
 						</tr>
-						<tr bgcolor="#F7FBFF">
+						<tr bgcolor="#EEF7FF">
 							<td height="21" width="11%">
 								<span class="style1"> 试卷描述</span>
 							</td>
@@ -239,9 +240,9 @@ function selectscope(){
 						<tr>
 					<td align="left" colspan="4">
 					<p align="center">
-						<input type="button" onClick="save('0');" value="保存" name="B7" src="" />
-						<input type="button" onClick="history.go(-1)" value="返回" name="B1" />
-						<input name="B12" type="button" onClick="save('1');" value="进入策略" src="" />
+						<input type="button" onClick="save('0');"  class="btn_cm_small" value="保存" name="B7" src="" />
+						<input type="button" onClick="history.go(-1)"  class="btn_cm_small" value="返回" name="B1" />
+						<input name="B12" type="button" onClick="save('1');"  class="btn_cm" value="进入策略" src="" />
 									&nbsp;
 					</p>
 					</td>

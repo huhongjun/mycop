@@ -6,6 +6,7 @@
 <title>无标题文档</title>
 <script src="<%=request.getContextPath() %>/js/dtree.js"></script>
 <link href="<%=request.getContextPath()%>/css/dtree.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/scrollbar.css" rel="stylesheet" type="text/css">
 </head>
 
 <body topmargin="0" leftmargin="0">

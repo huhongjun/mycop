@@ -1,4 +1,4 @@
-package com.zhjedu.util;
+ï»¿package com.zhjedu.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,15 +19,15 @@ import java.util.regex.Pattern;
 
 
 /**
- * ´ËÀàÖĞ·â×°Ò»Ğ©³£ÓÃµÄ×Ö·û´®²Ù×÷¡£
- * ËùÓĞ·½·¨¶¼ÊÇ¾²Ì¬·½·¨£¬²»ĞèÒªÉú³É´ËÀàµÄÊµÀı£¬
- * Îª±ÜÃâÉú³É´ËÀàµÄÊµÀı£¬¹¹Ôì·½·¨±»ÉêÃ÷ÎªprivateÀàĞÍµÄ¡£
+ * æ­¤ç±»ä¸­å°è£…ä¸€äº›å¸¸ç”¨çš„å­—ç¬¦ä¸²æ“ä½œã€‚
+ * æ‰€æœ‰æ–¹æ³•éƒ½æ˜¯é™æ€æ–¹æ³•ï¼Œä¸éœ€è¦ç”Ÿæˆæ­¤ç±»çš„å®ä¾‹ï¼Œ
+ * ä¸ºé¿å…ç”Ÿæˆæ­¤ç±»çš„å®ä¾‹ï¼Œæ„é€ æ–¹æ³•è¢«ç”³æ˜ä¸ºprivateç±»å‹çš„ã€‚
  * @since  0.1
  */
 
 public class StringUtil {
   /**
-   * Ë½ÓĞ¹¹Ôì·½·¨£¬·ÀÖ¹ÀàµÄÊµÀı»¯£¬ÒòÎª¹¤¾ßÀà²»ĞèÒªÊµÀı»¯¡£
+   * ç§æœ‰æ„é€ æ–¹æ³•ï¼Œé˜²æ­¢ç±»çš„å®ä¾‹åŒ–ï¼Œå› ä¸ºå·¥å…·ç±»ä¸éœ€è¦å®ä¾‹åŒ–ã€‚
    */
   private StringUtil() {
   }
@@ -65,11 +65,11 @@ public class StringUtil {
     }
 
   /**
-   * ´Ë·½·¨½«¸ø³öµÄ×Ö·û´®sourceÊ¹ÓÃdelim»®·ÖÎªµ¥´ÊÊı×é¡£
-   * @param source ĞèÒª½øĞĞ»®·ÖµÄÔ­×Ö·û´®
-   * @param delim µ¥´ÊµÄ·Ö¸ô×Ö·û´®
-   * @return »®·ÖÒÔºóµÄÊı×é£¬Èç¹ûsourceÎªnullµÄÊ±ºò·µ»ØÒÔsourceÎªÎ¨Ò»ÔªËØµÄÊı×é£¬
-   *         Èç¹ûdelimÎªnullÔòÊ¹ÓÃ¶ººÅ×÷Îª·Ö¸ô×Ö·û´®¡£
+   * æ­¤æ–¹æ³•å°†ç»™å‡ºçš„å­—ç¬¦ä¸²sourceä½¿ç”¨delimåˆ’åˆ†ä¸ºå•è¯æ•°ç»„ã€‚
+   * @param source éœ€è¦è¿›è¡Œåˆ’åˆ†çš„åŸå­—ç¬¦ä¸²
+   * @param delim å•è¯çš„åˆ†éš”å­—ç¬¦ä¸²
+   * @return åˆ’åˆ†ä»¥åçš„æ•°ç»„ï¼Œå¦‚æœsourceä¸ºnullçš„æ—¶å€™è¿”å›ä»¥sourceä¸ºå”¯ä¸€å…ƒç´ çš„æ•°ç»„ï¼Œ
+   *         å¦‚æœdelimä¸ºnullåˆ™ä½¿ç”¨é€—å·ä½œä¸ºåˆ†éš”å­—ç¬¦ä¸²ã€‚
    * @since  0.1
    */
   public static String[] split(String source, String delim) {
@@ -92,10 +92,10 @@ public class StringUtil {
   }
 
   /**
-   * ´Ë·½·¨½«¸ø³öµÄ×Ö·û´®sourceÊ¹ÓÃdelim»®·ÖÎªµ¥´ÊÊı×é¡£
-   * @param source ĞèÒª½øĞĞ»®·ÖµÄÔ­×Ö·û´®
-   * @param delim µ¥´ÊµÄ·Ö¸ô×Ö·û
-   * @return »®·ÖÒÔºóµÄÊı×é£¬Èç¹ûsourceÎªnullµÄÊ±ºò·µ»ØÒÔsourceÎªÎ¨Ò»ÔªËØµÄÊı×é¡£
+   * æ­¤æ–¹æ³•å°†ç»™å‡ºçš„å­—ç¬¦ä¸²sourceä½¿ç”¨delimåˆ’åˆ†ä¸ºå•è¯æ•°ç»„ã€‚
+   * @param source éœ€è¦è¿›è¡Œåˆ’åˆ†çš„åŸå­—ç¬¦ä¸²
+   * @param delim å•è¯çš„åˆ†éš”å­—ç¬¦
+   * @return åˆ’åˆ†ä»¥åçš„æ•°ç»„ï¼Œå¦‚æœsourceä¸ºnullçš„æ—¶å€™è¿”å›ä»¥sourceä¸ºå”¯ä¸€å…ƒç´ çš„æ•°ç»„ã€‚
    * @since  0.2
    */
   public static String[] split(String source, char delim) {
@@ -103,9 +103,9 @@ public class StringUtil {
   }
 
   /**
-   * ´Ë·½·¨½«¸ø³öµÄ×Ö·û´®sourceÊ¹ÓÃ¶ººÅ»®·ÖÎªµ¥´ÊÊı×é¡£
-   * @param source ĞèÒª½øĞĞ»®·ÖµÄÔ­×Ö·û´®
-   * @return »®·ÖÒÔºóµÄÊı×é£¬Èç¹ûsourceÎªnullµÄÊ±ºò·µ»ØÒÔsourceÎªÎ¨Ò»ÔªËØµÄÊı×é¡£
+   * æ­¤æ–¹æ³•å°†ç»™å‡ºçš„å­—ç¬¦ä¸²sourceä½¿ç”¨é€—å·åˆ’åˆ†ä¸ºå•è¯æ•°ç»„ã€‚
+   * @param source éœ€è¦è¿›è¡Œåˆ’åˆ†çš„åŸå­—ç¬¦ä¸²
+   * @return åˆ’åˆ†ä»¥åçš„æ•°ç»„ï¼Œå¦‚æœsourceä¸ºnullçš„æ—¶å€™è¿”å›ä»¥sourceä¸ºå”¯ä¸€å…ƒç´ çš„æ•°ç»„ã€‚
    * @since  0.1
    */
   public static String[] split(String source) {
@@ -113,11 +113,11 @@ public class StringUtil {
   }
 
   /**
-   * Ñ­»·´òÓ¡×Ö·û´®Êı×é¡£
-   * ×Ö·û´®Êı×éµÄ¸÷ÔªËØ¼äÒÔÖ¸¶¨×Ö·û·Ö¸ô£¬Èç¹û×Ö·û´®ÖĞÒÑ¾­°üº¬Ö¸¶¨×Ö·ûÔòÔÚ×Ö·û´®µÄÁ½¶Ë¼ÓÉÏË«ÒıºÅ¡£
-   * @param strings ×Ö·û´®Êı×é
-   * @param delim ·Ö¸ô·û
-   * @param out ´òÓ¡µ½µÄÊä³öÁ÷
+   * å¾ªç¯æ‰“å°å­—ç¬¦ä¸²æ•°ç»„ã€‚
+   * å­—ç¬¦ä¸²æ•°ç»„çš„å„å…ƒç´ é—´ä»¥æŒ‡å®šå­—ç¬¦åˆ†éš”ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸­å·²ç»åŒ…å«æŒ‡å®šå­—ç¬¦åˆ™åœ¨å­—ç¬¦ä¸²çš„ä¸¤ç«¯åŠ ä¸ŠåŒå¼•å·ã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
+   * @param delim åˆ†éš”ç¬¦
+   * @param out æ‰“å°åˆ°çš„è¾“å‡ºæµ
    * @since  0.4
    */
   public static void printStrings(String[] strings, String delim,
@@ -161,10 +161,10 @@ public class StringUtil {
   }
 
   /**
-   * Ñ­»·´òÓ¡×Ö·û´®Êı×éµ½±ê×¼Êä³ö¡£
-   * ×Ö·û´®Êı×éµÄ¸÷ÔªËØ¼äÒÔÖ¸¶¨×Ö·û·Ö¸ô£¬Èç¹û×Ö·û´®ÖĞÒÑ¾­°üº¬Ö¸¶¨×Ö·ûÔòÔÚ×Ö·û´®µÄÁ½¶Ë¼ÓÉÏË«ÒıºÅ¡£
-   * @param strings ×Ö·û´®Êı×é
-   * @param delim ·Ö¸ô·û
+   * å¾ªç¯æ‰“å°å­—ç¬¦ä¸²æ•°ç»„åˆ°æ ‡å‡†è¾“å‡ºã€‚
+   * å­—ç¬¦ä¸²æ•°ç»„çš„å„å…ƒç´ é—´ä»¥æŒ‡å®šå­—ç¬¦åˆ†éš”ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸­å·²ç»åŒ…å«æŒ‡å®šå­—ç¬¦åˆ™åœ¨å­—ç¬¦ä¸²çš„ä¸¤ç«¯åŠ ä¸ŠåŒå¼•å·ã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
+   * @param delim åˆ†éš”ç¬¦
    * @since  0.4
    */
   public static void printStrings(String[] strings, String delim) {
@@ -172,10 +172,10 @@ public class StringUtil {
   }
 
   /**
-   * Ñ­»·´òÓ¡×Ö·û´®Êı×é¡£
-   * ×Ö·û´®Êı×éµÄ¸÷ÔªËØ¼äÒÔ¶ººÅ·Ö¸ô£¬Èç¹û×Ö·û´®ÖĞÒÑ¾­°üº¬¶ººÅÔòÔÚ×Ö·û´®µÄÁ½¶Ë¼ÓÉÏË«ÒıºÅ¡£
-   * @param strings ×Ö·û´®Êı×é
-   * @param out ´òÓ¡µ½µÄÊä³öÁ÷
+   * å¾ªç¯æ‰“å°å­—ç¬¦ä¸²æ•°ç»„ã€‚
+   * å­—ç¬¦ä¸²æ•°ç»„çš„å„å…ƒç´ é—´ä»¥é€—å·åˆ†éš”ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸­å·²ç»åŒ…å«é€—å·åˆ™åœ¨å­—ç¬¦ä¸²çš„ä¸¤ç«¯åŠ ä¸ŠåŒå¼•å·ã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
+   * @param out æ‰“å°åˆ°çš„è¾“å‡ºæµ
    * @since  0.2
    */
   public static void printStrings(String[] strings, OutputStream out) {
@@ -183,9 +183,9 @@ public class StringUtil {
   }
 
   /**
-   * Ñ­»·´òÓ¡×Ö·û´®Êı×éµ½ÏµÍ³±ê×¼Êä³öÁ÷System.out¡£
-   * ×Ö·û´®Êı×éµÄ¸÷ÔªËØ¼äÒÔ¶ººÅ·Ö¸ô£¬Èç¹û×Ö·û´®ÖĞÒÑ¾­°üº¬¶ººÅÔòÔÚ×Ö·û´®µÄÁ½¶Ë¼ÓÉÏË«ÒıºÅ¡£
-   * @param strings ×Ö·û´®Êı×é
+   * å¾ªç¯æ‰“å°å­—ç¬¦ä¸²æ•°ç»„åˆ°ç³»ç»Ÿæ ‡å‡†è¾“å‡ºæµSystem.outã€‚
+   * å­—ç¬¦ä¸²æ•°ç»„çš„å„å…ƒç´ é—´ä»¥é€—å·åˆ†éš”ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸­å·²ç»åŒ…å«é€—å·åˆ™åœ¨å­—ç¬¦ä¸²çš„ä¸¤ç«¯åŠ ä¸ŠåŒå¼•å·ã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
    * @since  0.2
    */
   public static void printStrings(String[] strings) {
@@ -193,16 +193,16 @@ public class StringUtil {
   }
 
   /**
-   * ½«×Ö·û´®ÖĞµÄ±äÁ¿Ê¹ÓÃvaluesÊı×éÖĞµÄÄÚÈİ½øĞĞÌæ»»¡£
-   * Ìæ»»µÄ¹ı³ÌÊÇ²»½øĞĞÇ¶Ì×µÄ£¬¼´Èç¹ûÌæ»»µÄÄÚÈİÖĞ°üº¬±äÁ¿±í´ïÊ½Ê±²»»áÌæ»»¡£
-   * @param prefix ±äÁ¿Ç°×º×Ö·û´®
-   * @param source ´ø²ÎÊıµÄÔ­×Ö·û´®
-   * @param values Ìæ»»ÓÃµÄ×Ö·û´®Êı×é
-   * @return Ìæ»»ºóµÄ×Ö·û´®¡£
-   *         Èç¹ûÇ°×ºÎªnullÔòÊ¹ÓÃ¡°%¡±×÷ÎªÇ°×º£»
-   *         Èç¹ûsource»òÕßvaluesÎªnull»òÕßvaluesµÄ³¤¶ÈÎª0Ôò·µ»Øsource£»
-   *         Èç¹ûvaluesµÄ³¤¶È´óÓÚ²ÎÊıµÄ¸öÊı£¬¶àÓàµÄÖµ½«±»ºöÂÔ£»
-   *         Èç¹ûvaluesµÄ³¤¶ÈĞ¡ÓÚ²ÎÊıµÄ¸öÊı£¬ÔòºóÃæµÄËùÓĞ²ÎÊı¶¼Ê¹ÓÃ×îºóÒ»¸öÖµ½øĞĞÌæ»»¡£
+   * å°†å­—ç¬¦ä¸²ä¸­çš„å˜é‡ä½¿ç”¨valuesæ•°ç»„ä¸­çš„å†…å®¹è¿›è¡Œæ›¿æ¢ã€‚
+   * æ›¿æ¢çš„è¿‡ç¨‹æ˜¯ä¸è¿›è¡ŒåµŒå¥—çš„ï¼Œå³å¦‚æœæ›¿æ¢çš„å†…å®¹ä¸­åŒ…å«å˜é‡è¡¨è¾¾å¼æ—¶ä¸ä¼šæ›¿æ¢ã€‚
+   * @param prefix å˜é‡å‰ç¼€å­—ç¬¦ä¸²
+   * @param source å¸¦å‚æ•°çš„åŸå­—ç¬¦ä¸²
+   * @param values æ›¿æ¢ç”¨çš„å­—ç¬¦ä¸²æ•°ç»„
+   * @return æ›¿æ¢åçš„å­—ç¬¦ä¸²ã€‚
+   *         å¦‚æœå‰ç¼€ä¸ºnullåˆ™ä½¿ç”¨â€œ%â€ä½œä¸ºå‰ç¼€ï¼›
+   *         å¦‚æœsourceæˆ–è€…valuesä¸ºnullæˆ–è€…valuesçš„é•¿åº¦ä¸º0åˆ™è¿”å›sourceï¼›
+   *         å¦‚æœvaluesçš„é•¿åº¦å¤§äºå‚æ•°çš„ä¸ªæ•°ï¼Œå¤šä½™çš„å€¼å°†è¢«å¿½ç•¥ï¼›
+   *         å¦‚æœvaluesçš„é•¿åº¦å°äºå‚æ•°çš„ä¸ªæ•°ï¼Œåˆ™åé¢çš„æ‰€æœ‰å‚æ•°éƒ½ä½¿ç”¨æœ€åä¸€ä¸ªå€¼è¿›è¡Œæ›¿æ¢ã€‚
    * @since  0.2
    */
   public static String getReplaceString(String prefix, String source,
@@ -234,11 +234,11 @@ public class StringUtil {
   }
 
   /**
-   * ½«×Ö·û´®ÖĞµÄ±äÁ¿£¨ÒÔ¡°%¡±ÎªÇ°µ¼ºó½ÓÊı×Ö£©Ê¹ÓÃvaluesÊı×éÖĞµÄÄÚÈİ½øĞĞÌæ»»¡£
-   * Ìæ»»µÄ¹ı³ÌÊÇ²»½øĞĞÇ¶Ì×µÄ£¬¼´Èç¹ûÌæ»»µÄÄÚÈİÖĞ°üº¬±äÁ¿±í´ïÊ½Ê±²»»áÌæ»»¡£
-   * @param source ´ø²ÎÊıµÄÔ­×Ö·û´®
-   * @param values Ìæ»»ÓÃµÄ×Ö·û´®Êı×é
-   * @return Ìæ»»ºóµÄ×Ö·û´®
+   * å°†å­—ç¬¦ä¸²ä¸­çš„å˜é‡ï¼ˆä»¥â€œ%â€ä¸ºå‰å¯¼åæ¥æ•°å­—ï¼‰ä½¿ç”¨valuesæ•°ç»„ä¸­çš„å†…å®¹è¿›è¡Œæ›¿æ¢ã€‚
+   * æ›¿æ¢çš„è¿‡ç¨‹æ˜¯ä¸è¿›è¡ŒåµŒå¥—çš„ï¼Œå³å¦‚æœæ›¿æ¢çš„å†…å®¹ä¸­åŒ…å«å˜é‡è¡¨è¾¾å¼æ—¶ä¸ä¼šæ›¿æ¢ã€‚
+   * @param source å¸¦å‚æ•°çš„åŸå­—ç¬¦ä¸²
+   * @param values æ›¿æ¢ç”¨çš„å­—ç¬¦ä¸²æ•°ç»„
+   * @return æ›¿æ¢åçš„å­—ç¬¦ä¸²
    * @since  0.1
    */
   public static String getReplaceString(String source, String[] values) {
@@ -246,11 +246,11 @@ public class StringUtil {
   }
 
   /**
-   * ×Ö·û´®Êı×éÖĞÊÇ·ñ°üº¬Ö¸¶¨µÄ×Ö·û´®¡£
-   * @param strings ×Ö·û´®Êı×é
-   * @param string ×Ö·û´®
-   * @param caseSensitive ÊÇ·ñ´óĞ¡Ğ´Ãô¸Ğ
-   * @return °üº¬Ê±·µ»Øtrue£¬·ñÔò·µ»Øfalse
+   * å­—ç¬¦ä¸²æ•°ç»„ä¸­æ˜¯å¦åŒ…å«æŒ‡å®šçš„å­—ç¬¦ä¸²ã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
+   * @param string å­—ç¬¦ä¸²
+   * @param caseSensitive æ˜¯å¦å¤§å°å†™æ•æ„Ÿ
+   * @return åŒ…å«æ—¶è¿”å›trueï¼Œå¦åˆ™è¿”å›false
    * @since  0.4
    */
   public static boolean contains(String[] strings, String string,
@@ -271,10 +271,10 @@ public class StringUtil {
   }
 
   /**
-   * ×Ö·û´®Êı×éÖĞÊÇ·ñ°üº¬Ö¸¶¨µÄ×Ö·û´®¡£´óĞ¡Ğ´Ãô¸Ğ¡£
-   * @param strings ×Ö·û´®Êı×é
-   * @param string ×Ö·û´®
-   * @return °üº¬Ê±·µ»Øtrue£¬·ñÔò·µ»Øfalse
+   * å­—ç¬¦ä¸²æ•°ç»„ä¸­æ˜¯å¦åŒ…å«æŒ‡å®šçš„å­—ç¬¦ä¸²ã€‚å¤§å°å†™æ•æ„Ÿã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
+   * @param string å­—ç¬¦ä¸²
+   * @return åŒ…å«æ—¶è¿”å›trueï¼Œå¦åˆ™è¿”å›false
    * @since  0.4
    */
   public static boolean contains(String[] strings, String string) {
@@ -282,10 +282,10 @@ public class StringUtil {
   }
 
   /**
-   * ²»Çø·Ö´óĞ¡Ğ´ÅĞ¶¨×Ö·û´®Êı×éÖĞÊÇ·ñ°üº¬Ö¸¶¨µÄ×Ö·û´®¡£
-   * @param strings ×Ö·û´®Êı×é
-   * @param string ×Ö·û´®
-   * @return °üº¬Ê±·µ»Øtrue£¬·ñÔò·µ»Øfalse
+   * ä¸åŒºåˆ†å¤§å°å†™åˆ¤å®šå­—ç¬¦ä¸²æ•°ç»„ä¸­æ˜¯å¦åŒ…å«æŒ‡å®šçš„å­—ç¬¦ä¸²ã€‚
+   * @param strings å­—ç¬¦ä¸²æ•°ç»„
+   * @param string å­—ç¬¦ä¸²
+   * @return åŒ…å«æ—¶è¿”å›trueï¼Œå¦åˆ™è¿”å›false
    * @since  0.4
    */
   public static boolean containsIgnoreCase(String[] strings, String string) {
@@ -293,10 +293,10 @@ public class StringUtil {
   }
 
   /**
-   * ½«×Ö·û´®Êı×éÊ¹ÓÃÖ¸¶¨µÄ·Ö¸ô·ûºÏ²¢³ÉÒ»¸ö×Ö·û´®¡£
-   * @param array ×Ö·û´®Êı×é
-   * @param delim ·Ö¸ô·û£¬ÎªnullµÄÊ±ºòÊ¹ÓÃ""×÷Îª·Ö¸ô·û£¨¼´Ã»ÓĞ·Ö¸ô·û£©
-   * @return ºÏ²¢ºóµÄ×Ö·û´®
+   * å°†å­—ç¬¦ä¸²æ•°ç»„ä½¿ç”¨æŒ‡å®šçš„åˆ†éš”ç¬¦åˆå¹¶æˆä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
+   * @param array å­—ç¬¦ä¸²æ•°ç»„
+   * @param delim åˆ†éš”ç¬¦ï¼Œä¸ºnullçš„æ—¶å€™ä½¿ç”¨""ä½œä¸ºåˆ†éš”ç¬¦ï¼ˆå³æ²¡æœ‰åˆ†éš”ç¬¦ï¼‰
+   * @return åˆå¹¶åçš„å­—ç¬¦ä¸²
    * @since  0.4
    */
   public static String combineStringArray(String[] array, String delim) {
@@ -314,7 +314,7 @@ public class StringUtil {
   }
 
   /**
-   * ½«Ö¸¶¨×Ö·û´®²åÈëµ½Êı×éÃ¿¸ö×Ö·û´®µÄÍ·²¿¡£
+   * å°†æŒ‡å®šå­—ç¬¦ä¸²æ’å…¥åˆ°æ•°ç»„æ¯ä¸ªå­—ç¬¦ä¸²çš„å¤´éƒ¨ã€‚
    * @param array
    * @param headString
    */
@@ -331,7 +331,7 @@ public class StringUtil {
   }
 
   /**
-   * È¥³ıËùÓĞµÄ»Ø³µ¡£
+   * å»é™¤æ‰€æœ‰çš„å›è½¦ã€‚
    * @param source
    * @param String
    */
@@ -340,7 +340,7 @@ public class StringUtil {
   }
   
   /**
-   * ×ª»»ËùÓĞµÄ»Ø³µÎªHTMLÖĞµÄ·ÖĞĞ¡£
+   * è½¬æ¢æ‰€æœ‰çš„å›è½¦ä¸ºHTMLä¸­çš„åˆ†è¡Œã€‚
    * @param source
    * @param String
    */
@@ -348,7 +348,7 @@ public class StringUtil {
       return source.replaceAll("\n","<br />");
   }
   /**
-   * °Ñ×Ö·û´®Êı¾İ×ª»¯³ÉBase64µÄ¸ñÊ½
+   * æŠŠå­—ç¬¦ä¸²æ•°æ®è½¬åŒ–æˆBase64çš„æ ¼å¼
    * @param data String
    * @return String
    */
@@ -367,7 +367,7 @@ public class StringUtil {
   }
 
   /**
-   * °ÑbtyeÊı×éÊı¾İ×ª»¯³ÉBase64µÄ¸ñÊ½
+   * æŠŠbtyeæ•°ç»„æ•°æ®è½¬åŒ–æˆBase64çš„æ ¼å¼
    * @param data byte[]
    * @return String
    */
@@ -412,7 +412,7 @@ public class StringUtil {
   }
 
   /**
-   * °ÑBase64µÄ¸ñÊ½×Ö·û´®Êı¾İ½â³ÉÔ­Ê¼Êı¾İ
+   * æŠŠBase64çš„æ ¼å¼å­—ç¬¦ä¸²æ•°æ®è§£æˆåŸå§‹æ•°æ®
    * @param data String
    * @return String
    */
@@ -431,7 +431,7 @@ public class StringUtil {
   }
 
   /**
-   * °ÑBase64µÄ¸ñÊ½btyeÊı×éÊı¾İ½â³ÉÔ­Ê¼Êı¾İ 
+   * æŠŠBase64çš„æ ¼å¼btyeæ•°ç»„æ•°æ®è§£æˆåŸå§‹æ•°æ® 
    * @param data byte[]
    * @return String
    */
@@ -475,10 +475,10 @@ public class StringUtil {
   }
 
   /**
-   * °ÑÖ¸¶¨URL×Ö·û´®°´ÕÕÖ¸¶¨µÄ±àÂë×ª»»
-   * @param original Ö¸¶¨µÄURL×Ö·û´®
-   * @param charset Ö¸¶¨µÄ±àÂë·½Ê½
-   * @return ×ª»»ºóµÄURL
+   * æŠŠæŒ‡å®šURLå­—ç¬¦ä¸²æŒ‰ç…§æŒ‡å®šçš„ç¼–ç è½¬æ¢
+   * @param original æŒ‡å®šçš„URLå­—ç¬¦ä¸²
+   * @param charset æŒ‡å®šçš„ç¼–ç æ–¹å¼
+   * @return è½¬æ¢åçš„URL
    * @throws UnsupportedEncodingException
    */
   public static String URLEncode(String original, String charset)
@@ -519,9 +519,9 @@ public class StringUtil {
     }
 
     /**
-     * ¹şÏ£Êı¾İ
-     * @param data Ô­Ê¼Êı¾İ
-     * @return ¹şÏ£ºóµÄÊı¾İ
+     * å“ˆå¸Œæ•°æ®
+     * @param data åŸå§‹æ•°æ®
+     * @return å“ˆå¸Œåçš„æ•°æ®
      */
     public static final synchronized String hash(String data)
     {
@@ -591,9 +591,9 @@ public class StringUtil {
     }
 
     /**
-     * °Ñ16Î»×Ö·û×ª»»³É×Ö½ÚÂğ
-     * @param ch 16Î»×Ö·û
-     * @return ×Ö½Ú
+     * æŠŠ16ä½å­—ç¬¦è½¬æ¢æˆå­—èŠ‚å—
+     * @param ch 16ä½å­—ç¬¦
+     * @return å­—èŠ‚
      */
     private static final byte hexCharToByte(char ch)
     {
@@ -692,10 +692,10 @@ public class StringUtil {
     }
 
     /**
-     * ¸ü¸ÄÎÄ¼şµÄÀ©Õ¹Ãû
-     * @param filename ÎÄ¼şÃû
-     * @param suffix ĞÂµÄÀ©Õ¹Ãû
-     * @return ĞÂµÄÎÄ¼şÃû
+     * æ›´æ”¹æ–‡ä»¶çš„æ‰©å±•å
+     * @param filename æ–‡ä»¶å
+     * @param suffix æ–°çš„æ‰©å±•å
+     * @return æ–°çš„æ–‡ä»¶å
      */
     public static String changeFileNameSuffixTo(String filename, String suffix)
     {
@@ -710,9 +710,9 @@ public class StringUtil {
     }
 
     /**
-     * ×ª»»javascriptÖĞµÄ·ûºÅ
-     * @param source ´úÂë
-     * @return ×ª»»ºóµÄ´úÂë
+     * è½¬æ¢javascriptä¸­çš„ç¬¦å·
+     * @param source ä»£ç 
+     * @return è½¬æ¢åçš„ä»£ç 
      */
     public static String escapeJavaScript(String source)
     {
@@ -725,9 +725,9 @@ public class StringUtil {
     }
 
     /**
-     * Ïû³ı×Ö·û´®ÎªPattern,ÊÇÒ»¸öÕıÔò±í´ïÊ½±äÎªÒ»¸ö·ÇÕıÔò±í´ïÊ½
-     * @param source ÕıÔò±í´ïÊ½×Ö·û´®
-     * @return ×ª»»ºóµÄ×Ö·û´®
+     * æ¶ˆé™¤å­—ç¬¦ä¸²ä¸ºPattern,æ˜¯ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼å˜ä¸ºä¸€ä¸ªéæ­£åˆ™è¡¨è¾¾å¼
+     * @param source æ­£åˆ™è¡¨è¾¾å¼å­—ç¬¦ä¸²
+     * @return è½¬æ¢åçš„å­—ç¬¦ä¸²
      */
     public static String escapePattern(String source)
     {
@@ -811,11 +811,11 @@ public class StringUtil {
     }
 
     /**
-     * °ÑtextÎÄ±¾ÖĞµÄattributeÊôĞÔ³éÈ¡³öÀ´,ÆäÖĞ·µ»ØµÄmapÖĞ°üº¬Á½¸öÔªËØ,Ò»¸öÊÇ¼üÖµtext,Ò»¸öÊÇ¼üÖµvalue.·µ»ØµÄtext¼üÖµÖĞµÄÖµ½«²»ÔÙ°üº¬attribute
-     * @param text textÎÄ±¾
-     * @param attribute textÖĞµÄÊôĞÔ
-     * @param defValue Ä¬ÈÏÊôĞÔÖµ
-     * @return ÆäÖĞ·µ»ØµÄmapÖĞ°üº¬Á½¸öÔªËØ,Ò»¸öÊÇ¼üÖµtext,Ò»¸öÊÇ¼üÖµvalue
+     * æŠŠtextæ–‡æœ¬ä¸­çš„attributeå±æ€§æŠ½å–å‡ºæ¥,å…¶ä¸­è¿”å›çš„mapä¸­åŒ…å«ä¸¤ä¸ªå…ƒç´ ,ä¸€ä¸ªæ˜¯é”®å€¼text,ä¸€ä¸ªæ˜¯é”®å€¼value.è¿”å›çš„texté”®å€¼ä¸­çš„å€¼å°†ä¸å†åŒ…å«attribute
+     * @param text textæ–‡æœ¬
+     * @param attribute textä¸­çš„å±æ€§
+     * @param defValue é»˜è®¤å±æ€§å€¼
+     * @return å…¶ä¸­è¿”å›çš„mapä¸­åŒ…å«ä¸¤ä¸ªå…ƒç´ ,ä¸€ä¸ªæ˜¯é”®å€¼text,ä¸€ä¸ªæ˜¯é”®å€¼value
      */
     public static Map extendAttribute(String text, String attribute, String defValue)
     {
@@ -847,9 +847,9 @@ public class StringUtil {
     }
 
     /**
-     * °ÑHTMLÖĞµÄbody²¿·ÖÌáÈ¡³öÀ´
-     * @param content HTMLÎÄ±¾ÄÚÈİ
-     * @return HTMLÖĞµÄbodyÄÚÈİ
+     * æŠŠHTMLä¸­çš„bodyéƒ¨åˆ†æå–å‡ºæ¥
+     * @param content HTMLæ–‡æœ¬å†…å®¹
+     * @return HTMLä¸­çš„bodyå†…å®¹
      */
     public static String extractHtmlBody(String content)
     {
@@ -869,9 +869,9 @@ public class StringUtil {
     }
 
     /**
-     * µÃµ½XMLÎÄ¼şÍ·²¿±êÊ¾µÄ±àÂë·½Ê½
-     * @param content XMLÎÄ±¾ÄÚÈİ
-     * @return ±àÂë·½Ê½
+     * å¾—åˆ°XMLæ–‡ä»¶å¤´éƒ¨æ ‡ç¤ºçš„ç¼–ç æ–¹å¼
+     * @param content XMLæ–‡æœ¬å†…å®¹
+     * @return ç¼–ç æ–¹å¼
      */
     public static String extractXmlEncoding(String content)
     {
@@ -896,9 +896,9 @@ public class StringUtil {
     }
 
     /**
-     * ×ª»»ÔËĞĞÊ±¼ä³¤¶È,°ÑÔËĞĞÊ±³¤µÄºÁÃëÊı×ª»»³ÉÊ±·ÖÃë
-     * @param runtime ÔËĞĞÊ±¼ä
-     * @return ×ª»»ºóµÄ×Ö·û´®(¸ñÊ½Îª00:00:00)
+     * è½¬æ¢è¿è¡Œæ—¶é—´é•¿åº¦,æŠŠè¿è¡Œæ—¶é•¿çš„æ¯«ç§’æ•°è½¬æ¢æˆæ—¶åˆ†ç§’
+     * @param runtime è¿è¡Œæ—¶é—´
+     * @return è½¬æ¢åçš„å­—ç¬¦ä¸²(æ ¼å¼ä¸º00:00:00)
      */
     public static String formatRuntime(long runtime)
     {
@@ -937,9 +937,9 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ
-     * @param value ×Ö·û´®
-     * @return ÅĞ¶Ï½á¹û
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©º
+     * @param value å­—ç¬¦ä¸²
+     * @return åˆ¤æ–­ç»“æœ
      */
     public static boolean isEmpty(String value)
     {
@@ -947,9 +947,9 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®È¥µô¿Õ°×ÊÇ·ñÎª¿Õ
-     * @param value ×Ö·û´®
-     * @return ÅĞ¶Ï½á¹û
+     * åˆ¤æ–­å­—ç¬¦ä¸²å»æ‰ç©ºç™½æ˜¯å¦ä¸ºç©º
+     * @param value å­—ç¬¦ä¸²
+     * @return åˆ¤æ–­ç»“æœ
      */
     public static boolean isEmptyOrWhitespaceOnly(String value)
     {
@@ -957,9 +957,9 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñ²»Îª¿Õ
-     * @param value ×Ö·û´®
-     * @return ÅĞ¶Ï½á¹û
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ä¸ºç©º
+     * @param value å­—ç¬¦ä¸²
+     * @return åˆ¤æ–­ç»“æœ
      */
     public static boolean isNotEmpty(String value)
     {
@@ -967,9 +967,9 @@ public class StringUtil {
     }
     
     /**
-     * ÅĞ¶Ï×Ö·û´®È¥µô¿Õ°×ÊÇ·ñ²»Îª¿Õ
-     * @param value ×Ö·û´®
-     * @return ÅĞ¶Ï½á¹û
+     * åˆ¤æ–­å­—ç¬¦ä¸²å»æ‰ç©ºç™½æ˜¯å¦ä¸ä¸ºç©º
+     * @param value å­—ç¬¦ä¸²
+     * @return åˆ¤æ–­ç»“æœ
      */
     public static boolean isNotEmptyOrWhitespaceOnly(String value)
     {
@@ -977,9 +977,9 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶ÏclassNameÊÇ·ñ·ûºÏjavaÃüÃû¹æÔò
-     * @param className ÀàÃû
-     * @return ÅĞ¶Ï½á¹û
+     * åˆ¤æ–­classNameæ˜¯å¦ç¬¦åˆjavaå‘½åè§„åˆ™
+     * @param className ç±»å
+     * @return åˆ¤æ–­ç»“æœ
      */
     public static boolean isValidJavaClassName(String className)
     {
@@ -1025,10 +1025,10 @@ public class StringUtil {
     }
 
    /**
-    * ¸ù¾İ·Ö¸ô·û·Ö¸î×Ö·û´®³É×Ö·û´®Êı×é
-    * @param source ×Ö·û´®
-    * @param delimiter ·Ö¸ô·û
-    * @return ×Ö·û´®Êı×é
+    * æ ¹æ®åˆ†éš”ç¬¦åˆ†å‰²å­—ç¬¦ä¸²æˆå­—ç¬¦ä¸²æ•°ç»„
+    * @param source å­—ç¬¦ä¸²
+    * @param delimiter åˆ†éš”ç¬¦
+    * @return å­—ç¬¦ä¸²æ•°ç»„
     */
     public static String[] splitAsArray(String source, char delimiter)
     {
@@ -1037,10 +1037,10 @@ public class StringUtil {
     }
 
    /**
-    * ¸ù¾İ·Ö¸ô·û·Ö¸î×Ö·û´®³É×Ö·û´®Êı×é
-    * @param source ×Ö·û´®
-    * @param delimiter ·Ö¸ô·û
-    * @return ×Ö·û´®Êı×é
+    * æ ¹æ®åˆ†éš”ç¬¦åˆ†å‰²å­—ç¬¦ä¸²æˆå­—ç¬¦ä¸²æ•°ç»„
+    * @param source å­—ç¬¦ä¸²
+    * @param delimiter åˆ†éš”ç¬¦
+    * @return å­—ç¬¦ä¸²æ•°ç»„
     */
     public static String[] splitAsArray(String source, String delimiter)
     {
@@ -1049,10 +1049,10 @@ public class StringUtil {
     }
 
     /**
-     * ¸ù¾İ·Ö¸ô·û·Ö¸î×Ö·û´®³ÉListÊı×é
-     * @param source ×Ö·û´®
-     * @param delimiter ·Ö¸ô·û
-     * @return ×Ö·û´®Êı×é
+     * æ ¹æ®åˆ†éš”ç¬¦åˆ†å‰²å­—ç¬¦ä¸²æˆListæ•°ç»„
+     * @param source å­—ç¬¦ä¸²
+     * @param delimiter åˆ†éš”ç¬¦
+     * @return å­—ç¬¦ä¸²æ•°ç»„
      */
     public static List splitAsList(String source, char delimiter)
     {
@@ -1060,10 +1060,10 @@ public class StringUtil {
     }
 
     /**
-     * ¸ù¾İ·Ö¸ô·û·Ö¸î×Ö·û´®³ÉListÊı×é
-     * @param source ×Ö·û´®
-     * @param delimiter ·Ö¸ô·û
-     * @return ×Ö·û´®Êı×é
+     * æ ¹æ®åˆ†éš”ç¬¦åˆ†å‰²å­—ç¬¦ä¸²æˆListæ•°ç»„
+     * @param source å­—ç¬¦ä¸²
+     * @param delimiter åˆ†éš”ç¬¦
+     * @return å­—ç¬¦ä¸²æ•°ç»„
      */
     public static List splitAsList(String source, String delimiter)
     {
@@ -1071,11 +1071,11 @@ public class StringUtil {
     }
     
     /**
-     * ¸ù¾İ·Ö¸ô·û·Ö¸î×Ö·û´®³ÉListÊı×é
-     * @param source ×Ö·û´®
-     * @param delimiter ·Ö¸ô·û
-     * @param trim ÊÇ·ñÈ¥³ı¿Õ°×
-     * @return ×Ö·û´®Êı×é
+     * æ ¹æ®åˆ†éš”ç¬¦åˆ†å‰²å­—ç¬¦ä¸²æˆListæ•°ç»„
+     * @param source å­—ç¬¦ä¸²
+     * @param delimiter åˆ†éš”ç¬¦
+     * @param trim æ˜¯å¦å»é™¤ç©ºç™½
+     * @return å­—ç¬¦ä¸²æ•°ç»„
      */
     public static List splitAsList(String source, char delimiter, boolean trim)
     {
@@ -1105,11 +1105,11 @@ public class StringUtil {
     }
 
     /**
-     * ¸ù¾İ·Ö¸ô·û·Ö¸î×Ö·û´®³ÉListÊı×é
-     * @param source ×Ö·û´®
-     * @param delimiter ·Ö¸ô·û
-     * @param trim ÊÇ·ñÈ¥³ı¿Õ°×
-     * @return ×Ö·û´®Êı×é
+     * æ ¹æ®åˆ†éš”ç¬¦åˆ†å‰²å­—ç¬¦ä¸²æˆListæ•°ç»„
+     * @param source å­—ç¬¦ä¸²
+     * @param delimiter åˆ†éš”ç¬¦
+     * @param trim æ˜¯å¦å»é™¤ç©ºç™½
+     * @return å­—ç¬¦ä¸²æ•°ç»„
      */
     public static List splitAsList(String source, String delimiter, boolean trim)
     {
@@ -1144,11 +1144,11 @@ public class StringUtil {
     }
 
     /**
-     * ËÑË÷contentÄÚÈİ×Ö·û´®ÖĞserarchStringµÄ×Ö·û´®,²¢ÇÒ°ÑËüÌæ»»³ÉreplaceItem×Ö·û´®µÄÄÚÈİ
-     * @param content ÄÚÈİ×Ö·û´®
-     * @param searchString ÒªËÑË÷µÄ×Ö·û´®
-     * @param replaceItem ÒªÌæ»»³ÉµÄ×Ö·û´®
-     * @return ´¦ÀíºóµÄ×Ö·û´®
+     * æœç´¢contentå†…å®¹å­—ç¬¦ä¸²ä¸­serarchStringçš„å­—ç¬¦ä¸²,å¹¶ä¸”æŠŠå®ƒæ›¿æ¢æˆreplaceItemå­—ç¬¦ä¸²çš„å†…å®¹
+     * @param content å†…å®¹å­—ç¬¦ä¸²
+     * @param searchString è¦æœç´¢çš„å­—ç¬¦ä¸²
+     * @param replaceItem è¦æ›¿æ¢æˆçš„å­—ç¬¦ä¸²
+     * @return å¤„ç†åçš„å­—ç¬¦ä¸²
      */
     public static String substitute(String content, String searchString, String replaceItem)
     {
@@ -1206,9 +1206,9 @@ public class StringUtil {
     }
 
     /**
-     * ÑéÖ¤×ÊÔ´ÎÄ¼şÃûÊÇ·ñ·ûºÏ¹æ·¶
-     * @param ÎÄ¼şÃû
-     * @return ·µ»Ø½á¹û
+     * éªŒè¯èµ„æºæ–‡ä»¶åæ˜¯å¦ç¬¦åˆè§„èŒƒ
+     * @param æ–‡ä»¶å
+     * @return è¿”å›ç»“æœ
      */
     public static boolean validateResourceName(String name)
     {
@@ -1271,29 +1271,29 @@ public class StringUtil {
     }
 
     public static String replaceNum(int num){
-		String Num = "Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®";
+		String Num = "ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹å";
 		
 		if(num <= 10){
 			return Num.substring(num, num + 1);
 		}else{
-			Num = (num + "").replaceAll("1", "Ò»");
-			Num = (num + "").replaceAll("2", "¶ş");
-			Num = (num + "").replaceAll("3", "Èı");
-			Num = (num + "").replaceAll("4", "ËÄ");
-			Num = (num + "").replaceAll("5", "Îå");
-			Num = (num + "").replaceAll("6", "Áù");
-			Num = (num + "").replaceAll("7", "Æß");
-			Num = (num + "").replaceAll("8", "°Ë");
-			Num = (num + "").replaceAll("9", "¾Å");
+			Num = (num + "").replaceAll("1", "ä¸€");
+			Num = (num + "").replaceAll("2", "äºŒ");
+			Num = (num + "").replaceAll("3", "ä¸‰");
+			Num = (num + "").replaceAll("4", "å››");
+			Num = (num + "").replaceAll("5", "äº”");
+			Num = (num + "").replaceAll("6", "å…­");
+			Num = (num + "").replaceAll("7", "ä¸ƒ");
+			Num = (num + "").replaceAll("8", "å…«");
+			Num = (num + "").replaceAll("9", "ä¹");
 			return Num;
 		}
   }
     
 	/**
-	 * Ìá¹©Ğ¡ÊıÎ»ËÄÉáÎåÈë´¦Àí¡£
-	 * @param d ĞèÒªËÄÉáÎåÈëµÄÊı×Ö 
-	 * @param scale Ğ¡Êıµãºó±£Áô¼¸Î»
-	 * @return ËÄÉáÎåÈëºóµÄ½á¹û
+	 * æä¾›å°æ•°ä½å››èˆäº”å…¥å¤„ç†ã€‚
+	 * @param d éœ€è¦å››èˆäº”å…¥çš„æ•°å­— 
+	 * @param scale å°æ•°ç‚¹åä¿ç•™å‡ ä½
+	 * @return å››èˆäº”å…¥åçš„ç»“æœ
 	 */
     public static double round(double d, int scale) {
         long temp=1;

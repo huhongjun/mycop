@@ -4,11 +4,8 @@ import java.util.ArrayList;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import com.zhjedu.exam.domain.ZjQuiz;
-import com.zhjedu.exam.manager.IAssignmentManager;
 import com.zhjedu.exam.manager.IAssignmentWManager;
-import com.zhjedu.exam.manager.impl.AssignmentWManager;
 import com.zhjedu.exam.service.IAssignmentWService;
 import com.zhjedu.util.PageObject;
 

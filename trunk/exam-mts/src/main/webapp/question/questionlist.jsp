@@ -140,12 +140,18 @@ function listcategory(){
     <td height="36" colspan="9"><img border="0" src="<%=request.getContextPath() %>/image/tb16_dept.gif" width="16" height="16" /><b><span class="style3"><span class="style4"> 试题列表(所属目录：</span><font color="#FFFFFF"><font color="#ff0000"><%=request.getAttribute("catName") %> </font> </font><span class="style4">) </span></span></b></td>
   </tr>
   <tr>
-    <td colspan="10" height="25"><a href="#" onClick="addquestion('<%=request.getAttribute("catName") %>','<%=isleaf %>');">
+    <td colspan="10" height="25">
+    <!-- 
+    <a href="#" onClick="addquestion('<%=request.getAttribute("catName") %>','<%=isleaf %>');">
     <img src="<%=request.getContextPath() %>/image/x-001.gif" width="109" height="21" border="0" /></a> 
     <a href="javascript:editquestion()"><img src="<%=request.getContextPath() %>/image/x-002.gif" width="109" height="21" border="0" /></a>
     <a onClick="return check();" href="javascript:removequestion()"><img src="<%=request.getContextPath() %>/image/x-003.gif" width="109" height="21" border="0" /></a> 
-    <input type="button" onClick="listcategory();" value="目录维护" name="B43">
-    <input type="button" onClick="cat_question();" value="题目维护" name="B43">
+     -->
+    <input type="button" onClick="addquestion('<%=request.getAttribute("catName") %>','<%=isleaf %>');"  class="btn_cm" value="增加试题" name="B43">
+    <input type="button" onClick="editquestion()"  class="btn_cm" value="编辑试题" name="B43">
+    <input type="button" onClick="removequestion()"  class="btn_cm" value="删除试题" name="B43">
+    <input type="button" onClick="listcategory();"  class="btn_cm" value="目录维护" name="B43">
+    <input type="button" onClick="cat_question();"  class="btn_cm" value="题目维护" name="B43">
     
   </tr>
   <tr>
@@ -161,8 +167,8 @@ function listcategory(){
           <html:option value="<%=Constants.QUESTION_INTEGRATE %>">综合题</html:option>
         </html:select>
         <font size="2" class="style1">关键字</font>
-        <html:text property="key" size="14" value="" style="color: #C0C0C0" />
-        <input type="button" onclick="search();" value="查询" name="B6" /></td>
+        <html:text property="key" size="14" value="" />
+        <input type="button" onclick="search();" value="查询"  class="btn_cm_small" name="B6" /></td>
   </tr>
   <tr>
     <td height="21" bgcolor="#7FBEE6" width="5%"><p align="center">

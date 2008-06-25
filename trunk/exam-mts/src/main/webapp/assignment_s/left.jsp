@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>无标题文档</title>
+<link href="<%=request.getContextPath()%>/css/scrollbar.css" rel="stylesheet" type="text/css">
 </head>
 
 <body topmargin="0" leftmargin="0">

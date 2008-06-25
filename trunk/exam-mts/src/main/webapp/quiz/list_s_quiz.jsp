@@ -118,7 +118,7 @@ background-image=url(assignment_s/image/x-00100.gif);
   		</logic:iterate>
 <tr>
 	<td align="center" colspan="9">
-		<page:pager totalrecord="<%=po.getTotalRecord()%>" intPageSize="<%=po.getPageSize()%>" pageCount="<%=po.getTotalPage()%>" page="<%=po.getCurrentPage()%>" formName="quizForm" pageVar="page" jsName="changePage" url="Quiz.do?method=getStudentQuizList"/>
+		<SPAN class="style1"><page:pager totalrecord="<%=po.getTotalRecord()%>" intPageSize="<%=po.getPageSize()%>" pageCount="<%=po.getTotalPage()%>" page="<%=po.getCurrentPage()%>" formName="quizForm" pageVar="page" jsName="changePage" url="Quiz.do?method=getStudentQuizList"/></SPAN>
 	</td>
 </tr>
       </table>

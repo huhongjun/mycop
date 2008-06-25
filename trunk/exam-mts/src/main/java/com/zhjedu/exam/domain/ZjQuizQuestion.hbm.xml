@@ -20,7 +20,7 @@
         <many-to-one name="question" class="com.zhjedu.exam.domain.ZjQuestion" lazy="false" fetch="select">
             <column name="QUESTION" length="32" not-null="true" />
         </many-to-one>
-        <property name="grade" type="java.lang.Long">
+        <property name="grade" type="java.lang.Double">
             <column name="GRADE" precision="22" scale="0" not-null="true" />
         </property>
         <property name="belongto" type="java.lang.Long">

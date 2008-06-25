@@ -7,8 +7,6 @@ import java.util.Vector;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.HibernateException;
-
-import com.zhjedu.exam.domain.ZjQuestion;
 import com.zhjedu.exam.domain.ZjQuiz;
 import com.zhjedu.exam.manager.IAssignmentWManager;
 import com.zhjedu.util.BaseManager;

@@ -52,5 +52,8 @@
         <property name="reador" type="java.lang.String">
             <column name="READOR" length="32" />
         </property>
+        <property name="midExamCourseId" type="java.lang.String">
+            <column name="MID_EXAM_COURSE_ID" length="32" />
+        </property>
     </class>
 </hibernate-mapping>

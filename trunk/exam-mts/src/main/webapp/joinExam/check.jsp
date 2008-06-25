@@ -13,50 +13,50 @@ response.setDateHeader("Expires",0);
 <TITLE>参加考试——请输入考试密码</TITLE>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<%=request.getContextPath()%>/css/login-css.css" rel="stylesheet" type="text/css" />
-
+<script language="javascript">
+function userlogin()
+{
+	if(QuizForm.userName.value == null || QuizForm.userName.value == ""){
+		alert("请输入用户名！");
+		QuizForm.userName.focus();
+		return;
+	}
+	if(QuizForm.passcord.value == null || QuizForm.passcord.value == ""){
+		alert("请输入验证码！");
+		QuizForm.passcord.focus();
+		return;
+	}
+	document.QuizForm.submit();
+}
+</script>
 <BODY class="body-css">
 <form name="myform" method="post" action="<%=request.getContextPath()%>/joinExam.do?method=check&quizId=<%=request.getParameter("quizId") %>">
-<TABLE height="100%" width="101%">
-<TR>
-    <TD vAlign="middle" align="center" class="login-bg"><table width="600" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="40"><table width="510"  border="0" align="center" cellpadding="0" cellspacing="0" background="../image/login-exam.jpg">
       <tr>
-        <td><table width="600" height="400" border="0" align="center" cellpadding="0" cellspacing="0" background="<%=request.getContextPath()%>/image/login_bg_01.jpg">
+        <td height="278" valign="top"><table width="50%"  border="0" align="center" cellpadding="0" cellspacing="0" class="13">
           <tr>
-            <td width="280" rowspan="2" align="center">&nbsp;</td>
-            <td width="320" align="left" valign="middle"><table width="300" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td height="200" align="center" valign="middle" background="<%=request.getContextPath()%>/image/form_bg_01.gif"><table width="260" border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td height="10" align="center"></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td align="center" class="login-text" colspan="2"><font color="#FF0000">请输入考试密码参加考试！</font></td>
-                  </tr>
-                  <tr>
-                    <td align="center" class="login-text">考试密码：</td>
-                    <td><span class="wenzi">
-                      <input class="cm-input-bg" type="text" name="password"  size="4"/>
-                    </span></td>
-                  </tr>
-                  <tr>
-                    <td>&nbsp;</td>
-                    <td valign="middle" class="wenzi"><input class="cm-button-bg" type="submit" name="Submit52" value="进入"/>
-                        <input class="cm-button-bg" type="reset" name="Submit22" value="关闭" onclick="javascript:window.close()"/>
-                    </td>
-                  </tr>
-                </table></td>
-              </tr>
-            </table></td>
-          </tr>
+            <td width="24%" height="110">&nbsp;</td>
+            <td width="76%">&nbsp;</td>
+            </tr>
           <tr>
-            <td valign="bottom">&nbsp;</td>
+            <td height="40" class="13" nowrap><font style="font-size:12px"><strong>考试密码：</strong></font></td>
+            <td><input type="password" name="password" style="width:150px;"></td>
+            </tr>          
+          <tr>
+            <td class="login-text" colspan="2" align="center"><%if(request.getAttribute("info") != null){out.print("<font color=\"red\">" + request.getAttribute("info") + "</font>");} %></td>
           </tr>
-        </table></td> 
-      </tr>
-    </table></TD>
-</TR>
-</TABLE>
+          
+          <tr>
+            <td colspan="2" height="40" align="center"><div id="submitForm"><span class="button"><input type="submit" value=" 进入 "/></span>　<span class="button"><input type="reset" value=" 重置 "/></span>　<span class="button"><input type="button" value=" 退出 " onclick="javascript:window.close()"/></span></div></td>
+          </tr>
+         
+        </table></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
 </form>
 </BODY>
 </HTML>

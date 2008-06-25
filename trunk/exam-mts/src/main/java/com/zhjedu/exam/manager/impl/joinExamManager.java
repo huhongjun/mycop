@@ -1,13 +1,10 @@
 package com.zhjedu.exam.manager.impl;
 
 import java.util.List;
-
-import com.zhjedu.exam.domain.ZjManeuverList;
 import com.zhjedu.exam.domain.ZjQuiz;
 import com.zhjedu.exam.domain.ZjQuizAnswers;
 import com.zhjedu.exam.domain.ZjQuizExam;
 import com.zhjedu.exam.manager.IJoinExamManager;
-import com.zhjedu.exam.manager.IManeuverManager;
 import com.zhjedu.util.BaseManager;
 
 public class joinExamManager extends BaseManager implements
