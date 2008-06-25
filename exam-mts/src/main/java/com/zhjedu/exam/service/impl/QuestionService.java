@@ -58,7 +58,18 @@ public class QuestionService implements IQuestionService {
 
 	public String saveQuestionCategory(ZjQuestionCategory category) {
 		// TODO Auto-generated method stub
-		return questionManager.saveQuestionCategory(category);
+		String categoryid = questionManager.saveQuestionCategory(category);
+		if(category.getParent()!=null&&!category.getParent().equals("")){
+			ZjQuestionCategory tmp = questionManager.getZjQuestionCategory(category.getParent());
+			if(tmp!=null){
+				tmp.setIsleaf("0");
+				if(tmp.getParent()==null){
+					tmp.setParent("");
+				}
+				questionManager.saveQuestionCategory(tmp);
+			}
+		}
+		return categoryid;
 	}
 	public List getCourseItemList(String course) {
 		// TODO Auto-generated method stub

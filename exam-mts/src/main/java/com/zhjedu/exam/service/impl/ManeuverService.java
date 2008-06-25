@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.zhjedu.exam.service.IManeuverService;
 import com.zhjedu.exam.manager.IManeuverManager;
-import com.zhjedu.exam.domain.ZjCourse;
 import com.zhjedu.exam.domain.ZjManeuver;
 import com.zhjedu.exam.domain.ZjManeuverItem;
 import com.zhjedu.exam.domain.ZjManeuverList;
@@ -127,6 +126,7 @@ public class ManeuverService implements IManeuverService {
 							if("0".equals(item.getQuestionType())){	//如果不限题型
 								Hashtable hd = getQuestionGroupbyType(_tempList);
 								for(int j = 0; j <= 9; j ++){		//循环题型 1-9是各题型的编号
+									if(j == 9) j = 90;				//如果是综合题，题型为默认综合题
 									List __tempList = (List)hd.get(j + "");
 									if(__tempList != null && __tempList.size() >= t){
 										ZjManeuverList meneuver = new ZjManeuverList();
@@ -183,6 +183,7 @@ public class ManeuverService implements IManeuverService {
 							if("0".equals(item.getQuestionType())){	//如果不限题型
 								Hashtable hd = getQuestionGroupbyType(_tempList);
 								for(int j = 0; j <= 9; j ++){		//循环题型 1-9是各题型的编号
+									if(j == 9) j = 90;				//如果是综合题，题型为默认综合题
 									List __tempList = (List)hd.get(j + "");
 									if(__tempList != null && __tempList.size() >= t){
 										ZjManeuverList meneuver = new ZjManeuverList();
@@ -291,6 +292,9 @@ public class ManeuverService implements IManeuverService {
 			for(int i = 0; i < questionList.size(); i ++){
 				ZjQuestion question = (ZjQuestion)questionList.get(i);
 				String qType = question.getQtype();
+				if(Constants.QUESTION_INTEGRATE.equals(qType)){ //如果是综合题，将题选改为默认综合题型
+					qType = Constants.QUESTION_INTEGRATE + "0";
+				}
 				if(rd.containsKey(qType)){
 					List qList = (List)rd.get(qType);
 					qList.add(question);
@@ -447,7 +451,7 @@ public class ManeuverService implements IManeuverService {
 					ZjQuizQuestion qQuestion = new ZjQuizQuestion();
 					qQuestion.setQuiz(quizId);
 					qQuestion.setQuestion(question);
-					qQuestion.setGrade(Long.parseLong(score));
+					qQuestion.setGrade(Double.parseDouble(score));
 					qQuestion.setBelongto(i);
 					questionList.add(qQuestion);
 					rd.put(question.getId(), "");
@@ -464,7 +468,7 @@ public class ManeuverService implements IManeuverService {
 					ZjQuizQuestion qQuestion = new ZjQuizQuestion();
 					qQuestion.setQuiz(quizId);
 					qQuestion.setQuestion(question);
-					qQuestion.setGrade(Long.parseLong(score));
+					qQuestion.setGrade(Double.parseDouble(score));
 					qQuestion.setBelongto(i);
 					questionList.add(qQuestion);
 					rd.put(question.getId(), "");
@@ -481,7 +485,7 @@ public class ManeuverService implements IManeuverService {
 					ZjQuizQuestion qQuestion = new ZjQuizQuestion();
 					qQuestion.setQuiz(quizId);
 					qQuestion.setQuestion(question);
-					qQuestion.setGrade(Long.parseLong(score));
+					qQuestion.setGrade(Double.parseDouble(score));
 					qQuestion.setBelongto(i);
 					questionList.add(qQuestion);
 					rd.put(question.getId(), "");
@@ -498,7 +502,7 @@ public class ManeuverService implements IManeuverService {
 					ZjQuizQuestion qQuestion = new ZjQuizQuestion();
 					qQuestion.setQuiz(quizId);
 					qQuestion.setQuestion(question);
-					qQuestion.setGrade(Long.parseLong(score));
+					qQuestion.setGrade(Double.parseDouble(score));
 					qQuestion.setBelongto(i);
 					questionList.add(qQuestion);
 					rd.put(question.getId(), "");
@@ -515,7 +519,7 @@ public class ManeuverService implements IManeuverService {
 					ZjQuizQuestion qQuestion = new ZjQuizQuestion();
 					qQuestion.setQuiz(quizId);
 					qQuestion.setQuestion(question);
-					qQuestion.setGrade(Long.parseLong(score));
+					qQuestion.setGrade(Double.parseDouble(score));
 					qQuestion.setBelongto(i);
 					questionList.add(qQuestion);
 					rd.put(question.getId(), "");
@@ -533,7 +537,7 @@ public class ManeuverService implements IManeuverService {
 						ZjQuizQuestion qQuestion = new ZjQuizQuestion();
 						qQuestion.setQuiz(quizId);
 						qQuestion.setQuestion(question);
-						qQuestion.setGrade(Long.parseLong(score));
+						qQuestion.setGrade(Double.parseDouble(score));
 						qQuestion.setBelongto(i);
 						questionList.add(qQuestion);
 					}else{
@@ -563,7 +567,9 @@ public class ManeuverService implements IManeuverService {
 		html.append("<option value=\"" + Constants.QUESTION_MULTICHOICE + "\">多选题</option>/n");
 		html.append("<option value=\"" + Constants.QUESTION_JUDGE + "\">判断题</option>/n");
 		html.append("<option value=\"" + Constants.QUESTION_MATCHING + "\">匹配题</option>/n");
-		html.append("<option value=\"" + Constants.QUESTION_INTEGRATE + "\">综合题</option>/n");
+		html.append("<option value=\"" + Constants.QUESTION_INTEGRATE + "0\">综合题</option>/n");
+		html.append("<option value=\"" + Constants.QUESTION_INTEGRATE + "1\">阅读理解</option>/n");
+		html.append("<option value=\"" + Constants.QUESTION_INTEGRATE + "2\">完型填空</option>/n");
 		return html.toString();
 	}
 	

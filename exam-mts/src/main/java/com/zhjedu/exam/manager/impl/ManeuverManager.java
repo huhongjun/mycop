@@ -19,7 +19,12 @@ public class ManeuverManager extends BaseManager implements
 	public int getQuestionCountbyCourse(String courseId, String scope, String questionType){
 		String hql = "select count(*) from ZjQuestion where parent='0' and status='0' and delflag='0'";
 		if(questionType != null && !"0".equals(questionType)){
-			hql += " and qtype='" + questionType + "'";
+			if(questionType.length() == 2){
+				hql += " and qtype='" + questionType.substring(0, 1) + "'";
+				hql += " and alias='" + questionType.substring(1, 2) + "'";
+			}else{
+				hql += " and qtype='" + questionType + "'";
+			}
 		}
 		if(scope != null && !"".equals(scope)){
 			hql += " and category in ('" + scope.replaceAll(",", "','") + "')";
@@ -35,7 +40,12 @@ public class ManeuverManager extends BaseManager implements
 	public List getQuestionListbyCourse(String courseId, String scope, String questionType){
 		String hql = "from ZjQuestion where parent='0' and status='0' and delflag='0'";
 		if(questionType != null && !"0".equals(questionType)){
-			hql += " and qtype='" + questionType + "'";
+			if(questionType.length() == 2){
+				hql += " and qtype='" + questionType.substring(0, 1) + "'";
+				hql += " and alias='" + questionType.substring(1, 2) + "'";
+			}else{
+				hql += " and qtype='" + questionType + "'";
+			}
 		}
 		if(scope != null && !"".equals(scope)){
 			hql += " and category in ('" + scope.replaceAll(",", "','") + "')";
@@ -55,12 +65,18 @@ public class ManeuverManager extends BaseManager implements
 	}
 	
 	public int getQuestionCount(String scope, String questionType, double difficult_s, double difficult_e){
-		String hql = "select count(*) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype='" + questionType + "' and category='" + scope + "'";
+		String hql = "select count(*) from ZjQuestion where parent='0' and status='0' and delflag='0' and category='" + scope + "'";
 		if(difficult_s > 0){
 			hql += " and difficulty>='" + difficult_s + "'";
 		}
 		if(difficult_e > 0){
 			hql += " and difficulty<='" + difficult_e + "'";
+		}
+		if(questionType.length() == 2){
+			hql += " and qtype='" + questionType.substring(0, 1) + "'";
+			hql += " and alias='" + questionType.substring(1, 2) + "'";
+		}else{
+			hql += " and qtype='" + questionType + "'";
 		}
 		List list = this.findObject(hql);
 		if(list != null && list.size() > 0){
@@ -71,12 +87,18 @@ public class ManeuverManager extends BaseManager implements
 	}
 	
 	public List getQuestion(String scope, String questionType, double difficult_s, double difficult_e){
-		String hql = "from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype='" + questionType + "' and category='" + scope + "'";
+		String hql = "from ZjQuestion where parent='0' and status='0' and delflag='0' and category='" + scope + "'";
 		if(difficult_s > 0){
 			hql += " and difficulty>='" + difficult_s + "'";
 		}
 		if(difficult_e > 0){
 			hql += " and difficulty<='" + difficult_e + "'";
+		}
+		if(questionType.length() == 2){
+			hql += " and qtype='" + questionType.substring(0, 1) + "'";
+			hql += " and alias='" + questionType.substring(1, 2) + "'";
+		}else{
+			hql += " and qtype='" + questionType + "'";
 		}
 		List list = this.findObject(hql);
 		return list;
@@ -101,17 +123,17 @@ public class ManeuverManager extends BaseManager implements
 				" (select name from ZjQuestionCategory where delflag='0' and id=zml.scope) as chapterName," +
 				" zml.questionType," +
 				" zml.hard1Num," +
-				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype=zml.questionType and category=zml.scope and difficulty>='0.1' and difficulty<='0.2') as hard1TotalNum," +
+				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and (qtype=zml.questionType or (qtype=substr(zml.questionType, 1, 1) and alias=substr(zml.questionType, 2, 1))) and category=zml.scope and difficulty>='0.1' and difficulty<='0.2') as hard1TotalNum," +
 				" zml.hard2Num," +
-				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype=zml.questionType and category=zml.scope and difficulty>='0.3' and difficulty<='0.4') as hard2TotalNum," +
+				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and (qtype=zml.questionType or (qtype=substr(zml.questionType, 1, 1) and alias=substr(zml.questionType, 2, 1))) and category=zml.scope and difficulty>='0.3' and difficulty<='0.4') as hard2TotalNum," +
 				" zml.hard3Num," +
-				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype=zml.questionType and category=zml.scope and difficulty>='0.5' and difficulty<='0.6') as hard3TotalNum," +
+				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and (qtype=zml.questionType or (qtype=substr(zml.questionType, 1, 1) and alias=substr(zml.questionType, 2, 1))) and category=zml.scope and difficulty>='0.5' and difficulty<='0.6') as hard3TotalNum," +
 				" zml.hard4Num," +
-				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype=zml.questionType and category=zml.scope and difficulty>='0.7' and difficulty<='0.8') as hard4TotalNum," +
+				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and (qtype=zml.questionType or (qtype=substr(zml.questionType, 1, 1) and alias=substr(zml.questionType, 2, 1))) and category=zml.scope and difficulty>='0.7' and difficulty<='0.8') as hard4TotalNum," +
 				" zml.hard5Num," +
-				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype=zml.questionType and category=zml.scope and difficulty>='0.9' and difficulty<='1.0') as hard5TotalNum," +
+				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and (qtype=zml.questionType or (qtype=substr(zml.questionType, 1, 1) and alias=substr(zml.questionType, 2, 1))) and category=zml.scope and difficulty>='0.9' and difficulty<='1.0') as hard5TotalNum," +
 				" zml.nohardNum," +
-				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and qtype=zml.questionType and category=zml.scope) as nohardTotalNum," +
+				" (select count(id) from ZjQuestion where parent='0' and status='0' and delflag='0' and (qtype=zml.questionType or (qtype=substr(zml.questionType, 1, 1) and alias=substr(zml.questionType, 2, 1))) and category=zml.scope) as nohardTotalNum," +
 				" zml.score," +
 				" zml.status" +
 				" from ZjManeuverList as zml where zml.status='0' and zml.quizid='" + quizId + "'";

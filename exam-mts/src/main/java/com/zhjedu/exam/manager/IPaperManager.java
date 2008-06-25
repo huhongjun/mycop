@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Vector;
 
 import com.zhjedu.exam.domain.ZjPaper;
-import com.zhjedu.exam.domain.ZjQuizQuestion;
 import com.zhjedu.util.PageObject;
 
 public interface IPaperManager {

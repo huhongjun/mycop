@@ -35,7 +35,7 @@ public class OtherDAOImpl implements OtherDAO {
 		Statement stmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from MID_SUBJECT order by ID";
+		String sql = "select * from MID_SUBJECT order by name";
 		System.out.println("sql=" + sql);
 		try {
 			conn = DBUtil.getConnection();
@@ -311,7 +311,7 @@ public class OtherDAOImpl implements OtherDAO {
 		Statement stmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from MID_INSTITUTION order by ID";
+		String sql = "select * from MID_INSTITUTION order by name";
 		System.out.println("sql=" + sql);
 		try {
 			conn = DBUtil.getConnection();

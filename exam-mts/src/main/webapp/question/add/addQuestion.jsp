@@ -11,6 +11,7 @@
 .style1 {font-size: 12px}
 -->
 </style>
+<link href="<%=request.getContextPath()%>/css/ksmain.css" rel="stylesheet" type="text/css" />
 <script>
 	function sbt(){
 		var flag=false;
@@ -181,9 +182,9 @@
               <tr class="main5" align="center">
                 <td align="center" nowrap></td>
                 <td align="center" nowrap>               
-                  &nbsp;<input name="Submit" type="submit" class="xbutton" value="下一步">
-                  <input name="Reset" type="reset" class="xbutton" value="重置">
-                  <input name="button" type="reset" class="xbutton" onClick="javascript:history.go(-1)" value="返回">                                 
+                  &nbsp;<input name="Submit"  class="btn_cm_small" type="submit" class="xbutton" value="下一步">
+                  <input name="Reset"  class="btn_cm_small" type="reset" class="xbutton" value="重置">
+                  <input name="button"  class="btn_cm_small" type="button" class="xbutton" onClick="javascript:history.go(-1)" value="返回">                                 
                 </td>
                 <td align="center" nowrap>　</td>
               </tr>

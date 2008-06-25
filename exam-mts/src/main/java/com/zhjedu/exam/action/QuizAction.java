@@ -26,11 +26,7 @@ import com.dfcw.zjproject.zj.dao.TeacherDAOImpl;
 import com.dfcw.zjproject.zj.model.CourseTeacherModel;
 import com.dfcw.zjproject.zj.model.TeacherModel;
 import com.zhjedu.exam.domain.ZjCourse;
-import com.zhjedu.exam.domain.ZjQuestion;
 import com.zhjedu.exam.domain.ZjQuestionCategory;
-import com.zhjedu.exam.domain.ZjQuestionMatchingAnswer;
-import com.zhjedu.exam.domain.ZjQuestionMatchingOption;
-import com.zhjedu.exam.domain.ZjQuestionOption;
 import com.zhjedu.exam.domain.ZjQuiz;
 import com.zhjedu.exam.domain.ZjQuizExam;
 import com.zhjedu.exam.domain.ZjQuizMidEc;
@@ -126,39 +122,46 @@ public class QuizAction extends BaseAction {
 	}
 	
 	public ActionForward selectUserScopeForQuiz(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response) {
-		int studykind = 0;
-		if(request.getParameter("studykind")!=null){
-		    studykind = Integer.parseInt(request.getParameter("studykind"));
+		String tag = request.getParameter("tag");
+		if(tag != null && "no".equals(tag)){
+			request.setAttribute("list", new ArrayList());
+			return mapping.findForward("listUserScopeForQuiz");
+			
+		}else{
+			int studykind = 0;
+			if(request.getParameter("studykind")!=null){
+			    studykind = Integer.parseInt(request.getParameter("studykind"));
+			}
+			int subject = 0;
+			if(request.getParameter("subject")!=null){
+				subject = Integer.parseInt(request.getParameter("subject"));
+			}
+			int institution = 0;
+			if(request.getParameter("institution")!=null){
+				institution = Integer.parseInt(request.getParameter("institution"));
+			}
+			int learncenter = 0;
+			if(request.getParameter("learncenter")!=null){
+				learncenter = Integer.parseInt(request.getParameter("learncenter"));
+			}
+			int recruitbatch = 0;
+			if(request.getParameter("recruitbatch")!=null){
+				recruitbatch = Integer.parseInt(request.getParameter("recruitbatch"));
+			}
+			
+			
+			CourseDAO cdao = new CourseDAOImpl();
+			List list = new ArrayList();
+			try {
+				list = cdao.getExamCoursees(studykind, subject, institution, learncenter, recruitbatch);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("list", list);
+			return mapping.findForward("listUserScopeForQuiz");
 		}
-		int subject = 0;
-		if(request.getParameter("subject")!=null){
-			subject = Integer.parseInt(request.getParameter("subject"));
-		}
-		int institution = 0;
-		if(request.getParameter("institution")!=null){
-			institution = Integer.parseInt(request.getParameter("institution"));
-		}
-		int learncenter = 0;
-		if(request.getParameter("learncenter")!=null){
-			learncenter = Integer.parseInt(request.getParameter("learncenter"));
-		}
-		int recruitbatch = 0;
-		if(request.getParameter("recruitbatch")!=null){
-			recruitbatch = Integer.parseInt(request.getParameter("recruitbatch"));
-		}
-		
-		
-		CourseDAO cdao = new CourseDAOImpl();
-		List list = new ArrayList();
-		try {
-			list = cdao.getExamCoursees(studykind, subject, institution, learncenter, recruitbatch);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		request.setAttribute("list", list);
-		return mapping.findForward("listUserScopeForQuiz");
 	}
 	
 	public ActionForward saveAssignment(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response) {
@@ -625,6 +628,9 @@ public class QuizAction extends BaseAction {
 		if(request.getAttribute("info")!=null){
 			info = (String)request.getAttribute("info");
 		}
+		if("haveQuestion".equals(info)){
+			info = "该目录或它的子目录下有题目,暂时不能删除该目录,要想删除该目录,请先将该目录下的题目全部删除!";
+		}
 		request.setAttribute("info", info);
 		String category = request.getParameter("category");
 		if(category==null||category.equals("")){
@@ -677,16 +683,7 @@ public class QuizAction extends BaseAction {
 		category.setLasteditor(userid);
 		
 		String categoryid = this.getQuestionService().saveQuestionCategory(category);
-		if(category.getParent()!=null&&!category.getParent().equals("")){
-			ZjQuestionCategory tmp = this.getQuestionService().getZjQuestionCategory(category.getParent());
-			if(tmp!=null){
-				tmp.setIsleaf("0");
-				if(tmp.getParent()==null){
-					tmp.setParent("");
-				}
-				this.getQuestionService().saveQuestionCategory(tmp);
-			}
-		}
+		
 		request.setAttribute("parent", category.getParent());
 		return mainCategory(mapping, actionForm, request, response);
 	}
@@ -749,7 +746,7 @@ public class QuizAction extends BaseAction {
 		if(category!=null&&!category.equals("")){
 			List list = this.getQuestionService().getQuestionListByCategory(category, new ArrayList());
 			if(list!=null&&!list.isEmpty()&&list.size()>0){
-				info = "该目录或它的子目录下有题目,暂时不能删除该目录,要想删除该目录,请先将该目录下的题目全部删除!";
+				info = "haveQuestion";
 				request.setAttribute("info", info);
 				request.setAttribute("parent", parent);
 				return mainCategory(mapping, actionForm, request, response);
@@ -785,7 +782,7 @@ public class QuizAction extends BaseAction {
 			info = (String)request.getAttribute("info");
 		}
 		String leftAction = request.getContextPath()+"/Category.do?method=leftCategoryTree&category="+parent;
-		String rightAction = request.getContextPath()+"/Category.do?method=listCategory&category="+parent+"&info="+info;
+		String rightAction = request.getContextPath()+"/Category.do?method=listCategory&category="+parent+"&info=" + info;
 		request.setAttribute("leftAction", leftAction);
 		request.setAttribute("rightAction",rightAction);
 		return mapping.findForward("main");

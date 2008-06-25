@@ -1,11 +1,8 @@
 package com.zhjedu.exam.service;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import com.zhjedu.exam.domain.ZjPaper;
-import com.zhjedu.exam.domain.ZjQuizQuestion;
 import com.zhjedu.util.PageObject;
 
 public interface IPaperService {

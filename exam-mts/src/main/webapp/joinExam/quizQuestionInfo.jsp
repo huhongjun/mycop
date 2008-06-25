@@ -16,13 +16,14 @@
 </head>
 <body>
 <form name="examForm" action="<%=request.getContextPath()%>/joinExam.do?method=sbtExam" method="post">
+<input type="hidden" value="0" name="totalhour">
 <div align="center" class="bgall">
-	<div class="toptitle"></div>
+<br/><br/><br/>
 	<div class="toptitle"> <bean:write name="quiz" property="name"/> （总分：<span id="_totalScore"></span>分）</div>
        <div class="borderv">
     <div class="ms">
 <%
-	int _totalScore = 0;
+	double _totalScore = 0;
 	int questionNo = 0;
 	int questionNo2 = 0;
 	ArrayList questionId = new ArrayList();
@@ -42,6 +43,11 @@
 				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
+				ZjQuizAnswers quizAnswers = question.getUAnswer();
+				String userAnswers = "";
+				if(quizAnswers != null){
+					userAnswers = quizAnswers.getAnswer();
+				}
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
 				_totalScore += quizQuestion.getGrade();
@@ -58,7 +64,7 @@
 						ZjQuestionOption option = (ZjQuestionOption)optionList.get(j);
 %>
           <tr>
-            <td  height="25" align="right"><input type="radio" name="<%=question.getId() %>" value="<%=op.substring(j, j + 1) %>"></td>
+            <td  height="25" align="right"><input type="radio" name="<%=question.getId() %>" value="<%=op.substring(j, j + 1) %>" <%if(userAnswers.indexOf(op.substring(j, j + 1)) >= 0){%>checked<%} %>></td>
             <td width="22"><%=op.substring(j, j + 1) %> </td>
             <td width="858" align="left"><%=option.getOptioncontext() %> </td>
           </tr>
@@ -87,6 +93,11 @@
 				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
+				ZjQuizAnswers quizAnswers = question.getUAnswer();
+				String userAnswers = "";
+				if(quizAnswers != null){
+					userAnswers = quizAnswers.getAnswer();
+				}
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
 				_totalScore += quizQuestion.getGrade();
@@ -103,7 +114,7 @@
 						ZjQuestionOption option = (ZjQuestionOption)optionList.get(j);
 %>
             <tr>
-              <td  height="25" align="right"><input type="checkbox" name="<%=question.getId() %>" value="<%=op.substring(j, j + 1) %>"></td>
+              <td  height="25" align="right"><input type="checkbox" name="<%=question.getId() %>" value="<%=op.substring(j, j + 1) %>" <%if(userAnswers.indexOf(op.substring(j, j + 1)) >= 0){%>checked<%} %>></td>
               <td width="22"><%=op.substring(j, j + 1) %> </td>
               <td width="858" align="left"> <%=option.getOptioncontext() %> </td>
       </tr>
@@ -132,6 +143,11 @@
 				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
+				ZjQuizAnswers quizAnswers = question.getUAnswer();
+				String userAnswers = "";
+				if(quizAnswers != null){
+					userAnswers = quizAnswers.getAnswer();
+				}
 				questionId.add(question.getId());
 				_questionId.append("," + question.getId());
 				_totalScore += quizQuestion.getGrade();
@@ -142,11 +158,11 @@
             </tr>
 
             <tr>
-              <td  height="25" align="right"><input type="radio" name="<%=question.getId() %>" value="1"></td>
+              <td  height="25" align="right"><input type="radio" name="<%=question.getId() %>" value="1" <%if(userAnswers.indexOf("1") >= 0){%>checked<%} %>></td>
               <td align="left">正确</td>
             </tr>
             <tr>
-              <td height="25" align="right" ><input type="radio" name="<%=question.getId() %>" value="0"></td>
+              <td height="25" align="right" ><input type="radio" name="<%=question.getId() %>" value="2" <%if(userAnswers.indexOf("2") >= 0){%>checked<%} %>></td>
               <td align="left">错误</td>
             </tr>
 <%
@@ -250,6 +266,12 @@
 				questionNo2 = questionNo2 + 1;
 				ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 				ZjQuestion question = quizQuestion.getQuestion();
+				String userAnswers = "";
+				ZjQuizAnswers quizAnswers = question.getUAnswer();
+				if(quizAnswers != null){
+					userAnswers = quizAnswers.getAnswer();
+				}
+				String[] answer = StringUtil.split(userAnswers, ",");
 				List matchingOptionList = question.getMatchingOptionList();
 				List matchingAnswerList = question.getMatchingAnswerList();
 				_totalScore += quizQuestion.getGrade();
@@ -274,7 +296,7 @@
 <%
 						for(int k = 0; k < matchingOptionList.size(); k ++){
 %>
-	            <option value="<%=op.substring(k, k + 1) %>"><%=op.substring(k, k + 1) %></option>
+	            <option value="<%=op.substring(k, k + 1) %>" <%if(answer[k].equals(op.substring(k, k + 1))){%>selected<%} %>><%=op.substring(k, k + 1) %></option>
 <%
 						}
 %>
@@ -332,6 +354,11 @@
 						ZjQuestion sonQuestion = (ZjQuestion)sonQuestionList.get(j);
 						_questionId.append("," + sonQuestion.getId());
 						questionId.add(sonQuestion.getId());
+						String userAnswers = "";
+						ZjQuizAnswers _quizAnswers = sonQuestion.getUAnswer();
+						if(_quizAnswers != null){
+							userAnswers = _quizAnswers.getAnswer();
+						}
 						if(Constants.QUESTION_SINGLECHOICE.equals(sonQuestion.getQtype())){	//子题为单选题
 							List optionList = sonQuestion.getOptionList();
 							if(sonQuestion.getQuestioncontext() != null && !"".equals(sonQuestion.getQuestioncontext())){
@@ -358,7 +385,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>" <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
 <%
 									}
@@ -389,7 +416,7 @@
 														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
 %>
             			<td height="25" style="width:350px;" align="left">
-						<input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+						<input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>" <%if(userAnswers.indexOf(op.substring(2 * k + t, 2 * k + t + 1)) >= 0){%>checked<%} %>>
 			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
             			</td>
 <%
@@ -418,7 +445,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>" <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
 <%
 									}
@@ -449,7 +476,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>"  <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
 <%
 									}
@@ -472,7 +499,7 @@
 														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
 %>
             			<td height="25" style="width:350px;" align="left">
-						<input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+						<input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>" <%if(userAnswers.indexOf(op.substring(2 * k + t, 2 * k + t + 1)) >= 0){%>checked<%} %>>
 			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
             			</td>
 <%
@@ -494,7 +521,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="radio" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>" <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
 <%
 									}
@@ -533,7 +560,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>"  <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
 <%
 									}
@@ -564,7 +591,7 @@
 														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
 %>
             			<td height="25" style="width:350px;" align="left">
-						<input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+						<input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>" <%if(userAnswers.indexOf(op.substring(2 * k + t, 2 * k + t + 1)) >= 0){%>checked<%} %>>
 			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
             			</td>
 <%
@@ -593,7 +620,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>"  <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
 <%
 									}
@@ -628,7 +655,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>"  <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %>
 <%
 									}
@@ -651,7 +678,7 @@
 														ZjQuestionOption option = (ZjQuestionOption)optionList.get(2 * k + t);
 %>
             			<td height="25" style="width:350px;" align="left">
-						<input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>">
+						<input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(2 * k + t, 2 * k + t + 1) %>" <%if(userAnswers.indexOf(op.substring(2 * k + t, 2 * k + t + 1)) >= 0){%>checked<%} %>>
 			            <%=op.substring(2 * k + t, 2 * k + t + 1) %> <%=option.getOptioncontext() %>
             			</td>
 <%
@@ -673,7 +700,7 @@
 									for(int k = 0; k < optionList.size(); k ++){
 										ZjQuestionOption option = (ZjQuestionOption)optionList.get(k);
 %>
-            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>">
+            <input type="checkbox" name="<%=sonQuestion.getId() %>" value="<%=op.substring(k, k + 1) %>" <%if(userAnswers.indexOf(op.substring(k, k + 1)) >= 0){%>checked<%} %>>
             <%=op.substring(k, k + 1) %> <%=option.getOptioncontext() %><br/>
 <%
 									}
@@ -698,8 +725,8 @@
           <tr>
             <td height="25" align="right"></td>
             <td width="755" align="left">
-			<input type="radio" name="<%=sonQuestion.getId() %>" value="1"> 正确
-			<input type="radio" name="<%=sonQuestion.getId() %>" value="2"> 错误
+			<input type="radio" name="<%=sonQuestion.getId() %>" value="1" <%if(userAnswers.indexOf("1") >= 0){%>checked<%} %>> 正确
+			<input type="radio" name="<%=sonQuestion.getId() %>" value="2" <%if(userAnswers.indexOf("2") >= 0){%>checked<%} %>> 错误
             </td>
             <td width="125"></td>
           </tr>
@@ -709,8 +736,8 @@
           <tr>
             <td height="25" align="right" valign="top"><span >第<%=questionNo2 %>题</span></td>
             <td width="755" align="left">
-			<input type="radio" name="<%=sonQuestion.getId() %>" value="1"> 正确
-			<input type="radio" name="<%=sonQuestion.getId() %>" value="2"> 错误
+			<input type="radio" name="<%=sonQuestion.getId() %>" value="1" <%if(userAnswers.indexOf("1") >= 0){%>checked<%} %>> 正确
+			<input type="radio" name="<%=sonQuestion.getId() %>" value="2" <%if(userAnswers.indexOf("2") >= 0){%>checked<%} %>> 错误
             </td>
             <td width="125"></td>
           </tr>
@@ -803,6 +830,7 @@ if(id != null && id.length() > 0){
 <input type="hidden" name="questionId" value="<%=id %>">
 <input type="hidden" name="quizId" value="<%=request.getParameter("quizId") %>">
 </form>
+ <iframe border="0" name="info" width="0" height="0"></iframe>
 </body>
 <script type="text/javascript">
 document.getElementById("_totalScore").innerHTML = "<%=_totalScore%>";
@@ -870,6 +898,25 @@ document.getElementById("_totalScore").innerHTML = "<%=_totalScore%>";
 		}
 	}
 %>
+		examForm.action="<%=request.getContextPath()%>/joinExam.do?method=sbtExam";
+		examForm.target="_self";
+		examForm.submit();
+	}
+	
+	function sbt2(s){
+<%
+	if(questionId != null && questionId.size() > 0){
+		for(int i = 0; i < questionId.size(); i ++){
+%>
+		nullToString(document.getElementsByName("<%=(String)questionId.get(i)%>"));
+<%
+		}
+	}
+%>
+		examForm.totalhour.value = s;
+		//alert(examForm.totalhour.value);
+		examForm.action="<%=request.getContextPath()%>/joinExam.do?method=saveExam";
+		examForm.target="info";
 		examForm.submit();
 	}
 	
@@ -888,6 +935,12 @@ document.getElementById("_totalScore").innerHTML = "<%=_totalScore%>";
 					s.value = " ";
 				}
 			}
+		}
+	}
+	
+	function sbt3(){
+		if(confirm("本次考试即将提交，点击[确定]提交试卷，点击[取消]继续答题！")){
+			sbt();
 		}
 	}
 </script>

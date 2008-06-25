@@ -10,20 +10,15 @@ response.setDateHeader("Expires",0);
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="0"> 
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="<%=request.getContextPath()%>/css/ksmain.css" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>选择学生</title>
+<title>选择发布科目</title>
 <script language="JavaScript" type="text/JavaScript">
 function addToSelect(){ 
 	var selectScopes = document.all("selectScopes");
-	var str = "";
-	
+	var str = ",";
 	for(var k = 0; k < selectScopes.options.length; k ++){
-		if(k==0){
-			str = selectScopes.options[k].value;
-		}
-		else{
-			str = str + selectScopes.options[k].value + ",";
-		}
+			str = str + selectScopes.options[k].title + ",";
 	}
 	var scopes = rightFrame.document.all("scope");
 	var scopenum = scopes.options.length;
@@ -31,9 +26,15 @@ function addToSelect(){
 	for(var j = 0; j < scopenum; j ++){
 		var scope = scopes.options[j];
 		if(scope.selected == true){
-			if(str.indexOf("," + scope.value + ",") == -1){ 
+			if(str.indexOf("," + scope.title + ",") == -1){
+				str = str + scope.title + ",";
+				var ss = document.createElement("option");
 				var scopeHtml = scope.innerHTML;
-				selectScopes.add(new Option(scopeHtml , scope.value));
+				ss.value = scope.value;
+				ss.text = scopeHtml;
+				ss.title = scope.title;
+				selectScopes.add(ss);
+				//selectScopes.add(new Option(scopeHtml , scope.value));
 			}
 		
 		}    
@@ -101,18 +102,19 @@ function goNext(){
  <table bgcolor=#fffff border=0 align="center" width=100% height="100%"> 
 
     <tr bgcolor="#F0F9FF">
-      <td width=50% align="center" rowspan=2>
+      <td width=40% align="center" rowspan=2>
        <iframe src="<%=request.getContextPath()%>/Quiz.do?method=leftForQuiz" height=100% width=98% frameborder="0" name="leftFrame" marginwidth="0" marginheight="0"></iframe>
 	  </td>
-	  <td width=50% align="left" height="40%">
-       <iframe src="<%=request.getContextPath()%>/Quiz.do?method=selectUserScopeForQuiz&course=<%=request.getParameter("course") %>" height=100% width=100% frameborder="0" name="rightFrame" scrolling=no marginwidth="0" marginheight="0"></iframe>
+	  <td width=60% align="left" height="40%">
+       <iframe src="<%=request.getContextPath()%>/Quiz.do?method=selectUserScopeForQuiz&tag=no" height=100% width=100% frameborder="0" name="rightFrame" scrolling=no marginwidth="0" marginheight="0"></iframe>
 	  </td>
      </tr>
      <tr bgcolor="#F0F9FF">
        <td width=65% align="center" height="60%">
         <table height="100%" border="0" cellpadding="0" cellspacing="0" width=100%>
           <td height=10% width="100%"  background="main_bg_b.jpg" align=center class="newstitle">
-             <a href="#" onclick="addToSelect()"><img src="<%=request.getContextPath() %>/image/plan-s1.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a>
+          <input name="Submit"  class="btn_cm_small" type="button" onClick="addToSelect()"  value="选择"/>
+            <!--  <a href="#" onclick="addToSelect()"><img src="<%=request.getContextPath() %>/image/plan-s1.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a> -->
           </td>
           <TR>
            <TD height=75%>
@@ -121,9 +123,12 @@ function goNext(){
           </tr>
           <tr>            
             <td  height=15%  background="main_bg_b.jpg"  width="97%" align=center valign="bottom" class="newstitle"><strong><font color="#FFFFFF"> 
-            <a href="#" onclick="delSelect2()"><img src="<%=request.getContextPath() %>/image/plan-s2.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a>
+            <input name="Submit"  class="btn_cm_small" type="button" onClick="delSelect2()"  value="移除"/>
+            <input name="Submit"  class="btn_cm_small" type="button" onClick="goNext()"  value="确定"/>
+            <input name="Submit"  class="btn_cm_small" type="button" onClick="window.close()"  value="退出"/>
+            <!-- <a href="#" onclick="delSelect2()"><img src="<%=request.getContextPath() %>/image/plan-s2.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a>
 			<a href="#" onclick="goNext()"><img src="<%=request.getContextPath() %>/image/queding.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a>
-			<a href="#" onclick="window.close()"><img src="<%=request.getContextPath() %>/image/close.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a>            
+			<a href="#" onclick="window.close()"><img src="<%=request.getContextPath() %>/image/close.jpg" width="45" height="21" class="admin_pic_left" border="0"/></a>        -->     
               </font></strong></td>
               
               

@@ -12,6 +12,7 @@ Object[] list = (Object[])request.getAttribute("qq");
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+  <link href="<%=request.getContextPath()%>/css/ksmain.css" rel="stylesheet" type="text/css" />
   <style type="text/css">
 <!--
 .sec1 {cursor: hand;
@@ -160,12 +161,24 @@ background-image=url(image/x-00100.gif);
       <input type="submit" value="上传考试" name="B1" src="" />
       
        -->
-      <input type="button" value="在线考试" name="B12" src="" onclick="window.open('<%=request.getContextPath()%>/joinExam/check.jsp?quizId=<%=zq.getId() %>')"/>
+      <input type="button" value="在线考试" name="B12" class="btn_cm" onclick="javascript:to_exam();"/>
       &nbsp;
     <%} %>
-      <input type="button" value="返回" name="B13" onclick="javascript:history.go(-1);"/>
+      <input type="button" value="返回" name="B13" class="btn_cm_small" onclick="javascript:history.go(-1);"/>
     </p></td>
   </tr>
 </table>
   </body>
 </html>
+<script type="text/javascript">
+function to_exam(){
+	var target="<%=request.getContextPath()%>/joinExam/check.jsp?quizId=<%=zq.getId() %>";
+	newwindow=window.open("","","scrollbars");
+	if (document.all){
+		newwindow.moveTo(0,0)
+		newwindow.resizeTo(screen.width,screen.height)
+	}
+	newwindow.location=target
+	window.location.href='<%=request.getContextPath()%>/assignment.do?method=getStatus&status=3';
+}
+</script>

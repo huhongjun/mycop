@@ -1,5 +1,6 @@
 package com.zhjedu.exam.service.impl;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
@@ -8,6 +9,8 @@ import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.dfcw.zjproject.zj.dao.ScoreDAO;
+import com.dfcw.zjproject.zj.dao.ScoreDAOImpl;
 import com.dfcw.zjproject.zj.model.ExamCourseModel;
 import com.zhjedu.exam.service.IJoinExamService;
 import com.zhjedu.exam.manager.IJoinExamManager;
@@ -106,12 +109,15 @@ public class joinExamService implements IJoinExamService {
 		}
 	}
 	
-	public void saveExamScore(HttpServletRequest request, String userId, String quizId, boolean isPaper){
+public void saveExamScore2(HttpServletRequest request, String userId, String quizId, boolean isPaper, String totalhour){
 		
 		//将提交的答案保存进数据库
 		Hashtable questionInfo = this.getQuestionbyQuizid(userId, quizId, isPaper);
 		ZjQuizExam quizExam = (ZjQuizExam)questionInfo.get("quizExam");
-		
+		quizExam.setTotalhour(Long.parseLong(totalhour));
+		List saveList = new Vector();
+		saveList.add(quizExam);
+		this.getJoinExamManager().saveQuizExam(saveList);
 //		首先移除所有题
 		String quizExamId = quizExam.getId();
 		this.getJoinExamManager().removeQuizAnswer(quizExamId);
@@ -128,9 +134,6 @@ public class joinExamService implements IJoinExamService {
 					double score = 0;
 					if(answer != null)
 						_answer = StringUtil.combineStringArray(answer, ",");
-					if(_answer.equals(question.getAnswers())){
-						score = quizQuestion.getGrade();
-					}
 					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
 					_quizAnswer.setUserid(userId);
 					_quizAnswer.setExam(quizExamId);
@@ -154,9 +157,6 @@ public class joinExamService implements IJoinExamService {
 					double score = 0;
 					if(answer != null)
 						_answer = StringUtil.combineStringArray(answer, ",");
-					if(_answer.equals(question.getAnswers())){
-						score = quizQuestion.getGrade();
-					}
 					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
 					_quizAnswer.setUserid(userId);
 					_quizAnswer.setExam(quizExamId);
@@ -180,9 +180,6 @@ public class joinExamService implements IJoinExamService {
 					double score = 0;
 					if(answer != null)
 						_answer = StringUtil.combineStringArray(answer, ",");
-					if(_answer.equals(question.getAnswers())){
-						score = quizQuestion.getGrade();
-					}
 					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
 					_quizAnswer.setUserid(userId);
 					_quizAnswer.setExam(quizExamId);
@@ -229,8 +226,9 @@ public class joinExamService implements IJoinExamService {
 					_quizAnswer.setExam(quizExamId);
 					_quizAnswer.setQuestion(question.getId());
 					_quizAnswer.setAnswer(__answer);
-					_quizAnswer.setGrade(Math.ceil(score * ((float)rightNum / (float)matchingOptionList.size())));
-					System.out.println(score + "*(" + rightNum + "/" + matchingOptionList.size() + ")=" + score * ((float)rightNum / (float)matchingOptionList.size()) + ">>" + Math.ceil(score * ((float)rightNum / (float)matchingOptionList.size())));
+					_quizAnswer.setGrade(0.0);
+//					_quizAnswer.setGrade(Math.ceil(score * ((float)rightNum / (float)matchingOptionList.size())));
+					//System.out.println(score + "*(" + rightNum + "/" + matchingOptionList.size() + ")=" + score * ((float)rightNum / (float)matchingOptionList.size()) + ">>" + Math.ceil(score * ((float)rightNum / (float)matchingOptionList.size())));
 					quizAnswer.add(_quizAnswer);
 					
 				}
@@ -288,45 +286,291 @@ public class joinExamService implements IJoinExamService {
 			}
 		}
 		
-		if(questionInfo.containsKey(Constants.QUESTION_INTEGRATE)){
-			List questionList = (List)questionInfo.get(Constants.QUESTION_INTEGRATE);
+		for(int a = 0; a < 3; a ++){
+			if(questionInfo.containsKey(Constants.QUESTION_INTEGRATE + a)){
+				List questionList = (List)questionInfo.get(Constants.QUESTION_INTEGRATE + a);
+				if(questionList != null && questionList.size() > 0){
+					for(int i = 0; i < questionList.size(); i ++){
+						ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+						ZjQuestion question = quizQuestion.getQuestion();
+						List sonQuestionList = question.getSonQuestionList();
+						
+						ZjQuizAnswers __quizAnswer = new ZjQuizAnswers();
+						__quizAnswer.setUserid(userId);
+						__quizAnswer.setExam(quizExamId);
+						__quizAnswer.setQuestion(question.getId());
+						__quizAnswer.setAnswer("");
+						__quizAnswer.setGrade(0.0);
+						quizAnswer.add(__quizAnswer);
+						
+						
+						if(sonQuestionList != null && sonQuestionList.size() > 0){
+							for(int j = 0; j < sonQuestionList.size(); j ++){
+								ZjQuestion sonQuestion = (ZjQuestion)sonQuestionList.get(j);
+								String[] answer = request.getParameterValues(sonQuestion.getId());
+								String _answer = "";
+								double score = 0;
+								if(answer != null)
+									_answer = StringUtil.combineStringArray(answer, ",");
+//								if(sonQuestion.getQtype().equals(Constants.QUESTION_SINGLECHOICE) || sonQuestion.getQtype().equals(Constants.QUESTION_MULTICHOICE) || sonQuestion.getQtype().equals(Constants.QUESTION_JUDGE)){
+//									if(_answer.equals(sonQuestion.getAnswers())){
+//										String score1 = UserSessionInfo.getScore(Float.parseFloat(quizQuestion.getGrade().toString()), sonQuestionList.size(), j);
+//										score = Double.parseDouble(score1);
+//									}
+//								}
+								
+								ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+								_quizAnswer.setUserid(userId);
+								_quizAnswer.setExam(quizExamId);
+								_quizAnswer.setQuestion(sonQuestion.getId());
+								_quizAnswer.setAnswer(_answer);
+								_quizAnswer.setGrade(score);
+								quizAnswer.add(_quizAnswer);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		this.getJoinExamManager().saveQuizAnswerList(quizAnswer);
+//		将状态置为已批阅和总分
+//		this.getJoinExamManager().updateQuizExamScore(quizExamId);
+//		this.getJoinExamManager().updateQuizExamStatus(quizExamId, "3", false);
+	}
+	
+	
+	public void saveExamScore(HttpServletRequest request, String userId, String quizId, boolean isPaper){
+		
+		//将提交的答案保存进数据库
+		Hashtable questionInfo = this.getQuestionbyQuizid(userId, quizId, isPaper);
+		ZjQuizExam quizExam = (ZjQuizExam)questionInfo.get("quizExam");
+		double totalscore = 0.0;
+//		首先移除所有题
+		String quizExamId = quizExam.getId();
+		this.getJoinExamManager().removeQuizAnswer(quizExamId);
+		
+		List quizAnswer = new Vector();
+		if(questionInfo.containsKey(Constants.QUESTION_SINGLECHOICE)){
+			List questionList = (List)questionInfo.get(Constants.QUESTION_SINGLECHOICE);
 			if(questionList != null && questionList.size() > 0){
 				for(int i = 0; i < questionList.size(); i ++){
 					ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
 					ZjQuestion question = quizQuestion.getQuestion();
-					List sonQuestionList = question.getSonQuestionList();
-					
-					ZjQuizAnswers __quizAnswer = new ZjQuizAnswers();
-					__quizAnswer.setUserid(userId);
-					__quizAnswer.setExam(quizExamId);
-					__quizAnswer.setQuestion(question.getId());
-					__quizAnswer.setAnswer("");
-					__quizAnswer.setGrade(0.0);
-					quizAnswer.add(__quizAnswer);
-					
-					
-					if(sonQuestionList != null && sonQuestionList.size() > 0){
-						for(int j = 0; j < sonQuestionList.size(); j ++){
-							ZjQuestion sonQuestion = (ZjQuestion)sonQuestionList.get(j);
-							String[] answer = request.getParameterValues(sonQuestion.getId());
+					String[] answer = request.getParameterValues(question.getId());
+					String _answer = "";
+					double score = 0;
+					if(answer != null)
+						_answer = StringUtil.combineStringArray(answer, ",");
+					if(_answer.equals(question.getAnswers())){
+						score = quizQuestion.getGrade();
+					}
+					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+					_quizAnswer.setUserid(userId);
+					_quizAnswer.setExam(quizExamId);
+					_quizAnswer.setQuestion(question.getId());
+					_quizAnswer.setAnswer(_answer);
+					_quizAnswer.setGrade(score);
+					quizAnswer.add(_quizAnswer);
+					totalscore += score;
+				}
+			}
+		}
+		
+		
+		if(questionInfo.containsKey(Constants.QUESTION_MULTICHOICE)){
+			List questionList = (List)questionInfo.get(Constants.QUESTION_MULTICHOICE);
+			if(questionList != null && questionList.size() > 0){
+				for(int i = 0; i < questionList.size(); i ++){
+					ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+					ZjQuestion question = quizQuestion.getQuestion();
+					String[] answer = request.getParameterValues(question.getId());
+					String _answer = "";
+					double score = 0;
+					if(answer != null)
+						_answer = StringUtil.combineStringArray(answer, ",");
+					if(_answer.equals(question.getAnswers())){
+						score = quizQuestion.getGrade();
+					}
+					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+					_quizAnswer.setUserid(userId);
+					_quizAnswer.setExam(quizExamId);
+					_quizAnswer.setQuestion(question.getId());
+					_quizAnswer.setAnswer(_answer);
+					_quizAnswer.setGrade(score);
+					quizAnswer.add(_quizAnswer);
+					totalscore += score;
+				}
+			}
+		}
+		
+		
+		if(questionInfo.containsKey(Constants.QUESTION_JUDGE)){
+			List questionList = (List)questionInfo.get(Constants.QUESTION_JUDGE);
+			if(questionList != null && questionList.size() > 0){
+				for(int i = 0; i < questionList.size(); i ++){
+					ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+					ZjQuestion question = quizQuestion.getQuestion();
+					String[] answer = request.getParameterValues(question.getId());
+					String _answer = "";
+					double score = 0;
+					if(answer != null)
+						_answer = StringUtil.combineStringArray(answer, ",");
+					if(_answer.equals(question.getAnswers())){
+						score = quizQuestion.getGrade();
+					}
+					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+					_quizAnswer.setUserid(userId);
+					_quizAnswer.setExam(quizExamId);
+					_quizAnswer.setQuestion(question.getId());
+					_quizAnswer.setAnswer(_answer);
+					_quizAnswer.setGrade(score);
+					quizAnswer.add(_quizAnswer);
+					totalscore += score;
+				}
+			}
+		}
+		
+		
+		if(questionInfo.containsKey(Constants.QUESTION_MATCHING)){
+			List questionList = (List)questionInfo.get(Constants.QUESTION_MATCHING);
+			if(questionList != null && questionList.size() > 0){
+				for(int i = 0; i < questionList.size(); i ++){
+					ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+					ZjQuestion question = quizQuestion.getQuestion();
+					List matchingOptionList = question.getMatchingOptionList();
+					double score = quizQuestion.getGrade();
+					int rightNum = 0;
+					String __answer = "";
+					if(matchingOptionList != null && matchingOptionList.size() > 0){
+						for(int j = 0; j < matchingOptionList.size(); j ++){
+							ZjQuestionMatchingOption matchingOption = (ZjQuestionMatchingOption)matchingOptionList.get(j);
+							
+							
+							String[] answer = request.getParameterValues(matchingOption.getId());
 							String _answer = "";
-							double score = 0;
+							
 							if(answer != null)
 								_answer = StringUtil.combineStringArray(answer, ",");
-							if(sonQuestion.getQtype().equals(Constants.QUESTION_SINGLECHOICE) || sonQuestion.getQtype().equals(Constants.QUESTION_MULTICHOICE) || sonQuestion.getQtype().equals(Constants.QUESTION_JUDGE)){
-								if(_answer.equals(sonQuestion.getAnswers())){
-									String score1 = UserSessionInfo.getScore(Float.parseFloat(quizQuestion.getGrade().toString()), sonQuestionList.size(), j);
-									score = Double.parseDouble(score1);
-								}
-							}
 							
-							ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
-							_quizAnswer.setUserid(userId);
-							_quizAnswer.setExam(quizExamId);
-							_quizAnswer.setQuestion(sonQuestion.getId());
-							_quizAnswer.setAnswer(_answer);
-							_quizAnswer.setGrade(score);
-							quizAnswer.add(_quizAnswer);
+							if(_answer.equals(matchingOption.getAnswer())){
+								rightNum = rightNum + 1;
+							}
+							__answer += "," + _answer;
+						}
+					}
+					if(__answer != null && __answer.length() > 0)
+						__answer = __answer.substring(1);
+					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+					_quizAnswer.setUserid(userId);
+					_quizAnswer.setExam(quizExamId);
+					_quizAnswer.setQuestion(question.getId());
+					_quizAnswer.setAnswer(__answer);
+					_quizAnswer.setGrade(Math.ceil(score * ((float)rightNum / (float)matchingOptionList.size())));
+					//System.out.println(score + "*(" + rightNum + "/" + matchingOptionList.size() + ")=" + score * ((float)rightNum / (float)matchingOptionList.size()) + ">>" + Math.ceil(score * ((float)rightNum / (float)matchingOptionList.size())));
+					quizAnswer.add(_quizAnswer);
+					totalscore += _quizAnswer.getGrade();
+					
+				}
+			}
+		}
+		
+		
+		if(questionInfo.containsKey(Constants.QUESTION_INPUTFILL)){
+			List questionList = (List)questionInfo.get(Constants.QUESTION_INPUTFILL);
+			if(questionList != null && questionList.size() > 0){
+				for(int i = 0; i < questionList.size(); i ++){
+					ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+					ZjQuestion question = quizQuestion.getQuestion();
+					String[] answer = request.getParameterValues(question.getId());
+					String _answer = "";
+					double score = 0;
+					if(answer != null)
+						_answer = StringUtil.combineStringArray(answer, ",");
+//					if(_answer.equals(question.getAnswers())){
+//						score = quizQuestion.getGrade();
+//					}
+					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+					_quizAnswer.setUserid(userId);
+					_quizAnswer.setExam(quizExamId);
+					_quizAnswer.setQuestion(question.getId());
+					_quizAnswer.setAnswer(_answer);
+					_quizAnswer.setGrade(score);
+					quizAnswer.add(_quizAnswer);
+					totalscore += score;
+					
+				}
+			}
+		}
+		
+		if(questionInfo.containsKey(Constants.QUESTION_ANSWER)){
+			List questionList = (List)questionInfo.get(Constants.QUESTION_ANSWER);
+			if(questionList != null && questionList.size() > 0){
+				for(int i = 0; i < questionList.size(); i ++){
+					ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+					ZjQuestion question = quizQuestion.getQuestion();
+					String[] answer = request.getParameterValues(question.getId());
+					String _answer = "";
+					double score = 0;
+					if(answer != null)
+						_answer = StringUtil.combineStringArray(answer, ",");
+//					if(_answer.equals(question.getAnswers())){
+//						score = quizQuestion.getGrade();
+//					}
+					ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+					_quizAnswer.setUserid(userId);
+					_quizAnswer.setExam(quizExamId);
+					_quizAnswer.setQuestion(question.getId());
+					_quizAnswer.setAnswer(_answer);
+					_quizAnswer.setGrade(score);
+					quizAnswer.add(_quizAnswer);
+					totalscore += score;
+				}
+			}
+		}
+		
+		for(int a = 0; a < 3; a ++){
+			if(questionInfo.containsKey(Constants.QUESTION_INTEGRATE + a)){
+				List questionList = (List)questionInfo.get(Constants.QUESTION_INTEGRATE + a);
+				if(questionList != null && questionList.size() > 0){
+					for(int i = 0; i < questionList.size(); i ++){
+						ZjQuizQuestion quizQuestion = (ZjQuizQuestion)questionList.get(i);
+						ZjQuestion question = quizQuestion.getQuestion();
+						List sonQuestionList = question.getSonQuestionList();
+						
+						ZjQuizAnswers __quizAnswer = new ZjQuizAnswers();
+						__quizAnswer.setUserid(userId);
+						__quizAnswer.setExam(quizExamId);
+						__quizAnswer.setQuestion(question.getId());
+						__quizAnswer.setAnswer("");
+						__quizAnswer.setGrade(0.0);
+						quizAnswer.add(__quizAnswer);
+						
+						
+						if(sonQuestionList != null && sonQuestionList.size() > 0){
+							for(int j = 0; j < sonQuestionList.size(); j ++){
+								ZjQuestion sonQuestion = (ZjQuestion)sonQuestionList.get(j);
+								String[] answer = request.getParameterValues(sonQuestion.getId());
+								String _answer = "";
+								double score = 0;
+								if(answer != null)
+									_answer = StringUtil.combineStringArray(answer, ",");
+								if(sonQuestion.getQtype().equals(Constants.QUESTION_SINGLECHOICE) || sonQuestion.getQtype().equals(Constants.QUESTION_MULTICHOICE) || sonQuestion.getQtype().equals(Constants.QUESTION_JUDGE)){
+									if(_answer.equals(sonQuestion.getAnswers())){
+										String score1 = UserSessionInfo.getScore(Float.parseFloat(quizQuestion.getGrade().toString()), sonQuestionList.size(), j);
+										score = Double.parseDouble(score1);
+									}
+								}
+								
+								ZjQuizAnswers _quizAnswer = new ZjQuizAnswers();
+								_quizAnswer.setUserid(userId);
+								_quizAnswer.setExam(quizExamId);
+								_quizAnswer.setQuestion(sonQuestion.getId());
+								_quizAnswer.setAnswer(_answer);
+								_quizAnswer.setGrade(score);
+								quizAnswer.add(_quizAnswer);
+								totalscore += score;
+							}
 						}
 					}
 				}
@@ -336,7 +580,17 @@ public class joinExamService implements IJoinExamService {
 		this.getJoinExamManager().saveQuizAnswerList(quizAnswer);
 //		将状态置为已批阅和总分
 		this.getJoinExamManager().updateQuizExamScore(quizExamId);
-		this.getJoinExamManager().updateQuizExamStatus(quizExamId, "3", false);
+		this.getJoinExamManager().updateQuizExamStatus(quizExamId, "3", false);	
+		//回写中间库
+		try {
+			ScoreDAO sdao = new ScoreDAOImpl();
+			sdao.addEntraceScore(Integer.parseInt(quizExam.getMidExamCourseId()), Integer.parseInt(quizExam.getUserid()), Float.parseFloat(totalscore + ""));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		//quizExam
 	}
 	
 	/**
@@ -472,6 +726,7 @@ public class joinExamService implements IJoinExamService {
 	
 	public void saveQuizExamList(String userId, ArrayList list){
 		List saveList = new Vector();
+		Hashtable rd = new Hashtable();
 		if(list != null && list.size() > 0){
 			for(int i = 0; i < list.size(); i ++){
 				ExamCourseModel examCourse = (ExamCourseModel)list.get(i);
@@ -479,15 +734,19 @@ public class joinExamService implements IJoinExamService {
 				if(quizMidECList != null && quizMidECList.size() > 0){
 					for(int j = 0; j < quizMidECList.size(); j ++){
 						ZjQuizMidEc quizMidEC = (ZjQuizMidEc)quizMidECList.get(j);
-						if(this.getJoinExamManager().isQuizExamHave(userId, quizMidEC.getQuiz())){
-							ZjQuizExam quizExam = new ZjQuizExam();
-							Random random = new Random();
-							int rand = random.nextInt(10);
-							quizExam.setZjQuiz(quizMidEC.getZjQuiz());
-							quizExam.setUserid(userId);
-							quizExam.setPaper(rand + "");
-							saveList.add(quizExam);
-						}
+						//if(!rd.containsKey(quizMidEC.getQuiz())){
+							//if(this.getJoinExamManager().isQuizExamHave(userId, quizMidEC.getQuiz())){
+								ZjQuizExam quizExam = new ZjQuizExam();
+								Random random = new Random();
+								int rand = random.nextInt(10);
+								quizExam.setZjQuiz(quizMidEC.getZjQuiz());
+								quizExam.setUserid(userId);
+								quizExam.setPaper(rand + "");
+								quizExam.setMidExamCourseId(quizMidEC.getMidExamId());
+								saveList.add(quizExam);
+							//}
+							//rd.put(quizMidEC.getQuiz(), "");
+						//}
 					}
 				}
 			}
@@ -496,7 +755,9 @@ public class joinExamService implements IJoinExamService {
 	}
 	
 	
-	
+	public ZjQuizExam getQuizExam(String userId, String quizId){
+		return this.getJoinExamManager().getQuizExam(userId, quizId);
+	}
 	
 	
 	

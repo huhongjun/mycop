@@ -111,9 +111,9 @@ function selectscope(quizid){
 		
 		var scopechar = "";
 		
-		var strFeatures = "dialogWidth: 900px; dialogHeight: 600px; center: yes; scroll:no;help: no; status: no; edge: raised; resize:yes";
+		var strFeatures = "dialogWidth: 800px; dialogHeight: 600px; center: yes; scroll:no;help: no; status: no; edge: raised; resize:yes";
 	    var result = new Array;
-	    result = window.showModalDialog("<%=request.getContextPath()%>/quiz/selectUserScopeForQuiz.jsp", strFeatures);
+	    result = window.showModalDialog("<%=request.getContextPath()%>/quiz/selectUserScopeForQuiz.jsp","", strFeatures);
 	    
 	    if(result != null){
 	    	
@@ -155,11 +155,11 @@ function selectscope(quizid){
                     </tr>
                     <tr >
                       <td height="35" align="left"><div align="left"><span class="style3">
-                        <input name="B40" type="button" onClick="addQuiz();" value="添加考试">
-                        <input name="B41" type="button" onClick="editquiz();" value="修改考试">
-                        <input type="button" onClick="removequiz();" value="删除考试" name="B42">                        
-                        <input type="button" onClick="listcategory();" value="目录维护" name="B43">
-                        <input type="button" onClick="cat_question();" value="题目维护" name="B43">
+                        <input class="btn_cm" name="B40" type="button" onClick="addQuiz();" value="添加考试">
+                        <input class="btn_cm" name="B41" type="button" onClick="editquiz();" value="修改考试">
+                        <input class="btn_cm" type="button" onClick="removequiz();" value="删除考试" name="B42">                        
+                        <input class="btn_cm" type="button" onClick="listcategory();" value="目录维护" name="B43">
+                        <input class="btn_cm" type="button" onClick="cat_question();" value="题目维护" name="B43">
                       </span></div></td>
                     </tr>
                     <tr>
@@ -187,19 +187,20 @@ function selectscope(quizid){
 							  <input type="text" name="timeopen" value="<%=timeopen%>" onclick="setday(this)">
         					  
 								&nbsp;&nbsp;
-        					   <input type="button" onclick="search();" value="查  询" name="B34">
+        					   <input type="button" class="btn_cm_small" onclick="search();" value="查 询" name="B34">
                           </td>
                         </tr>
                         <tr bgcolor="#7FBEE6">
                           <td width="5%" height="21" align="center"> <input type="checkbox" name="quizid"></td>
-                          <td width="10%" height="21" align="center"><span class="style1"> 考试名称</span></td>
+                          <td width="20%" height="21" align="center"><span class="style1"> 考试名称</span></td>
                           <td width="18%" height="21" align="center"><span class="style1"> 有效期</span></td>
                           <td width="8%" height="21" align="center"><span class="style1"> 创建时间</span></td>
+                          <!-- 
                           <td width="8%" height="21" align="center"><span class="style1"> 作业方式</span></td>
                           <td width="8%" height="21" align="center"><span class="style1"> 记分方式</span></td>
-                          
+                           -->
                           <td width="10%" height="21" align="center"><span class="style1"> 状态</span></td>
-                          <td width="18%" height="21" align="center"><span class="style1"> 操作</span></td>
+                          <td width="24%" height="21" align="center"><span class="style1"> 操作</span></td>
                         </tr>
                         <%com.zhjedu.util.PageObject po=(com.zhjedu.util.PageObject)request.getAttribute("po");%>   
   						<bean:define id="list" name="po" property="datas"/>
@@ -210,7 +211,7 @@ function selectscope(quizid){
       						<input type="checkbox" name="quizid" value="<bean:write name="element" property="id"/>" />
       						</logic:notEqual>
     					  </p></td>
-                          <td height="21" bgcolor="#EEF7FF">
+                          <td height="21" bgcolor="#EEF7FF"><span class="style1">
                           <logic:notEqual name="element" property="invigilator1" value="1">
                           <a href="<%=request.getContextPath()%>/Quiz.do?method=edit&quizid=<bean:write name="element" property="id"/>">
                           <bean:write name="element" property="name"/>
@@ -220,13 +221,14 @@ function selectscope(quizid){
                           <logic:equal name="element" property="invigilator1" value="1">
                           	<bean:write name="element" property="name"/>
                           
-                          </logic:equal>
+                          </logic:equal></span>
                           </td>
                           <bean:define id="start" name="element" property="timeopen"/>
                           <bean:define id="end" name="element" property="timeclose"/>
                           <bean:define id="create" name="element" property="createdate"/>
                           <td height="21"><span class="style1"><%=DateTimeUtil.getTime((Long)start,2) %>至<%=DateTimeUtil.getTime((Long)end,2) %></span></td>
                           <td height="21"><span class="style1"><%=DateTimeUtil.getTime((Long)create,2) %></span></td>
+                          <!-- 
                           <td height="21"> <span class="style1">　
                           	<logic:equal name="element" property="quizStyle" value="1">固定</logic:equal>
                           	<logic:equal name="element" property="quizStyle" value="2">手工</logic:equal>
@@ -236,7 +238,7 @@ function selectscope(quizid){
                           	<logic:equal name="element" property="grademethod" value="1">最高分</logic:equal>
                           	<logic:equal name="element" property="grademethod" value="2">平均分</logic:equal>
                           	<logic:equal name="element" property="grademethod" value="3">最后得分</logic:equal>
-                          </span></td>
+                          </span></td> -->
                           <!-- <td height="21" bgcolor="#EEF7FF"><span class="style1"><bean:write name="element" property="maxExamNum"/></span></td> -->
                           <td height="21" align="center"><span class="style1">
                           <logic:equal name="element" property="status" value="1">停用</logic:equal>
@@ -278,7 +280,7 @@ function selectscope(quizid){
   </tr>
   <tr>
 		<td align="center" colspan="8"><span class="style1">
-		<page:pager totalrecord="<%=po.getTotalRecord()%>" intPageSize="<%=po.getPageSize()%>" pageCount="<%=po.getTotalPage()%>" page="<%=po.getCurrentPage()%>" formName="QuizForm" pageVar="page" jsName="changePage" url="Question.do?method=list"/>
+		<page:pager totalrecord="<%=po.getTotalRecord()%>" intPageSize="<%=po.getPageSize()%>" pageCount="<%=po.getTotalPage()%>" page="<%=po.getCurrentPage()%>" formName="QuizForm" pageVar="page" jsName="changePage" url="Quiz.do?method=list&quizType=2"/>
 		</span></td>
   </tr>
 </table>

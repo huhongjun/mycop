@@ -16,7 +16,6 @@ import com.zhjedu.exam.domain.ZjQuestionCategory;
 import com.zhjedu.exam.domain.ZjQuestionMatchingAnswer;
 import com.zhjedu.exam.domain.ZjQuestionMatchingOption;
 import com.zhjedu.exam.domain.ZjQuestionOption;
-import com.zhjedu.exam.domain.ZjQuizQuestion;
 
 import com.zhjedu.exam.manager.IQuestionManager;
 import com.zhjedu.util.BaseManager;

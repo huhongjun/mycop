@@ -16,7 +16,7 @@ public class ZjQuizQuestion  implements java.io.Serializable {
      private String quiz = "";
      private ZjQuestion question;
 //     private String question;
-     private Long grade = new Long(0);
+     private Double grade = new Double(0.0);
      private Long belongto = new Long(0);
 
 
@@ -53,11 +53,11 @@ public class ZjQuizQuestion  implements java.io.Serializable {
         this.quiz = quiz;
     }
 
-    public Long getGrade() {
+    public Double getGrade() {
         return this.grade;
     }
     
-    public void setGrade(Long grade) {
+    public void setGrade(Double grade) {
         this.grade = grade;
     }
 

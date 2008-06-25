@@ -1,8 +1,6 @@
 package com.zhjedu.exam.service;
 
 import java.util.ArrayList;
-
-import com.zhjedu.exam.domain.ZjQuestion;
 import com.zhjedu.exam.domain.ZjQuiz;
 import com.zhjedu.util.PageObject;
 

@@ -35,7 +35,13 @@ public class joinExamAction extends BaseAction {
 			return mapping.findForward("studentLogin");
 		}
 		String quizId = request.getParameter("quizId");		//考试/作业ID
+		String userid = "";
+		StudentModel student = (StudentModel)request.getSession().getAttribute(UserSession.STUDENT_SESSION);
+		if(student!=null){
+			userid = String.valueOf(student.getStudentId());
+		}
 		request.setAttribute("quiz", this.getJoinExamService().getQuizbyId(quizId));
+		request.setAttribute("quizExam", this.getJoinExamService().getQuizExam(userid, quizId));
 		return mapping.findForward("quizInfo");
 	}
 	
@@ -56,6 +62,25 @@ public class joinExamAction extends BaseAction {
 		request.setAttribute("quizQuestion", rd);
 		request.setAttribute("quiz", quiz);
 		return mapping.findForward("quizYulan");
+	}	
+	
+	public ActionForward quizInput(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response) {
+		if(!UserSessionInfo.teacherIsLogin(request)){
+			return mapping.findForward("login");
+		}
+		String quizId = request.getParameter("quizId");		//考试/作业ID
+		ZjQuiz quiz = this.getJoinExamService().getQuizbyId(quizId);
+		Hashtable rd = new Hashtable();
+		if(quiz != null){
+			if(quiz.getPaper() != null && !"".equals(quiz.getPaper())){
+				rd = this.getJoinExamService().getQuestionbyQuizid(quiz, true);
+			}else{
+				rd = this.getJoinExamService().getQuestionbyQuizid(quiz, false);
+			}
+		}
+		request.setAttribute("quizQuestion", rd);
+		request.setAttribute("quiz", quiz);
+		return mapping.findForward("quizInput");
 	}	
 	
 	public ActionForward quizQuestionInfo(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response) {
@@ -83,6 +108,31 @@ public class joinExamAction extends BaseAction {
 		request.setAttribute("quiz", quiz);
 		request.setAttribute("quizQuestion", rd);
 		return mapping.findForward("quizQuestionInfo");
+	}
+	
+	public ActionForward saveExam(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response) {
+		if(!UserSessionInfo.studentIsLogin(request)){
+			return mapping.findForward("studentLogin");
+		}
+		String quizId = request.getParameter("quizId");		//考试/作业ID
+		String userid = "";
+		StudentModel student = (StudentModel)request.getSession().getAttribute(UserSession.STUDENT_SESSION);
+		if(student!=null){
+			userid = String.valueOf(student.getStudentId());
+		}
+		if(userid.equals("")){
+			return mapping.findForward("login");
+		}
+		ZjQuiz quiz = this.getJoinExamService().getQuizbyId(quizId);
+		String totalhour = request.getParameter("totalhour");
+		if(quiz != null){
+			if(quiz.getPaper() != null && !"".equals(quiz.getPaper())){
+				this.getJoinExamService().saveExamScore2(request, userid, quizId, true, totalhour);
+			}else{
+				this.getJoinExamService().saveExamScore2(request, userid, quizId, false, totalhour);
+			}
+		}
+		return mapping.findForward("info2");
 	}
 	
 	public ActionForward sbtExam(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response) {
@@ -125,6 +175,7 @@ public class joinExamAction extends BaseAction {
 			}
 		}
 		request.setAttribute("quizQuestion", rd);
+		request.setAttribute("quiz", quiz);
 		return mapping.findForward("quizQuestionAnswerInfo");
 	}
 	
@@ -141,6 +192,7 @@ public class joinExamAction extends BaseAction {
 			}
 		}
 		request.setAttribute("quizQuestion", rd);
+		request.setAttribute("quiz", quiz);
 		return mapping.findForward("quizQuestionAnswer");
 	}
 	

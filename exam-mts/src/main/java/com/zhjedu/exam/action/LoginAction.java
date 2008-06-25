@@ -16,10 +16,8 @@ import com.dfcw.zjproject.zj.dao.StudentDAO;
 import com.dfcw.zjproject.zj.dao.StudentDAOImpl;
 import com.dfcw.zjproject.zj.dao.TeacherDAO;
 import com.dfcw.zjproject.zj.dao.TeacherDAOImpl;
-import com.dfcw.zjproject.zj.model.ExamCourseModel;
 import com.dfcw.zjproject.zj.model.StudentModel;
 import com.dfcw.zjproject.zj.model.TeacherModel;
-import com.zhjedu.exam.domain.ZjCourse;
 import com.zhjedu.util.UserSession;
 
 public class LoginAction extends BaseAction {
@@ -40,6 +38,7 @@ public ActionForward login(ActionMapping mapping, ActionForm actionForm,HttpServ
 			userType = request.getParameter("userType");
 		}
 		if(!password.equals("12345")){
+			request.setAttribute("info", "登录名或密码错误，请重新登录！");
 			return mapping.findForward("login");
 		}
 		if(!userName.equals("")){
@@ -115,5 +114,15 @@ public ActionForward login(ActionMapping mapping, ActionForm actionForm,HttpServ
 		return new ActionForward("/login.jsp");
 	}
 
-
+	public ActionForward loginout(ActionMapping mapping, ActionForm actionForm,HttpServletRequest request,HttpServletResponse response){
+		if(request.getSession().getAttribute(UserSession.TEACHER_SESSION) != null){
+			request.getSession().removeAttribute(UserSession.TEACHER_SESSION);
+			request.setAttribute("info", "teacher");
+		}
+		if(request.getSession().getAttribute(UserSession.STUDENT_SESSION) != null){
+			request.getSession().removeAttribute(UserSession.STUDENT_SESSION);
+			request.setAttribute("info", "student");
+		}
+		return new ActionForward("/return2.jsp");
+	}
 }

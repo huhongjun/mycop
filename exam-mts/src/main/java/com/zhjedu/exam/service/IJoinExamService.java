@@ -6,6 +6,7 @@ import java.util.Hashtable;
 import javax.servlet.http.HttpServletRequest;
 
 import com.zhjedu.exam.domain.ZjQuiz;
+import com.zhjedu.exam.domain.ZjQuizExam;
 
 public interface IJoinExamService {
 	
@@ -42,6 +43,16 @@ public interface IJoinExamService {
 	 * @return			作业需要的题信息
 	 */
 	public Hashtable getQuestionbyQuizid(String userId, String quizId, boolean isPaper);
+	
+	/**
+	 * 暂存用户参加作业情况
+	 * @param request	传递用户答案
+	 * @param userId	用户ID
+	 * @param quizId	作业ID
+	 * @param isPaper	是否固定试卷(true-是 false-否)
+	 * @param totalhour	考试剩余时间
+	 */
+	public void saveExamScore2(HttpServletRequest request, String userId, String quizId, boolean isPaper, String totalhour);
 	
 	/**
 	 * 保存用户参加作业情况
@@ -89,6 +100,13 @@ public interface IJoinExamService {
 	 */
 	public boolean checkPass(String quizId, String password);
 	
+	/**
+	 * 取得一个学生的考试情况
+	 * @param userId	学生ID
+	 * @param quizId	考试ID
+	 * @return
+	 */
+	public ZjQuizExam getQuizExam(String userId, String quizId);
 	
 	//****************************************  */
 	//以下是同步学生参加考试数据的一些方法  2008-04-05

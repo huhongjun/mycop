@@ -3,13 +3,34 @@
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
 <%@ taglib uri="/WEB-INF/Pager.tld" prefix="page" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<% 
-response.setHeader("Cache-Control","no-store"); 
-response.setHeader("Pragrma","no-cache"); 
-response.setDateHeader("Expires",0); 
-%> 
+<link href="<%=request.getContextPath()%>/css/ksmain.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.sec1 {cursor: hand;
+font-size:12px;
+color: #000000;
+width:107;
+height:25;
+background-image=url(image/x-00100.gif);
+}
+.style1 {font-size: 12px}
+.style11 {color: #164f8e;
+	font-weight: bold;
+}
+.style11 {color: #164f8e; font-weight: bold; font-size: 14px; }
+.style12 {color: #0000FF}
+.style13 {color: #3b6ba0}
+.style14 {	font-size: 36px;
+	color: #3B6BA0;
+}
+.style8 {color: #0000FF; font-size: 12px; }
+.style9 {font-size: 14px}
+-->
+</style>
+<html>
+<head>
+<title>添加目录</title>
+</head>
 <script language="javascript">
 function validate(){
 	if(this.document.CategoryForm.name.value==""){
@@ -20,17 +41,7 @@ function validate(){
 	return true;
 }
 </script>
-<head>
-<title>添加机考目录</title>
-</head>
-
 <body>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr class="title_01">
-    <td width="2%" valign="middle" class="title_fonts">&nbsp;</td>
-    <td width="98%" height="40" valign="middle" class="title_fonts"><img src="<%=request.getContextPath()%>/image/ico_01.gif" width="36" height="36" align="middle" /> 添加目录</td>
-  </tr>
-</table>
 <html:form method="post" action="/Category.do?method=saveCategory" target="_parent" onsubmit="if(!validate()){return false;}" >
 <%
 String parent = "";
@@ -40,35 +51,58 @@ if(request.getParameter("parent")!=null){
  %>
 <html:hidden property="parent" name="category" />
 <html:hidden property="id" name="category" />
-<table width="97%" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC" class="table-pub">
-  <tr>
-    <td align="center" bgcolor="#FFFFFF"><table border="0" width="100%" id="table3" cellpadding="0" style="border-collapse: collapse" cellspacing="0">
-      <tr>
-        <td height="71" align="left" valign="top" bgcolor="#FFFFFF"><table width="100%" height="60" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC" id="table12" style="border-collapse: collapse">
-            <tr>
-              <td align="center" bgcolor="#FFFFFF" class="wenzi"><table width="100%" height="53" border="0" cellpadding="0" id="table12" style="border-collapse: collapse">
-                  <tr>
-                    <td height="30" align="right" class="wenzi">目录名称</td>
-                    <td height="30" align="left" class="wenzi"><html:text property="name" name="category" /></td>
-                  </tr>
-                  
-                  <tr>
-                    <td align="right" class="wenzi">目录简介</td>
-                    <td align="left" class="wenzi"><html:textarea property="info" name="category" cols="29" rows="3" /></td>
-                  </tr>     
-              </table></td>
-            </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td bgcolor="#FFFFFF" valign="top" align="center"><hr noshade="noshade" color="#808080" size="1" />
-            <input type=submit value="保存" name=Submit>
-            <input type=reset value="重置" name=Submit2>
-		</td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
+	<div align="center">
+		<table border="0" width="100%" id="table4">
+			<tr>
+				<td width="100%" height="30">
+					<p class="style1">
+						您现在的位置是：考试中心 / 考试管理 / 添加/修改目录 /
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td height="30" align="left" valign="middle" bgcolor="#7FBEE6">
+					<div align="center">
+						<span class="style3">添加/修改目录</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<table width="100%" border="0" id="table4">
+						<tr bgcolor="#EEF7FF">
+							<td width="11%" height="21">
+								<span class="style1"> 目录名称</span>
+							</td>
+							<td width="90%" height="21">
+								<html:text property="name" name="category" />
+							</td>
+						</tr>
+						<tr bgcolor="#F7FBFF">
+							<td width="11%" height="21">
+								<span class="style1"> 目录简介</span>
+							</td>
+							<td width="90%" height="21">
+								<html:textarea property="info" name="category" cols="29" rows="3" />
+							</td>
+						</tr>
+						<tr>
+					<td align="left" colspan="4">
+					<p align="center">
+						<input type="submit" class="btn_cm_small" value="保存" name="B7" src="" />
+						<input type="button" onClick="history.go(-1)"  class="btn_cm_small" value="返回" name="B1" />
+									&nbsp;
+					</p>
+					</td>
+			</tr>
+					</table>
+				</td>
+			</tr>
+			
+		</table>
+		
+		</div>
+
 </html:form>
 </body>
 </html>

@@ -14,6 +14,7 @@
 		<action path="/joinExam" name="QuestionForm" parameter="method" type="com.zhjedu.exam.action.joinExamAction" scope="request" validate="false">
 			<forward name="quizInfo" path="/joinExam/quizInfo.jsp"/>
 			<forward name="quizYulan" path="/joinExam/quizYulan.jsp"/>
+			<forward name="quizInput" path="/joinExam/quizInput.jsp"/>
 			<forward name="quizQuestionInfo" path="/joinExam/quizQuestionInfo.jsp"/>
 			<forward name="quizQuestionAnswerInfo" path="/joinExam/quizQuestionAnswerInfo.jsp"/>
 			<forward name="quizQuestionAnswer" path="/joinExam/quizQuestionAnswer.jsp"/>

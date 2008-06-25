@@ -3,7 +3,6 @@ package com.zhjedu.exam.action;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +20,6 @@ import com.zhjedu.exam.domain.ZjQuestionMatchingAnswer;
 import com.zhjedu.exam.domain.ZjQuestionMatchingOption;
 import com.zhjedu.exam.domain.ZjQuestionOption;
 import com.zhjedu.exam.domain.ZjQuiz;
-import com.zhjedu.exam.manager.IAssignmentManager;
-import com.zhjedu.exam.manager.impl.AssignmentManager;
 import com.zhjedu.util.PageObject;
 import com.zhjedu.util.StringUtil;
 import com.zhjedu.util.UserSession;
