@@ -16,4 +16,6 @@
  
  2008/4/24
       cvs 工作目录是有意这样安排，为的是changelog的maven 2 插件能正常工作
-      mvn changelog：changelog
+      mvn changelog:changelog,会抽取CVS库中的更新日志（changelog.xml=>生成target\site\changelog.html）
+2008/8/6
+	exam-mts-cvs更新操作：cvs update
