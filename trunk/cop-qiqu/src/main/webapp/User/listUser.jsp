@@ -14,7 +14,7 @@
     <td colspan="6">&nbsp;</td>
   </tr>
   <tr> 
-    <td colspan="6" align="center" class="TableTitleText">用户列表</td>
+    <td colspan="6" align="center" class="TableTitleText">??列表</td>
   </tr>
   <tr> 
     <td colspan="6" align="right">&nbsp;</td>
@@ -47,9 +47,9 @@
 	<table width="100%"border="0" cellspacing="0" cellpadding="2">
         <tr height="20">
       <td width="32" class="Listtitle" align="center" ><input alt="选择" type="checkbox" name="selectall" onclick="selectAllChk(this)"></td>
-      		<td width="15%" class="Listtitle" id=".id"  onclick="onchangeOrderBy(this)"> <div align="v">代码</div></td>
-      		<td width="15%" class="Listtitle" id=".name"  onclick="onchangeOrderBy(this)"> <div align="v">名称</div></td>
-      		<td width="15%" class="Listtitle" id=".email"  onclick="onchangeOrderBy(this)"> <div align="v">电邮</div></td>
+      		<td width="15%" class="Listtitle" id=".id"  onclick="onchangeOrderBy(this)"> <div align="v">??</div></td>
+      		<td width="15%" class="Listtitle" id=".name"  onclick="onchangeOrderBy(this)"> <div align="v">??</div></td>
+      		<td width="15%" class="Listtitle" id=".email"  onclick="onchangeOrderBy(this)"> <div align="v">??</div></td>
     </tr>
 <logic:iterate id="ps" name="UserForm" property="pageControl.data" type="com.gever.goa.user.vo.UserVO" indexId="index">
 	   <tr  onmouseover="javascript:changeBgColorOnMouseOver(this);" onmouseout="javascript:changeBgColorOnMouseOut(this);" ondblclick="<%="toUrl('../User/viewUser.do?fid=" +ps.getValue("id")+ "',false)"%>">

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>${item.title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+	<style type="text/css" media="all">
+					@import "../Shared Files/css/snstyle.css";
+					</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container">
+	<div class="header">	</div>
+	<div class="navigation">
+		<div id="previousBtn">
+			<a href="javascript:PreviousPage();"></a>		</div>
+		<div id="nextBtn">
+			<a href="javascript:NextPage();"></a>		</div>
+	</div>
+	
+#foreach($page in ${item.pagelist})
+	<div class="page" id="${page.id}">
+		<div class="content">
+			<h2>${page.title}</h2>
+						<img class="right" src="images/${page.image}" alt="" />
+			<p>${page.text}</p>
+	
+		</div>
+		<div class="instructions">		</div>
+	</div>
+#end
+</body>
+</html>
+
+

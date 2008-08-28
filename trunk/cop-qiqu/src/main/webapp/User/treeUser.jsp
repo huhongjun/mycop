@@ -12,7 +12,7 @@
 
 	var context = "<%=context%>";
 	//var rti;
-	var tree = new WebFXLoadTree("≤ø√≈",  context+"/User/treeUser.do?action=doTreeData","javascript:toRight('/User/listUser.do')",null, null, null, null,'0');
+	var tree = new WebFXLoadTree("??",  context+"/User/treeUser.do?action=doTreeData","javascript:toRight('/User/listUser.do')",null, null, null, null,'0');
 	try{
 		tree.expand();
 	} catch(e) {

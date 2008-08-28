@@ -1,0 +1,28 @@
+<templatelist>
+
+<!-- ******************************** scorm 2004 ******************************** -->	
+<template 
+	FileName="velocity/templateSCORM/SCORM2004-3rd/imsmanifest.xml.vsl"
+    Output="src/courseware/scorm2004" 
+    CustomName="imsmanifest.xml" 
+    scope="scorm" />
+<template 
+	FileName="velocity/templateSCORM/SCORM2004-3rd/imsmanifest.xml.vsl"
+    Output="src/courseware/scorm2004" 
+    CustomName="imsmanifest.xml" 
+    scope="folder" />
+<template 
+	FileName="velocity/templateSCORM/SCORM2004-3rd/imsmanifest.xml.vsl"
+    Output="src/courseware/scorm2004" 
+    CustomName="imsmanifest.xml" 
+    scope="file" />
+
+<!-- ******************************** page style ******************************** -->	
+<template 
+	FileName="velocity/templateSCORM/pageStyle/html/text-image/SCO-index.html.vsl"
+    Output="src/courseware/scorm2004" 
+    CustomName="SCO-index.html" 
+    scope="sco" />
+
+
+</templatelist>

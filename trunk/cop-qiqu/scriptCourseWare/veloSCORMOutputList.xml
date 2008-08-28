@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<filelist>
+  <file name="src/courseware/scorm2004/imsmanifest.xml"/>
+  <file name="src/courseware/scorm2004/sco01/SCO-index.html"/>
+  <file name="src/courseware/scorm2004/sco02/SCO-index.html"/>
+</filelist>

@@ -1,0 +1,7 @@
+<QiQuScript>
+	<LoadDoc FileName="'scriptCourseWare/veloSCORMOutputList.xml'" NewDocRef="$veloOutputListDoc"/>
+	
+	<For NodeRef="$veloOutputListDoc" XPath="//file" IteratorEleRef="$file">
+		<EchoText InfoText="$file.name"/>
+	</For>
+</QiQuScript>
