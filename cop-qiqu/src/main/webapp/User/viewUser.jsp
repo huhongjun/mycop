@@ -12,22 +12,22 @@
    <br>
 	<table  align="center" width="600"  border="0" cellspacing="0" cellpadding="0">
 	<tr> 
-      <td align="center" colspan="2"><span class="TableTitleText">用户 编辑</span></td>
+      <td align="center" colspan="2"><span class="TableTitleText">?? 编辑</span></td>
       </tr>
 	<tr>
 	<td align="center">
 		<table width="98%" align="center" border="0" cellspacing="0" cellpadding="0">
 				
 							  <tr class="listcellrow" height="23" >
-					    <td width="86" nowrap class="InputLabelCell">代码：</td>
+					    <td width="86" nowrap class="InputLabelCell">??：</td>
 					    <td class="f12"><goa:write  name="UserForm" property="vo.id" filter="true"/></td>
 			  </tr>
 						  <tr class="listcellrow" height="23" >
-					    <td width="86" nowrap class="InputLabelCell">名称：</td>
+					    <td width="86" nowrap class="InputLabelCell">??：</td>
 					    <td class="f12"><goa:write  name="UserForm" property="vo.name" filter="true"/></td>
 			  </tr>
 						  <tr class="listcellrow" height="23" >
-					    <td width="86" nowrap class="InputLabelCell">电邮：</td>
+					    <td width="86" nowrap class="InputLabelCell">??：</td>
 					    <td class="f12"><goa:write  name="UserForm" property="vo.email" filter="true"/></td>
 			  </tr>
 			</table>

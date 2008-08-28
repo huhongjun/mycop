@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>模块[用户]框架页面</title>
+<title>模块[??]框架页面</title>
 </head>
   <frameset cols="180,*" id="main" >
   <frame name="left" 

@@ -14,7 +14,7 @@
     <br>  
 	<table  align="center" width="500"  border="0" cellspacing="0" cellpadding="0">
 	<tr> 
-      <td align="center" colspan="2"><span class="TableTitleText">用户编辑</span></td>
+      <td align="center" colspan="2"><span class="TableTitleText">??编辑</span></td>
       </tr>
 	<tr>
 	<td align="center">
@@ -23,15 +23,15 @@
 			<td>&nbsp;<html:hidden name="UserForm" property="actionType"/></td>
 		  </tr>
 				  <tr class="listcellrow" height="23" >
-					     <td width="86" nowrap class="InputLabelCell">代码：</td>
+					     <td width="86" nowrap class="InputLabelCell">??：</td>
 				     <td ><html:text styleClass="input2" property="vo.id" size="50" validatetype="notempty" msg="名称不能为空！" maxlength="100"/><font color="red">*</font></td>
 			  </tr>
 						  <tr class="listcellrow" height="23" >
-					     <td width="86" nowrap class="InputLabelCell">名称：</td>
+					     <td width="86" nowrap class="InputLabelCell">??：</td>
 				     <td ><html:text styleClass="input2" property="vo.name" size="50" validatetype="notempty" msg="名称不能为空！" maxlength="100"/><font color="red">*</font></td>
 			  </tr>
 						  <tr class="listcellrow" height="23" >
-					     <td width="86" nowrap class="InputLabelCell">电邮：</td>
+					     <td width="86" nowrap class="InputLabelCell">??：</td>
 				     <td ><html:text styleClass="input2" property="vo.email" size="50" validatetype="notempty" msg="名称不能为空！" maxlength="100"/><font color="red">*</font></td>
 			  </tr>
 			  <tr>

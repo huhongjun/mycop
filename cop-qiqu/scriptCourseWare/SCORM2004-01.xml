@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courseware>
+	<scorm title="SCORM-autoGen" default-org="syllabus">
+		<orglist>
+			<org identifier="syllabus" title="Chapter 1: syllabus title">
+				<itemlist>
+					<item title="Section 1: syllabus title" url="" stylesheet="../Shared Files/css/snstyle.css" name="sco01">
+						<pagelist>
+							<page id="p1" title="sco01:page 1" text="sco01:page 1 text" style="text"  image="image-01.jpg">
+							</page>
+							<page id="p2" title="sco01:page 2" text="sco01:page 2 text" style="text-swf"  image="image-01.jpg">
+							</page>
+							<page id="p3" title="sco01:page 3" text="sco01:page 3 text" style="text-swf"  image="image-01.jpg">
+							</page>
+						</pagelist>
+					</item>
+					<item title="Section 2: grade title" url="" stylesheet="../Shared Files/css/snstyle.css" name="sco02">
+						<pagelist>
+							<page id="p1" title="sco02:page 1" text="item sco02: page 1 text" style="text" image="image-01.jpg">
+							</page>
+							<page id="p2" title="sco02:page 2" text="item sco02: page 2 text" style="text-swf"  image="image-01.jpg">
+							</page>
+							<page id="p3" title="sco02:page 3" text="item sco02: page 3 text" style="text-swf"  image="image-01.jpg">
+							</page>
+						</pagelist>
+					</item>
+				</itemlist>
+			</org>
+		</orglist>	
+	</scorm>
+</courseware>

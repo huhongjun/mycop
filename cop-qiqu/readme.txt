@@ -1,3 +1,9 @@
+2008/5/14
+	开始用于课件生成
+	
+	使用Tips：
+	
+	
 2006/8/2
 	根据jagTestData.xml自动生成CRUD testcase和selenium testcase
 

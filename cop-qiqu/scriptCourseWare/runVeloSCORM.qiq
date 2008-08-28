@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QiQuScript>
+    <LoadDoc FileName="'scriptCourseWare/SCORM2004-01.xml'" NewDocRef="$scormDoc"/>
+	<SelectFirst NodeRef="$scormDoc" XPath="/courseware/scorm[1]" SelectedEleRef="$scorm"/>
+	<SelectFirst NodeRef="$scormDoc" XPath="//item" SelectedEleRef="$allItemList"/>
+
+	<CreateDoc NewDocRef="$veloOutputListDoc"/>
+	<CreateEle  NodeRef="$veloOutputListDoc" EleName="'filelist'" NewEleRef="$veloFileList"/>
+	
+	<LoadDoc FileName="'velocity/templateSCORM/veloList-scorm2004-3rd.xml'" NewDocRef="$templateListDoc"/>
+	<For NodeRef="$templateListDoc" XPath="/templatelist/template" IteratorEleRef="$template">
+	    <VelocityContextPut ContextName="'scorm'" NodeRef="$scorm"/>
+	    
+	    <If Condition="equalsIgnoreCase($template.scope , 'sco')">
+		    <For NodeRef="$scormDoc" XPath="//item" IteratorEleRef="$item">
+		    	<VelocityContextPut ContextName="'item'" NodeRef="$item"/>
+
+		    	<CreateEle NodeRef="$veloFileList" EleName="'file'" NewEleRef="$OutputFileName"/>
+		    	<Set Ref="$OutputFileName.name" Value="$template.Output +'/'+ $item.name + '/'+ $template.CustomName"/>
+		    	<RunVelocity TemplateFileName="$template.FileName" OutputFileName="$OutputFileName.name"/>
+		    </For>
+	    </If>
+
+	    <If  Condition="equalsIgnoreCase($template.scope , 'scorm')">    	
+	    	<CreateEle NodeRef="$veloFileList" EleName="'file'" NewEleRef="$OutputFileName"/>
+	    	<Set Ref="$OutputFileName.name" Value="$template.Output +'/'+ $template.CustomName"/>
+	    	
+	    	<RunVelocity TemplateFileName="$template.FileName" OutputFileName="$OutputFileName.name" Mode="'overwrite'"/>   	
+	    </If>	
+
+	</For>
+	
+	<SaveDoc FileName="'scriptCourseWare/veloSCORMOutputList.xml'" DocRef="$veloOutputListDoc" />
+</QiQuScript>

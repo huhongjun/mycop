@@ -1,11 +1,11 @@
-model/
+model/					COP=》建模专用目录
 	input/
 		mapForce/
-			jag.xsd 				jag模型定义,现在只能是层级+列表结构，且列表必须是***list
-			pd.xsd					PowerDesigner模型定义
-		jagModel.xml				jag模型实例
+			jag.xsd 	jag模型定义,现在只能是层级+列表结构，且列表必须是***list
+			pd.xsd		PowerDesigner模型定义
+		jagModel.xml	jag模型实例
 	output/
-script
+scriptCOP				COP=》脚本专用目录
 	DoTransform.bat					命令行运行外部执行文件完成PD与jaga文件的转换；
 	ExtractorXmi_Powerdesigner.xslt.qiq		执行xslt文件完成PD与jaga文件的转换；
 	MapTojag.xslt					Mapforce生成的xslt转换文件；
@@ -24,9 +24,18 @@ script
 	runVeloClean.qiq				清除所有的生成文件；
 	transformer_preRunVelo_jag.qiq	模板处理之前模型文件按的预处理；
 	veloOutputList.xml				模板处理时所有生成文件的清单，用于runVeloClean的清理；
-	
-velocity/
-	templateCOP/	COP源代码模板
-		veloList.xml	列出模板文件路径；指定输出位置；自定义输出文件名；指定作用范围(模型XPath)
-	templateSCORM/	SCORM课件模板
-		veloList.xml	
+scriptCourseWare
+	runVeloSCORM.qiq		QiQu脚本文件
+	SCORM2004-01.xml		SCORM建模文件
+	veloSCORMOutputList.xml	QiQu运行输出文件清单
+		
+velocity/				=》模板目录
+	templateCOP/		COP源代码模板
+		veloList.xml		列出模板文件路径；指定输出位置；自定义输出文件名；指定作用范围(模型XPath)
+	templateSCORM/		SCORM课件模板
+		veloList.xml
+
+说明：
+	课件生成
+		1、建模SCORM2004-01.xml；
+		2、runVeloSCORM.qiq（硬编码所用模板）；

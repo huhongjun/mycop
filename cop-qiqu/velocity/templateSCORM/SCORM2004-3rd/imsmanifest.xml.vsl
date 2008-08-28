@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" identifier="MANIFEST-FDC59F51-B25F-70CF-3923-B549F45F83F0" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd" version="1.3">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 3rd Edition</schemaversion>
+  </metadata>
+  <organizations default="${scorm.default-org}">
+  
+#foreach($org in ${scorm.orglist})
+    <organization identifier="${org.identifier}" structure="hierarchical">
+      <title>${org.title}</title>
+
+#foreach($itemOfOrg in ${org.itemlist})
+      <item identifier="ITEM-C2D1FAF9-FF04-07BD-9A28-CDC8DC6EC0B8" isvisible="true" identifierref="RES-${itemOfOrg.name}">
+        <title>${itemOfOrg.title}</title>
+        <adlnav:presentation>
+          <adlnav:navigationInterface>
+            <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+            <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+          </adlnav:navigationInterface>
+        </adlnav:presentation>
+        <imsss:sequencing>
+          <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
+        </imsss:sequencing>
+      </item>
+#end
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
+      </imsss:sequencing>
+    </organization>
+#end    
+  </organizations>
+  
+  <resources>
+
+#foreach($org in ${scorm.orglist})  
+#foreach($item in ${org.itemlist})
+    <resource identifier="RES-${item.name}" type="webcontent" href="${item.name}/SCO-index.html" adlcp:scormType="sco">
+      <file href="${item.name}/SCO-index.html" />
+      <dependency identifierref="RES-shared" />
+    </resource>
+#end
+#end
+    
+    <resource identifier="RES-shared" type="webcontent" adlcp:scormType="asset">
+      <file href="Shared%20Files/scripts/APIWrapper.js" />
+      <file href="Shared%20Files/scripts/courseFunctions.js" />
+	  		    <file href="Shared%20Files/images/bottom.gif" />
+      <file href="Shared%20Files/images/next.gif" />
+      <file href="Shared%20Files/images/next_rollover.gif" />
+      <file href="Shared%20Files/images/previous.gif" />
+      <file href="Shared%20Files/images/previous_rollover.gif" />
+      <file href="Shared%20Files/images/top.gif" />
+      <file href="Shared%20Files/css/snstyle.css" />
+    </resource>
+  </resources>
+</manifest>
+
