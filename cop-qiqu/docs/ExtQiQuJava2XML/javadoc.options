@@ -1,0 +1,1 @@
+-d .\output -multiple -private .\src\java\com\jeldoclet\JELDoclet.java

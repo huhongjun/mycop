@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jel>
+	<admin creation="Thu Jul 27 15:56:58 GMT+08:00 2006" xsdversion="1.0.0" version="1.0.0" />
+	<jelclass superclass="BaseFunction" visibility="public" superclassfulltype="ch.aloba.qiqu.script.base.BaseFunction" fulltype="ch.aloba.qiqu.extend.Greeting" type="Greeting" package="ch.aloba.qiqu.extend">
+		<comment>
+			<description>A simple QiQu-Function.</description>
+			<attribute name="@author">
+				<description>Hansjoerg</description>
+			</attribute>
+			<attribute name="@version">
+				<description>$Revision: $</description>
+			</attribute>
+		</comment>
+		<methodlist>
+			<constructor visibility="public" name="Greeting" />
+			<method visibility="public" fulltype="java.lang.String" type="String" name="getFunctionName">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#getFunctionName()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="public" fulltype="java.lang.String" type="String" name="getFunctionGroup">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#getFunctionGroup()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="public" fulltype="java.lang.String" type="String" name="getDescription">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#getDescription()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="public" fulltype="int" type="int" name="getReturnType">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#getReturnType()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="public" fulltype="int" type="int" name="getNumberOfParameters">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#getNumberOfParameters()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="public" fulltype="boolean" type="boolean" name="isLastParameterMultiple">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#isLastParameterMultiple()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="protected" fulltype="void" type="void" name="setParameters">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#setParameters()</description>
+					</attribute>
+				</comment>
+			</method>
+			<method visibility="public" fulltype="java.lang.String" type="String" name="evaluateFunction">
+				<comment>
+					<attribute name="@see">
+						<description>ch.aloba.qiqu.script.base.BaseFunction#evaluateFunction(java.lang.String[], ch.aloba.qiqu.parser.model.Expression[])</description>
+					</attribute>
+				</comment>
+				<paramlist>
+					<param fulltype="java.lang.String[]" type="String" name="params" />
+					<param fulltype="ch.aloba.qiqu.parser.model.Expression[]" type="Expression" name="expressions" />
+				</paramlist>
+				<exceptionlist>
+					<exception fulltype="java.lang.Exception" type="Exception" />
+				</exceptionlist>
+			</method>
+		</methodlist>
+	</jelclass>
+</jel>

@@ -1,0 +1,11 @@
+${admin.creation}
+${admin.qiquXMLElement}
+${admin.textcontent}
+${admin.version}
+${admin.xsdversion}
+
+$
+#foreach($method in ${jelclass.fieldlist})
+${method.name}
+#end
+
