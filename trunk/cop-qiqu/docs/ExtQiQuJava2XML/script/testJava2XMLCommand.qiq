@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<QiQuScript>
+	<Java2XML sourceFile=" ch.aloba.qiqu.extend  -sourcepath .\\src\\java " outputPath="output"/>
+	<EchoText InfoText="greeting('m','Sears')"/>
+	
+	<XslTransform 
+		InputFileName="'output/ch.aloba.qiqu.extend.Java2XML.xml'" 
+		OutputFileName="ch.aloba.qiqu.extend.Java2XML.html" 
+		StylesheetFileName="'script/java2html.xsl'"/>
+</QiQuScript>

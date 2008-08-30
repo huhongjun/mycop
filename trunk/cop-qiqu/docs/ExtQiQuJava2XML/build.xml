@@ -1,0 +1,13 @@
+<project name="Java2XMLLib" default="buildlib" basedir=".">
+	<property name="dist" location="dist" />
+	<property name="classes" location="bin/classes" />
+	<property name="filename" value="java2xmllib.jar" />
+	
+	<target name="buildlib">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+		
+		<!-- Put everything in ${classes} into the jar file -->
+		<jar jarfile="${dist}/${filename}" basedir="${classes}" />
+	</target>
+</project>

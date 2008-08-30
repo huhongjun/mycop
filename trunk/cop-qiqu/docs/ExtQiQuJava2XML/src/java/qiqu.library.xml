@@ -1,0 +1,4 @@
+<QiQuLib>
+	<command fqn="ch.aloba.qiqu.extend.Java2XML"/>
+	<function fqn="ch.aloba.qiqu.extend.Greeting"/>	
+</QiQuLib>

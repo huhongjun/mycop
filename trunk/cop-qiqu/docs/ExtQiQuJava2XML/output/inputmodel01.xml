@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanlist> 
+   <bean name= " ABean" package="ch.aloba.qiqu.helloWorld.beans"> 
+      <propertylist> 
+         <property name="firstProperty" type="java.lang.String"/> 
+         <property name="secondProperty" type="java.lang.String"/> 
+      </propertylist> 
+   </bean> 
+   <bean name="AnotherBean" package="ch.aloba.qiqu.helloWorld.beans">
+      <propertylist> 
+         <property name="myProperty" type="java.lang.String"/> 
+         <property name="yourProperty" type="java.lang.String"/> 
+      </propertylist> 
+   </bean> 
+</beanlist>
