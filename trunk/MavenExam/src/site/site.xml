@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sysman">
+  <bannerLeft>
+    <name>Sysman</name>
+    <src>images/cop-logo.jpg</src>
+    <href>http://www.osmatrix.org/</href>
+  </bannerLeft>
+  <bannerRight>
+    <src>http://maven.apache.org/images/maven-small.gif</src>
+    <href>http://maven.apache.org/</href>
+  </bannerRight>
+  <publishDate position="navigation-bottom" format="MM-dd-yy"/>
+  <poweredBy>
+    <logo name="Maven" href="http://maven.apache.org/" img="http://maven.apache.org/images/logos/maven-feather.png"/>
+  </poweredBy>
+  <body>
+    <links>
+      <item name="Apache" href="http://www.apache.org/" />
+      <item name="Maven 2" href="http://maven.apache.org/maven2/"/>
+      <item name="博客" href="http://blog.donews.com/huhj/"/>
+    </links>
+    <menu name="关于()">
+      <item name="介绍" href="/introduction.html"/>
+      <item name="FAQ" href="/faq.html"/>
+      <item name="APT格式指南" href="/format.html"/>
+      <item name="XDoc样例" href="xdoc.html" collapse="true">
+      	<item name="XDoc样例1" href="/sample/sample-xdoc-format.html" collapse="true" img="http://www.thesite.net/thesite.png"/>
+      </item>
+    </menu>
+    <menu name="用户文档">
+        <item name="Getting Started" href="documentation/getting_started.html"/>
+        <item name="User Manual(PDF)" href="EhcacheUserGuide.pdf"/>
+        <item name="User Manual(singlepage html)" href="EhcacheUserGuide.html"/>
+        <item name="User Manual(multipage html)" href="documentation/index.html"/>
+        <item name="JavaDoc" href="apidocs/index.html"/>
+        <item name="FAQ" href="/documentation/faq.html"/>
+    </menu>
+    <menu name="Developer Document">
+    	<item name="Directory Guide" href=""/>
+    	<item name="Technial Architecture" href=""/>
+    	<item name="Programmer Guide" href="Programmer.html"></item>   	
+    </menu>
+    <menu ref="reports"/>    
+  </body>
+</project>
