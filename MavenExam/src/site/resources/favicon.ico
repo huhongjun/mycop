@@ -1,0 +1,411 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC - http://viewvc.org/
+by Greg Stein - mailto:gstein@lyra.org -->
+<head>
+<title>SourceForge.net Repository - [ehcache] Log of /branches/ehcache-1.2.4/src/site/resources/favicon.ico</title>
+<meta name="generator" content="ViewVC 1.0.3" />
+<link rel="stylesheet" href="/viewvc/*docroot*/styles.css" type="text/css" />
+</head>
+<body>
+<table style="padding:0.1em;">
+<tr>
+<td>
+<strong>
+
+<a href="/viewvc/ehcache/">
+
+[ehcache]</a>
+/
+
+<a href="/viewvc/ehcache/branches/">
+
+branches</a>
+/
+
+<a href="/viewvc/ehcache/branches/ehcache-1.2.4/">
+
+ehcache-1.2.4</a>
+/
+
+<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/">
+
+src</a>
+/
+
+<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/">
+
+site</a>
+/
+
+<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/">
+
+resources</a>
+/
+
+
+
+favicon.ico
+
+
+</strong>
+
+</td>
+</tr>
+</table>
+
+
+<div style="float: right; padding: 5px;"><a href="http://sourceforge.net"><img src="/viewvc/*docroot*/images/sflogo-210pxtrans.png" alt="(logo)" border=0 width=210 height=62></a></div>
+<h1>Log of /branches/ehcache-1.2.4/src/site/resources/favicon.ico</h1>
+
+<p style="margin:0;">
+
+<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/"><img src="/viewvc/*docroot*/images/back_small.png" width="16" height="16" alt="Parent Directory" /> Parent Directory</a>
+
+
+
+
+</p>
+
+<hr />
+<table class="auto">
+
+
+
+<tr>
+<td>Links to HEAD:</td>
+<td>
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?view=markup">view</a>)
+(<a href="/viewvc/*checkout*/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico">download</a>)
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?view=annotate">annotate</a>)
+</td>
+</tr>
+
+
+
+<tr>
+<td>Sticky Revision:</td>
+<td><form method="get" action="/viewvc/ehcache" style="display: inline">
+<input type="hidden" name="orig_pathtype" value="FILE" /><input type="hidden" name="orig_view" value="log" /><input type="hidden" name="orig_path" value="branches/ehcache-1.2.4/src/site/resources/favicon.ico" /><input type="hidden" name="view" value="redirect_pathrev" />
+
+<input type="text" name="pathrev" value="" size="6"/>
+
+<input type="submit" value="Set" />
+</form>
+
+</td>
+</tr>
+</table>
+ 
+
+
+
+
+
+
+
+
+<div>
+<hr />
+
+<a name="rev246"></a>
+
+
+Revision <a href="/viewvc/ehcache?view=rev&amp;revision=246"><strong>246</strong></a> -
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=246&amp;view=markup">view</a>)
+
+(<a href="/viewvc/*checkout*/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=246">download</a>)
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?annotate=246">annotate</a>)
+
+
+
+- <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=246&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sun Nov 26 09:09:28 2006 UTC</em> (6 months, 3 weeks ago) by <em>gregluck</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 3782 byte(s)
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=28&amp;r2=246">previous 28</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Release ehcache-1.2.4RC and create maintenance branch for 1.2.4</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev28"></a>
+
+
+Revision <a href="/viewvc/ehcache?view=rev&amp;revision=28"><strong>28</strong></a> -
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=28&amp;view=markup">view</a>)
+
+(<a href="/viewvc/*checkout*/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=28">download</a>)
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?annotate=28">annotate</a>)
+
+
+
+- <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=28&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sat Apr 15 05:12:32 2006 UTC</em> (14 months, 1 week ago) by <em>gregluck</em>
+
+<br />Original Path: <a href="/viewvc/ehcache/trunk/src/site/resources/favicon.ico?view=log&amp;pathrev=28"><em>trunk/src/site/resources/favicon.ico</em></a>
+
+
+
+
+
+
+
+
+
+<br />File length: 3782 byte(s)
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=8&amp;r2=28">previous 8</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Turn on Id keyword</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev8"></a>
+
+
+Revision <a href="/viewvc/ehcache?view=rev&amp;revision=8"><strong>8</strong></a> -
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=8&amp;view=markup">view</a>)
+
+(<a href="/viewvc/*checkout*/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=8">download</a>)
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?annotate=8">annotate</a>)
+
+
+
+- <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=8&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sun Mar 26 09:01:42 2006 UTC</em> (14 months, 3 weeks ago) by <em>gregluck</em>
+
+<br />Original Path: <a href="/viewvc/ehcache/trunk/src/site/resources/favicon.ico?view=log&amp;pathrev=8"><em>trunk/src/site/resources/favicon.ico</em></a>
+
+
+
+
+
+
+
+
+
+<br />File length: 3782 byte(s)
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=2&amp;r2=8">previous 2</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Move files to trunk</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev2"></a>
+
+
+Revision <a href="/viewvc/ehcache?view=rev&amp;revision=2"><strong>2</strong></a> -
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=2&amp;view=markup">view</a>)
+
+(<a href="/viewvc/*checkout*/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?revision=2">download</a>)
+
+(<a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?annotate=2">annotate</a>)
+
+
+
+- <a href="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico?r1=2&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+Added
+
+<em>Sat Mar 25 05:44:01 2006 UTC</em> (14 months, 4 weeks ago) by <em>gregluck</em>
+
+<br />Original Path: <a href="/viewvc/ehcache/src/site/resources/favicon.ico?view=log&amp;pathrev=2"><em>src/site/resources/favicon.ico</em></a>
+
+
+
+
+
+
+
+<br />File length: 3782 byte(s)
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Initial import from CVS
+</pre>
+</div>
+
+ 
+
+
+
+ <hr />
+<p><a name="diff"></a>
+This form allows you to request diffs between any two revisions of this file.
+For each of the two "sides" of the diff,
+
+enter a numeric revision.
+
+</p>
+<form method="get" action="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico" name="diff_select">
+<table cellpadding="2" cellspacing="0" class="auto">
+<tr>
+<td>&nbsp;</td>
+<td>
+<input type="hidden" name="view" value="diff" />
+Diffs between
+
+<input type="text" size="12" name="r1"
+value="246" />
+
+and
+
+<input type="text" size="12" name="r2" value="2" />
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+Type of Diff should be a
+<select name="diff_format" onchange="submit()">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</td>
+</tr>
+</table>
+</form>
+
+
+<form method="get" action="/viewvc/ehcache/branches/ehcache-1.2.4/src/site/resources/favicon.ico">
+<div>
+<hr />
+<a name="logsort"></a>
+<input type="hidden" name="view" value="log" />
+Sort log by:
+<select name="logsort" onchange="submit()">
+<option value="cvs" >Not sorted</option>
+<option value="date" selected="selected">Commit date</option>
+<option value="rev" >Revision</option>
+</select>
+<input type="submit" value=" Sort " />
+</div>
+</form>
+
+
+<hr />
+<table>
+<tr>
+<td>
+<address><a href="http://sourceforge.net/">Back to SourceForge.net</a></address><br />
+Powered by <a href="http://viewvc.tigris.org/">ViewVC 1.0.3</a>
+</td>
+<td style="text-align:right;">
+<h3><a href="/viewvc/*docroot*/help_log.html">ViewVC and Help</a></h3>
+</td>
+</tr>
+</table>
+</body>
+</html>
+
+

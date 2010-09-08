@@ -6,6 +6,7 @@ import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
+ * @todo: 用于Maven中文测试
  */
 public class AppTest 
     extends TestCase
@@ -22,14 +23,17 @@ public class AppTest
 
     /**
      * @return the suite of tests being tested
+     * FIXME: 中文测试
      */
     public static Test suite()
     {
+    	
         return new TestSuite( AppTest.class );
     }
 
     /**
      * Rigourous Test :-)
+     * TODO: 测试TagList的待办事项
      */
     public void testApp()
     {
