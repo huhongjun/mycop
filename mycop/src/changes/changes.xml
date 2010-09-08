@@ -1,25 +1,29 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document>
-   <properties>
-      <title>Hotel Database tutorial application</title>
-      <author email="duke@wakaleo.com">Duke Java</author>
-   </properties>
-   <body>
-      <release version="current" description="Current work version">    
-           <action dev="Duke Java" type="add">
-               A new cool feature.
-           </action>         
-         </release>
-      <release version="1.5" date="2005-11-18" description="Release fix">   
-           <action dev="Duke Java" type="add">
-               Added a cool feature.
-           </action>                      
-           <action dev="Duke Java" type="fix" issue="1254">
-               Fixed a nasty bug.
-           </action>        
-           <action dev="Duke Java" type="delete">
-               Removed a feature that nobody liked.
-           </action>        
-         </release>         
-   </body>
+<properties>
+<title>Hotel Database tutorial application</title>
+<author email="duke@wakaleo.com">Duke Java</author>
+</properties>
+<body>
+<release version="2.2.3" description="µ±Ç°×îÐÂ°æ±¾">
+<action dev="UFO" type="ÐÂÔö">
+Spring ¶¯Ì¬É¨Ãè×¢²áBean »úÖÆ
+</action>
+</release>
+<release version="1.0.1" date="2005-11-18"
+description="Release fix">
+<action dev="Duke Java" type="ÐÂÔö">
+Spring ¶¯Ì¬É¨Ãè×¢²áBean »úÖÆ
+</action>
+<action dev="Duke Java" type="ÐÂÔö">
+·¢²¼X±êÇ©
+</action>
+<action dev="Duke Java" type="bugÐÞ¸´" issue="1254">
+½â¾öKISS 2.2.2 ÖÐµÄbug£º¶¯Ì¬SQLÓï¾äµÄ·Ö¸ôÎÊÌâ
+</action>
+<action dev="Duke Java" type="²»¿ÉÓÃ">
+È¥µô¶ÔÍâÎ§web×é¼þµÄÖ§³Ö¡£Èç¹ûÐèÒªÏàÓ¦¹¦ÄÜ£¬Çëµ¥¶À¼ÓÈë¸Ã²¿·ÖµÄ×é¼þÐÅÏ¢¡£
+</action>
+</release>
+</body>
 </document>
