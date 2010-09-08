@@ -1,22 +1,22 @@
-È¨ÏŞ¹ÜÀí¿ª·¢Ö¸ÄÏ
+æƒé™ç®¡ç†å¼€å‘æŒ‡å—
 
-×ÊÔ´[rescode] 1-n ²Ù×÷[optcode]
+èµ„æº[rescode] 1-n æ“ä½œ[optcode]
 
-È¨ÏŞtag
+æƒé™tag
 
 
 jsp
 0.	<%@ taglib uri="/WEB-INF/taglib/gever-perm" prefix="perm" %>
 1.	<perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">
-		var tree1 = new WebFXLoadTree("ÏµÍ³Ä¬ÈÏ²Ëµ¥",  context+"/menusetup/leftDefault.do?action=toXTree&isFolder=1&nodeid=0","javascript:toRightDefault()",null, null, null, null,'0');
+		var tree1 = new WebFXLoadTree("ç³»ç»Ÿé»˜è®¤èœå•",  context+"/menusetup/leftDefault.do?action=toXTree&isFolder=1&nodeid=0","javascript:toRightDefault()",null, null, null, null,'0');
 	</perm:defaultmenu>
 	
 2.	<perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">
-	  tree1.expand(); //ÏµÍ³Ä¬ÈÏ²Ëµ¥Ê÷
+	  tree1.expand(); //ç³»ç»Ÿé»˜è®¤èœå•æ ‘
 	</perm:defaultmenu>
 
 3.		<perm:defaultmenu rescode="GDP-MRCD" optcode="ALL">
-		  tree1.reload(); //ÏµÍ³Ä¬ÈÏ²Ëµ¥Ê÷
+		  tree1.reload(); //ç³»ç»Ÿé»˜è®¤èœå•æ ‘
 		</perm:defaultmenu>
 4.
 <perm:defaultmenu rescode="GDP-CDDZ" optcode="MRCD">

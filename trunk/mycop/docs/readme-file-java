@@ -1,139 +1,139 @@
-src/main/java		javaÔ´Âë
+src/main/java		javaæºç 
 	com
-		package.html	°üËµÃ÷ÎÄ¼ş,Éú³Éjava apiÎÄµµÊ±ÓÃµ½
+		package.html	åŒ…è¯´æ˜æ–‡ä»¶,ç”Ÿæˆjava apiæ–‡æ¡£æ—¶ç”¨åˆ°
 		gever
 ==================================================================================
 config
-	Constants.java		Ò»¸ö³£Á¿196´¦ÒıÓÃ£¬Ö¸¶¨Êı¾İ¿âÁ¬½ÓÃû³Æ£¨ÏµÍ³ÅäÖÃÎÄ¼şsystem.propertiesÖĞÅäÖÃÁËÈı¸öÊı¾İ¿âÁ´½Ó£¬·Ö±ğÊÇgdp¡¢goaºÍunittest£©£¬Õâ¸öÓ¦¸Ã¿ÉÒÔÈ¥µô
-	Environment.java	ÓÃÓÚ¶ÁÈ¡ÊôĞÔÎÄ¼şµÄÊôĞÔ¶¨Òå£¬Èçgever_config.properties£¨Ä¬ÈÏ£©£¬system.properties£¬¿ÉÒÔ¹éÈëutilÀà
-		£ºspringÖĞÌá¹©£¬ÅäÖÃÎªbean¼´¿É
+	Constants.java		ä¸€ä¸ªå¸¸é‡196å¤„å¼•ç”¨ï¼ŒæŒ‡å®šæ•°æ®åº“è¿æ¥åç§°ï¼ˆç³»ç»Ÿé…ç½®æ–‡ä»¶system.propertiesä¸­é…ç½®äº†ä¸‰ä¸ªæ•°æ®åº“é“¾æ¥ï¼Œåˆ†åˆ«æ˜¯gdpã€goaå’Œunittestï¼‰ï¼Œè¿™ä¸ªåº”è¯¥å¯ä»¥å»æ‰
+	Environment.java	ç”¨äºè¯»å–å±æ€§æ–‡ä»¶çš„å±æ€§å®šä¹‰ï¼Œå¦‚gever_config.propertiesï¼ˆé»˜è®¤ï¼‰ï¼Œsystem.propertiesï¼Œå¯ä»¥å½’å…¥utilç±»
+		ï¼šspringä¸­æä¾›ï¼Œé…ç½®ä¸ºbeanå³å¯
 db
-	DAOException.java	DAO²Ù×÷µÄexception´¦Àí£»springÖĞÓĞºÜÈ«µÄÒì³£´¦ÀíÊ÷
+	DAOException.java	DAOæ“ä½œçš„exceptionå¤„ç†ï¼›springä¸­æœ‰å¾ˆå…¨çš„å¼‚å¸¸å¤„ç†æ ‘
 exception
-	action	¼Ì³Ğstruts»úÖÆ£¬´íÎó´¦ÀíÒ³ÃæÁ÷³Ì¡¾ÒÑ×ªÒÆµ½strutsÏÂ¡¿
+	action	ç»§æ‰¿strutsæœºåˆ¶ï¼Œé”™è¯¯å¤„ç†é¡µé¢æµç¨‹ã€å·²è½¬ç§»åˆ°strutsä¸‹ã€‘
 		DAOExceptionHandler.java
 		DefaultExceptionHandler.java
 	DefaultException.java
-	ErrorConfig.java	error.properties(´íÎóĞÅÏ¢ÊôĞÔÎÄ¼ş)µ¥Ì¬¶ÁÈ¡£¬¿ÉÒÔ¿¼ÂÇºÍEnvironmentºÏ²¢£¬È»ºó¶¨ÒåÁ½¸ö³£Á¿·Ö±ğÖ¸¶¨ÊôĞÔÎÄ¼ş
-	ErrorConstant.java	ÎªÒì³£¡¢´íÎó¶¨ÒåÏûÏ¢³£Á¿£¬¡¾ÒÑÉ¾¡¿
-goa	Ğ­Í¬°ì¹«
-	admin	Âë±í¹ÜÀí¡¾BaseVO¡¢VOInterface¡¢BaseAction¡¢BaseForm¡¢BaseDAO¡¢pager¡¿
-			//ÔõÃ´ÔÚiBatisÉÏ¹¹½¨Í¬ÑùÒ»Ì×ÌåÏµ
+	ErrorConfig.java	error.properties(é”™è¯¯ä¿¡æ¯å±æ€§æ–‡ä»¶)å•æ€è¯»å–ï¼Œå¯ä»¥è€ƒè™‘å’ŒEnvironmentåˆå¹¶ï¼Œç„¶åå®šä¹‰ä¸¤ä¸ªå¸¸é‡åˆ†åˆ«æŒ‡å®šå±æ€§æ–‡ä»¶
+	ErrorConstant.java	ä¸ºå¼‚å¸¸ã€é”™è¯¯å®šä¹‰æ¶ˆæ¯å¸¸é‡ï¼Œã€å·²åˆ ã€‘
+goa	ååŒåŠå…¬
+	admin	ç è¡¨ç®¡ç†ã€BaseVOã€VOInterfaceã€BaseActionã€BaseFormã€BaseDAOã€pagerã€‘
+			//æ€ä¹ˆåœ¨iBatisä¸Šæ„å»ºåŒæ ·ä¸€å¥—ä½“ç³»
 		action
-			DutyAction	¼Ì³Ğ×ÔBaseAction
-			DutyForm	¼Ì³Ğ×ÔbaseForm£¬¿ÕÀà
+			DutyAction	ç»§æ‰¿è‡ªBaseAction
+			DutyForm	ç»§æ‰¿è‡ªbaseFormï¼Œç©ºç±»
 		dao		
 			impl
-				DefaultAdminFactory¡¢DutyDaoImpl¡¢......
-			AdminFactory¡¢DutyDao¡¢......
-		vo		vo£ºÖ°¼¶¡¢¸ÚÎ»¡¢Ñ§Àú¡¢»éÒö¡¢Ãñ×å¡¢ÕşÖÎÃæÃ²¡¢ĞÔ±ğ¡¢unit
-	base	ºËĞÄ»ùÀà
-		ActionBase	¶¨Òå±ê×¼¶¯×÷£¬ÈçtoList¡¢toEditµÈ£¬ÃüÁîÖĞĞÄdoActionCenter
+				DefaultAdminFactoryã€DutyDaoImplã€......
+			AdminFactoryã€DutyDaoã€......
+		vo		voï¼šèŒçº§ã€å²—ä½ã€å­¦å†ã€å©šå§»ã€æ°‘æ—ã€æ”¿æ²»é¢è²Œã€æ€§åˆ«ã€unit
+	base	æ ¸å¿ƒåŸºç±»
+		ActionBase	å®šä¹‰æ ‡å‡†åŠ¨ä½œï¼Œå¦‚toListã€toEditç­‰ï¼Œå‘½ä»¤ä¸­å¿ƒdoActionCenter
 		BaseAction->ActionBase->Struts..Action
 		BaseDAO
-		BaseForm->struts..ActionForm	Form»ùÀà£¬·ÖÒ³£¬ÉÏÏÂÎÄ£¬µ±Ç°vo
-		BaseTreeVO	Æ¥ÅäXMLLoadTreeµÄÊı¾İ½á¹¹
-		Constant	³£Á¿¶¨Òå£º¶¯×÷¡¢session
-		GoaActionConfig	Action»·¾³¶ÔÏó±£´æ
-	dailyoffice	ÈÕ³£°ì¹«
-		bbs			ÂÛÌ³
-		calendararrange	ÈÕÀú
-		impowermgr	ÊÚÈ¨¹ÜÀí
-		mailmgr		ÓÊ¼ş¹ÜÀí
-		message		ÄÚ²¿ÏûÏ¢
-		reportmgr	Ä¿±ê¹ÜÀí£¿
-		smsmgr		¶ÌĞÅ
-		targetmng	Ä¿±ê¹ÜÀí£ºÖÜ¡¢ÔÂ¡¢Äê¡¢ÎåÄê
-		tools		³£ÓÃ¹¤¾ß£ºÃûÆ¬²á¡¢ÌáĞÑ¡¢ÊÀ½çÖ®´°
-		worklog		¸öÈËÔÂ¡¢ÖÜ¡¢ÄêÄ¿±ê£»ÍÅ¶ÓÈÕÖ¾¡¢¸öÈËÈÕÖ¾
-		workreport	¹¤×÷»ã±¨
-	infoservice ĞÅÏ¢·şÎñ£ºµØÖ·¡¢¿Í»§¡¢ĞÅÏ¢·şÎñ¡¢±ê×¼Ä£°å¡¢ĞÅÏ¢ÀàĞÍ
-	innermgr.hr	¹¦ÄÜÒÑÉ¾£¬ÁôÏÂÁ½¸öÀà
-	menselect	ÈËÔ±Ñ¡È¡¹¤¾ßÀà¡¾ÑĞ¾¿¡¿
+		BaseForm->struts..ActionForm	FormåŸºç±»ï¼Œåˆ†é¡µï¼Œä¸Šä¸‹æ–‡ï¼Œå½“å‰vo
+		BaseTreeVO	åŒ¹é…XMLLoadTreeçš„æ•°æ®ç»“æ„
+		Constant	å¸¸é‡å®šä¹‰ï¼šåŠ¨ä½œã€session
+		GoaActionConfig	Actionç¯å¢ƒå¯¹è±¡ä¿å­˜
+	dailyoffice	æ—¥å¸¸åŠå…¬
+		bbs			è®ºå›
+		calendararrange	æ—¥å†
+		impowermgr	æˆæƒç®¡ç†
+		mailmgr		é‚®ä»¶ç®¡ç†
+		message		å†…éƒ¨æ¶ˆæ¯
+		reportmgr	ç›®æ ‡ç®¡ç†ï¼Ÿ
+		smsmgr		çŸ­ä¿¡
+		targetmng	ç›®æ ‡ç®¡ç†ï¼šå‘¨ã€æœˆã€å¹´ã€äº”å¹´
+		tools		å¸¸ç”¨å·¥å…·ï¼šåç‰‡å†Œã€æé†’ã€ä¸–ç•Œä¹‹çª—
+		worklog		ä¸ªäººæœˆã€å‘¨ã€å¹´ç›®æ ‡ï¼›å›¢é˜Ÿæ—¥å¿—ã€ä¸ªäººæ—¥å¿—
+		workreport	å·¥ä½œæ±‡æŠ¥
+	infoservice ä¿¡æ¯æœåŠ¡ï¼šåœ°å€ã€å®¢æˆ·ã€ä¿¡æ¯æœåŠ¡ã€æ ‡å‡†æ¨¡æ¿ã€ä¿¡æ¯ç±»å‹
+	innermgr.hr	åŠŸèƒ½å·²åˆ ï¼Œç•™ä¸‹ä¸¤ä¸ªç±»
+	menselect	äººå‘˜é€‰å–å·¥å…·ç±»ã€ç ”ç©¶ã€‘
 	util
-		timer	Ò³Ãæ¶¨Ê±Ë¢ĞÂ¹¤¾ßÀà£¬¿¼ÂÇÌáÉı¼¶±ğ×÷ÎªÏµÍ³¹¦ÄÜ
-			AutoTasks	ºóÌ¨Ïß³Ì
-			HtmlTimer	¶¨Ê±²éÑ¯ÓÊ¼ş
+		timer	é¡µé¢å®šæ—¶åˆ·æ–°å·¥å…·ç±»ï¼Œè€ƒè™‘æå‡çº§åˆ«ä½œä¸ºç³»ç»ŸåŠŸèƒ½
+			AutoTasks	åå°çº¿ç¨‹
+			HtmlTimer	å®šæ—¶æŸ¥è¯¢é‚®ä»¶
 			MessageBox
-			TimerConfig	¶ÁÈ¡¶¨Ê±ÈËÎïÉèÖÃ£¨timer.xml£©
+			TimerConfig	è¯»å–å®šæ—¶äººç‰©è®¾ç½®ï¼ˆtimer.xmlï¼‰
 			TimverVO
 		ConstantSet
-		DepartmentStructute	²¿ÃÅ½á¹¹Àà£¬¿¼ÂÇ»»¸öµØ·½
+		DepartmentStructute	éƒ¨é—¨ç»“æ„ç±»ï¼Œè€ƒè™‘æ¢ä¸ªåœ°æ–¹
 	web
-		listener.ActiveUserListener	¼àÌıÓÃ»§µÇÂ½£¬¹ÜÀíÔÚÏßÓÃ»§¶ÔÏóºÍÈËÊıÍ³¼Æ£¬ÌáÉı¡¿
+		listener.ActiveUserListener	ç›‘å¬ç”¨æˆ·ç™»é™†ï¼Œç®¡ç†åœ¨çº¿ç”¨æˆ·å¯¹è±¡å’Œäººæ•°ç»Ÿè®¡ï¼Œæå‡ã€‘
 		servlet
 			DownloadServlet	
-			InitServlet	³õÊ¼»¯servlet£ºlog4j¡¢¡¾ÒÑ×ª¡¿
-			RsToFile	logÎÄ¼şµ¼³öµÄservlet£¬ÓĞÖØ¸´£¿
-		taglib	ÊÇ·ñ¿ÉÒÔºÏ²¢
-			BeanWriteTag-¡·org.apache.struts.taglib.bean.WriteTag £¿
-			ButtonTag-¡·
+			InitServlet	åˆå§‹åŒ–servletï¼šlog4jã€ã€å·²è½¬ã€‘
+			RsToFile	logæ–‡ä»¶å¯¼å‡ºçš„servletï¼Œæœ‰é‡å¤ï¼Ÿ
+		taglib	æ˜¯å¦å¯ä»¥åˆå¹¶
+			BeanWriteTag-ã€‹org.apache.struts.taglib.bean.WriteTag ï¼Ÿ
+			ButtonTag-ã€‹
 			LinkTag
 			SplitPageTag
 			SubmitTag
 		util
-			DownLoadFile	downloadfile.jsp×¨ÓÃ
+			DownLoadFile	downloadfile.jspä¸“ç”¨
 			RequesrUtils
-				1.Àà=¡·È¡CSSÂ·¾¶£ºÓ¦¸Ã¿ÉÒÔÈ¥³ı¹ØÁª£¬Constant.CSS_PATHÎŞĞ§£¬/jsp/homepage/viewuser.jsp¡¢sendmessage.jsp ÓÃµ½<link href="<%=com.gever.goa.web.util.RequestUtils.getCSSPath(pageContext)%>" id="goastylecss" rel="stylesheet" type="text/css">
-				2.Àà=¡·templateÏÂ8¸öjspÎÄ¼ş£¬ÓÃµ½ÊÇ·ñµÇÂ¼ºÍÈ¡cssÂ·¾¶¡£Õâ¼¸¸öÎÄ¼şÓĞÓÃÂğ£¿
-			TemplateUtils ±¨±íÄ£°å²Ù×÷Í¨ÓÃ·½·¨Àà
-			UploadFile    ÉÏ´«¸½¼şÎÄ¼ş
+				1.ç±»=ã€‹å–CSSè·¯å¾„ï¼šåº”è¯¥å¯ä»¥å»é™¤å…³è”ï¼ŒConstant.CSS_PATHæ— æ•ˆï¼Œ/jsp/homepage/viewuser.jspã€sendmessage.jsp ç”¨åˆ°<link href="<%=com.gever.goa.web.util.RequestUtils.getCSSPath(pageContext)%>" id="goastylecss" rel="stylesheet" type="text/css">
+				2.ç±»=ã€‹templateä¸‹8ä¸ªjspæ–‡ä»¶ï¼Œç”¨åˆ°æ˜¯å¦ç™»å½•å’Œå–cssè·¯å¾„ã€‚è¿™å‡ ä¸ªæ–‡ä»¶æœ‰ç”¨å—ï¼Ÿ
+			TemplateUtils æŠ¥è¡¨æ¨¡æ¿æ“ä½œé€šç”¨æ–¹æ³•ç±»
+			UploadFile    ä¸Šä¼ é™„ä»¶æ–‡ä»¶
 			
-jdbc		×ÔÖ÷¿ª·¢µÄÊı¾İ¿â³Ö¾Ã»¯¿ò¼Ü
+jdbc		è‡ªä¸»å¼€å‘çš„æ•°æ®åº“æŒä¹…åŒ–æ¡†æ¶
 	connection
 		impl
-			DBCPÁ´½Ó³ØÊµÏÖ
-			JDBCÁ¬½Ó³ØÊµÏÖ
-			JNDIÁ¬½Ó³ØÊµÏÖ
-		ConnectionProvider	½Ó¿Ú¶¨Òå
-		ConnectionProviderFactory Á¬½Ó³Ø¹¤³§
-	database.dialet	Êı¾İ¿â·½ÑÔ
-	ibatis	»ùÓÚibatisµÄ³Ö¾Ã»¯·½°¸=¡·Ó¦¸ÃÓëjdbcÆ½ĞĞ
-	sqlhelper	³Ö¾Ã»¯¿ò¼ÜµÄºËĞÄÀà
-		DataTypes ³£Á¿£ºÊı¾İÀàĞÍ¡¢Êı¾İ¿â²Ù×÷ÀàĞÍ¡¢²éÑ¯½á¹û´æ´¢·½Ê½£¬Ó¦¸Ã¶¨Òå³ÉÈı¸öÀà
-		DefaultSQLHelper	ÊµÏÖÀà
-		SQLHelper 			³éÏóÀà
-		SQLHelperUtil		¸¨ÖúÀà,Êı¾İ¿âÀà±ğÊÇ¾²Ì¬³£Á¿£¬ÔÚInitServletÖĞ³õÊ¼»¯(Servlet²ÎÊıÖĞÖ¸¶¨Êı¾İ¿âÀàĞÍ£¿)
+			DBCPé“¾æ¥æ± å®ç°
+			JDBCè¿æ¥æ± å®ç°
+			JNDIè¿æ¥æ± å®ç°
+		ConnectionProvider	æ¥å£å®šä¹‰
+		ConnectionProviderFactory è¿æ¥æ± å·¥å‚
+	database.dialet	æ•°æ®åº“æ–¹è¨€
+	ibatis	åŸºäºibatisçš„æŒä¹…åŒ–æ–¹æ¡ˆ=ã€‹åº”è¯¥ä¸jdbcå¹³è¡Œ
+	sqlhelper	æŒä¹…åŒ–æ¡†æ¶çš„æ ¸å¿ƒç±»
+		DataTypes å¸¸é‡ï¼šæ•°æ®ç±»å‹ã€æ•°æ®åº“æ“ä½œç±»å‹ã€æŸ¥è¯¢ç»“æœå­˜å‚¨æ–¹å¼ï¼Œåº”è¯¥å®šä¹‰æˆä¸‰ä¸ªç±»
+		DefaultSQLHelper	å®ç°ç±»
+		SQLHelper 			æŠ½è±¡ç±»
+		SQLHelperUtil		è¾…åŠ©ç±»,æ•°æ®åº“ç±»åˆ«æ˜¯é™æ€å¸¸é‡ï¼Œåœ¨InitServletä¸­åˆå§‹åŒ–(Servletå‚æ•°ä¸­æŒ‡å®šæ•°æ®åº“ç±»å‹ï¼Ÿ)
 	
-struts	struts·ÖÒ³¿ØÖÆ
-	action.BasePagerAction->Action	Ã»ÓÃ
+struts	strutsåˆ†é¡µæ§åˆ¶
+	action.BasePagerAction->Action	æ²¡ç”¨
 	taglib.pager
-	AbstractPageControlHelper		³éÏóÀà£¬²ÉÓÃÇ¶Ì××ÓÀàµÄ·½Ê½Ê¹ÓÃ
-	PageControl		°üº¬·ÖÒ³ÓÃµ½µÄ±äÁ¿Êı¾İ
-	PageHelper		·ÖÒ³¹¤¾ßÀà£¬ºÃÏñºÍAbstractPageControlHelperÖØ¸´
+	AbstractPageControlHelper		æŠ½è±¡ç±»ï¼Œé‡‡ç”¨åµŒå¥—å­ç±»çš„æ–¹å¼ä½¿ç”¨
+	PageControl		åŒ…å«åˆ†é¡µç”¨åˆ°çš„å˜é‡æ•°æ®
+	PageHelper		åˆ†é¡µå·¥å…·ç±»ï¼Œå¥½åƒå’ŒAbstractPageControlHelperé‡å¤
 sysman	
-		//ËµÃ÷£ºÏµÍ³¹ÜÀí£¬²ÉÓÃºÍgoa²»Ò»ÑùµÄ¿ª·¢»ù´¡£¬ÓĞ×Ô¼ºµÄbaseAction
-		//ËµÃ÷£º»ù±¾ÉÏÓÃjdbcĞ´µÄ£¬ÉÙÊıÓÃÁËsqlhelper£¬ÈİÒ×ĞŞ¸Ä¡£
-	->api	organization api£¬²Î¿¼R1
-		OrganizationUtil->BaseDAO	sql¡¢jdbc£¬ÓÃµ½»ùÀàµÄµØ·½£ºlog¡¢this.dbdata,¿ÉÒÔ²»¼Ì³Ğ
-	basedata	Êı¾İµ¼³ö£¬Ö´ĞĞÍâ²¿ÃüÁî£»ÊÇ·ñÒªÔÚÊı¾İ¿â·şÎñÆ÷ÉÏ²ÅĞĞ£¿
-	db.SequenceMan	ĞòÁĞºÅ¹ÜÀí£¬ºÍIdManagerÓĞµãÏñ£¬±íGEVERID
-	export	µ¼³ö×ÊÔ´±íÊı¾İ£¬sql¡¢jdbc
-	level	¡¾sql¡¢jdbc¡¿
+		//è¯´æ˜ï¼šç³»ç»Ÿç®¡ç†ï¼Œé‡‡ç”¨å’Œgoaä¸ä¸€æ ·çš„å¼€å‘åŸºç¡€ï¼Œæœ‰è‡ªå·±çš„baseAction
+		//è¯´æ˜ï¼šåŸºæœ¬ä¸Šç”¨jdbcå†™çš„ï¼Œå°‘æ•°ç”¨äº†sqlhelperï¼Œå®¹æ˜“ä¿®æ”¹ã€‚
+	->api	organization apiï¼Œå‚è€ƒR1
+		OrganizationUtil->BaseDAO	sqlã€jdbcï¼Œç”¨åˆ°åŸºç±»çš„åœ°æ–¹ï¼šlogã€this.dbdata,å¯ä»¥ä¸ç»§æ‰¿
+	basedata	æ•°æ®å¯¼å‡ºï¼Œæ‰§è¡Œå¤–éƒ¨å‘½ä»¤ï¼›æ˜¯å¦è¦åœ¨æ•°æ®åº“æœåŠ¡å™¨ä¸Šæ‰è¡Œï¼Ÿ
+	db.SequenceMan	åºåˆ—å·ç®¡ç†ï¼Œå’ŒIdManageræœ‰ç‚¹åƒï¼Œè¡¨GEVERID
+	export	å¯¼å‡ºèµ„æºè¡¨æ•°æ®ï¼Œsqlã€jdbc
+	level	ã€sqlã€jdbcã€‘
 		dao				
 			impl
-				DefaultDAO	Ã»ÓĞ¼Ì³ĞBaseDAO£¬Ğ´ËÀsql£¬Ö±½ÓÖ´ĞĞjdbc api
-			LevelDAO		½Ó¿Ú¶¨Òå
-		model			ÉÏÃæÓÃµÄÊÇvo£¬´Ë´¦ÓÃÁË½Ó¿Ú
+				DefaultDAO	æ²¡æœ‰ç»§æ‰¿BaseDAOï¼Œå†™æ­»sqlï¼Œç›´æ¥æ‰§è¡Œjdbc api
+			LevelDAO		æ¥å£å®šä¹‰
+		model			ä¸Šé¢ç”¨çš„æ˜¯voï¼Œæ­¤å¤„ç”¨äº†æ¥å£
 			impl
 				DefaultLevel
 			Level
 		webapp.action
 			LevelAction->com.gever.sysman.util.BaseAction
-	log	¡¾BaseVO¡¢SQLHelper³ÉÌ×Ê¹ÓÃ¡¿
+	log	ã€BaseVOã€SQLHelperæˆå¥—ä½¿ç”¨ã€‘
 		->action
 			LogAction
 		->dao
 			->impl.oracle
 			LogDao			I
 			LogDAOFactory
-			LogDaoImpl->LogDao	sql¡¢SQLHelper			
+			LogDaoImpl->LogDao	sqlã€SQLHelper			
 		->form
-			LogForm	searchVO¡¢vo
+			LogForm	searchVOã€vo
 		->util
-			IdManager	Ö»¸øLogDaoImplÓÃ£¬ÓĞÍ¬ÃûÀà£¬±íT_SYSTEM_ID
-			RsToFileServlet log¼ÇÂ¼µ¼³öÎªÎÄ¼ş£¬sql¡¢jdbc
-			RsToFileUtil ¹©RsToFileServletÊ¹ÓÃ
+			IdManager	åªç»™LogDaoImplç”¨ï¼Œæœ‰åŒåç±»ï¼Œè¡¨T_SYSTEM_ID
+			RsToFileServlet logè®°å½•å¯¼å‡ºä¸ºæ–‡ä»¶ï¼Œsqlã€jdbc
+			RsToFileUtil ä¾›RsToFileServletä½¿ç”¨
 		->vo
 			LogVO	extends BaseVO implements VOInterface
 	organization
@@ -172,22 +172,22 @@ sysman
 			DepartmentTreeNode->GeverTreeNode
 		webapp
 			->action
-				DepartmentAction-¡·BaseAction	ÓÃµ½·ÖÒ³³éÏóÀà
+				DepartmentAction-ã€‹BaseAction	ç”¨åˆ°åˆ†é¡µæŠ½è±¡ç±»
 				......
-			->taglib¡¾ÒÑÉ¾¡¿
-				MessageTag ¿ÉÄÜÃ»ÓÃ
+			->taglibã€å·²åˆ ã€‘
+				MessageTag å¯èƒ½æ²¡ç”¨
 	privilege
 		dao
 			->impl
-				DefaultOperationDAO				sql¡¢jdbc
-				DefaultPermissionDAO			sql¡¢jdbc
-				DefaultPermissionMapDAO			sql¡¢jdbc
-				DefaultPrivilegeFactory			ÊµÀı»¯±¾°üÏÂµÄÀà
-				DefaultResourceDAO				sql¡¢jdbc
-				DefaultRoleDAO¡·RoleDAO			sql¡¢jdbc
-				DefaultSQLFactory¡·SQLFactory	com/gever/sysman/privilege/dao/impl/sql.properties
-				DefaultUserDAO¡·UserDAO			sql¡¢JDBC					
-				ResOrderDAOIMP¡·ResOrderDAO 		sql¡¢JDBC
+				DefaultOperationDAO				sqlã€jdbc
+				DefaultPermissionDAO			sqlã€jdbc
+				DefaultPermissionMapDAO			sqlã€jdbc
+				DefaultPrivilegeFactory			å®ä¾‹åŒ–æœ¬åŒ…ä¸‹çš„ç±»
+				DefaultResourceDAO				sqlã€jdbc
+				DefaultRoleDAOã€‹RoleDAO			sqlã€jdbc
+				DefaultSQLFactoryã€‹SQLFactory	com/gever/sysman/privilege/dao/impl/sql.properties
+				DefaultUserDAOã€‹UserDAO			sqlã€JDBC					
+				ResOrderDAOIMPã€‹ResOrderDAO 		sqlã€JDBC
 			OperationDAO
 			PermissionDAO
 			PermissionMapDAO
@@ -209,193 +209,193 @@ sysman
 			RolePermission
 			UserPermission
 		tree
-			ResourceOrderTreeAction->BaseAction£¿
+			ResourceOrderTreeAction->BaseActionï¼Ÿ
 				
-			ResourceTreeNode->GeverTreeNode ½öÓÃÓÚResourceAction
+			ResourceTreeNode->GeverTreeNode ä»…ç”¨äºResourceAction
 		util
-			Constants			ÓÃÓÚget¡¢set
-			Extensible			ÓÃÍ¾£¿×ÓÀàÓĞprivilege.modelÏÂµÄOperation¡¢PermissionMap¡¢Resource¡¢RoleÖÚ½Ó¿Ú
-			PermissionMapACL	£¿Éæ¼°/WEB-INF/action_privilege/ÏÂµÄxmlÎÄ¼ş£¬Ö»BaseActionÓÃµ½
-			PermissionUtil		ÔÚsessionÖĞ¼ì²éÊÇ·ñÓĞ¶ÔÄ³×ÊÔ´¡¢Ä³²Ù×÷µÄÈ¨ÏŞ
-			UniQueryConfig		PrivilegeUserActionÓÃµ½Ò»¸ö³£Á¿£ºUniQueryConfig.DEFAULT_SQL_NAME£¬È«ÊÇget£¬Ã»ÓĞset£¬¡¾¿ÉÉ¾¡¿¡£
+			Constants			ç”¨äºgetã€set
+			Extensible			ç”¨é€”ï¼Ÿå­ç±»æœ‰privilege.modelä¸‹çš„Operationã€PermissionMapã€Resourceã€Roleä¼—æ¥å£
+			PermissionMapACL	ï¼Ÿæ¶‰åŠ/WEB-INF/action_privilege/ä¸‹çš„xmlæ–‡ä»¶ï¼ŒåªBaseActionç”¨åˆ°
+			PermissionUtil		åœ¨sessionä¸­æ£€æŸ¥æ˜¯å¦æœ‰å¯¹æŸèµ„æºã€æŸæ“ä½œçš„æƒé™
+			UniQueryConfig		PrivilegeUserActionç”¨åˆ°ä¸€ä¸ªå¸¸é‡ï¼šUniQueryConfig.DEFAULT_SQL_NAMEï¼Œå…¨æ˜¯getï¼Œæ²¡æœ‰setï¼Œã€å¯åˆ ã€‘ã€‚
 		webapp
 			action
 				GetConfigAction->DispatchAction		?
-				GetResOpTreeAction->BaseAction	Î¬»¤È¨ÏŞÓë²Ù×÷´úÂëµÄ¹ØÏµ£¿
+				GetResOpTreeAction->BaseAction	ç»´æŠ¤æƒé™ä¸æ“ä½œä»£ç çš„å…³ç³»ï¼Ÿ
 					
 				LoginAction->BaseAction
 					welcome
-						»ñµÃÅäÖÃÎÄ¼şÖĞµÄ²ÎÊı£¬·ÅÈërequest£¬×ªÏòlogin
+						è·å¾—é…ç½®æ–‡ä»¶ä¸­çš„å‚æ•°ï¼Œæ”¾å…¥requestï¼Œè½¬å‘login
 					login
-						get£ºActionForm.name/password
-						set£ºisLogon
-					logout	remove£ºConstants.USERID¡¢Constants.USER_PERMISSION
-							sessionÊ§Ğ§£ºrequest.getSession(true).invalidate();
-							×ªÏòµÇÂ¼Ò³Ãæ
-					getRequestAddress ½âÎö»ñÈ¡ÁËÄÇ¸ö²¿·Ö
-					checkLicense	¡¾Îª¿Õ¡¿
-					getDeptCodes	´«ÈëCollection´æ·ÅÄÇÖÖ¶ÔÏó£¿
-						ÏµÍ³Ô¼Êø£º²¿ÃÅÃû³ÆºÍIDÖĞ²»ÄÜÓĞ¼ä¸ô·û-","»ò¿Õ¸ñ
-					getPermission	ÕÊºÅ×´Ì¬£º¼¤»î£¨status=1£©¡¢¹ıÆÚ£¨ValidDate£©¡¢È¨ÏŞ
-						set£º	Constants.USERID/			String
+						getï¼šActionForm.name/password
+						setï¼šisLogon
+					logout	removeï¼šConstants.USERIDã€Constants.USER_PERMISSION
+							sessionå¤±æ•ˆï¼šrequest.getSession(true).invalidate();
+							è½¬å‘ç™»å½•é¡µé¢
+					getRequestAddress è§£æè·å–äº†é‚£ä¸ªéƒ¨åˆ†
+					checkLicense	ã€ä¸ºç©ºã€‘
+					getDeptCodes	ä¼ å…¥Collectionå­˜æ”¾é‚£ç§å¯¹è±¡ï¼Ÿ
+						ç³»ç»Ÿçº¦æŸï¼šéƒ¨é—¨åç§°å’ŒIDä¸­ä¸èƒ½æœ‰é—´éš”ç¬¦-","æˆ–ç©ºæ ¼
+					getPermission	å¸å·çŠ¶æ€ï¼šæ¿€æ´»ï¼ˆstatus=1ï¼‰ã€è¿‡æœŸï¼ˆValidDateï¼‰ã€æƒé™
+						setï¼š	Constants.USERID/			String
 								Constant.USER_PERMISSION/	Collection
-								Constant.USER_FILTER		String ÓÃ»§Ö°¼¶
-								Constant.USER_NAME			String ÓÃ»§Ãû
-								Constant.USER_ID			String ÓÃ»§ID
-								Constant.NAME				String Ãû£¿
-								com.gever.sysman.privilege.util.Constants.USERNAME String Ãû£¿
+								Constant.USER_FILTER		String ç”¨æˆ·èŒçº§
+								Constant.USER_NAME			String ç”¨æˆ·å
+								Constant.USER_ID			String ç”¨æˆ·ID
+								Constant.NAME				String åï¼Ÿ
+								com.gever.sysman.privilege.util.Constants.USERNAME String åï¼Ÿ
 								Constant.DEPT_CODES		
 								Constant.DEPT_NAMES
-								Constant.LIST_DEPTS		Collection ÓÃ»§ËùÔÚµÄ²¿ÃÅ?
+								Constant.LIST_DEPTS		Collection ç”¨æˆ·æ‰€åœ¨çš„éƒ¨é—¨?
 								isLogon					"true"/"false"
-								onstant.IS_ADMIN		ÓÃ»§ÀàĞÍ"1"ÊÇÏµÍ³¹ÜÀíÔ±
-					getRandom		¡¾Î´ÓÃ¡¿
-					makeReturnType	ÓÃµ½gever_configÖĞµÄ¶¨ÒåµÄ¶Ë¿ÚºÅ
-						set£ºFORWARD_URL£¬mapping.findForward("ssl_forward");
-						ÔÚssl_forward.jspÖĞ¸ù¾İFORWARD_URLÊôĞÔÖµÖØ¶¨Ïò		
+								onstant.IS_ADMIN		ç”¨æˆ·ç±»å‹"1"æ˜¯ç³»ç»Ÿç®¡ç†å‘˜
+					getRandom		ã€æœªç”¨ã€‘
+					makeReturnType	ç”¨åˆ°gever_configä¸­çš„å®šä¹‰çš„ç«¯å£å·
+						setï¼šFORWARD_URLï¼Œmapping.findForward("ssl_forward");
+						åœ¨ssl_forward.jspä¸­æ ¹æ®FORWARD_URLå±æ€§å€¼é‡å®šå‘		
 				PermissionAction
 				PermissionMapAction
 				PrivilegeUserAction
 				ResourceOperationAction
 				RoleAction
 			taglib
-				DefaultMenuPermissionTag->TagSupport ÅĞ¶Ïµ±Ç°ÓÃ»§ÊÇ·ñÓĞÏµÍ³Ä¬ÈÏ²Ëµ¥¶¨ÒåÈ¨ÏŞ£¬´«ÈëÁ½¸ö²ÎÊı-´ú±íÏµÍ³Ä¬ÈÏ²Ëµ¥¶¨ÒåÈ¨ÏŞ£¬È»ºóµ÷ÓÃPermissionUtil¡£Ã»ÓĞÊä³ö£¬Ö»ÊÇÓÃÀ´ÆÁ±Î±ê¼ÇÖĞ¼äµÄÄÚÈİ¡£
-				PermissionButton->BaseHandlerTag	ÓÃµ½Ò³Ãæ	/jsp/errors.jsp,login.jsp; Êä³ö°´Å¥£»´«Èëoptid/resid»òrescode/optcode
+				DefaultMenuPermissionTag->TagSupport åˆ¤æ–­å½“å‰ç”¨æˆ·æ˜¯å¦æœ‰ç³»ç»Ÿé»˜è®¤èœå•å®šä¹‰æƒé™ï¼Œä¼ å…¥ä¸¤ä¸ªå‚æ•°-ä»£è¡¨ç³»ç»Ÿé»˜è®¤èœå•å®šä¹‰æƒé™ï¼Œç„¶åè°ƒç”¨PermissionUtilã€‚æ²¡æœ‰è¾“å‡ºï¼Œåªæ˜¯ç”¨æ¥å±è”½æ ‡è®°ä¸­é—´çš„å†…å®¹ã€‚
+				PermissionButton->BaseHandlerTag	ç”¨åˆ°é¡µé¢	/jsp/errors.jsp,login.jsp; è¾“å‡ºæŒ‰é’®ï¼›ä¼ å…¥optid/residæˆ–rescode/optcode
 				PermissionImgButton->org.apache.struts.taglib.html.ImageTag
-					ÓÃµ½Ò³Ãæ	/jsp/errors.jsp,login.jsp; Êä³öÍ¼Æ¬°´Å¥£»´«Èëoptid/resid»òrescode/optcode
-				PermissionTag->TagSupport ÓÃµ½Ò³Ãæ/jsp/errors.jsp,login.jsp;Ã»ÓĞÊä³ö,Ö»×öÈ¨ÏŞ¼ì²â
-					´«Èë:resource/resourcecode/action£¬¡¾ºÃÏñÃ»ÓÃ¡¿
-	util	sysmanÓÃµ½µÄutil
-		BaseAction->DispatchAction	±£´æµÇÂ¼ÈÕÖ¾£»³¬Ê±¼ì²â£»È¨ÏŞÅĞ¶Ï£»Ö»ÔÚ.sysman/.webÏÂÓÃµ½¡¾´ıÑĞ¡¿
-			ÓÃµ½strutsµÄglobal forward=¡·timeout_page/access_deny
-		OrderList	Ôö¼ÓJSPÊÓÍ¼ÁĞ±íÅÅĞò¹¦ÄÜ£»´æ´¢ĞèÒªÅÅĞòÊı¾İµÄ½á¹¹¡£ÓĞÊı¾İ¿âÏà¹Ø´úÂë£¬¿¼ÂÇ·ÅÈëÅäÖÃÎÄ¼şÖĞ¡£Ö»ÔÚ.sysmanÏÂÓÃµ½¡£
-			ÈçºÎÊ¹ÓÃ£º
-				1.DAO£º	private String[] orderby;
+					ç”¨åˆ°é¡µé¢	/jsp/errors.jsp,login.jsp; è¾“å‡ºå›¾ç‰‡æŒ‰é’®ï¼›ä¼ å…¥optid/residæˆ–rescode/optcode
+				PermissionTag->TagSupport ç”¨åˆ°é¡µé¢/jsp/errors.jsp,login.jsp;æ²¡æœ‰è¾“å‡º,åªåšæƒé™æ£€æµ‹
+					ä¼ å…¥:resource/resourcecode/actionï¼Œã€å¥½åƒæ²¡ç”¨ã€‘
+	util	sysmanç”¨åˆ°çš„util
+		BaseAction->DispatchAction	ä¿å­˜ç™»å½•æ—¥å¿—ï¼›è¶…æ—¶æ£€æµ‹ï¼›æƒé™åˆ¤æ–­ï¼›åªåœ¨.sysman/.webä¸‹ç”¨åˆ°ã€å¾…ç ”ã€‘
+			ç”¨åˆ°strutsçš„global forward=ã€‹timeout_page/access_deny
+		OrderList	å¢åŠ JSPè§†å›¾åˆ—è¡¨æ’åºåŠŸèƒ½ï¼›å­˜å‚¨éœ€è¦æ’åºæ•°æ®çš„ç»“æ„ã€‚æœ‰æ•°æ®åº“ç›¸å…³ä»£ç ï¼Œè€ƒè™‘æ”¾å…¥é…ç½®æ–‡ä»¶ä¸­ã€‚åªåœ¨.sysmanä¸‹ç”¨åˆ°ã€‚
+			å¦‚ä½•ä½¿ç”¨ï¼š
+				1.DAOï¼š	private String[] orderby;
 					    public void setOrderby(String[] s){ this.orderby = s; }
-				2.sql:  Óï¾ä¸ÄÔì - sql = OrderList.getInstance().formatSQL(orderby,sql);
+				2.sql:  è¯­å¥æ”¹é€  - sql = OrderList.getInstance().formatSQL(orderby,sql);
 				3.Action: LevelAction.getPagerData()->evelDAO.setOrderby(ss)
 				4.JSP:  
 				5.order_inc.inc
 util
-	->crypto	¼ÓÃÜ¡¢½âÂë
+	->crypto	åŠ å¯†ã€è§£ç 
 	->log
-		Log		ÈÕÖ¾-ÓÃlog4j£¬ÓÃµ½Ò»¸öÅäÖÃÎÄ¼ş£¬ÔÚInitServlet²ÎÊıÖĞÖ¸¶¨²¢¼ÓÔØ³õÊ¼»¯
+		Log		æ—¥å¿—-ç”¨log4jï¼Œç”¨åˆ°ä¸€ä¸ªé…ç½®æ–‡ä»¶ï¼Œåœ¨InitServletå‚æ•°ä¸­æŒ‡å®šå¹¶åŠ è½½åˆå§‹åŒ–
 	->queue
-		Queue			ÏÖÖ»ÓÃÓÚGeverTreeNode
+		Queue			ç°åªç”¨äºGeverTreeNode
 	->sysinfo
-		DiskInfoView	´ÅÅÌĞÅÏ¢£ºÅÌ·û¡¢×Ü¿Õ¼ä¡¢ÒÑÓÃ¿Õ¼ä¡¢¿ÉÓÃ¿Õ¼ä
-		MemoryStatusView	ÄÚ´æ
-		RunTime				ÔËĞĞÊ±»·¾³ĞÅÏ¢
+		DiskInfoView	ç£ç›˜ä¿¡æ¯ï¼šç›˜ç¬¦ã€æ€»ç©ºé—´ã€å·²ç”¨ç©ºé—´ã€å¯ç”¨ç©ºé—´
+		MemoryStatusView	å†…å­˜
+		RunTime				è¿è¡Œæ—¶ç¯å¢ƒä¿¡æ¯
 	->tree
-		EmptyQueueException	¶ÓÁĞÎª¿ÕÊ±´¥·¢µÄÒì³££¬QueueÓÃµ½
-		GeverTreeNode	Ê÷½Úµã²Ù×÷Àà£¬×÷Îª»ùÀà±»¼Ì³Ğ	
-		NodeObject		½Úµã¶ÔÏó,ÓÃÓÚGeverTreeNode			
-	Codes.java		?ÓĞÓÃÓÚcellÎÄ¼ş´¦Àí
-	DateTimeUtils	²»ºÃµÄµØ·½£¬ÓÃµ½ActiveUsers»ñÈ¡Êı¾İ¿âÀà±ğ£¬È»ºóÉè¶¨Êı¾İ¿âÏà¹Øsqlº¯Êı-toDate¡¢toDateTime£¬ÔÚ4¸ödaoºÍbaseActionÖĞÓÃµ½£¬ÓĞ4¸öBaseActionµÄ×ÓÀàÓÃµ½£¬¾ùÓÃÀ´Éú³ÉwhereÌõ¼ş¡£
-	DateUtil		¡¾ÒÑÉ¾£¬²¢ÈëDateUtils¡¿
-	EncodeUtil		¶àÓïÑÔ×ÖÔª×Ö·û×ª»»Àà£¨ÈçUNICODE×ª»» GBKµÈ£©
-	IdMng			ĞòÁĞºÅÉú³ÉÆ÷£¬[Äê][ÈÕ][·ÖÖÓ][ÓÃ»§id][Ëæ»úÊı]£¬ÓÃÓÚÉú³ÉÎÄ¼şÂ·¾¶¡¢ÎÄ¼şÃû¡¢±í¼ÇÂ¼ĞòÁĞºÅµÈ¡£
-	NumberUtil		½«×Ö·ûĞÍÊı¾İ×ª»»³É¸÷ÖÖÕûĞÍÊı¾İ
+		EmptyQueueException	é˜Ÿåˆ—ä¸ºç©ºæ—¶è§¦å‘çš„å¼‚å¸¸ï¼ŒQueueç”¨åˆ°
+		GeverTreeNode	æ ‘èŠ‚ç‚¹æ“ä½œç±»ï¼Œä½œä¸ºåŸºç±»è¢«ç»§æ‰¿	
+		NodeObject		èŠ‚ç‚¹å¯¹è±¡,ç”¨äºGeverTreeNode			
+	Codes.java		?æœ‰ç”¨äºcellæ–‡ä»¶å¤„ç†
+	DateTimeUtils	ä¸å¥½çš„åœ°æ–¹ï¼Œç”¨åˆ°ActiveUsersè·å–æ•°æ®åº“ç±»åˆ«ï¼Œç„¶åè®¾å®šæ•°æ®åº“ç›¸å…³sqlå‡½æ•°-toDateã€toDateTimeï¼Œåœ¨4ä¸ªdaoå’ŒbaseActionä¸­ç”¨åˆ°ï¼Œæœ‰4ä¸ªBaseActionçš„å­ç±»ç”¨åˆ°ï¼Œå‡ç”¨æ¥ç”Ÿæˆwhereæ¡ä»¶ã€‚
+	DateUtil		ã€å·²åˆ ï¼Œå¹¶å…¥DateUtilsã€‘
+	EncodeUtil		å¤šè¯­è¨€å­—å…ƒå­—ç¬¦è½¬æ¢ç±»ï¼ˆå¦‚UNICODEè½¬æ¢ GBKç­‰ï¼‰
+	IdMng			åºåˆ—å·ç”Ÿæˆå™¨ï¼Œ[å¹´][æ—¥][åˆ†é’Ÿ][ç”¨æˆ·id][éšæœºæ•°]ï¼Œç”¨äºç”Ÿæˆæ–‡ä»¶è·¯å¾„ã€æ–‡ä»¶åã€è¡¨è®°å½•åºåˆ—å·ç­‰ã€‚
+	NumberUtil		å°†å­—ç¬¦å‹æ•°æ®è½¬æ¢æˆå„ç§æ•´å‹æ•°æ®
 	PropertiesUtil	?
-	StringUtil		¡¾ÒÑÉ¾¡¿
-	StringUtils		×Ö·û´®²Ù×÷
-	SumUtils		×Ö´®Êı×Ö×ª»»¡¢Êı×ÖÔËËã
+	StringUtil		ã€å·²åˆ ã€‘
+	StringUtils		å­—ç¬¦ä¸²æ“ä½œ
+	SumUtils		å­—ä¸²æ•°å­—è½¬æ¢ã€æ•°å­—è¿ç®—
 vo
-	BaseTreeVO->BaseVO implements VOInterface ËùÓĞÊ÷ĞÎÊÓÍ¼¶¼ÊÇËüµÄ×ÓÀà£¬²»Ö»ÊÇÓÃÓÚÏÔÊ¾²Ëµ¥£¬ËùÒÔÒªÊµÏÖVOInterface
-	BaseVO		ËùÓĞVOµÄ¸¸Àà£¬Ã»ÓĞÈÎºÎÄÚÈİ
-	VOInterface	ÎªVOÀ©Õ¹ÁËÒ»Ğ©ÓëÊı¾İ¿âÏà¹ØµÄ²Ù×÷
+	BaseTreeVO->BaseVO implements VOInterface æ‰€æœ‰æ ‘å½¢è§†å›¾éƒ½æ˜¯å®ƒçš„å­ç±»ï¼Œä¸åªæ˜¯ç”¨äºæ˜¾ç¤ºèœå•ï¼Œæ‰€ä»¥è¦å®ç°VOInterface
+	BaseVO		æ‰€æœ‰VOçš„çˆ¶ç±»ï¼Œæ²¡æœ‰ä»»ä½•å†…å®¹
+	VOInterface	ä¸ºVOæ‰©å±•äº†ä¸€äº›ä¸æ•°æ®åº“ç›¸å…³çš„æ“ä½œ
 web
-	css.dao		Ó¦¸ÃÊÇÔÚInitServletÖĞÓÃµ½£¬ÏÖÏà¹Ø´úÂëÒÑÉ¾¡£Ìæ´ú·½Ê½£ºcssÓ¦ÓÃÄ¿Â¼·ÅÄÇ¸öÄÇ¸ö¾ÍÆğ×÷ÓÃ¡£»òÕßÔÚÅäÖÃÎÄ¼şÖĞÖ¸¶¨£¬Ò²¾ÍÊÇËµÃ»ÓĞ¸öĞÔ»¯cssÁË¡£
+	css.dao		åº”è¯¥æ˜¯åœ¨InitServletä¸­ç”¨åˆ°ï¼Œç°ç›¸å…³ä»£ç å·²åˆ ã€‚æ›¿ä»£æ–¹å¼ï¼šcssåº”ç”¨ç›®å½•æ”¾é‚£ä¸ªé‚£ä¸ªå°±èµ·ä½œç”¨ã€‚æˆ–è€…åœ¨é…ç½®æ–‡ä»¶ä¸­æŒ‡å®šï¼Œä¹Ÿå°±æ˜¯è¯´æ²¡æœ‰ä¸ªæ€§åŒ–cssäº†ã€‚
 		impl
-			DefaultUserCssDAO ÊµÏÖUserCssDAO,ÅäÖÃÎÄ¼şcss-config.xml,±íT_User_CSS
-		UserCssDAO	½Ó¿Ú
+			DefaultUserCssDAO å®ç°UserCssDAO,é…ç½®æ–‡ä»¶css-config.xml,è¡¨T_User_CSS
+		UserCssDAO	æ¥å£
 		UserCssDAOFactory
 	homepage
-		action.UserMenuAction	»ñµÃµ±Ç°ÓÃ»§µÄËùÓĞ²Ëµ¥£»·¢ÏÖÓÃ»§Ã»ÓĞÈÎºÎ²Ëµ¥Ê±µ÷ÓÃCreateDefaultUserMenuDAO
-			get£ºstrUserID
-			set£ºmenus¡¢xmldata
+		action.UserMenuAction	è·å¾—å½“å‰ç”¨æˆ·çš„æ‰€æœ‰èœå•ï¼›å‘ç°ç”¨æˆ·æ²¡æœ‰ä»»ä½•èœå•æ—¶è°ƒç”¨CreateDefaultUserMenuDAO
+			getï¼šstrUserID
+			setï¼šmenusã€xmldata
 		dao
 			->impl
 				->mysql
-					MySQLUserMenuDAO->DefaultUserMenuDao ¸²¸ÇresetUserMenus·½·¨£¿
-					MySQLUserMenuDAOFactory->DefaultUserMenuDAOFactory ¸²¸ÇgetUserMenuDao£¬ÊµÀı»¯±¾°üÄÚµÄÀàMySQLUserMenuDAO
+					MySQLUserMenuDAO->DefaultUserMenuDao è¦†ç›–resetUserMenusæ–¹æ³•ï¼Ÿ
+					MySQLUserMenuDAOFactory->DefaultUserMenuDAOFactory è¦†ç›–getUserMenuDaoï¼Œå®ä¾‹åŒ–æœ¬åŒ…å†…çš„ç±»MySQLUserMenuDAO
 				->oracle
-					OracleUserMenuDAO->DefaultUserMenuDao ¸²¸ÇresetUserMenus·½·¨£¿
-					OracleUserMenuDAOFactory->DefaultUserMenuDAOFactory ¸²¸ÇgetUserMenuDao£¬ÊµÀı»¯±¾°üÄÚµÄÀàOracleUserMenuDAO								
-				CreateDefaultUserMenuDAO	ÊµÏÖCreateDefaultMenuDAO£¬µ÷ÓÃDefaultSQLHelperÖ±½ÓÖ´ĞĞdelete¡¢insertÓï¾ä
-					¹¦ÄÜ£ºÎªÖ¸¶¨ÓÃ»§´´½¨Ä¬ÈÏ²Ëµ¥£¬ÔÚT_USER_MENUÖĞ½«DEFAULT_USER_ID=-1£¿µÄ¼ÇÂ¼¸´ÖÆ¸øuserIdÓÃ»§
-				DefaultUserMenuDao			ÊµÏÖUserMenuDao£¬resetUserMenus·½·¨ÒÑÓĞÊµÏÖ
-				DefaultUserMenuDAOFactory	¼Ì³ĞUserMenuDAOFactory
-			CreateDefaultMenuDAO	´´½¨Ä¬ÈÏ²Ëµ¥
-			UserMenuDao			½Ó¿Ú
-			UserMenuDAOFactory	³éÏóÀà£¬ÊµÀı»¯->gerver-config¡¢Ä¬ÈÏÀà
+					OracleUserMenuDAO->DefaultUserMenuDao è¦†ç›–resetUserMenusæ–¹æ³•ï¼Ÿ
+					OracleUserMenuDAOFactory->DefaultUserMenuDAOFactory è¦†ç›–getUserMenuDaoï¼Œå®ä¾‹åŒ–æœ¬åŒ…å†…çš„ç±»OracleUserMenuDAO								
+				CreateDefaultUserMenuDAO	å®ç°CreateDefaultMenuDAOï¼Œè°ƒç”¨DefaultSQLHelperç›´æ¥æ‰§è¡Œdeleteã€insertè¯­å¥
+					åŠŸèƒ½ï¼šä¸ºæŒ‡å®šç”¨æˆ·åˆ›å»ºé»˜è®¤èœå•ï¼Œåœ¨T_USER_MENUä¸­å°†DEFAULT_USER_ID=-1ï¼Ÿçš„è®°å½•å¤åˆ¶ç»™userIdç”¨æˆ·
+				DefaultUserMenuDao			å®ç°UserMenuDaoï¼ŒresetUserMenusæ–¹æ³•å·²æœ‰å®ç°
+				DefaultUserMenuDAOFactory	ç»§æ‰¿UserMenuDAOFactory
+			CreateDefaultMenuDAO	åˆ›å»ºé»˜è®¤èœå•
+			UserMenuDao			æ¥å£
+			UserMenuDAOFactory	æŠ½è±¡ç±»ï¼Œå®ä¾‹åŒ–->gerver-configã€é»˜è®¤ç±»
 		form.UserMenuForm
 		taglib
-			GetNodePath	ÏÔÊ¾µ¼º½Â·¾¶£¬¶ÁÈ¡²Ëµ¥Êı¾İÉú³ÉµÄjavascript×¤ÁôÒ³ÃæÉÏµÄparent.document.forms[0].nodePathName.value
-			MenuTag£¿Ö»ÔÚjsp/homepage/main.jspÖĞÓÃµ½
-			SplitPageTag ÓĞÓÃ£¬¿ÉÄÜÓëgoaÏÂÍ¬ÃûtagÖØ¸´£¿
+			GetNodePath	æ˜¾ç¤ºå¯¼èˆªè·¯å¾„ï¼Œè¯»å–èœå•æ•°æ®ç”Ÿæˆçš„javascripté©»ç•™é¡µé¢ä¸Šçš„parent.document.forms[0].nodePathName.value
+			MenuTagï¼Ÿåªåœ¨jsp/homepage/main.jspä¸­ç”¨åˆ°
+			SplitPageTag æœ‰ç”¨ï¼Œå¯èƒ½ä¸goaä¸‹åŒåtagé‡å¤ï¼Ÿ
 		vo
 			UserMenuVO->BaseVO->VOInterface
-	menselect	ÖØ¸´£¿
+	menselect	é‡å¤ï¼Ÿ
 		action.MenSelectAction->BaseAction
-			×ªÈë£ºjsp/org/dept/department-edit.jsp,department-new.jsp
-				µ¯³ö´°¿Újavascript:manSelectedPopupWin-¡·manSelectedPopupWin.do
-			ÊäÈë£º	isMultilSelected="true|false"
+			è½¬å…¥ï¼šjsp/org/dept/department-edit.jsp,department-new.jsp
+				å¼¹å‡ºçª—å£javascript:manSelectedPopupWin-ã€‹manSelectedPopupWin.do
+			è¾“å…¥ï¼š	isMultilSelected="true|false"
 					isConfMultil=
-					hiddenConf=	£¨,×ö¼ä¸ô·û£¬Òş²ØÄÇĞ©¿ÉÑ¡µÄÌõ¼ş£©
-					selectedIds=	£¨,×ö¼ä¸ô·û£©
-			Êä³ö£º	userlist			Collection-UserVO
-					selectedIds			String	- ,¼ä¸ô
+					hiddenConf=	ï¼ˆ,åšé—´éš”ç¬¦ï¼Œéšè—é‚£äº›å¯é€‰çš„æ¡ä»¶ï¼‰
+					selectedIds=	ï¼ˆ,åšé—´éš”ç¬¦ï¼‰
+			è¾“å‡ºï¼š	userlist			Collection-UserVO
+					selectedIds			String	- ,é—´éš”
 					manSelectedCatalogs	Collection - MenSelectedCatalog
-			´¦Àí£º	´Ógever-configÅäÖÃÖĞ¶ÁÈ¡Àà±ğÃû£¬²ÎÊı£ºMenSelectedCatalogs=
-					Í¨¹ıhiddenConf¹ıÂËMenSelectedCatalogs£»=¡·Êµ¼ÊĞ§¹ûÊÇ¼õÉÙÁË¼ÓÔØµÄMenSelectedCatalog½è¿ÚÊµÏÖÀà£»
-					¼ÓÔØMenSelectedCatalog½è¿ÚÊµÏÖÀà£¬´æÈëmanSelectedCatalogs£¬·ÅÈërequest
-			×ªÏò£º/manSelectedPopupWin.do->selectman->path="/jsp/menselect/men_select.jsp" 
+			å¤„ç†ï¼š	ä»gever-configé…ç½®ä¸­è¯»å–ç±»åˆ«åï¼Œå‚æ•°ï¼šMenSelectedCatalogs=
+					é€šè¿‡hiddenConfè¿‡æ»¤MenSelectedCatalogsï¼›=ã€‹å®é™…æ•ˆæœæ˜¯å‡å°‘äº†åŠ è½½çš„MenSelectedCatalogå€Ÿå£å®ç°ç±»ï¼›
+					åŠ è½½MenSelectedCatalogå€Ÿå£å®ç°ç±»ï¼Œå­˜å…¥manSelectedCatalogsï¼Œæ”¾å…¥request
+			è½¬å‘ï¼š/manSelectedPopupWin.do->selectman->path="/jsp/menselect/men_select.jsp" 
 				request:isMutilSelected,
 						isConfMutil,
 						selectedIds,
 						userlist,
 						manSelectedCatalogs
-				½áÊøÊ±doOk()->window.opener.manSelectedPopupWinReturn(returnIDString,returnNameString)[µ¯³ö´°¿ÚÒ³µÄº¯Êı]->setParams()¸³Öµµ½Ò³ÃæÄ³±à¼­×Ö¶Î
-				[ºÜ¸´ÔÓ£¬ÒªÑĞ¾¿]
+				ç»“æŸæ—¶doOk()->window.opener.manSelectedPopupWinReturn(returnIDString,returnNameString)[å¼¹å‡ºçª—å£é¡µçš„å‡½æ•°]->setParams()èµ‹å€¼åˆ°é¡µé¢æŸç¼–è¾‘å­—æ®µ
+				[å¾ˆå¤æ‚ï¼Œè¦ç ”ç©¶]
 		impl
-			MenSelect->MenSelectedCatalog £¿
-		MenSelectedCatalog	½Ó¿Ú£¬´ú±íÊ²Ã´£¿
+			MenSelect->MenSelectedCatalog ï¼Ÿ
+		MenSelectedCatalog	æ¥å£ï¼Œä»£è¡¨ä»€ä¹ˆï¼Ÿ
 	menusetup
-		action	£¨¼Ì³Ğ×Ôsysman.util.BaseAction£©
-			DefaultMenuSetupAction	¡¾ÒÑÉ¾¡¿
-			MenuSetupAction			ÔÚstrutsÅäÖÃÎÄ¼şÖĞÒıÓÃ
-		dao		¸ÄÓÃiBatisÄÜ¼ò»¯ºÜ¶à£¿MenuSetup¡¢UserMenu¡¢sysman.organization¡¢sysman.previlege
+		action	ï¼ˆç»§æ‰¿è‡ªsysman.util.BaseActionï¼‰
+			DefaultMenuSetupAction	ã€å·²åˆ ã€‘
+			MenuSetupAction			åœ¨strutsé…ç½®æ–‡ä»¶ä¸­å¼•ç”¨
+		dao		æ”¹ç”¨iBatisèƒ½ç®€åŒ–å¾ˆå¤šï¼ŸMenuSetupã€UserMenuã€sysman.organizationã€sysman.previlege
 			impl
 				mysql->
-					MySQLMenuSetupFactory	ÅäÖÃÎÄ¼şÖĞÖ¸¶¨£¬¸²¸Ç·½·¨ÓÃ±¾°üÖĞÀàÊµÀı»¯£¬·ñÔòÓÃ»ùÀà·½·¨ÊµÀı»¯ÉÏ²ãÀà
+					MySQLMenuSetupFactory	é…ç½®æ–‡ä»¶ä¸­æŒ‡å®šï¼Œè¦†ç›–æ–¹æ³•ç”¨æœ¬åŒ…ä¸­ç±»å®ä¾‹åŒ–ï¼Œå¦åˆ™ç”¨åŸºç±»æ–¹æ³•å®ä¾‹åŒ–ä¸Šå±‚ç±»
 					MySQLFactory
 					sql.properties
 				oracle->
-					OracleMenuSetupDao		ÓÃµ½sqlhelper
-					OracleMenuSetupFactory	ÅäÖÃÎÄ¼şÖĞÖ¸¶¨£¬Í¬ÉÏ
-					OracleSQLFactory		»ñµÃsqlÓï¾ä
+					OracleMenuSetupDao		ç”¨åˆ°sqlhelper
+					OracleMenuSetupFactory	é…ç½®æ–‡ä»¶ä¸­æŒ‡å®šï¼ŒåŒä¸Š
+					OracleSQLFactory		è·å¾—sqlè¯­å¥
 					sql.properties
-				DefaultMenuSetupDao	ÓÃµ½ÁËSQLFactory´ÓpropertiesÖĞÈ¡sql
-				DefaultMenuSetupFactory->MenuSetupFactory	ÅäÖÃÎÄ¼şÖĞÖ¸¶¨£¬Éú³ÉDefaultSQLFactory¡¢DefaultMenuSetupDaoÊµÀı
-				DefaultSQLFactory	Ö¸¶¨ÁËsql.properties,ÊµÏÖget½è¿Ú£¬Í¨¹ı²éÑ¯Ãû»ñµÃsqlÓï¾ä
-				sql.properties		DefaultMenuSetupDaoµÄsqlÓï¾ä
-			MenuSetupDao		½Ó¿Ú
-			MenuSetupFactory	³éÏóÀà£¬Ä¬ÈÏgetInstance·½·¨£¬ÊµÀı»¯ÊµÌåÀà-Ä¬ÈÏÀà»òÅäÖÃÎÄ¼ş[Ö¸Ïòmysql»òoracle°üÏÂµÄ¡Á£¬È»ºóÊµÀı»¯µÃµ½µÄÊÇ¸Ã°üÏÂµÄ¾ßÌåÀà]
-			SQLFactory			½Ó¿Ú£¬·½·¨get(String)
+				DefaultMenuSetupDao	ç”¨åˆ°äº†SQLFactoryä»propertiesä¸­å–sql
+				DefaultMenuSetupFactory->MenuSetupFactory	é…ç½®æ–‡ä»¶ä¸­æŒ‡å®šï¼Œç”ŸæˆDefaultSQLFactoryã€DefaultMenuSetupDaoå®ä¾‹
+				DefaultSQLFactory	æŒ‡å®šäº†sql.properties,å®ç°getå€Ÿå£ï¼Œé€šè¿‡æŸ¥è¯¢åè·å¾—sqlè¯­å¥
+				sql.properties		DefaultMenuSetupDaoçš„sqlè¯­å¥
+			MenuSetupDao		æ¥å£
+			MenuSetupFactory	æŠ½è±¡ç±»ï¼Œé»˜è®¤getInstanceæ–¹æ³•ï¼Œå®ä¾‹åŒ–å®ä½“ç±»-é»˜è®¤ç±»æˆ–é…ç½®æ–‡ä»¶[æŒ‡å‘mysqlæˆ–oracleåŒ…ä¸‹çš„Ã—ï¼Œç„¶åå®ä¾‹åŒ–å¾—åˆ°çš„æ˜¯è¯¥åŒ…ä¸‹çš„å…·ä½“ç±»]
+			SQLFactory			æ¥å£ï¼Œæ–¹æ³•get(String)
 		form.MenuSetupForm	
 	servlet
-		DBTestServlet	Êı¾İ¿â²Ù×÷²âÊÔservletÀà£¬´ø²ÎÊı£ºsource=Êı¾İÔ´£¬SQL=sqlÓï¾ä
-		InitServlet [Ô­ÀàÒÑÉ¾£¬goaÏÂÒÆµ½´Ë´¦]²»ÊÇÖØ¸´(goa.web.servletÏÂÓĞÍ¬ÃûÀà£¬web.xmlÓÃµÄÊÇgoaÏÂµÄ)£¬¹¦ÄÜ¼òµ¥Ğ©£¬Ã»ÓĞautotask¡¢activeusersµÈ£¬¿ÉÒÔÉ¾³ı£¿
-			¹¦ÄÜ£ºdebug->Log³õÊ¼»¯£»SQLHelperUtilÉèÖÃÊı¾İ¿âÀàĞÍ£»ActiveUsers³õÊ¼»¯£»¶¨Ê±Æ÷ÔËĞĞ£»Òì³£´¦ÀíÏûÏ¢½âÎöÀàÊµÀı»¯£»CSSÅäÖÃÉ¾µôÁË£»
+		DBTestServlet	æ•°æ®åº“æ“ä½œæµ‹è¯•servletç±»ï¼Œå¸¦å‚æ•°ï¼šsource=æ•°æ®æºï¼ŒSQL=sqlè¯­å¥
+		InitServlet [åŸç±»å·²åˆ ï¼Œgoaä¸‹ç§»åˆ°æ­¤å¤„]ä¸æ˜¯é‡å¤(goa.web.servletä¸‹æœ‰åŒåç±»ï¼Œweb.xmlç”¨çš„æ˜¯goaä¸‹çš„)ï¼ŒåŠŸèƒ½ç®€å•äº›ï¼Œæ²¡æœ‰autotaskã€activeusersç­‰ï¼Œå¯ä»¥åˆ é™¤ï¼Ÿ
+			åŠŸèƒ½ï¼šdebug->Logåˆå§‹åŒ–ï¼›SQLHelperUtilè®¾ç½®æ•°æ®åº“ç±»å‹ï¼›ActiveUsersåˆå§‹åŒ–ï¼›å®šæ—¶å™¨è¿è¡Œï¼›å¼‚å¸¸å¤„ç†æ¶ˆæ¯è§£æç±»å®ä¾‹åŒ–ï¼›CSSé…ç½®åˆ æ‰äº†ï¼›
 	taglib
-		ContextTag	¶¨Òågever-gdp.tld;jspÒ³ÃæÓÃµ½£¬È«ÔÚjspÄ¿Â¼ÏÂ£¬¼´goaÎ´ÓÃ-exam: <gdp:context/> ,Êµ¼ÊĞ§¹û£ºÌîÈëweb contextÈçgdp
+		ContextTag	å®šä¹‰gever-gdp.tld;jspé¡µé¢ç”¨åˆ°ï¼Œå…¨åœ¨jspç›®å½•ä¸‹ï¼Œå³goaæœªç”¨-exam: <gdp:context/> ,å®é™…æ•ˆæœï¼šå¡«å…¥web contextå¦‚gdp
 	util
-		ActiveUsers	µ¥Ì¬£¬¾²Ì¬Êı¾İ¡£
-			ÉÏÏÂÎÄ»·¾³£ºsessionÊ±¼ä¡¢¹«Ë¾Ãû¡¢Êı¾İ¿âÀàĞÍ£»»·¾³¶ÓÁĞ±£´æ£ºÔÚÏßÓÃ»§Êı×é¡¢ÓÊÏäÏûÏ¢Êı×é¡¢ÒµÎñÊı×é
-			viewuser.jsp/sendmessage.jsp	»ñµÃÔÚÏßÓÃ»§
+		ActiveUsers	å•æ€ï¼Œé™æ€æ•°æ®ã€‚
+			ä¸Šä¸‹æ–‡ç¯å¢ƒï¼šsessionæ—¶é—´ã€å…¬å¸åã€æ•°æ®åº“ç±»å‹ï¼›ç¯å¢ƒé˜Ÿåˆ—ä¿å­˜ï¼šåœ¨çº¿ç”¨æˆ·æ•°ç»„ã€é‚®ç®±æ¶ˆæ¯æ•°ç»„ã€ä¸šåŠ¡æ•°ç»„
+			viewuser.jsp/sendmessage.jsp	è·å¾—åœ¨çº¿ç”¨æˆ·
 			DateTimeUtils
-			LoginAction¡¢InitServlet¡¢ActiveUserListener Êı¾İĞ´Èë
-			ÆäËüDAOÊ²Ã´µÄ£¬¶¼ÊÇÓÃÀ´ÅĞ¶ÏÊı¾İ¿â
-		SetCharacterEncodingFilter.java	ÎÄ×Ö±àÂë¹ıÂËÆğ£¬ÔÚweb.xmlÖĞÉè¶¨
-		URLBuilder	Î¨Ò»·½·¨£¬ÎªurlÔö¼Ó²ÎÊı-¼üÖµ¶Ô£¬Ö»ÔÚTagÀàÖĞÓÃµ½£¬ÓÃÓÚÔö¼ÓÖ¸¶¨Ò³ÃæµÄ²ÎÊı
+			LoginActionã€InitServletã€ActiveUserListener æ•°æ®å†™å…¥
+			å…¶å®ƒDAOä»€ä¹ˆçš„ï¼Œéƒ½æ˜¯ç”¨æ¥åˆ¤æ–­æ•°æ®åº“
+		SetCharacterEncodingFilter.java	æ–‡å­—ç¼–ç è¿‡æ»¤èµ·ï¼Œåœ¨web.xmlä¸­è®¾å®š
+		URLBuilder	å”¯ä¸€æ–¹æ³•ï¼Œä¸ºurlå¢åŠ å‚æ•°-é”®å€¼å¯¹ï¼Œåªåœ¨Tagç±»ä¸­ç”¨åˆ°ï¼Œç”¨äºå¢åŠ æŒ‡å®šé¡µé¢çš„å‚æ•°

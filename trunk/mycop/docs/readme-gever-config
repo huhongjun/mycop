@@ -1,55 +1,55 @@
 #
-# Ö¸¶¨sqlHelperÓÃµ½µÄÊı¾İ¿â·½ÑÔ¶¨ÒåÀà£¬ÓÃÓÚÉú³ÉÊı¾İ¿âÌØÓĞµÄsql
+# æŒ‡å®šsqlHelperç”¨åˆ°çš„æ•°æ®åº“æ–¹è¨€å®šä¹‰ç±»ï¼Œç”¨äºç”Ÿæˆæ•°æ®åº“ç‰¹æœ‰çš„sql
 #
 #database.dialect=com.gever.database.dialect.DB2Dialect
 #database.dialect=com.gever.database.dialect.OracleDialect
 database.dialect=com.gever.jdbc.database.dialect.MySQLDialect
 
 #
-# ·ÖÒ³ÅäÖÃ£¬Ö¸¶¨Ã¿Ò³ĞĞÊı
+# åˆ†é¡µé…ç½®ï¼ŒæŒ‡å®šæ¯é¡µè¡Œæ•°
 #
 pager.rowsPerPage=10
 
-# ·ÖÒ³ÅäÖÃ£¬Ö¸¶¨Ë÷Òı£¿ 2,3,4,5,6,7,8,9,10
+# åˆ†é¡µé…ç½®ï¼ŒæŒ‡å®šç´¢å¼•ï¼Ÿ 2,3,4,5,6,7,8,9,10
 pager.indexSize=9
 
-# £¿
+# ï¼Ÿ
 privilege=false
 
-# £¿
+# ï¼Ÿ
 normal.port=8080
 
 #SSL
 ssl.port=8443
 
-# Ö¸¶¨´æÈ¡ÏµÍ³ÈÕÖ¾µÄdaoÊµÏÖÀà
+# æŒ‡å®šå­˜å–ç³»ç»Ÿæ—¥å¿—çš„daoå®ç°ç±»
 # LogDAOFactory Instance
 #
 #Sysman.LogDAOFactoryClassName=com.gever.sysman.log.dao.LogDAOFactory
 Sysman.LogDAOFactoryClassName=com.gever.sysman.log.dao.impl.oracle.OracleLogDAOFactory
 
-# Ö¸¶¨¶¥¼¶¹¤³§£¬È»ºóÓÉÖ®»ñµÃdaoºÍsqlFactoryÊµÏÖ¶ÔÏó
+# æŒ‡å®šé¡¶çº§å·¥å‚ï¼Œç„¶åç”±ä¹‹è·å¾—daoå’ŒsqlFactoryå®ç°å¯¹è±¡
 # MenuSetupFactory Instance
 #
 #Sysman.MenuSetupFactoryClassName=com.gever.menusetup.dao.impl.DefaultMenuSetupFactory
 #Sysman.MenuSetupFactoryClassName=com.gever.menusetup.dao.impl.oracle.OracleMenuSetupFactory
 Sysman.MenuSetupFactoryClassName=com.gever.web.menusetup.dao.impl.mysql.MySQLMenuSetupFactory
 
-# Í¬ÉÏ
+# åŒä¸Š
 # Sysman.UserMenuDAOFactory instance
 #
 #Sysman.UserMenuDAOFactory=com.gever.homepage.dao.impl.DefaultUserMenuDAOFactory
 #Sysman.UserMenuDAOFactory=com.gever.homepage.dao.impl.oracle.OracleUserMenuDAOFactory
 Sysman.UserMenuDAOFactory=com.gever.web.homepage.dao.impl.mysql.MySQLUserMenuDAOFactory
 
-# Í¬ÉÏ
+# åŒä¸Š
 # OrganizationFactory Instance
 #
 #Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.DefaultOrganizationFactory
 #Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.oracle.OracleOrganizationFactory
 Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.mysql.MySQLOrganizationFactory
 
-# Í¬ÉÏ
+# åŒä¸Š
 # PrivilegeFactory Instance
 #
 #Sysman.PrivilegeFactoryClassName=com.gever.sysman.privilege.dao.impl.DefaultPrivilegeFactory
@@ -57,7 +57,7 @@ Sysman.OrganizationFactoryClassName=com.gever.sysman.organization.dao.impl.mysql
 Sysman.PrivilegeFactoryClassName=com.gever.sysman.privilege.dao.impl.mysql.MySQLPrivilegeFactory
 
 #
-# £¿
+# ï¼Ÿ
 #
-MenSelectedCatalogs=departments	//¶¼ºÃ¼ä¸ô£¬¿ÉÒÔÖ¸¶¨¶à¸ö
+MenSelectedCatalogs=departments	//éƒ½å¥½é—´éš”ï¼Œå¯ä»¥æŒ‡å®šå¤šä¸ª
 MenSelectedCatalog.departments.className=com.gever.web.menselect.impl.MenSelect

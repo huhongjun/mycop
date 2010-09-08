@@ -1,36 +1,36 @@
-webapp¡¢javaÖ®ÍâµÄÆäËüÄ¿Â¼
+webappã€javaä¹‹å¤–çš„å…¶å®ƒç›®å½•
 ======================================================================================================					
 
-src/main/resources	ÅäÖÃÎÄ¼şºÍstrutsÊôĞÔÎÄ¼ş
-	->com.gever	ÄÚÈİ²»¶à£¬Ö÷ÒªÊÇµÇÂ¼ÓÃµÄ
+src/main/resources	é…ç½®æ–‡ä»¶å’Œstrutså±æ€§æ–‡ä»¶
+	->com.gever	å†…å®¹ä¸å¤šï¼Œä¸»è¦æ˜¯ç™»å½•ç”¨çš„
 		ApplicationResources.properties
 		ApplicationResources_zh_CN.properties	
 		privilege
-			ApplicationResources.properties		Ã»ÓĞÄÚÈİ
+			ApplicationResources.properties		æ²¡æœ‰å†…å®¹
 	properties
-		messages.properties ibatisÓÃ
+		messages.properties ibatisç”¨
 	css-config.xml
 	debug.properties
-	error.properties		´æ·Å´íÎóĞÅÏ¢µÄÊôĞÔÎÄ¼ş
-	gever_config.properties	´úÂëĞĞÎªÈç·ÖÒ³µÈµÄÅäÖÃ¡¢¶¨ÖÆ
+	error.properties		å­˜æ”¾é”™è¯¯ä¿¡æ¯çš„å±æ€§æ–‡ä»¶
+	gever_config.properties	ä»£ç è¡Œä¸ºå¦‚åˆ†é¡µç­‰çš„é…ç½®ã€å®šåˆ¶
 	log4j.properties
 	readme.txt
-	sql-map-config.xml	ibatisÓÃ
-	system.properties	Êı¾İ¿âÁ´½ÓÅäÖÃ
+	sql-map-config.xml	ibatisç”¨
+	system.properties	æ•°æ®åº“é“¾æ¥é…ç½®
 
 ===============web test/docs=====================================================================	
 
-src/test/java		µ¥Ôª²âÊÔÀàjavaÔ´Âë
+src/test/java		å•å…ƒæµ‹è¯•ç±»javaæºç 
 bin
-docs				ÎÄµµ
+docs				æ–‡æ¡£
 
 ====================================================================================
-	site	maven2.0Éú³ÉµÄ¿ª·¢Õ¾µã£¬ÈıÖÖÎÄµµ¸ñÊ½
-		apt->	ÎÄµµÄ£°å
-		fml->	£¿
-		xdoc->	£¿xml¸ñÊ½µÄÎÄµµ
-		site.xml	Õ¾µã¶¨Òå
-testDir				ÔËĞĞjunitµ¥Ôª²âÊÔÊ±ĞèÒªµÄÄ¿Â¼
+	site	maven2.0ç”Ÿæˆçš„å¼€å‘ç«™ç‚¹ï¼Œä¸‰ç§æ–‡æ¡£æ ¼å¼
+		apt->	æ–‡æ¡£æ¨¡æ¿
+		fml->	ï¼Ÿ
+		xdoc->	ï¼Ÿxmlæ ¼å¼çš„æ–‡æ¡£
+		site.xml	ç«™ç‚¹å®šä¹‰
+testDir				è¿è¡Œjunitå•å…ƒæµ‹è¯•æ—¶éœ€è¦çš„ç›®å½•
 webroot
-readme-huhj.txt		ÏîÄ¿ÈÕ¼Ç
-readme				±¾ÎÄ¼ş
+readme-huhj.txt		é¡¹ç›®æ—¥è®°
+readme				æœ¬æ–‡ä»¶

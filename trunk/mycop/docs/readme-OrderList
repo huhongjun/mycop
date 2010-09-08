@@ -1,15 +1,23 @@
-OrderList	Ôö¼ÓJSPÊÓÍ¼ÁĞ±íÅÅĞò¹¦ÄÜ£»´æ´¢ĞèÒªÅÅĞòÊı¾İµÄ½á¹¹¡£ÓĞÊı¾İ¿âÏà¹Ø´úÂë£¬¿¼ÂÇ·ÅÈëÅäÖÃÎÄ¼şÖĞ¡£Ö»ÔÚ.sysmanÏÂÓÃµ½¡£
+OrderList	ï¿½ï¿½ï¿½JSPï¿½ï¿½Í¼ï¿½Ğ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½æ´¢ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İµÄ½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ğ¡ï¿½Ö»ï¿½ï¿½.sysmanï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½
 	OrderList.desc="desc";
 	OrderList.level_key= = "level_key"; 
 
-ÈçºÎÊ¹ÓÃ£º
-1.DAO£º	private String[] orderby;
+ï¿½ï¿½ï¿½Ê¹ï¿½Ã£ï¿½
+1.DAOï¿½ï¿½	private String[] orderby;
 		    public void setOrderby(String[] s){ this.orderby = s; }
-2.sql	Óï¾ä¸ÄÔì£ºsql = OrderList.getInstance().formatSQL(orderby,sql);
+2.sql	ï¿½ï¿½ï¿½ï¿½ï¿½ì£ºsql = OrderList.getInstance().formatSQL(orderby,sql);
+OrderList	å¢åŠ JSPè§†å›¾åˆ—è¡¨æ’åºåŠŸèƒ½ï¼›å­˜å‚¨éœ€è¦æ’åºæ•°æ®çš„ç»“æ„ã€‚æœ‰æ•°æ®åº“ç›¸å…³ä»£ç ï¼Œè€ƒè™‘æ”¾å…¥é…ç½®æ–‡ä»¶ä¸­ã€‚åªåœ¨.sysmanä¸‹ç”¨åˆ°ã€‚
+	OrderList.desc="desc";
+	OrderList.level_key= = "level_key"; 
+
+å¦‚ä½•ä½¿ç”¨ï¼š
+1.DAOï¼š	private String[] orderby;
+		    public void setOrderby(String[] s){ this.orderby = s; }
+2.sql	è¯­å¥æ”¹é€ ï¼šsql = OrderList.getInstance().formatSQL(orderby,sql);
 
 3.LevelAction.getPagerData()
-		get£ºOrderList.level_key£¬OrderList.desc
-		set£ºOrderList.level_key£¬
+		getï¼šOrderList.level_keyï¼ŒOrderList.desc
+		setï¼šOrderList.level_keyï¼Œ
 		levelDAO.setOrderby(ss)
 	------------------------------------------------------------------
         OrderList _order = OrderList.getInstance();
@@ -34,7 +42,7 @@ OrderList	Ôö¼ÓJSPÊÓÍ¼ÁĞ±íÅÅĞò¹¦ÄÜ£»´æ´¢ĞèÒªÅÅĞòÊı¾İµÄ½á¹¹¡£ÓĞÊı¾İ¿âÏà¹Ø´úÂë£¬¿¼Â
 	<%@ page import="com.gever.sysman.util.OrderList" %>
 1-
     //==============================================================================
-    // ºúÓÂÌí¼Ó£¬Ôö¼ÓÁĞ±íÅÅĞò¹¦ÄÜ
+    // èƒ¡å‹‡æ·»åŠ ï¼Œå¢åŠ åˆ—è¡¨æ’åºåŠŸèƒ½
     var ns = navigator.appName == "Netscape";
 	<%  
 		String key_value = OrderList.getInstance().level_key;
@@ -42,11 +50,63 @@ OrderList	Ôö¼ÓJSPÊÓÍ¼ÁĞ±íÅÅĞò¹¦ÄÜ£»´æ´¢ĞèÒªÅÅĞòÊı¾İµÄ½á¹¹¡£ÓĞÊı¾İ¿âÏà¹Ø´úÂë£¬¿¼Â
 	%>  
 	<%@ include file="../order_inc.inc" %>
     //==============================================================================
-2- ÁĞ±í±êÌâĞĞ
-	<td width="10%" class="Listtitle" id="<%=mapList[0]%>" onclick="order('<%=mapList[0]%>',event)">±àºÅ</td>
+2- åˆ—è¡¨æ ‡é¢˜è¡Œ
+	<td width="10%" class="Listtitle" id="<%=mapList[0]%>" onclick="order('<%=mapList[0]%>',event)">ç¼–å·</td>
 3-
 	//==============================================================================
-	// ºúÓÂÌí¼Ó£¬ÇĞ»»Í¼Æ¬ÏÔÊ¾
+	// èƒ¡å‹‡æ·»åŠ ï¼Œåˆ‡æ¢å›¾ç‰‡æ˜¾ç¤º
+	if((event_id != null) && (event_id != "null")){
+	    swapImages();
+	} else {
+	    if(orderby != "null"){
+	        event_id = orderby;
+	        swapImages();
+	    }
+	}
+	//==============================================================================
+
+5. order_inc.inc
+	
+3.LevelAction.getPagerData()
+		getï¿½ï¿½OrderList.level_keyï¿½ï¿½OrderList.desc
+		setï¿½ï¿½OrderList.level_keyï¿½ï¿½
+		levelDAO.setOrderby(ss)
+	------------------------------------------------------------------
+        OrderList _order = OrderList.getInstance();
+        String orderby = request.getParameter(OrderList.level_key);
+        String desc = request.getParameter(OrderList.desc);
+
+        if (!_order.isNull(orderby) && !_order.isNull(desc)) {
+            String[] ss = { orderby, desc };
+            request.getSession(true).setAttribute(OrderList.level_key,
+                ss);
+            levelDAO.setOrderby(ss);
+        } else {
+            String[] ss = (String[]) request.getSession(true)
+                                            .getAttribute(OrderList.level_key);
+
+            if (ss != null) {
+                levelDAO.setOrderby(ss);
+            }
+        }							
+4.JSP
+0-
+	<%@ page import="com.gever.sysman.util.OrderList" %>
+1-
+    //==============================================================================
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    var ns = navigator.appName == "Netscape";
+	<%  
+		String key_value = OrderList.getInstance().level_key;
+    	String uri = "/privilege/levelAction.do";
+	%>  
+	<%@ include file="../order_inc.inc" %>
+    //==============================================================================
+2- ï¿½Ğ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	<td width="10%" class="Listtitle" id="<%=mapList[0]%>" onclick="order('<%=mapList[0]%>',event)">ï¿½ï¿½ï¿½</td>
+3-
+	//==============================================================================
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½Ğ»ï¿½Í¼Æ¬ï¿½ï¿½Ê¾
 	if((event_id != null) && (event_id != "null")){
 	    swapImages();
 	} else {
