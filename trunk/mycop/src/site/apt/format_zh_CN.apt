@@ -1,17 +1,17 @@
 
-APT¸ñÊ½
+APTæ ¼å¼
 ~~~~~~~~~~~~~~
 
-  ÏÂÃæÕÂ½ÚÖĞ, °üº¬ÏñÊÇ´ò×Ö»ú×ÖÌåÎÄ±¾µÄ·½¿òÊÇAPTÔ´ÂëµÄÀı×Ó.
+  ä¸‹é¢ç« èŠ‚ä¸­, åŒ…å«åƒæ˜¯æ‰“å­—æœºå­—ä½“æ–‡æœ¬çš„æ–¹æ¡†æ˜¯APTæºç çš„ä¾‹å­.
 
-* ÎÄµµ½á¹¹ 
+* æ–‡æ¡£ç»“æ„ 
 ~~~~~~~~~~~~~~~~~~~~
 
-  Ò»¸ö¶ÌµÄAPTÎÄµµ¿ÉÒÔ´æ·ÅÔÚÒ»¸ö¼òµ¥µÄÎÄ±¾ÎÄ¼şÖĞ. ³¤µÄÎÄµµ¿ÉÄÜ°üÀ¨Ò»ÏµÁĞÓĞĞòµÄÎÄ±¾ÎÄ¼ş¡£
-  ÀıÈç£¬µÚÒ»¸öÎÄ±¾ÎÄ¼ş°üº¬µÚÒ»¶Î£¬µÚ¶ş¸öÎÄ±¾ÎÄ¼ş°üÀ¨µÚ¶ş¶Î£¬Ò»´ÊÀàÍÆ¡£
+  ä¸€ä¸ªçŸ­çš„APTæ–‡æ¡£å¯ä»¥å­˜æ”¾åœ¨ä¸€ä¸ªç®€å•çš„æ–‡æœ¬æ–‡ä»¶ä¸­. é•¿çš„æ–‡æ¡£å¯èƒ½åŒ…æ‹¬ä¸€ç³»åˆ—æœ‰åºçš„æ–‡æœ¬æ–‡ä»¶ã€‚
+  ä¾‹å¦‚ï¼Œç¬¬ä¸€ä¸ªæ–‡æœ¬æ–‡ä»¶åŒ…å«ç¬¬ä¸€æ®µï¼Œç¬¬äºŒä¸ªæ–‡æœ¬æ–‡ä»¶åŒ…æ‹¬ç¬¬äºŒæ®µï¼Œä¸€è¯ç±»æ¨ã€‚
 
-      [×¢ÊÍ:] ²ğ·ÖAPTÎÄµµ³ÉÎª¶à¸öÎÄ¼ş²»ÊÇÒ»¶¨ÒªÒÔ¶ÎÎª±ß½ç£¬²ğ·âÊµ¼ÊÉÏ¿ÉÒÔÔÚAPTÎÄµµµÄÈÎºÎÎ»ÖÃ¡£
-             ²»¹ı£¬½¨ÒéÕâÃ´×ö£¬ÒòÎª°üº¬¶ÎµÄÎÄ±¾ÎÄ¼ş±¾Éí¾ÍÊÇÒ»¸öÓĞĞ§µÄAPTÎÄµµ¡£
+      [æ³¨é‡Š:] æ‹†åˆ†APTæ–‡æ¡£æˆä¸ºå¤šä¸ªæ–‡ä»¶ä¸æ˜¯ä¸€å®šè¦ä»¥æ®µä¸ºè¾¹ç•Œï¼Œæ‹†å°å®é™…ä¸Šå¯ä»¥åœ¨APTæ–‡æ¡£çš„ä»»ä½•ä½ç½®ã€‚
+             ä¸è¿‡ï¼Œå»ºè®®è¿™ä¹ˆåšï¼Œå› ä¸ºåŒ…å«æ®µçš„æ–‡æœ¬æ–‡ä»¶æœ¬èº«å°±æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„APTæ–‡æ¡£ã€‚
 
   A file contains a sequence of paragraphs and ``displays'' (non paragraphs
   such as tables) separated by open lines.
@@ -59,13 +59,13 @@ other lines of the paragraph.
 
   Note that tabs are expanded with a tab width set to 8.
 
-* ÎÄµµÔªËØ
+* æ–‡æ¡£å…ƒç´ 
 ~~~~~~~~~~~~~~~~~~~
 
-** ¿ì¼¶±ğµÄÔªËØ
+** å¿«çº§åˆ«çš„å…ƒç´ 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*** ±êÌâ
+*** æ ‡é¢˜
 ~~~~~~~~~~
 
   A title is optional. If used, it must appear as the first block of the
@@ -107,7 +107,7 @@ other lines of the paragraph.
 
   The last line is ignored. It is just there to make the block nicer.
 
-*** ¶ÎÂä£¿
+*** æ®µè½ï¼Ÿ
 ~~~~~~~~~~~~~
 
   Paragraphs other than the title block may appear before the first section.
@@ -123,7 +123,7 @@ other lines of the paragraph.
   Paragraphs are indented. They have already been described in the {{document
   structure}} section.
 
-*** ¶Î
+*** æ®µ
 ~~~~~~~~~~~
 
   Sections are created by inserting section titles into the document. Simple
