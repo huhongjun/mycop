@@ -1,12 +1,12 @@
-1¡¢³õÊ¼Æô¶¯Ò³Ãæ
+1ã€åˆå§‹å¯åŠ¨é¡µé¢
 	<html:button 
 		property="selectnotice" 
-		value="Ñ¡ÔñÈËÔ±" 
+		value="é€‰æ‹©äººå‘˜" 
 		styleClass="button"  
 		onclick="javascript:openSelectWindow('menselect','vo.notice','vo.noticename');"/>
-	´«¸øpub.js,Ê¹Ö®ÄÜ´ò¿ªÕıÈ·µÄµ¯³ö´°¿Ú£¬²¢Ö¸¶¨·µ»ØÖµµÄÌîÈë¶ÔÏóµÄid£¨'vo.notice','vo.noticename'£©
+	ä¼ ç»™pub.js,ä½¿ä¹‹èƒ½æ‰“å¼€æ­£ç¡®çš„å¼¹å‡ºçª—å£ï¼Œå¹¶æŒ‡å®šè¿”å›å€¼çš„å¡«å…¥å¯¹è±¡çš„idï¼ˆ'vo.notice','vo.noticename'ï¼‰
 
-2¡¢pub.js:
+2ã€pub.js:
 	function openSelectWindow(type,id,name) {
 	var context = '/gdp';
 	var url = '';
@@ -29,20 +29,20 @@
 	        break;
     }
 	url = addPara(url,rnd);
-	var userIds = document.all[id].value;	//ÒÑÓĞµÄidÖµ
+	var userIds = document.all[id].value;	//å·²æœ‰çš„idå€¼
 	alert('userIds:' + userIds+'url:'+url);
    	var vReturnValue = window.showModalDialog(url,userIds,"dialogHeight: " + height + "px; dialogWidth: 450px; center: Yes; help: no; resizable: no; status: no;");
-5¡¢   	alert('vReturnValue.id is ' + vReturnValue.id);
+5ã€   	alert('vReturnValue.id is ' + vReturnValue.id);
    	if(vReturnValue.id != '-1') {
        document.all[id].value = vReturnValue.id;
        document.all[name].value = vReturnValue.name;
    }
 }
 
-3¡¢ <action name="MenSelectForm" parameter="toDept" path="/menselect/deptselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
+3ã€ <action name="MenSelectForm" parameter="toDept" path="/menselect/deptselect" scope="session" type="com.gever.goa.menselect.action.MenSelectAction" validate="false">
       <forward name="dept" path="/menselect/deptselect.jsp" redirect="false" />
     </action>
-	Action²Ù×÷£º
+	Actionæ“ä½œï¼š
 		initData()
 		toDept()
 			MenSelectDao.getDeptInfoArray()
@@ -51,6 +51,6 @@
 			MenSelectForm.setInitUserInfoArray(*)
 			/menselect/deptselect.jsp
 			
-4¡¢/menselect/deptselect.jsp
+4ã€/menselect/deptselect.jsp
 
 

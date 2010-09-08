@@ -1,65 +1,65 @@
 ===============web app=====================================================================	
 src/
 	main/webapp
-		admin->		»ù´¡Êı¾İ¹ÜÀí/¾²Ì¬Âë±íÎ¬»¤£¨½¨Òé¸ÄÃû£©
-		cell->		»ª±íµç×Ó±í¸ñ¿Ø¼ş£¬Ö»ÄÜÓÃÓÚie
+		admin->		åŸºç¡€æ•°æ®ç®¡ç†/é™æ€ç è¡¨ç»´æŠ¤ï¼ˆå»ºè®®æ”¹åï¼‰
+		cell->		åè¡¨ç”µå­è¡¨æ ¼æ§ä»¶ï¼Œåªèƒ½ç”¨äºie
 		common->	
 			htmleditor
 			menu
-			xtree	¿ªÔ´ÏîÄ¿XMLLoadTree
+			xtree	å¼€æºé¡¹ç›®XMLLoadTree
 			xtreeEx
 		css
 		dailyoffice
 			.....
-		ddlfile		Êı¾İ¿â¶¨ÒåÎÄ¼şµ¼³öºó´æ·ÅÔÚ´Ë
+		ddlfile		æ•°æ®åº“å®šä¹‰æ–‡ä»¶å¯¼å‡ºåå­˜æ”¾åœ¨æ­¤
 		images
 		infoservice
 		js
 		jscript
 		jsp
-			basedata	»ù´¡Êı¾İ£¿
+			basedata	åŸºç¡€æ•°æ®ï¼Ÿ
 			error
-			homepage	Ö÷Ò³
+			homepage	ä¸»é¡µ
 				images
 				empty.html
 				frame.jsp
-				left.jsp		Ö÷½çÃæ×ó±ßµÄÕ­Ìõ-Ò»ÁïÍ¼±ê
-					ÎÊÌâ£º/admin/homepage/hiddenleft.do
-					¹¦ÄÜ£º¿ì½İµ¼º½£»ÊµÊ©ĞÅÏ¢-ÓÊ¼ş¡¢ÔÚÏßÏûÏ¢¡¢ÔÚÏßÓÃ»§
-				viewuser.jsp	ÔÚÏßÓÃ»§ÁĞ±í
-			log			ÏµÍ³ÈÕÖ¾
-			login		µÇÂ¼
-			menselect	ÈËÔ±Ñ¡Ôñ
-			->menusetup	²Ëµ¥ÉèÖÃ
+				left.jsp		ä¸»ç•Œé¢å·¦è¾¹çš„çª„æ¡-ä¸€æºœå›¾æ ‡
+					é—®é¢˜ï¼š/admin/homepage/hiddenleft.do
+					åŠŸèƒ½ï¼šå¿«æ·å¯¼èˆªï¼›å®æ–½ä¿¡æ¯-é‚®ä»¶ã€åœ¨çº¿æ¶ˆæ¯ã€åœ¨çº¿ç”¨æˆ·
+				viewuser.jsp	åœ¨çº¿ç”¨æˆ·åˆ—è¡¨
+			log			ç³»ç»Ÿæ—¥å¿—
+			login		ç™»å½•
+			menselect	äººå‘˜é€‰æ‹©
+			->menusetup	èœå•è®¾ç½®
 				default
 				frame
 				hidedata
-				lefttree	Á½¿ÃÊ÷£ºtree-ÓÃ»§²Ëµ¥£¬tree1-ÏµÍ³Ä¬ÈÏ²Ëµ¥£¬ÓÃWebFXLoadTree¼ÓÔØ£»ÓÃÈ¨ÏŞtag¿ØÖÆtree1Ïà¹Ø´úÂë
+				lefttree	ä¸¤æ£µæ ‘ï¼štree-ç”¨æˆ·èœå•ï¼Œtree1-ç³»ç»Ÿé»˜è®¤èœå•ï¼Œç”¨WebFXLoadTreeåŠ è½½ï¼›ç”¨æƒé™tagæ§åˆ¶tree1ç›¸å…³ä»£ç 
 				menudel
 				menuedit
 				menuhide
 				menusetup
 				xtree
-			->organization	×éÖ¯£º²¿ÃÅ¡¢Ô±¹¤¡¢¸ÚÎ»
-			->privilege		È¨ÏŞ£ºÖ°¼¶¡¢opt-²Ù×÷¡¢È¨ÏŞÓ³Éä¡¢×ÊÔ´¡¢½ÇÉ«¡¢ÓÃ»§¡¢
-			jsp_css.jsp		¶¯Ì¬Ö¸¶¨cssÎÄ¼ş
-			order_inc.inc	Ö§³Öµã»÷±êÌâÅÅĞòµÄÒ³ÃæĞèÔÚjspÖĞ°üº¬±¾ÎÄ¼ş£¬¾ßÌåÓÃ·¨×öÒ»sample
-			sys_css.jsp		get:csslist,set:cssList[Ó¦¸Ã¿ÉÒÔÔÚÕâÀï¼ÓÈë¶¯Ì¬Éè¶¨cssµÄ¹¦ÄÜ]
-		menselect		ÈËÔ±Ñ¡Ôñ
+			->organization	ç»„ç»‡ï¼šéƒ¨é—¨ã€å‘˜å·¥ã€å²—ä½
+			->privilege		æƒé™ï¼šèŒçº§ã€opt-æ“ä½œã€æƒé™æ˜ å°„ã€èµ„æºã€è§’è‰²ã€ç”¨æˆ·ã€
+			jsp_css.jsp		åŠ¨æ€æŒ‡å®šcssæ–‡ä»¶
+			order_inc.inc	æ”¯æŒç‚¹å‡»æ ‡é¢˜æ’åºçš„é¡µé¢éœ€åœ¨jspä¸­åŒ…å«æœ¬æ–‡ä»¶ï¼Œå…·ä½“ç”¨æ³•åšä¸€sample
+			sys_css.jsp		get:csslist,set:cssList[åº”è¯¥å¯ä»¥åœ¨è¿™é‡ŒåŠ å…¥åŠ¨æ€è®¾å®šcssçš„åŠŸèƒ½]
+		menselect		äººå‘˜é€‰æ‹©
 		template
 		tree
 		uploadfiles
-			bbs		ÂÛÌ³¸½¼ş£¿
-			mailbox	£¿
-			manage	£¿
-			template	Ä£°å£¬ÄÇĞ©Ä£¿éÓÃµ½
-			syslog.txt		ÏµÍ³ÈÕÖ¾
+			bbs		è®ºå›é™„ä»¶ï¼Ÿ
+			mailbox	ï¼Ÿ
+			manage	ï¼Ÿ
+			template	æ¨¡æ¿ï¼Œé‚£äº›æ¨¡å—ç”¨åˆ°
+			syslog.txt		ç³»ç»Ÿæ—¥å¿—
 		util
-			selenium	¹¦ÄÜ²âÊÔ¿ªÔ´Ì×¼ş£¬ĞèÔÚFirefox¶Ë°²×°selenium ide
-				copTest	COP²âÊÔ½Å±¾
-			dbtest.jsp			Êı¾İ¿â²âÊÔ
-			debug.jsp			µ÷ÊÔÉèÖÃÒ³Ãæ
-			downloadfile.jsp	ÑùÀı-ÏÂÔØÎÄ¼ş
+			selenium	åŠŸèƒ½æµ‹è¯•å¼€æºå¥—ä»¶ï¼Œéœ€åœ¨Firefoxç«¯å®‰è£…selenium ide
+				copTest	COPæµ‹è¯•è„šæœ¬
+			dbtest.jsp			æ•°æ®åº“æµ‹è¯•
+			debug.jsp			è°ƒè¯•è®¾ç½®é¡µé¢
+			downloadfile.jsp	æ ·ä¾‹-ä¸‹è½½æ–‡ä»¶
 		WEB-INF
 			dtd
 			jspf
@@ -70,19 +70,19 @@ src/
 					header2.jspf
 			lib
 			taglib
-				gever-gdp.tld	ÓÃÍ¾£ºcontext£¬Ò»¸ötag£¬²¢Èë£¿
+				gever-gdp.tld	ç”¨é€”ï¼šcontextï¼Œä¸€ä¸ªtagï¼Œå¹¶å…¥ï¼Ÿ
 					com.gever.web.taglib.ContextTag
-				gever-goa.tld	ÓÃÍ¾£º
+				gever-goa.tld	ç”¨é€”ï¼š
 					com.gever.goa.web.taglib.SplitPageTag
 					com.gever.goa.web.taglib.BeanWriteTag
 					com.gever.goa.web.taglib.LinkTag
 					com.gever.goa.web.taglib.SubmitTag
 					com.gever.goa.web.taglib.ButtonTag
-				gever-menu.tld	Ö÷Ò³Ãæ²Ëµ¥×¨ÓÃ
+				gever-menu.tld	ä¸»é¡µé¢èœå•ä¸“ç”¨
 					com.gever.web.homepage.taglib.MenuTag
 					com.gever.web.homepage.taglib.GetNodePath
 					com.gever.web.homepage.taglib.SplitPageTag
-				gever-pager.tld	struts·ÖÒ³×¨ÓÃ
+				gever-pager.tld	strutsåˆ†é¡µä¸“ç”¨
 					com.gever.struts.taglib.pager.PagerTag
 					com.gever.struts.taglib.pager.FirstPageTag
 					com.gever.struts.taglib.pager.PrevPageTag
@@ -90,44 +90,44 @@ src/
 					com.gever.struts.taglib.pager.LastPageTag
 					com.gever.struts.taglib.pager.ListPageTag
 					com.gever.struts.taglib.pager.IndexPageTag
-				gever-perm.tld	È¨ÏŞ¿ØÖÆ
+				gever-perm.tld	æƒé™æ§åˆ¶
 					com.gever.sysman.privilege.webapp.taglib.PermissionImgButton
 					com.gever.sysman.privilege.webapp.taglib.PermissionButton
 					com.gever.sysman.privilege.webapp.taglib.PermissionTag
 					com.gever.sysman.privilege.webapp.taglib.DefaultMenuPermissionTag
-			basedata-config.xml		Êı¾İ¿â×¨Êôµ¼Èë¡¢µ¼³öÃüÁîÉèÖÃ
-			database-config.xml		Ö¸¶¨±íÃûÇåµ¥£¬½«ÎªÕâĞ©Ö¸¶¨±í´´½¨ddl
+			basedata-config.xml		æ•°æ®åº“ä¸“å±å¯¼å…¥ã€å¯¼å‡ºå‘½ä»¤è®¾ç½®
+			database-config.xml		æŒ‡å®šè¡¨åæ¸…å•ï¼Œå°†ä¸ºè¿™äº›æŒ‡å®šè¡¨åˆ›å»ºddl
 			
-			struts-config-admin.xml			»ù´¡Êı¾İºÍdailyofficeÏûÏ¢
-				ÉÙÁ¿jspÒıÓÃ£¬´ó²¿·Ötiles£»jspÄ¿Â¼-tiles=>/admin
-			struts-config-dailyoffice.xml	ÈÕ³£°ì¹«
-				¾ø´ó¶àÊıtiles£¬Ò»¸öjspÒıÓÃ;	jspÄ¿Â¼-tiles=>dailyoffice
-			struts-config-infoservice.xml	ĞÅÏ¢·şÎñ
-				1.Ö»ÓĞÁ½´¦ÓÃµ½jspÎÄ¼ş£¬ÆäÓàÈ«ÊÇtiles¶¨Òå=¡·/infoservice/treedata.jsp
-				2.¿¼ÂÇÒ²ÉèÖÃÎªtiles±äÁ¿;jspÄ¿Â¼-tiles=>infoservice
+			struts-config-admin.xml			åŸºç¡€æ•°æ®å’Œdailyofficeæ¶ˆæ¯
+				å°‘é‡jspå¼•ç”¨ï¼Œå¤§éƒ¨åˆ†tilesï¼›jspç›®å½•-tiles=>/admin
+			struts-config-dailyoffice.xml	æ—¥å¸¸åŠå…¬
+				ç»å¤§å¤šæ•°tilesï¼Œä¸€ä¸ªjspå¼•ç”¨;	jspç›®å½•-tiles=>dailyoffice
+			struts-config-infoservice.xml	ä¿¡æ¯æœåŠ¡
+				1.åªæœ‰ä¸¤å¤„ç”¨åˆ°jspæ–‡ä»¶ï¼Œå…¶ä½™å…¨æ˜¯tileså®šä¹‰=ã€‹/infoservice/treedata.jsp
+				2.è€ƒè™‘ä¹Ÿè®¾ç½®ä¸ºtileså˜é‡;jspç›®å½•-tiles=>infoservice
 			struts-config-organization.xml  sysman.organization
-				ºÃÏñÃ»ÓÃtiles¶¨Òå£¬È«²¿Ö±Ö¸jspÎÄ¼ş;jspÄ¿Â¼-/jsp
+				å¥½åƒæ²¡ç”¨tileså®šä¹‰ï¼Œå…¨éƒ¨ç›´æŒ‡jspæ–‡ä»¶;jspç›®å½•-/jsp
 			struts-config-privilege.xml		sysman.privilege,export,level
-				É¾³ıloginAction.do,Òòstruts-configÖĞÒÑÓĞÇÒ´Ë´¦¶¨ÒåÎ´ÓÃµ½¡£
-				Ö±Ö¸jsp;jspÄ¿Â¼-/jsp
+				åˆ é™¤loginAction.do,å› struts-configä¸­å·²æœ‰ä¸”æ­¤å¤„å®šä¹‰æœªç”¨åˆ°ã€‚
+				ç›´æŒ‡jsp;jspç›®å½•-/jsp
 			struts-config.xml
-				Ö±Ö¸jsp£»	jspÄ¿Â¼-/jsp
-			ËµÃ÷£º	1¡¢tilesÃüÃûÓ¦¸Ã²ÉÓÃÍ³Ò»µÄÄÜ±íÃ÷tilesÌØÕ÷¡¢tilesËùÊôÅäÖÃÎÄ¼şµÄÇ°×ºÃû£»
-					2.Ò»ËÑ¾ÍÖªµÀstrutsÅäÖÃ¡¢jspÖĞÊÇ·ñÓÃµ½
-					3¡¢ÓÃµ½µÄµØ·½£º»¥ÏàÒıÓÃ¡¢JSPÖĞÒıÓÃ¡¢strutsÅäÖÃÎÄ¼şÊ¹ÓÃ
-					4¡¢tiles.[*1].[*2]	=> *1ÊÇËùÊôtilesÅäÖÃÎÄ¼şµÄ±êÖ¾;*2Ó¦ÓÃÄ£¿é±êÖ¾
-					5¡¢×ÜµÄÀ´Ëµ£¬Ö»ÓĞgoaÓÃÁËtiles£»
+				ç›´æŒ‡jspï¼›	jspç›®å½•-/jsp
+			è¯´æ˜ï¼š	1ã€tileså‘½ååº”è¯¥é‡‡ç”¨ç»Ÿä¸€çš„èƒ½è¡¨æ˜tilesç‰¹å¾ã€tilesæ‰€å±é…ç½®æ–‡ä»¶çš„å‰ç¼€åï¼›
+					2.ä¸€æœå°±çŸ¥é“strutsé…ç½®ã€jspä¸­æ˜¯å¦ç”¨åˆ°
+					3ã€ç”¨åˆ°çš„åœ°æ–¹ï¼šäº’ç›¸å¼•ç”¨ã€JSPä¸­å¼•ç”¨ã€strutsé…ç½®æ–‡ä»¶ä½¿ç”¨
+					4ã€tiles.[*1].[*2]	=> *1æ˜¯æ‰€å±tilesé…ç½®æ–‡ä»¶çš„æ ‡å¿—;*2åº”ç”¨æ¨¡å—æ ‡å¿—
+					5ã€æ€»çš„æ¥è¯´ï¼Œåªæœ‰goaç”¨äº†tilesï¼›
 			tiles-defs-dailyoffice.xml	
-				Ç°×º£ºdailyoffice¡¢targetmng¡¢monthtarget¡¢monthsum¡¢weektarget¡¢
-					target¡¢teamwork¡¢worklog¡¢personweektarget¡¢docmng¡¢admin¡¢
-					message£¬ÓĞ²»´æÔÚµÄjspÒıÓÃ
-			tiles-defs-infoservice.xml	Ç°×º£ºinfoservice¡¢customer¡¢type
-			tiles-defs-main.xml			Ç°×º£ºmain/view/edit/tree open void
-			tiles-defs-staticdata.xml	Ç°×º£ºadmin
-			tiles-defs-login.xml	Èı¸ö£ºLoginLayout¡¢gerver.gdp.login¡¢gever.gdp.relogin
+				å‰ç¼€ï¼šdailyofficeã€targetmngã€monthtargetã€monthsumã€weektargetã€
+					targetã€teamworkã€worklogã€personweektargetã€docmngã€adminã€
+					messageï¼Œæœ‰ä¸å­˜åœ¨çš„jspå¼•ç”¨
+			tiles-defs-infoservice.xml	å‰ç¼€ï¼šinfoserviceã€customerã€type
+			tiles-defs-main.xml			å‰ç¼€ï¼šmain/view/edit/tree open void
+			tiles-defs-staticdata.xml	å‰ç¼€ï¼šadmin
+			tiles-defs-login.xml	ä¸‰ä¸ªï¼šLoginLayoutã€gerver.gdp.loginã€gever.gdp.relogin
 
 			timer.xml
-			validation-privilege.xml¡¢validator-rules.xml
+			validation-privilege.xmlã€validator-rules.xml
 			web.xml
 		404.jsp
 		index.jsp

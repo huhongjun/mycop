@@ -19,7 +19,7 @@
 
   <issueManagement>
     <system>JIRA</system>
-    <url>http://issues.osmatrix.info/browse/cop</url>
+    <url>http://code.google.com/p/mycop/issues/list</url>
   </issueManagement>
 
   <licenses>
@@ -30,9 +30,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:svn:svn://localhost/trunk/COP</connection>
-    <developerConnection>scm:svn:svn://huhj:huhj@localhost/trunk/COP</developerConnection>
-    <url>https://localhost/source/browse/cop</url>
+    <connection>scm:svn:https://mycop.googlecode.com/svn/trunk/mycop</connection>
+    <developerConnection>scm:svn:svn://huhongjun:Pv2Um5hz6EY6@https://mycop.googlecode.com/svn/trunk/mycop</developerConnection>
+    <url>http://code.google.com/p/mycop/source/browse/</url>
   </scm>
 
   <mailingLists>
@@ -271,8 +271,16 @@
 			<enabled>true</enabled>
 		</releases>
 	</pluginRepository>	
+	<pluginRepository>
+		<id>repo2</id>
+		<url>http://repo2.maven.org/</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+	</pluginRepository>	
   </pluginRepositories>
-    
+    maven2/org/apache/maven/doxia/
+    maven2/org/apache/maven/doxia/
   <build>
     <defaultGoal>package</defaultGoal>
     <finalName>${project.artifactId}</finalName>
@@ -305,9 +313,18 @@
       </testResource>
     </testResources>
     <plugins>
-		<plugin>
+   
+	<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.doxia</groupId>
+            <artifactId>doxia-module-twiki</artifactId>
+            <version>1.1</version>
+          </dependency>
+        </dependencies>
+	
         <configuration>   
           <locales>zh_CN,en</locales>
           <inputEncoding>UTF-8</inputEncoding>                  
