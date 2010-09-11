@@ -11,6 +11,7 @@
 
 	<description>
 	COP - Cooperation Office Platform from osMatrix.info
+协同办公平台
   </description>
 
 	<organization>
@@ -395,5 +396,7 @@
 		<dashboard-maven-plugin.version>1.0.0-beta-1</dashboard-maven-plugin.version>
 		<maven-checkstyle-plugin.version>2.2</maven-checkstyle-plugin.version>
 		<maven-overview-plugin.version>1.4</maven-overview-plugin.version>
-	</properties>	
+	</properties>
+	<modules>
+	</modules>	
 </project>

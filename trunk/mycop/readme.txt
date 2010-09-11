@@ -26,6 +26,8 @@
 		3、Java编译兼容版本，JDK库配置
 		0、设置自动build
 		4/eclipse Error log的处理，删除
+		
+		Eclipse 3.5.1 Java + m2eclipse + ExploreFS + BeyondCompareUtil
 	
 	COP：
 		struts 1.1
